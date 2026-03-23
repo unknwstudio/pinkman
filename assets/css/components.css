@@ -1,100 +1,85 @@
 /* ============================================================
-   components.css — header, footer, nav, global overrides
+   components.css
    ============================================================ */
 
-/* ══════════════════════════════════════════════════════════════
-   DESKTOP DROPDOWN HOVER
-   ══════════════════════════════════════════════════════════════ */
+/* ── Desktop dropdown hover ── */
 @media (min-width: 992px) {
   .header-dropdown-wrapper.hide-mobile:hover .header-dropdown {
     display: block !important;
   }
+  /* hide mobile-only nav item */
+  .mobile-nav-discuss { display: none !important; }
 }
 
-/* ══════════════════════════════════════════════════════════════
-   MOBILE NAV — full-screen gray overlay, card items
-   ══════════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+   MOBILE NAV MENU
+   ════════════════════════════════════════════ */
 @media (max-width: 991px) {
 
-  /* ── Full-screen panel, always rendered for transitions ── */
-  .nav-menu {
-    display: flex !important;
-    flex-direction: column !important;
+  /* Ensure header stays on top of the menu overlay */
+  .header-new { z-index: 9999 !important; }
 
+  /* Full-screen overlay — only when open */
+  .nav-menu.w--open {
+    display: flex !important;
+    flex-direction: column;
     position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
+    inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
     max-height: none !important;
     margin: 0 !important;
     z-index: 9000;
-
     background: #EAEAEA !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-
-    /* Space for the fixed header above */
-    padding: 80px 12px 24px !important;
+    padding: 78px 10px 20px !important;
     overflow-y: auto;
-
-    /* Hidden state */
-    pointer-events: none;
-    opacity: 0;
-    transform: scale(0.97);
-    transform-origin: top right;
-    transition: opacity 0.28s ease, transform 0.28s ease;
+    /* simple scale-in */
+    animation: menuIn 0.22s ease forwards;
   }
 
-  .nav-menu.w--open {
-    pointer-events: auto;
-    opacity: 1;
-    transform: scale(1);
+  @keyframes menuIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to   { opacity: 1; transform: scale(1); }
   }
 
-  /* ── Header wrapper inside nav — strip its own card styling ── */
   .header-wrapper {
     background: transparent !important;
     border-radius: 0 !important;
     padding: 0 !important;
-    border: none !important;
-    flex: 1;
     display: flex;
     flex-direction: column;
+    flex: 1;
   }
 
-  /* ── Links list — vertical stack with gap ── */
   .header-links-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 6px !important;
+    gap: 5px !important;
     width: 100% !important;
     align-items: stretch !important;
-    flex: 1;
   }
 
-  /* ── Each nav button — white rounded card ── */
+  /* Each nav item — white rounded card, compact */
   .header-btn {
     display: block !important;
-    width: 100% !important;
     background: #fff !important;
-    border-radius: 16px !important;
-    padding: 20px 22px !important;
-    font-size: 18px !important;
+    border-radius: 14px !important;
+    padding: 17px 18px !important;
+    font-size: 17px !important;
     font-weight: 500 !important;
     color: #0d0d0d !important;
-    line-height: 1.2;
     text-decoration: none;
+    width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* ── Services dropdown wrapper — white card, expands inline ── */
+  /* Services dropdown — white card */
   .header-dropdown-wrapper.hide-desktop {
     display: block !important;
     background: #fff !important;
-    border-radius: 16px !important;
+    border-radius: 14px !important;
     overflow: hidden !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -104,31 +89,27 @@
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 20px 22px !important;
+    padding: 17px 18px !important;
     cursor: pointer;
   }
 
   .header-dropdown-wrapper.hide-desktop .dropdown-trigger .header-btn {
     background: transparent !important;
-    padding: 0 !important;
     border-radius: 0 !important;
+    padding: 0 !important;
     width: auto !important;
-    font-size: 18px !important;
   }
 
   .dropdown-arrow-image {
-    width: 20px;
-    height: 20px;
-    opacity: 0.5;
-    transition: transform 0.22s ease;
+    width: 18px; height: 18px; opacity: 0.45;
+    transition: transform 0.2s ease;
     flex-shrink: 0;
   }
 
-  /* ── Dropdown list (services sub-items) ── */
   .header-dropdown-wrapper.hide-desktop .header-dropdown {
     display: none;
+    padding: 4px 18px 14px !important;
     background: transparent !important;
-    padding: 0 22px 16px !important;
     position: static !important;
   }
 
@@ -138,102 +119,84 @@
 
   .header-dropdown-wrapper.hide-desktop .header-dropdown-link {
     display: block !important;
-    padding: 10px 0 !important;
+    padding: 9px 0 !important;
     border: none !important;
-    border-radius: 0 !important;
-    border-top: 1px solid #eee !important;
+    border-top: 1px solid #f0f0f0 !important;
     background: transparent !important;
-    font-size: 16px !important;
-    color: #555 !important;
     width: 100% !important;
   }
 
   .header-dropdown-wrapper.hide-desktop .header-dropdown-link p {
+    font-size: 15px !important;
+    color: #666 !important;
     margin: 0;
-    font-size: 16px !important;
-    color: #555 !important;
   }
 
-  /* ── "Обсудить проект" at bottom of mobile nav ── */
+  /* "Обсудить проект" at bottom */
   .mobile-nav-discuss {
     display: flex !important;
-    align-items: center;
     justify-content: center;
-    margin-top: auto;
-    padding-top: 16px;
-    background: #ff3c78;
+    align-items: center;
+    margin-top: 10px;
+    padding: 17px 18px !important;
+    background: #ff3c78 !important;
     color: #fff !important;
-    border-radius: 16px !important;
-    padding: 20px 22px !important;
-    font-size: 18px !important;
+    border-radius: 14px !important;
+    font-size: 17px !important;
     font-weight: 600 !important;
     text-decoration: none;
     text-align: center;
   }
 }
 
-@media (max-width: 479px) {
-  .nav-menu {
-    padding: 70px 10px 20px !important;
-  }
-}
-
-/* ══════════════════════════════════════════════════════════════
-   HAMBURGER ICON (replaces Lottie)
-   ══════════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+   HAMBURGER (replaces Lottie)
+   ════════════════════════════════════════════ */
 .mobile-lottie {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4px;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   padding: 10px;
 }
 
 .ham-line {
   display: block;
-  width: 16px;
-  height: 1.5px;
+  width: 15px; height: 1.5px;
   background: #333;
   border-radius: 2px;
-  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity   0.2s  ease,
-              transform-origin 0s;
+  transition: transform 0.25s ease, opacity 0.2s ease;
   transform-origin: center;
 }
 
 .mobile-menu-btn.w--open .ham-line:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
-.mobile-menu-btn.w--open .ham-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mobile-menu-btn.w--open .ham-line:nth-child(2) { opacity: 0; }
 .mobile-menu-btn.w--open .ham-line:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
 
-/* ══════════════════════════════════════════════════════════════
-   HERO IMAGES — fix links + desktop hover popup + mobile carousel
-   ══════════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+   HERO IMAGES — links fix, hover (desktop), carousel (mobile)
+   ════════════════════════════════════════════ */
 
-.best-cases__link {
-  pointer-events: auto !important;
-  display: block;
-}
+/* Fix disabled pointer-events on image links */
+.best-cases__link { pointer-events: auto !important; display: block; }
 
+/* Desktop: slide-up hover popup */
 @media (min-width: 992px) {
-  .best-cases__item { cursor: pointer; }
-
   .features-grid___item.best-cases__popup {
     display: flex !important;
     pointer-events: none;
     position: absolute;
-    inset: auto 0 0 0;
+    inset: auto 0 0;
     transform: translateY(100%);
-    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
     opacity: 0;
-    background: rgba(255,255,255,0.96);
+    transition: transform 0.28s ease, opacity 0.22s ease;
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(4px);
     border-radius: 0 0 8px 8px;
-    padding: 16px 20px 20px;
+    padding: 14px 18px 18px;
   }
-
   .best-cases__item:hover .features-grid___item.best-cases__popup {
     transform: translateY(0);
     opacity: 1;
@@ -241,8 +204,18 @@
   }
 }
 
+/* Mobile: horizontal carousel, full-bleed */
 @media (max-width: 991px) {
   .features-grid___item.best-cases__popup { display: none !important; }
+
+  /* Remove container padding so cards go edge-to-edge */
+  .images-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
+  }
 
   .images-list.best-cases__list {
     display: flex !important;
@@ -250,17 +223,19 @@
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 10px !important;
-    padding-bottom: 8px;
+    gap: 8px !important;
+    padding: 0 16px 6px !important;
     scrollbar-width: none;
   }
   .images-list.best-cases__list::-webkit-scrollbar { display: none; }
 
   .best-cases__item {
-    flex: 0 0 80vw !important;
+    flex: 0 0 78vw !important;
     min-width: 0;
     scroll-snap-align: start;
-    height: 56vw !important;
+    /* match desktop proportion — desktop is ~4:3 approx */
+    aspect-ratio: 4 / 3;
+    height: auto !important;
   }
 
   .best-cases__img {
@@ -271,141 +246,73 @@
   }
 }
 
-/* ══════════════════════════════════════════════════════════════
+/* ════════════════════════════════════════════
    BOLD HEADLINES
-   ══════════════════════════════════════════════════════════════ */
-.text-big { font-weight: 700 !important; }
-h1, .h1   { font-weight: 700 !important; }
-h2, .h2   { font-weight: 700 !important; }
-h3, .h3   { font-weight: 700 !important; }
-.h3-bold  { font-weight: 700 !important; }
+   ════════════════════════════════════════════ */
+.text-big, h1, .h1, h2, .h2, h3, .h3, .h3-bold { font-weight: 700 !important; }
 
-/* ══════════════════════════════════════════════════════════════
-   STICKY "ОБСУДИТЬ ПРОЕКТ" BUTTON
-   ══════════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+   STICKY BUTTON
+   ════════════════════════════════════════════ */
 .sticky-discuss {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 9997;
-  display: inline-flex;
-  align-items: center;
-  padding: 16px 28px;
+  bottom: 24px; right: 24px;
+  z-index: 8000;
+  padding: 15px 26px;
   background: #ff3c78;
   color: #fff !important;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 999px;
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(255,60,120,0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255,60,120,0.32);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.2s ease;
   white-space: nowrap;
-  letter-spacing: -0.01em;
 }
-
-.sticky-discuss:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(255,60,120,0.45);
-}
-
-.sticky-discuss.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-}
+.sticky-discuss:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,60,120,0.42); }
+.sticky-discuss.is-hidden { opacity: 0; pointer-events: none; }
 
 @media (max-width: 479px) {
   .sticky-discuss {
-    bottom: 16px;
-    right: 12px;
-    left: 12px;
-    justify-content: center;
+    left: 12px; right: 12px; bottom: 16px;
+    text-align: center;
     font-size: 1.05rem;
-    padding: 18px 28px;
     border-radius: 999px;
   }
 }
 
-/* ══════════════════════════════════════════════════════════════
-   CONTACTS PAGE
-   ══════════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+   CONTACTS
+   ════════════════════════════════════════════ */
 .contacts-hero-section  { padding-bottom: 0 !important; }
-.contacts-headline      { padding-top: 2rem; }
 .contacts-main-section  { padding-top: 4rem !important; padding-bottom: 4rem !important; }
 .contacts-card          { max-width: 680px; }
-
-.contacts-intro {
-  font-size: clamp(1.6rem, 3vw, 2.8rem);
-  font-weight: 600;
-  line-height: 1.2;
-  color: #0d0d0d;
-  margin-bottom: 0.6em;
-}
-
-.contacts-role {
-  font-size: clamp(1rem, 1.6vw, 1.4rem);
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 2.4rem;
-}
-
-.contacts-links {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
+.contacts-intro { font-size: clamp(1.6rem, 3vw, 2.8rem); font-weight: 600; line-height: 1.2; color: #0d0d0d; margin-bottom: 0.6em; }
+.contacts-role  { font-size: clamp(1rem, 1.6vw, 1.4rem); color: #666; line-height: 1.5; margin-bottom: 2.4rem; }
+.contacts-links { display: flex; gap: 12px; flex-wrap: wrap; }
 .contacts-link-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 24px;
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-  background: #0d0d0d;
-  color: #fff;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 24px; border-radius: 999px;
+  font-size: 1rem; font-weight: 500; text-decoration: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  background: #0d0d0d; color: #fff;
 }
-
 .contacts-link-btn:hover { opacity: 0.82; transform: translateY(-1px); }
-
-.contacts-link-btn--light {
-  background: #fff;
-  color: #0d0d0d;
-  border: 1.5px solid #0d0d0d;
-}
-
-.contacts-legal-section {
-  border-top: 1px solid #e8e8e8;
-  padding-top: 3rem !important;
-  margin-top: 1rem;
-}
-
-.contacts-legal h3 {
-  font-size: clamp(0.85rem, 1.1vw, 1rem);
-  font-weight: 400;
-  color: #999;
-  line-height: 1.6;
-}
-
+.contacts-link-btn--light { background: #fff; color: #0d0d0d; border: 1.5px solid #0d0d0d; }
+.contacts-legal-section { border-top: 1px solid #e8e8e8; padding-top: 3rem !important; margin-top: 1rem; }
+.contacts-legal h3 { font-size: clamp(0.85rem, 1.1vw, 1rem); font-weight: 400; color: #999; line-height: 1.6; }
 @media (max-width: 767px) {
-  .contacts-intro    { font-size: 1.5rem; }
-  .contacts-role     { font-size: 0.95rem; }
+  .contacts-intro { font-size: 1.5rem; }
+  .contacts-role  { font-size: 0.95rem; }
   .contacts-link-btn { width: 100%; justify-content: center; }
-  .contacts-links    { flex-direction: column; }
+  .contacts-links { flex-direction: column; }
 }
 
-/* ══════════════════════════════════════════════════════════════
-   VERSION TAG
-   ══════════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+   VERSION
+   ════════════════════════════════════════════ */
 .site-version {
-  display: block;
-  text-align: center;
+  display: block; text-align: center;
   padding: 8px 0 12px;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: #aaa;
-  font-family: monospace;
+  font-size: 11px; letter-spacing: 0.06em; color: #aaa; font-family: monospace;
 }
