@@ -99,7 +99,7 @@
       var open = svcBtn.getAttribute('aria-expanded') !== 'true';
       svcBtn.setAttribute('aria-expanded', String(open));
       svcSub.hidden = !open;
-      if (svcArrow) svcArrow.style.transform = open ? 'rotate(180deg)' : '';
+      if (svcArrow) svcArrow.style.transform = open ? '' : 'rotate(180deg)';
     });
   }
 

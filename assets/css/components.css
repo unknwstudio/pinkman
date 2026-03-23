@@ -1,5 +1,5 @@
 /* ============================================================
-   components.css — v CLD345698
+   components.css — v CLD345699
    ============================================================ */
 
 /* ════════════════════════════════════════════════════════════
@@ -10,6 +10,8 @@
   .header-dropdown-wrapper.hide-mobile:hover .header-dropdown {
     display: block !important;
   }
+  /* Hide mobile-only link that lives inside .nav-menu */
+  .mobile-nav-discuss { display: none !important; }
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -51,6 +53,7 @@
     flex-direction: column;
     gap: 8px;
     flex: 1;
+    margin-top: 8px; /* same gap as between buttons */
   }
 
   /* ── Shared button style (from Figma) ── */
@@ -99,6 +102,7 @@
     opacity: 0.5;
     transition: transform 0.2s ease;
     flex-shrink: 0;
+    transform: rotate(180deg); /* default: points DOWN */
   }
   .nav-mob__sub {
     display: flex;
