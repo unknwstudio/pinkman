@@ -25,13 +25,29 @@
       });
     });
 
-  /* sticky button hide near footer */
-  var sticky = document.querySelector('.sticky-discuss');
-  var footer = document.querySelector('.footer-top');
-  if (sticky && footer) {
-    var t = false;
-    function chk(){ sticky.classList.toggle('is-hidden', footer.getBoundingClientRect().top < window.innerHeight + 40); t = false; }
-    window.addEventListener('scroll', function(){ if(!t){ requestAnimationFrame(chk); t=true; } }, {passive:true});
-    chk();
+  /* ── Scroll-hide header ── */
+  var header = document.querySelector('.header-new');
+  if (header) {
+    var lastY   = window.scrollY;
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var y = window.scrollY;
+          if (y > lastY && y > 80) {
+            /* scrolling down past 80px threshold → hide */
+            header.classList.add('header--hidden');
+            /* also close menu if open */
+            close();
+          } else {
+            /* scrolling up → reveal */
+            header.classList.remove('header--hidden');
+          }
+          lastY   = y;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
   }
 })();
