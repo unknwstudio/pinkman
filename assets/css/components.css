@@ -2,54 +2,60 @@
    components.css — header, footer, nav styles
    ============================================================ */
 
-/* ── Header / Nav ── */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+/* ── Desktop dropdown hover ─────────────────────────────────────────────── */
+@media (min-width: 992px) {
+  .header-dropdown-wrapper.hide-mobile:hover .header-dropdown {
+    display: block !important;
+  }
+}
+
+/* ── Mobile nav open state ──────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .nav-menu.w--open {
+    display: flex !important;
+  }
+  .header-dropdown-wrapper.hide-desktop .header-dropdown.w--open {
+    display: block !important;
+  }
+  .dropdown-arrow-image {
+    transition: transform 0.2s ease;
+  }
+}
+
+/* ── Hamburger icon (replaces Lottie) ───────────────────────────────────── */
+.mobile-lottie {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: var(--space-md) var(--space-lg);
-  background: var(--color-black);
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
 }
 
-.site-header .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--color-white);
+.ham-line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #111;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
 }
 
-.site-header .nav-links {
-  display: flex;
-  gap: var(--space-lg);
-}
+/* X state when menu is open */
+.mobile-menu-btn.w--open .ham-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mobile-menu-btn.w--open .ham-line:nth-child(2) { opacity: 0; }
+.mobile-menu-btn.w--open .ham-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.site-header .nav-links a {
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: color var(--transition-base);
-}
-
-.site-header .nav-links a:hover {
-  color: var(--color-pink);
-}
-
-/* ── Footer ── */
-.site-footer {
-  padding: var(--space-xl) var(--space-lg);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-lg);
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.site-footer .footer-copy {
-  font-size: 0.8rem;
-  opacity: 0.5;
+/* ── Version tag ────────────────────────────────────────────────────────── */
+.site-version {
+  display: block;
+  text-align: center;
+  padding: 8px 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #aaa;
+  font-family: monospace;
 }
