@@ -30,7 +30,9 @@
   --transition-base: 0.2s ease;
 }
 
-/* ── Minimal reset (don't override site's own styles) ── */
+/* ── Minimal reset ── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+
+body { background-color: #7c3aed; }
