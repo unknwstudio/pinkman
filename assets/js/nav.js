@@ -1,4 +1,4 @@
-/* nav.js — v CLD345698
+/* nav.js — v CLD345702
    Mobile nav overlay is injected here, NOT repeated in HTML.
    Update this file to update the mobile menu on all pages. */
 (function () {
@@ -11,7 +11,7 @@
 
   var isHome      = page === '';
   var isPortfolio = page === 'projects';
-  var isServices  = ['sites', 'digital-products', 'communications-design', 'multimedia-phygital'].indexOf(page) >= 0;
+  var isServices  = ['sites', 'digital-products', 'communications-design', 'multimedia-phygital', 'outsource-multimedia', 'outstaff-ai'].indexOf(page) >= 0;
   var isContacts  = page === 'contact-us';
 
   /* ── Build mobile overlay HTML ── */
@@ -38,6 +38,8 @@
           '<a class="nav-mob__sub-link" href="', B, 'digital-products/">Цифровые продукты</a>',
           '<a class="nav-mob__sub-link" href="', B, 'communications-design/">Дизайн коммуникаций</a>',
           '<a class="nav-mob__sub-link" href="', B, 'multimedia-phygital/">Multimedia &amp; Phygital</a>',
+          '<a class="nav-mob__sub-link" href="', B, 'outsource-multimedia/">Аутсорс мультимедиа</a>',
+          '<a class="nav-mob__sub-link" href="', B, 'outstaff-ai/">Аутстафф AI-дизайнеров</a>',
         '</div>',
       '</div>',
 
@@ -124,6 +126,26 @@
         ticking = true;
       }
     }, { passive: true });
+  }
+
+  /* ── Contact CTA — injected inside footer, skip if already on page ── */
+  if (!document.querySelector('.contacts-card')) {
+    var footerTop = document.querySelector('.footer-top');
+    if (footerTop) {
+      var cta = document.createElement('div');
+      cta.className = 'contacts-main-section';
+      cta.innerHTML =
+        '<div class="contacts-card">' +
+          '<p class="contacts-intro">Обсудим проект?</p>' +
+          '<p class="contacts-role">Аккаунт-директор Юрий Григоренко&nbsp;— расскажет про состав команды, сроки и&nbsp;стоимость под ваш проект.</p>' +
+          '<div class="contacts-links">' +
+            '<a class="contacts-link-btn" href="tel:+79153110332">+7&nbsp;915&nbsp;311&nbsp;03&nbsp;32</a>' +
+            '<a class="contacts-link-btn contacts-link-btn--light" href="mailto:grig@pinkman.ru">grig@pinkman.ru</a>' +
+          '</div>' +
+        '</div>';
+      /* Prepend inside the footer section's main-container, before footer-top */
+      footerTop.parentNode.insertBefore(cta, footerTop);
+    }
   }
 
 })();

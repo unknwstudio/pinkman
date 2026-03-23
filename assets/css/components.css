@@ -1,11 +1,27 @@
 /* ============================================================
-   components.css — v CLD345699
+   components.css — v CLD345703
    ============================================================ */
 
 /* ════════════════════════════════════════════════════════════
    DESKTOP NAV
    ════════════════════════════════════════════════════════════ */
+
+/* Guarantee the header is always fixed — overrides Webflow's .w-nav base rule */
+.header-new {
+  position: fixed !important;
+}
+
+/* Keep header-container as a flex row on desktop — Webflow resets it to column at ≤991px */
 @media (min-width: 992px) {
+  .header-container {
+    flex-flow: row !important;
+    align-items: center !important;
+  }
+  /* Nav-menu stays as a flex item, never floats outside */
+  .nav-menu {
+    float: none !important;
+    flex: 1;
+  }
   /* Services dropdown on hover */
   .header-dropdown-wrapper.hide-mobile:hover .header-dropdown {
     display: block !important;
@@ -17,6 +33,24 @@
 /* ════════════════════════════════════════════════════════════
    MOBILE NAV OVERLAY  (injected by nav.js — not in HTML)
    ════════════════════════════════════════════════════════════ */
+
+/* BASE — overlay is always fixed + invisible at EVERY viewport.
+   Without this, at desktop (≥992px) the overlay has zero CSS
+   and renders as a visible block at the bottom of the body. */
+.nav-mob-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.nav-mob-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 @media (max-width: 991px) {
 
   /* Hide Webflow nav-menu — JS overlay takes over on mobile */
@@ -25,26 +59,14 @@
   /* Header above overlay */
   .header-new { z-index: 9999 !important; }
 
-  /* ── Overlay ── */
+  /* ── Overlay visual styling (mobile only) ── */
   .nav-mob-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9000;
     background: #EAEAEA;
     padding: 80px 16px 40px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    /* default: hidden */
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
     transition: opacity 0.22s ease, visibility 0.22s ease;
-  }
-  .nav-mob-overlay.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
   }
 
   /* ── Nav list ── */
@@ -337,6 +359,15 @@
   .contacts-role  { font-size: 0.95rem; }
   .contacts-link-btn { width: 100%; justify-content: center; }
   .contacts-links { flex-direction: column; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER LOGO — clamp to sensible size on our custom pages
+   ════════════════════════════════════════════════════════════ */
+.footer-logo-img {
+  width: auto !important;
+  height: 36px !important;
+  max-width: 200px !important;
 }
 
 /* ════════════════════════════════════════════════════════════
