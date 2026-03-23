@@ -12,37 +12,40 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
-   MOBILE NAV — scale + fade transition from burger button
+   MOBILE NAV — full-screen gray overlay, card items
    ══════════════════════════════════════════════════════════════ */
 @media (max-width: 991px) {
 
-  /* Always rendered so transitions can run; hidden via opacity+scale */
+  /* ── Full-screen panel, always rendered for transitions ── */
   .nav-menu {
     display: flex !important;
-    pointer-events: none;
-    opacity: 0;
-    transform: scale(0.9);
-    transform-origin: top right;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    flex-direction: column !important;
 
-    /* Positioning: push below the fixed header */
     position: fixed !important;
-    top: 72px !important;        /* matches header height on tablet/mobile */
-    left: 12px !important;
-    right: 12px !important;
-    bottom: auto !important;
-    width: auto !important;
-    height: auto !important;
-    max-height: calc(100vh - 90px);
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    margin: 0 !important;
+    z-index: 9000;
+
+    background: #EAEAEA !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    /* Space for the fixed header above */
+    padding: 80px 12px 24px !important;
     overflow-y: auto;
 
-    /* Card look */
-    background-color: #fff !important;
-    border-radius: 20px !important;
-    padding: 16px 16px 20px !important;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
-    margin: 0 !important;
-    z-index: 9998;
+    /* Hidden state */
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.97);
+    transform-origin: top right;
+    transition: opacity 0.28s ease, transform 0.28s ease;
   }
 
   .nav-menu.w--open {
@@ -51,22 +54,127 @@
     transform: scale(1);
   }
 
-  /* Mobile accordion dropdowns */
+  /* ── Header wrapper inside nav — strip its own card styling ── */
+  .header-wrapper {
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Links list — vertical stack with gap ── */
+  .header-links-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
+    align-items: stretch !important;
+    flex: 1;
+  }
+
+  /* ── Each nav button — white rounded card ── */
+  .header-btn {
+    display: block !important;
+    width: 100% !important;
+    background: #fff !important;
+    border-radius: 16px !important;
+    padding: 20px 22px !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #0d0d0d !important;
+    line-height: 1.2;
+    text-decoration: none;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Services dropdown wrapper — white card, expands inline ── */
+  .header-dropdown-wrapper.hide-desktop {
+    display: block !important;
+    background: #fff !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .header-dropdown-wrapper.hide-desktop .dropdown-trigger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 20px 22px !important;
+    cursor: pointer;
+  }
+
+  .header-dropdown-wrapper.hide-desktop .dropdown-trigger .header-btn {
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    font-size: 18px !important;
+  }
+
+  .dropdown-arrow-image {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    transition: transform 0.22s ease;
+    flex-shrink: 0;
+  }
+
+  /* ── Dropdown list (services sub-items) ── */
+  .header-dropdown-wrapper.hide-desktop .header-dropdown {
+    display: none;
+    background: transparent !important;
+    padding: 0 22px 16px !important;
+    position: static !important;
+  }
+
   .header-dropdown-wrapper.hide-desktop .header-dropdown.w--open {
     display: block !important;
   }
 
-  .dropdown-arrow-image {
-    transition: transform 0.2s ease;
+  .header-dropdown-wrapper.hide-desktop .header-dropdown-link {
+    display: block !important;
+    padding: 10px 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-top: 1px solid #eee !important;
+    background: transparent !important;
+    font-size: 16px !important;
+    color: #555 !important;
+    width: 100% !important;
+  }
+
+  .header-dropdown-wrapper.hide-desktop .header-dropdown-link p {
+    margin: 0;
+    font-size: 16px !important;
+    color: #555 !important;
+  }
+
+  /* ── "Обсудить проект" at bottom of mobile nav ── */
+  .mobile-nav-discuss {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding-top: 16px;
+    background: #ff3c78;
+    color: #fff !important;
+    border-radius: 16px !important;
+    padding: 20px 22px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    text-decoration: none;
+    text-align: center;
   }
 }
 
 @media (max-width: 479px) {
   .nav-menu {
-    top: 62px !important;
-    left: 8px !important;
-    right: 8px !important;
-    max-height: calc(100vh - 80px);
+    padding: 70px 10px 20px !important;
   }
 }
 
@@ -91,11 +199,11 @@
   background: #333;
   border-radius: 2px;
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity   0.2s  ease;
+              opacity   0.2s  ease,
+              transform-origin 0s;
   transform-origin: center;
 }
 
-/* → X when open */
 .mobile-menu-btn.w--open .ham-line:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
 .mobile-menu-btn.w--open .ham-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .mobile-menu-btn.w--open .ham-line:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
@@ -104,26 +212,21 @@
    HERO IMAGES — fix links + desktop hover popup + mobile carousel
    ══════════════════════════════════════════════════════════════ */
 
-/* Fix: mobile/tablet disabled pointer-events on image links */
 .best-cases__link {
   pointer-events: auto !important;
   display: block;
 }
 
-/* Desktop hover — slide popup up from bottom */
 @media (min-width: 992px) {
-  .best-cases__item {
-    cursor: pointer;
-  }
+  .best-cases__item { cursor: pointer; }
 
   .features-grid___item.best-cases__popup {
-    display: flex !important;      /* override display:none */
+    display: flex !important;
     pointer-events: none;
     position: absolute;
     inset: auto 0 0 0;
     transform: translateY(100%);
-    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity   0.25s ease;
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
     opacity: 0;
     background: rgba(255,255,255,0.96);
     backdrop-filter: blur(4px);
@@ -138,22 +241,17 @@
   }
 }
 
-/* Mobile — hide popup overlay, convert grid to horizontal carousel */
 @media (max-width: 991px) {
-  .features-grid___item.best-cases__popup {
-    display: none !important;
-  }
+  .features-grid___item.best-cases__popup { display: none !important; }
 
   .images-list.best-cases__list {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
-    overflow-y: visible;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 10px !important;
     padding-bottom: 8px;
-    /* hide scrollbar */
     scrollbar-width: none;
   }
   .images-list.best-cases__list::-webkit-scrollbar { display: none; }
@@ -176,11 +274,11 @@
 /* ══════════════════════════════════════════════════════════════
    BOLD HEADLINES
    ══════════════════════════════════════════════════════════════ */
-.text-big          { font-weight: 700 !important; }
-h1, .h1            { font-weight: 700 !important; }
-h2, .h2            { font-weight: 700 !important; }
-h3, .h3            { font-weight: 700 !important; }
-.h3-bold           { font-weight: 700 !important; }
+.text-big { font-weight: 700 !important; }
+h1, .h1   { font-weight: 700 !important; }
+h2, .h2   { font-weight: 700 !important; }
+h3, .h3   { font-weight: 700 !important; }
+.h3-bold  { font-weight: 700 !important; }
 
 /* ══════════════════════════════════════════════════════════════
    STICKY "ОБСУДИТЬ ПРОЕКТ" BUTTON
@@ -192,17 +290,17 @@ h3, .h3            { font-weight: 700 !important; }
   z-index: 9997;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 24px;
+  padding: 16px 28px;
   background: #ff3c78;
-  color: #fff;
-  font-size: 0.95rem;
+  color: #fff !important;
+  font-size: 1rem;
   font-weight: 600;
   border-radius: 999px;
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(255,60,120,0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
   white-space: nowrap;
+  letter-spacing: -0.01em;
 }
 
 .sticky-discuss:hover {
@@ -210,7 +308,6 @@ h3, .h3            { font-weight: 700 !important; }
   box-shadow: 0 8px 28px rgba(255,60,120,0.45);
 }
 
-/* Hide when user is near footer so it doesn't stack */
 .sticky-discuss.is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -220,9 +317,12 @@ h3, .h3            { font-weight: 700 !important; }
 @media (max-width: 479px) {
   .sticky-discuss {
     bottom: 16px;
-    right: 16px;
-    left: 16px;
+    right: 12px;
+    left: 12px;
     justify-content: center;
+    font-size: 1.05rem;
+    padding: 18px 28px;
+    border-radius: 999px;
   }
 }
 
@@ -291,10 +391,10 @@ h3, .h3            { font-weight: 700 !important; }
 }
 
 @media (max-width: 767px) {
-  .contacts-intro         { font-size: 1.5rem; }
-  .contacts-role          { font-size: 0.95rem; }
-  .contacts-link-btn      { width: 100%; justify-content: center; }
-  .contacts-links         { flex-direction: column; }
+  .contacts-intro    { font-size: 1.5rem; }
+  .contacts-role     { font-size: 0.95rem; }
+  .contacts-link-btn { width: 100%; justify-content: center; }
+  .contacts-links    { flex-direction: column; }
 }
 
 /* ══════════════════════════════════════════════════════════════
