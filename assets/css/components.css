@@ -1,0 +1,55 @@
+/* ============================================================
+   components.css — header, footer, nav styles
+   ============================================================ */
+
+/* ── Header / Nav ── */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-black);
+}
+
+.site-header .nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-white);
+}
+
+.site-header .nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.site-header .nav-links a {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color var(--transition-base);
+}
+
+.site-header .nav-links a:hover {
+  color: var(--color-pink);
+}
+
+/* ── Footer ── */
+.site-footer {
+  padding: var(--space-xl) var(--space-lg);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.site-footer .footer-copy {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}

@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<!-- Last Published: Fri Mar 20 2026 11:44:08 GMT+0000 (Coordinated Universal Time) --><html lang="en"><head><link href="../assets/css/main.min.css" rel="stylesheet"/><link href="../assets/css/components.css" rel="stylesheet"/><link href="../assets/css/base.css" rel="stylesheet"/><meta charset="utf-8"/><title>Политика обработки персональных данных</title><meta content="Политика обработки персональных данных" property="og:title"/><meta content="Политика обработки персональных данных" property="twitter:title"/><meta content="width=device-width, initial-scale=1" name="viewport"/><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="../assets/images/favicon.png" rel="shortcut icon" type="image/x-icon"/><link href="../assets/images/webclip.png" rel="apple-touch-icon"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WEHHG5XKMC"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('js', new Date());gtag('config', 'G-WEHHG5XKMC');</script><script src="../assets/js/swiper-bundle.min.js"></script>
+<script>UPLOADCARE_PUBLIC_KEY = '53e6fcaf7a8c858fe0e1';</script>
+
+<script>
+UPLOADCARE_LOCALE_TRANSLATIONS = {
+  uploading: 'Загружаем...',
+  loadingInfo: 'Загружаем...',
+  buttons: {
+    cancel: '',
+    remove: '',
+    choose: {
+      files: {
+        one: 'Прикрепить материал',
+        other: 'Прикрепить материал'
+      },
+      images: {
+        one: 'Прикрепить материал',
+        other: 'Прикрепить материал'
+      }
+    }
+  }
+};
+//установка цветовой схемы страницы
+  
+const colorScheme = {
+  '/': "black",
+  '/home-test': "black",
+  "/projects": "black",
+  "/contacts": "black",
+  "/sites": "purple",
+  "/sites1": "purple",
+  "/sites-new": "bright",
+  "/instruments": "green",
+  "/lowcode": "pink",
+  "/research": "yellow",
+  "/research/ux-test": "yellow",
+  "/research/design-audit": "yellow",
+  "/research/ux-course": "forest",
+  "/communications": "blue",
+  "/mobile": "orange",
+  "/desk": "black",
+};
+  
+const path = window.location.pathname;
+  
+const setColorTheme = (page) => {
+  const root = document.documentElement;
+  const isBlackTheme = colorScheme[page] === "black";
+  const isDarkTheme = page === "/desk";
+  root.style.setProperty('--main-color', `var(--${colorScheme[page]})`);
+  root.style.setProperty('--dark-color', `var(--dark-${colorScheme[page]})`);
+  
+  if (isBlackTheme && !isDarkTheme) {
+    root.style.setProperty('--logo-color', `var(--graph)`);
+  }
+  
+  if (isDarkTheme) {
+    root.style.setProperty('--logo-color', `var(--white)`);
+  }
+};
+  
+setColorTheme(path);
+
+</script>
+<style>
+  /* small form start */
+	.not-valid-input {
+		color: var(--error-red) !important;
+	}
+  
+  	.active-field-details-button {
+      background-color: var(--light-yellow) !important;
+  	}
+
+	.error-text-mark, .input-details-content-mark {
+		display: none;
+	}
+  
+  	.modal-small__content::-webkit-scrollbar {
+      	display: none;
+  	}
+  
+  	.modal-small__content {
+      	-ms-overflow-style: none;  /* IE and Edge */
+  		scrollbar-width: none;  /* Firefox */
+  	}
+  
+/* small form end */
+  
+  
+  .quiz__uploader + .uploadcare--widget .uploadcare--widget__progress {
+    display: none !important;
+  }
+  
+  .uploadcare--widget {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .uploadcare--widget_status_started,
+  .uploadcare--widget_status_loaded {
+    display: flex !important;
+    align-items: center !important;
+    padding: 1.666rem !important;
+  }
+  
+  @media (max-width: 767px) {
+    .uploadcare--widget_status_started,
+    .uploadcare--widget_status_loaded {
+      padding: 6.666rem !important;
+    }
+  }
+  
+  .uploadcare--widget_status_started {
+    justify-content: space-between !important;
+    background-color: var(--white) !important;
+    border-radius: 0.8333rem !important;
+  }
+  
+  @media (max-width: 767px) {
+    .uploadcare--widget_status_started {
+      border-radius: 3.333rem !important;
+    }
+  }
+  
+  .uploadcare--widget_status_loaded {
+    width: max-content !important;
+    justify-content: flex-start !important;
+    background-color: var(--blue) !important;
+    border-radius: 3.472rem !important;
+  }
+  
+  @media (max-width: 767px) {
+    .uploadcare--widget_status_loaded {
+      border-radius: 13.888rem !important;
+    }
+  }
+  
+  .uploadcare--widget__file-size {
+    display: none !important;
+  }
+  
+  .uploadcare--widget__text {
+    position: relative !important;
+    z-index: 100 !important;
+    padding: 0 !important;
+    margin-right: 0.972rem !important;
+    color: var(--white) !important;
+  }
+  
+  @media (max-width: 767px) {
+    .uploadcare--widget__text {
+      margin-right: 6.888rem !important;
+    }
+  }
+  
+  .uploadcare--link {
+    color: var(--white) !important;
+    text-decoration: none !important;
+  }
+  
+  .uploadcare--widget__button {
+    position: relative !important;
+    z-index: 100 !important;
+  }
+  
+  .uploadcare--widget__button_type_open {
+    width: 100% !important;
+    padding: 1.666rem !important;
+    background-color: var(--medium-grey) !important;
+    color: var(--griph) !important;
+    border-radius: 0.8333rem !important;
+    text-align: left !important;
+  }
+  
+  @media (max-width: 767px) {
+    .uploadcare--widget__button_type_open {
+      padding: 6.666rem !important;
+      border-radius: 3.333rem !important;
+    }
+  }
+  
+  .uploadcare--widget__button_type_cancel,
+  .uploadcare--widget__button_type_remove {
+    width: 0.972rem !important;
+    height: 0.972rem !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    background-image: url('../assets/images/62e0fd68d111dddec12e26a0_icon-cross.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+  }
+  
+  @media (max-width: 767px) {
+    .uploadcare--widget__button_type_cancel,
+    .uploadcare--widget__button_type_remove {
+      width: 3.888rem !important;
+      height: 3.888rem !important;
+    }
+  }
+</style>
+<!-- Varioqub experiments -->
+<script type="text/javascript">
+(function(e, x, pe, r, i, me, nt){
+e[i]=e[i]||function(){(e[i].a=e[i].a||[]).push(arguments)},
+me=x.createElement(pe),me.async=1,me.src=r,nt=x.getElementsByTagName(pe)[0],nt.parentNode.insertBefore(me,nt)})
+(window, document, 'script', 'https://abt.s3.yandex.net/expjs/latest/exp.js', 'ymab');
+ymab('metrika.90076398', 'init'/*, {clientFeatures}, {callback}*/);
+</script>
+</head><body><div class="privacy__variable-css w-embed"><style>
+:root {
+/* Colors */
+  --black: #201C1C;
+  --dark-black: #3C9F75;
+  --white: #ffffff;
+  --grey: #BEBEBE;
+  --light-grey: #F8F8F8;
+  --medium-grey: #DFE3E3;
+  --dark-grey: #9E9E9E;
+  --very-dark-grey: #A6A6A6;
+  --grass: #0B8033;
+  --forest: #00A272;
+  --graph: #414141;
+  --dark-graph: #292929;
+
+  --green: #3C9F75;
+  --dark-green: #258055;
+  --light-green: #9DCCAD;
+
+  --yellow: #DBBB1E;
+  --dark-yellow: #CCA211;
+  --light-yellow: #F1E4A5;
+  
+  --pink: #F47FCC;
+  --dark-pink: #EE5FB7;
+  --light-pink: #E7BFD0;
+  
+  --blue: #008ECB;
+  --dark-blue: #006EB6;
+  --light-blue: #99D2EA;
+  
+  --orange: #FF7134;
+  --dark-orange: #FF521F;
+
+  --purple: #503678;
+  --dark-purple: #342158;
+  --light-purple: #8C74B0;
+
+  /* Color Theme */
+  --bright: var(--graph);
+  --dark-bright: var(--orange);
+  --main-color: var(--green);
+  --dark-color: var(--dark-green);
+  --logo-color: var(--black);
+ 
+  /* Toggle colors */
+  --yellow-toggle: var(--grey);
+  --pink-toggle: var(--grey);
+  --blue-toggle: var(--grey);
+  --orange-toggle: var(--grey);
+  --purple-toggle: var(--grey);
+  --green-toggle: var(--grey);
+  
+  /* Other colors */
+  --error-red: #FF2929;
+}
+</style></div><div class="privacy__states-css w-embed"><style>
+/* Hovers desktop only */
+@media (min-width: 768px) {
+.widjet-button:not(.widjet-button--colored):hover {
+  background-color: var(--main-color);
+  color: var(--white);
+}
+.header:not(.header--dark) .button:hover,
+.header:not(.header--dark) .button.w--current {
+  background-color: var(--light-grey);
+}
+.header--dark .button:not(.header__submenu-button):hover,
+.header--dark .button.w--current {
+  background-color: var(--dark-graph);
+}
+.header--dark .button.header__submenu-button:hover {
+  background-color: var(--graph);
+}
+.sticky-button:not(.sticky-button--super):hover {
+  background-color: var(--white);
+  color: var(--dark-color);
+}
+.sticky-button--super:hover .super-bg,
+.open-super:hover .super-bg, .pink-button-hover-mark:hover .super-bg {
+  opacity: 0;
+}
+.consent__button:hover {
+  background-color: var(--white);
+  color: var(--dark-orange);
+}
+
+.footer:not(.footer--colored) .button--text:hover,
+.footer:not(.footer--colored) .button--text.w--current {
+  color: var(--very-dark-grey);
+}
+
+.footer--colored .button--text:hover,
+.footer--colored .button--text.w--current {
+  color: var(--dark-color);
+}
+
+.button--iconed:hover {
+  background-color: var(--medium-grey);
+}
+.widjet-request:hover .shapes__pink,
+.widjet-request:focus .shapes__pink {
+  fill: var(--pink);
+}
+.widjet-request:hover .shapes__blue,
+.widjet-request:focus .shapes__blue {
+  fill: var(--blue);
+}
+.widjet-request:hover .shapes__green,
+.widjet-request:focus .shapes__green {
+  fill: var(--green);
+}
+.projects__card:hover .button.transparent,
+.projects__card:focus .button.transparent {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.1);
+}
+.projects__card .button.transparent:hover,
+.projects__card .button.transparent:focus {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.15);
+  transition: all 0.3 ease;
+}
+.card-person:hover,
+.card-person:focus {
+  background-color: var(--white);
+}
+.faq__card:hover .faq__card-side,
+.faq__card:focus .faq__card-side {
+  background-color: var(--orange);
+  color: var(--white);
+}
+.filters-reset:hover,
+.filter .button:not(.button-filter--dark):hover {
+  background-color: var(--medium-grey);
+}
+.filter .button-filter--dark:hover,
+.button-telegram:hover {
+  background-color: var(--graph);
+}
+.filters-reset--active:hover,
+.filter input[type="checkbox"]:checked ~ .button:hover {
+  background-color: var(--very-dark-grey);
+  color: var(--white);
+}
+.filter input[type="radio"]:checked ~ .button:hover {
+  background-color: var(--grey) !important;
+}
+.slider-buttons .button-round:hover {
+  background-color: var(--medium-grey);
+}
+.slider-buttons--dark .button-round:hover {
+  background-color: var(--graph);
+}
+.card--link:hover,
+.news__card:hover,
+.link-card:not(.card--large):not(.link-card--team):not(.link-card--watch):hover {
+  background-color: var(--yellow);
+}
+.card--link:hover,
+.card--link:hover svg {
+  color: var(--white);
+}
+.link-card--team:hover {
+  background-color: var(--medium-grey);
+  color: var(--graph);
+}
+.link-card--watch:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+.link-card.card--large:active {
+  background-color: var(--grey);
+}
+.link-card.card--large:not(.open-super):active {
+  color: var(--white);
+}
+.link-card:hover .card__subtitle,
+.link-card:focus .card__subtitle {
+  color: var(--graph);
+}
+.link-card.card--large:hover .shapes-large__pink,
+.link-card.card--large:focus .shapes-large__pink {
+  fill: var(--dark-pink);
+}
+.link-card.card--large:hover .shapes-large__blue,
+.link-card.card--large:focus .shapes-large__blue {
+  fill: var(--dark-blue);
+}
+.link-card.card--large:hover .shapes-large__yellow,
+.link-card.card--large:focus .shapes-large__yellow {
+  fill: var(--yellow);
+}
+.link-card.card--large:hover .shapes-large__green,
+.link-card.card--large:focus .shapes-large__green {
+  fill: var(--dark-green);
+}
+.promo__button:hover .button-promo,
+.promo__button:focus .button-promo {
+  background-color: var(--orange);
+  color: var(--white);
+}
+.button.white:hover,
+.button.white:focus {
+  background-color: var(--medium-grey);
+}
+.button-sort--desc:hover,
+.is-asc .button-sort--asc:hover,
+.is-desc .button-sort--desc:hover {
+  background-color: var(--dark-grey);
+}
+.button-sort--asc:hover,
+.is-asc .button-sort--desc:hover,
+.is-desc .button-sort--asc:hover {
+  background-color: var(--medium-grey);
+}
+.quiz__tag:hover > input[type="checkbox"]:not(:checked) ~ .button,
+.quiz__tag:focus > input[type="checkbox"]:not(:checked) ~ .button,
+.quiz__tag:hover > input[type="radio"]:not(:checked) ~ .button,
+.quiz__tag:focus > input[type="radio"]:not(:checked) ~ .button {
+  background-color: var(--grey) !important;
+}
+.quiz__button:not(.quiz__button--success):hover {
+  background-color: var(--light-yellow);
+}
+.quiz__button--success:hover {
+  background-color: var(--yellow);
+}
+.widjet-button:not(.widjet-button--disabled).purple:hover,
+.widjet-button:not(.widjet-button--disabled).purple:focus {
+  background-color: var(--dark-purple);
+}
+.widjet-button:not(.widjet-button--disabled).blue:hover,
+.widjet-button:not(.widjet-button--disabled).blue:focus {
+  background-color: var(--dark-blue);
+}
+.widjet-button:not(.widjet-button--disabled).pink:hover,
+.widjet-button:not(.widjet-button--disabled).pink:focus {
+ background-color: var(--dark-pink);
+}
+.widjet-button:not(.widjet-button--disabled).green:hover,
+.widjet-button:not(.widjet-button--disabled).green:focus {
+  background-color: var(--dark-green);
+}
+.widjet-button:not(.widjet-button--disabled).orange:hover,
+.widjet-button:not(.widjet-button--disabled).orange:focus {
+  background-color: var(--dark-orange);
+}
+.widjet-button:not(.widjet-button--disabled).purple-light:hover,
+.widjet-button:not(.widjet-button--disabled).purple-light:focus {
+  background-color: var(--purple);
+}
+.widjet-practice__subtitle-link:hover,
+.widjet-practice__subtitle-link:focus {
+  color: var(--graph);
+}
+.button-upload:hover,
+.button-close:hover,
+.button-share:hover,
+.button-sharing:hover {
+  background-color: var(--graph);
+}
+a.footer__copy:hover,
+a.footer__copy:focus {
+  text-decoration: none;
+}
+.hero__vtb:hover .hero__vtb-bg {
+  opacity: 1;
+}
+.form-field__tooltip:hover {
+  background-color: var(--light-yellow);
+}
+.form-field__tooltip:hover + .form-field__tooltip-message {
+  opacity: 1;
+}
+.form-button:hover {
+  background-color: var(--dark-pink);
+}
+}
+/* Active */
+.widjet-button:not(.widjet-button--disabled):active,
+.widjet-button:not(.widjet-button--disabled).active {
+  background-color: var(--dark-color) !important;
+  color: var(--white) !important;
+}
+.button--mob-menu:active {
+  background-color: var(--dark-grey);
+}
+.widjet-request:active .shapes__pink {
+  fill: var(--dark-pink);
+}
+.widjet-request:active .shapes__blue {
+  fill: var(--dark-blue);
+}
+.widjet-request:active .shapes__green {
+  fill: var(--dark-green);
+}
+.projects__card .button.transparent:active {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.3);
+}
+.preview .button-round:active,
+.preview .button-round.active {
+  background-color: var(--very-dark-grey);
+}
+.card-person:active,
+.button--iconed:active,
+.button-round:active,
+.news__card:active,
+.news__card.active,
+.card--link:active,
+.link-card:not(.card--large):active {
+  background-color: var(--grey) !important;
+}
+.link-card:active .card__subtitle {
+  color: var(--graph);
+}
+.link-card.card--large:active .shapes-large__pink {
+  fill: var(--pink);
+}
+.link-card.card--large:active .shapes-large__blue {
+  fill: var(--blue);
+}
+.link-card.card--large:active .shapes-large__yellow {
+  fill: var(--yellow);
+}
+.link-card.card--large:active .shapes-large__green {
+  fill: var(--grass);
+}
+.promo__button:active .button-promo {
+  background-color: var(--grey);
+  color: var(--white);
+}
+.button.white:not(.button--iconed):active {
+  background-color: var(--grey);
+  color: var(--white);
+}
+.filters-reset--active,
+.filters-reset--active:active,
+.filter .button:not(.button-filter--dark):active,
+.filter input[type="checkbox"]:checked ~ .button {
+  background-color: var(--graph) !important;
+  color: var(--white) !important;
+}
+.filter .button-filter--dark:active,
+.filter input[type="radio"]:checked ~ .button,
+.filter .button-filter--dark.reset-active {
+  background-color: var(--light-grey) !important;
+  color: var(--graph) !important;
+}
+.project-table__filters-mobile:active {
+  background-color: var(--dark-grey);
+  color: var(--white);
+}
+.widjet-button--disabled {
+  pointer-events: none !important;
+}
+.widjet-button--colored:not(.widjet-button--disabled):active,
+.widjet-button--colored:not(.widjet-button--disabled).active {
+  background-color: var(--grey) !important;
+}
+.sticky-button--super:active .super-bg {
+  opacity: 0;
+}
+.quiz__button:active {
+  background-color: var(--yellow);
+}
+
+@media (max-width: 767px) {
+.widjet-request:active .shapes__pink {
+  fill: var(--pink);
+}
+.widjet-request:active .shapes__blue {
+  fill: var(--blue);
+}
+.widjet-request:active .shapes__green {
+  fill: var(--green);
+}
+.button--iconed:active {
+  background-color: var(--dark-grey);
+}
+.button-round:active {
+  background-color: var(--dark-grey);
+}
+.link-card:not(.card--large):not(.link-card--watch):active {
+  background-color: var(--light-yellow);
+}
+.link-card.card--large:active .shapes-large__pink {
+  fill: var(--light-pink);
+}
+.link-card.card--large:active .shapes-large__blue {
+  fill: var(--light-blue);
+}
+.link-card.card--large:active .shapes-large__yellow {
+  fill: var(--light-yellow);
+}
+.link-card.card--large:active .shapes-large__green {
+  fill: var(--light-green);
+}
+}
+@keyframes deskFadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+.desk__columns.animation-active {
+  opacity: 0;
+  animation: deskFadeIn 2s ease-in-out infinite;
+}
+.post__cover {
+  opacity: 0;
+}
+.desk__special-grid.active .post__cover {
+  animation: deskFadeIn 1s ease-in-out forwards;
+  animation-iteration-count: 1;
+}
+</style></div><div class="privacy__main-styles w-embed"><style>
+html {
+font-size: 1vw;
+}
+body {
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+display: flex;
+flex-direction: column;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+footer {
+  flex: 0 0 auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a.footer__copy {
+  text-decoration: underline;
+}
+@media only screen and (max-width: 999px) {
+  a {
+    cursor: default;
+  }
+}
+*:focus {
+  outline: 0 !important;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+iframe {
+  position: absolute !important;
+  top: 0 !important; left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.header .logo {
+  color: var(--logo-color);
+}
+.logo svg {
+  width: 1.7361rem;
+  height: 1.7361rem;
+}  
+.button-desk svg {
+  width: 4.1666rem;
+  height: 3.194rem;
+}
+.button-desk--dark {
+  color: var(--graph);
+}
+.button-desk.w--current {
+  color: var(--main-color);
+}
+.mobile-menu {
+  background-color: var(--main-color);
+}
+.button--mob-menu .icon-burger {
+  width: 4.444rem;
+  height: 3.888rem;
+}
+.sticky-button {
+  background-color: var(--dark-color);
+  color: var(--white);
+}
+.sticky-button--super, .open-super, .pink-button-hover-mark {
+  background: url("../assets/images/650012f8bd5448ce08dedf37_Superrequest button_2.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.consent__button {
+  color: var(--white);
+}
+.sticky-button:not(.sticky-button--super):active {
+  background-color: var(--medium-grey);
+  color: var(--dark-color);
+}
+.footer {
+  background-color: var(--main-color);
+}
+.footer--dark {
+  background-color: var(--black);
+}
+.shapes path {
+  transition: all 0.3s ease;
+}
+.shapes {
+  width: 30.277rem;
+  height: 7.5rem;
+}
+.icon-arrow svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.card-numbered:last-child {
+  margin-bottom: 0 !important;
+}
+.faq__card {
+  transform-style: preserve-3d;
+}
+.swiper-button-disabled,
+.swiper-button-lock {
+  background-color: var(--light-grey);
+  color: var(--grey);
+  pointer-events: none;
+}
+.preview .swiper-button-disabled,
+.preview .swiper-button-lock {
+  background-color: var(--dark-graph);
+  color: var(--graph);
+}
+.swiper-slide:last-child {
+  margin-right: 0 !important;
+}
+.actions .card-large:last-child {
+  margin-bottom: 0 !important;
+}
+.list__item:last-child {
+  margin-bottom: 0 !important;
+}
+.list__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 27.27%;
+  width: 0.694rem;
+  height: 0.694rem;
+  background-color: var(--white);
+  border-radius: 50%;
+}
+.card-numbered:last-child {
+  margin-bottom: 0 !important;
+}
+.gantt__item--pink .gantt__toggler {
+  box-shadow: 0 0 0 0.138rem var(--pink-toggle);
+}
+.gantt__item--blue .gantt__toggler {
+  box-shadow: 0 0 0 0.138rem var(--blue-toggle);
+}
+.gantt__item--orange .gantt__toggler {
+  box-shadow: 0 0 0 0.138rem var(--orange-toggle);
+}
+.gantt__item--yellow .gantt__toggler {
+  box-shadow: 0 0 0 0.138rem var(--yellow-toggle);
+}
+.gantt__item--purple .gantt__toggler {
+  box-shadow: 0 0 0 0.138rem var(--purple-toggle);
+}
+.gantt__item--green .gantt__toggler {
+  box-shadow: 0 0 0 0.138rem var(--green-toggle);
+}
+input[type="checkbox"]:checked + .gantt__bar {
+  color: var(--white);
+}
+.gantt__item--pink .gantt__toggler.w--redirected-checked {
+  background-color: var(--dark-pink);
+  --pink-toggle: var(--dark-pink);
+}
+.gantt__item--pink > input[type="checkbox"]:checked + .gantt__bar {
+  background-color: var(--pink);
+  border-color: var(--pink);
+}
+.gantt__item--blue .gantt__toggler.w--redirected-checked {
+  background-color: var(--dark-blue);
+  --blue-toggle: var(--dark-blue);
+}
+.gantt__item--blue > input[type="checkbox"]:checked + .gantt__bar {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+.gantt__item--orange .gantt__toggler.w--redirected-checked {
+  background-color: var(--dark-orange);
+  --orange-toggle: var(--dark-orange);
+}
+.gantt__item--orange > input[type="checkbox"]:checked + .gantt__bar {
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+.gantt__item--yellow .gantt__toggler.w--redirected-checked {
+  background-color: var(--dark-yellow);
+  --yellow-toggle: var(--dark-yellow);
+}
+.gantt__item--yellow > input[type="checkbox"]:checked + .gantt__bar {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+}
+.gantt__item--purple .gantt__toggler.w--redirected-checked {
+  background-color: var(--dark-purple);
+  --purple-toggle: var(--dark-purple);
+}
+.gantt__item--purple > input[type="checkbox"]:checked + .gantt__bar {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+.gantt__item--green .gantt__toggler.w--redirected-checked {
+  background-color: var(--dark-green);
+  --green-toggle: var(--dark-green);
+}
+.gantt__item--green > input[type="checkbox"]:checked + .gantt__bar {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+.gantt__item--yellow .gantt__icon {
+  color: var(--dark-yellow);
+}
+.gantt__item--yellow > .gantt__bar--fixed {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+}
+.gantt__item--blue .gantt__icon {
+  color: var(--dark-blue);
+}
+.gantt__item--blue > .gantt__bar--fixed {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+.icon-star {
+  width: 2.083rem;
+  height: 2.083rem;
+}
+.shapes-large {
+  width: 100%;
+  height: 100%;
+}
+.shapes-large path {
+  transition: all 0.3s ease;
+}
+svg.dots {
+  width: 100%;
+  height: 100%;
+}
+svg.dots path,
+svg.dots circle {
+  fill: var(--main-color);
+}
+/* Projects page */
+.button-sort--desc,
+.is-asc ~ .button-sort--asc,
+.is-desc ~ .button-sort--desc,
+.button-sort:active {
+  background-color: var(--graph);
+  color: var(--white);
+}
+.button-sort--asc,
+.is-asc ~ .button-sort--desc,
+.is-desc ~ .button-sort--asc {
+  background-color: var(--light-grey);
+  color: var(--graph);
+}
+.projects-table__item:last-child {
+  margin-bottom: 0 !important;
+}
+.quiz__tag input[type="checkbox"]:checked ~ .button {
+  color: var(--white);
+}
+.quiz__tag--optimal input[type="radio"]:checked ~ .button {
+  background-color: var(--light-yellow);
+}
+.quiz__input--checkbox input[type="checkbox"]:checked ~ .quiz__checkbox .quiz__checkbox-checked {
+  display: block;
+}
+.quiz__input--checkbox.required {
+  color: #C3608A;
+}
+.quiz__input--checkbox.required .quiz__checkbox {
+  background-color: #C3608A;
+}
+textarea {
+  resize: none;
+}
+.w-input, .w-select {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+} 
+.w-input::placeholder, .w-select::placeholder {
+  color: var(--grey);
+}
+.widjet-practice__title {
+  color: var(--main-color);
+}
+.post__footer-back {
+  background: linear-gradient(180deg, #000000 -82.46%, rgba(0, 0, 0, 0.111811) 67.41%, rgba(0, 0, 0, 0.0465982) 81.86%, rgba(0, 0, 0, 0) 100%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+.icon-arrow-swiper,
+.icon-cross,
+.icon-plus,
+.icon-share,
+.icon-upload {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.icon-download svg {
+  width: 1.111rem;
+  height: 1.111rem;
+}
+.preview .swiper-slide {
+  opacity: 1 !important;
+}
+.preview .swiper-slide:not(.swiper-slide-active) { 
+  opacity: 0 !important; 
+}
+.preview .swiper-slide-active { 
+  z-index: 1000 !important; 
+}
+.preview__swipe-mobile {
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.reel__wrapper, .projects__video-wrapper {
+  -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+}
+.widjet-video__wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.833rem;
+}
+.open-super, .pink-button-hover-mark {
+  transform: translateZ(0);
+  isolation: isolate;
+}
+.card-gallery__list li:before {
+  content: "";
+  position: absolute;
+  top: 0.416rem;
+  left: 0;
+  width: 0.8333rem;
+  height: 0.8333rem;
+  border-radius: 50%;
+  background-color: var(--grey);
+}
+.card-gallery__list li:last-child {
+  margin-bottom: 0;
+}
+.form-field__tooltip-message {
+  pointer-events: none;
+}
+.blur-card-element-mark {
+	backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+}
+</style></div><div class="privacy__mobile-css w-embed"><style>
+@media (max-width: 767px) {
+  .logo svg {
+    width: 12.222rem;
+    height: 12.222rem;
+  }
+  .logo--forest-green svg {
+    width: 10rem;
+    height: 10rem;
+  }
+  .button-desk svg {
+    width: 24.722rem;
+    height: 18.888rem;
+  }
+  .sticky-button--super {
+    background: url("../assets/images/6357ef300cfd277c598b0cf7_super_bg_mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .shapes {
+    width: 42.77rem;
+    height: 49.44rem;
+  }
+  .icon-arrow svg {
+    width: 4.1666rem;
+    height: 3.888rem;
+  }
+  .preview .swiper-button-disabled,
+  .preview .swiper-button-lock {
+    background-color: transparent !important;
+  }
+  .list__item::before {
+    width: 2.222rem;
+    height: 2.222rem;
+    top: 1.111rem;
+  }
+  .gantt__item--pink .gantt__toggler {
+    box-shadow: 0 0 0 0.555rem var(--pink-toggle);
+  }
+  .gantt__item--blue .gantt__toggler {
+    box-shadow: 0 0 0 0.555rem var(--blue-toggle);
+  }
+  .gantt__item--orange .gantt__toggler {
+    box-shadow: 0 0 0 0.555rem var(--orange-toggle);
+  }
+  .gantt__item--yellow .gantt__toggler {
+    box-shadow: 0 0 0 0.555rem var(--yellow-toggle);
+  }
+  .gantt__item--purple .gantt__toggler {
+    box-shadow: 0 0 0 0.555rem var(--purple-toggle);
+  }
+  .gantt__item--green .gantt__toggler {
+    box-shadow: 0 0 0 0.555rem var(--green-toggle);
+  }
+  .icon-star {
+    width: 5.555rem;
+    height: 5.555rem;
+  }
+  .widjet-video__wrapper video {
+    border-radius: 2.222rem;
+  }
+  
+  .icon-arrow-swiper, .icon-cross, .icon-plus, .icon-share, .icon-upload {
+    width: 3.888rem;
+    height: 3.888rem;
+  }
+  .icon-download svg {
+    width: 3.333rem;
+    height: 3.333rem;
+  }
+  .hero__course-grid {
+    box-shadow: 14px 14px 40px rgba(0, 0, 0, 0.05);
+  }
+  .gallery-swiper-pagination .swiper-pagination-bullet,
+  .projects-swiper-pagination .swiper-pagination-bullet {
+    width: 3.333rem;
+    height: 3.333rem;
+    margin-right: 3.333rem;
+    background-color: #D9D9DA;
+    border-radius: 50%;
+  }
+  .gallery-swiper-pagination .swiper-pagination-bullet-active,
+  .projects-swiper-pagination .swiper-pagination-bullet-active {
+    background-color: var(--dark-grey);
+  }
+  .gallery-swiper-pagination .swiper-pagination-bullet:last-child,
+  .projects-swiper-pagination .swiper-pagination-bullet:last-child {
+    margin-right: 0;
+  }
+  .container-gallery {
+  	overflow-x: hidden;
+  }
+  .card-gallery__list li:before {
+  	top: 1.666rem;
+  	width: 1.666rem;
+  	height: 1.666rem;
+	}
+	.blur-card-element-mark {
+		backdrop-filter: blur(8rem);
+  	-webkit-backdrop-filter: blur(8rem);
+	}
+}
+</style></div><div class="privacy-policy"><div class="privacy-policy__text w-richtext"><p><strong>ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ</strong></p><p>‍</p><p>Дата публикации редакции: "08" ноября 2022 г.</p><p>‍<br/>Настоящая Политика обработки персональных данных (далее – «Политика») размещена на сайте в сети Интернет: <a href="../index.html" target="_blank">https://pinkman.ru</a> (далее – «Сайт»).</p><p>‍<br/>Использование сервисов Сайта означает безоговорочное согласие Пользователя с настоящей Политикой и указанными в ней условиями обработки его персональных данных, как это предусмотрено Политикой. В случае несогласия с этими условиями Пользователь должен воздержаться от использования Сайта.</p><p>‍</p><p><strong>1. ОБЩИЕ ПОЛОЖЕНИЯ</strong></p><p>‍</p><p>1.1. В рамках Политики под персональной информацией Пользователя понимаются:</p><p>‍<br/>1.1.1. Персональная информация, которую Пользователь предоставляет о себе самостоятельно при заполнении заявки на сотрудничество или в процессе использования элементов Сайта, включая персональные данные Пользователя (включая имя, место работы, должность, адрес электронной почты или телефон и иные данные, которые Пользователь самостоятельно отправляет посредством Сайта).</p><p>‍<br/>1.1.2. Данные, которые автоматически передаются сервисам Сайта в процессе их использования с помощью установленного на устройстве Пользователя программного обеспечения, в том числе IP-адрес, данные файлов cookie, информация о браузере Пользователя (или иной программе, с помощью которой осуществляется доступ к сервисам), технические характеристики оборудования и программного обеспечения, используемых Пользователем, дата и время доступа к сервисам, адреса запрашиваемых страниц и иная подобная информация.</p><p>‍<br/>1.2. Настоящая Политика применяется только к Сайту <a href="../index.html" target="_blank">https://pinkman.ru</a>. Сайт не контролирует и не несет ответственности за сайты третьих лиц, на которые Пользователь может перейти по ссылкам, доступным на Сайте.</p><p>‍</p><p><strong>2. ЦЕЛИ И ПРИНЦИПЫ ОБРАБОТКИ ПЕРСОНАЛЬНОЙ ИНФОРМАЦИИ ПОЛЬЗОВАТЕЛЕЙ</strong></p><p>‍</p><p>2.1. Сайт собирает и хранит только ту персональную информацию, которая необходима для предоставления сервисов или исполнения соглашений и договоров с Пользователем, за исключением случаев, когда законодательством предусмотрено обязательное хранение персональной информации в течение определенного законом срока.</p><p>‍<br/>В случае получения уведомления от Пользователя об отзыве согласия на обработку персональной информации Администрация Сайта прекращает обработку персональной информации Пользователя в срок, не превышающий 10 (десять) рабочих дней с момента получения.</p><p>‍<br/>2.2. Персональную информацию Пользователя Сайт обрабатывает в следующих целях:</p><p>‍<br/>2.2.1. Установления с Пользователем обратной связи, включая направление уведомлений, запросов, касающихся использования Сайта, оказания услуг, обработку запросов и заявок от Пользователя.</p><p>‍<br/>2.2.2. Уведомления Пользователя Сайта информационного или рекламного характера.</p><p>‍<br/>2.2.3. Предоставления Пользователю эффективной клиентской и технической поддержки при возникновении проблем, связанных с использованием Сайта.</p><p>‍</p><p>2.3. Настоящим Пользователь выражает полное согласие с условиями с целями обработки персональной информации Администрацией Сайта, включая уведомления рекламного характера. Пользователь имеет право отказаться от данных уведомлений с помощью функционала внутри рекламных и/или информационных сообщений, либо путем отправки письма в свободной форме по контактному адресу Администрации Сайта, как это предусмотрено в разделе 7 Политики.</p><p>‍</p><p>2.4. Обработка персональной информации Администрацией Сайта основана на следующих принципах:</p><p>‍</p><p>a) легитимность целей, методов обработки персональной информации и добросовестности;</p><p>‍</p><p>б) цели обработки персональной информации, соответствующие целям, предопределенным и заявленным при сборе персональной информации, а также полномочиям Администрации Сайта обрабатывать их;</p><p>‍</p><p>в) объем и характер обрабатываемых персональной информации, а также методы обработки персональной информации, соответствующие целям их обработки;</p><p>‍</p><p>г) отсутствие объединения баз данных, содержащих персональные данные, когда такие базы данных были первоначально созданы для несовместимых целей.</p><p>‍</p><p><strong>3. УСЛОВИЯ ОБРАБОТКИ ПЕРСОНАЛЬНОЙ ИНФОРМАЦИИ ПОЛЬЗОВАТЕЛЕЙ<br/>И ЕЕ ПЕРЕДАЧИ ТРЕТЬИМ ЛИЦАМ</strong></p><p>‍</p><p>3.1. Сайт хранит персональную информацию Пользователей в соответствии с внутренними регламентами конкретных сервисов.</p><p>‍<br/>3.2. В отношении персональной информации Пользователя сохраняется ее конфиденциальность, кроме случаев добровольного предоставления Пользователем информации о себе для общего доступа неограниченному кругу лиц.</p><p>‍<br/>3.3. Сайт вправе передать персональную информацию Пользователя третьим лицам в следующих случаях:</p><p>‍<br/>3.3.1. Пользователь выразил согласие на такие действия.</p><p>‍<br/>3.3.2. Передача необходима для использования Пользователем определенного сервиса Сайта, либо для исполнения определенного соглашения или договора с Пользователем.</p><p>‍<br/>3.3.4. Передача предусмотрена российским или иным применимым законодательством в рамках установленной законодательством процедуры.</p><p>‍<br/>3.3.5. В случае продажи Сайта к приобретателю переходят все обязательства по соблюдению условий Политики применительно к полученной им персональной информации.</p><p>‍<br/>3.4. Обработка персональной информации Пользователя осуществляется сроком не более чем того требует выполнение обозначенных в Политике целей или чем это необходимо для использования Пользователем Сайта. </p><p>‍<br/>3.4.1. Обработка персональной информации Пользователя осуществляется следующими способами: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональной информации, в том числе в информационных системах персональной информации с использованием средств автоматизации или без использования таких средств. Обработка персональной информации Пользователей осуществляется в соответствии с Федеральным законом от 27.07.2006 N 152-ФЗ "О персональной информации" и иным применимым законодательством определенной страны.</p><p>‍<br/>3.5. При утрате или разглашении персональной информации Администрация Сайта информирует Пользователя об утрате или разглашении персональной информации.</p><p>‍<br/>3.6. Администрация Сайта принимает необходимые организационные и технические меры для защиты персональной информации Пользователя от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения, а также от иных неправомерных действий третьих лиц.</p><p>‍<br/>3.7. Администрация Сайта совместно с Пользователем принимает все необходимые меры по предотвращению убытков или иных отрицательных последствий, вызванных утратой или разглашением персональной информации Пользователя.</p><p>‍<br/>3.8. Персональные данные не передаются третьим лицам, за исключением случаев, явно указанных в Политике. Предоставление персональной информации Пользователей по просьбе государственных (местных) органов осуществляется в порядке, установленном законом.</p><p>‍<br/>3.9. Администрация Сайта использует сервис Яндекс.Метрика для сбора сведений об использовании Сайта, таких как частота посещения Сайта Пользователями, посещенные страницы и сайты, на которых были пользователи до перехода на данный Сайт. Яндекс.Метрика собирает только IP-адреса, назначенные Пользователям в день посещения Сайта, но не имя или другие идентификационные сведения. </p><p>‍<br/>3.10. Яндекс.Метрика размещает постоянный cookie-файл в веб-браузере Пользователя для идентификации Пользователя в качестве уникального Пользователя при следующем посещении Сайта. Этот cookie-файл не может использоваться никем, кроме ООО «ЯНДЕКС». Сведения, собранные с помощью cookie-файла, будут передаваться в ООО «ЯНДЕКС». </p><p>‍<br/>3.11. Администрация Сайта использует сведения, полученные через сервис Яндекс.Метрика, только для совершенствования услуг на Сайте. Администрация Сайта не объединяет сведения, полученные через сервис Яндекс.Метрика с иной персональной информацией. </p><p>‍<br/>3.12. Возможности ООО «ЯНДЕКС» по использованию и передаче третьим лицам сведений, собранных посредством сервиса Яндекс.Метрика о посещениях Пользователей Сайта, ограничиваются Политикой конфиденциальности ООО «ЯНДЕКС», расположенной по адресу - <a href="https://yandex.ru/legal/confidential/" target="_blank">https://yandex.ru/legal/confidential/</a>. Пользователь может запретить сервису Яндекс.Метрика узнавать его при повторных посещениях Сайта, отключив cookie-файлы сервиса Яндекс.Метрика в своем браузере.</p><p>‍</p><p><strong>4. ПРАВА И ОБЯЗАТЕЛЬСТВА СТОРОН</strong></p><p>‍</p><p>4.1. Пользователь обязан:</p><p>‍<br/>4.1.1. Предоставить информацию о персональной информации, необходимую для пользования Сайтом.</p><p>‍<br/>4.1.2. Регулярно, не реже 1 (одного) раза в 14 (четырнадцать) календарных дней, самостоятельно отслеживать изменения Политики и проводить ознакомление с её условиями.</p><p>‍<br/>4.2. Администрация Сайта обязана:</p><p>‍<br/>4.2.1. Использовать полученную информацию исключительно для целей, указанных в Политике.</p><p>‍<br/>4.2.2. Обеспечить хранение конфиденциальной (персональной) информации в тайне, не разглашать без предварительного письменного разрешения Пользователя, а также не осуществлять продажу, обмен, опубликование либо разглашение иными возможными способами переданных персональной информации Пользователя, за исключением предусмотренных Политикой.</p><p>‍<br/>4.2.3. Для обеспечения защиты персональной информации Пользователя при их обработке приняты следующие правовые, организационные и технические меры от несанкционированного, неправомерного или случайного доступа к персональным данным, уничтожения, изменения, блокирования, копирования, предоставления, распространения персональной информации, а также от иных неправомерных действий в отношении персональной информации: антивирусная защита; обнаружение и предотвращение вторжений; анализ защищённости; защита используемых технических средств; защита информационной системы, её средств, систем связи и передачи данных; выявление событий, которые могут привести к сбоям или нарушению в работе информационной системы, или угрожающих безопасности данных, и реагирование на них.</p><p>‍<br/>4.2.4. Осуществить блокирование персональной информации, относящихся к соответствующему Пользователю, с момента обращения или запроса Пользователя или его законного представителя либо уполномоченного органа по защите прав субъектов персональной информации на период проверки в случае выявления недостоверных персональной информации или неправомерных действий.</p><p>‍<br/>4.3. Пользователь имеет право:</p><p>‍<br/>4.3.1. Право на возражение. Пользователь имеет право на возражение против обработки персональной информации, которые обрабатываются на основании законных интересов. Пользователь в любой момент может отказаться от дальнейшего сбора персональной информации.</p><p>‍<br/>4.3.2. Право доступа. Пользователь имеет право знать, какую информацию Администрация Сайта хранит о нем. Если Пользователь хочет воспользоваться этим правом, он имеет право связаться с Администрацией Сайта, указав, какую информацию Пользователь хотел бы получить. Администрация Сайта имеет право не предоставлять всю запрашиваемую информацию, например, в случаях, когда такая информация включает персональные данные другого лица. Если Администрация Сайта не может предоставить Пользователю запрашиваемую информацию, Администрация Сайта объяснит Пользователю причину отказа.</p><p>‍<br/>4.3.3. Право на изменение персональной информации. Администрация Сайта поддерживает точность и актуальность информации о Пользователях, однако если у Пользователя есть основания полагать, что какая-либо информация о нем, является неверной, Пользователь имеет право сообщить об этом Администрации Сайта и Администрация Сайта исправит такую информацию.</p><p>‍<br/>4.3.4. Удаление данных. Пользователь имеет право потребовать удаления своих персональной информации из базы данных Администрации Сайта. Администрация Сайта удалит персональные данные такого Пользователя в соответствии с запросом после проверки личности Пользователя. Администрация Сайта имеет право сохранить персональные данные или их часть, например, для выполнения юридических обязательств и защиты или обеспечения соблюдения законных прав. Администрация Сайта также имеет право хранить информацию о Пользователе в анонимной форме.</p><p>‍<br/>4.3.5. Переносимость данных. В некоторых случаях Пользователь имеет право потребовать, чтобы Администрация Сайта предоставила переданные персональные данные, чтобы Пользователь мог передать соответствующую информацию другому контролеру данных.</p><p>‍<br/>4.3.6. Право подать жалобу. Пользователь имеет право подать жалобу на Администрацию Сайта. Для этого Пользователь имеет право обратиться в соответствующий надзорный орган своей страны проживания при условии предварительного уведомления Администрации Сайта за 30 (тридцать) дней до даты подачи такого обращения в надзорные органы и в случае отсутствия обратной связи и/или решения жалобы Пользователя в указанный срок.</p><p>‍<br/>4.4. Для реализации прав, предусмотренных предыдущим пунктом Политики, Пользователь имеет право направить запрос в свободной форме в адрес Администрации Сайта по контактным данным, указанным в разделе 7 Политики. Срок обработки запроса Пользователя составляет 10 (десять) рабочих дней с момента получения запроса и при необходимости проверки личности Пользователя. Администрация Сайта оставляет за собой право попросить Пользователя предоставить дополнительную информацию для подтверждения личности Пользователя, прежде чем приступить к обработке отправленного им запроса.</p><p>‍<br/>4.5. Вся корреспонденция, полученная Администрации Сайта от Пользователей (запросы в письменной форме или представленные в электронном виде), считается информацией с ограниченным доступом и не разглашается без согласия Пользователя. Личные данные и другая информация о Пользователе, который отправил запрос, не могут использоваться без явного согласия Пользователя любым способом, кроме как отвечать на проблему, описанную в полученном запросе, или в случаях, явно предусмотренных законодательством.</p><p>‍</p><p><strong>5. ОТВЕТСТВЕННОСТЬ СТОРОН</strong></p><p>‍</p><p>5.1. Администрация Сайта, не исполнившая свои обязательства, несет ответственность за убытки, понесенные Пользователем в связи с неправомерным использованием персональной информации, в соответствии с законодательством Российской Федерации или иным применимым законодательством в рамках установленной законодательством процедуры.</p><p>‍<br/>5.2. В случае утраты или разглашения конфиденциальной (персональной) информации Администрация Сайта не несет ответственности, если данная конфиденциальная (персональная) информация:</p><p>‍<br/>5.2.1. Стала публичным достоянием до ее утраты или разглашения.</p><p>‍<br/>5.2.2. Была получена от третьей стороны до момента ее получения Администрацией Сайта.</p><p>‍<br/>5.2.3. Была разглашена с согласия Пользователя.</p><p>‍</p><p><strong>6. РАЗРЕШЕНИЕ СПОРОВ</strong></p><p>‍</p><p>6.1. До обращения в суд с иском по спорам, возникающим из отношений между Пользователем и Администрацией Сайта, обязательным является предъявление претензии (письменного предложения о добровольном урегулировании спора).</p><p>‍<br/>6.2. Получатель претензии в течение 10 (десяти) рабочих дней со дня получения претензии письменно уведомляет заявителя претензии о результатах рассмотрения претензии.</p><p>‍<br/>6.3. При недостижении соглашения спор будет передан на рассмотрение в суд в соответствии с действующим законодательством Российской Федерации или иным применимым законодательством в рамках установленной законодательством процедуры.</p><p>‍<br/>6.4. К Политике и отношениям между Пользователем и Администрацией Сайта применяется действующее законодательство Российской Федерации или иное специально применимое законодательство в рамках установленной законодательством процедуры.</p><p>‍</p><p><strong>7. ДОПОЛНИТЕЛЬНЫЕ УСЛОВИЯ</strong></p><p>‍</p><p>7.1. Администрация Сайта вправе вносить изменения в Политику без согласия Пользователя.</p><p>‍<br/>7.2. Новая Политика вступает в силу с момента ее размещения на Сайте, если иное не предусмотрено новой редакцией Политики. Для получения более ранних версий настоящей Политики Пользователь имеет право обратиться к Администрации Сайта по электронной почте, предусмотренной п. 7.3 Политики.</p><p>‍<br/>7.3. Все предложения, жалобы или вопросы по Политике следует сообщать по электронной почте: <a href="mailto:just@pink-man.ru">just@pink-man.ru</a>. </p><p>‍<br/>7.4. Действующая Политика размещена на странице по адресу: <a href="../privacy-policy" target="_blank">https://pinkman.ru/privacy-policy</a>.</p><p>‍<br/>7.5. Сторонами настоящей Политики являются: Пользователь (вы) и Администрация Сайта (ООО «СТУДИЯ ПИНКМАН», юридический адрес: 109507, город Москва, кв-л 137а Самаркандский бульвар, к. 11, кв. 116, ИНН 9721052900).</p><p>‍</p><p>‍</p></div></div><script> 
+// блок с метриками
+const metricsPropertyName = 'm_consent';
+const consentBlock = document.querySelector('.consent');
+const consentCloseButton = document.querySelector('.consent__button');
+  
+let metricsProperty = localStorage.getItem(metricsPropertyName);
+  
+if (!metricsProperty) {
+  if (consentBlock) {
+    consentBlock.style.display = 'flex';
+  }
+}
+
+const closeConsentHandler = () => {
+  localStorage.setItem(metricsPropertyName, true);
+  consentBlock.style.display = 'none';
+};
+  
+if (consentCloseButton) {
+  consentCloseButton.addEventListener('click', closeConsentHandler);
+}
+  
+const sourceFormField = document.getElementById("Source");
+ 
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  if (sourceFormField) {
+    sourceFormField.value = window.location;
+  }
+  
+});
+ 
+</script>
+<script>
+(function(ratingRuneta){
+var rrcid = new URLSearchParams(window.location.search).get(ratingRuneta); if (rrcid) window.sessionStorage.setItem(ratingRuneta, rrcid);
+rrcid = window.sessionStorage.getItem(ratingRuneta);
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a
+)})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+   ym(92096748, "init", {
+         'clickmap' : false,
+         'trackLinks': false,
+'accurateTrackBounce' : true, 'webvisor' : false,
+'params' : {
+           'rrcid' : rrcid
+         }
+
+
+   });
+})('rrcid');
+</script>
+</body></html>
