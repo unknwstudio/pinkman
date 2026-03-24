@@ -3,6 +3,7 @@ name: Deploy to Timeweb
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -15,6 +16,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
           script: |
-            cd /var/www/html
-            git pull origin main
+            cd /var/www/html && git pull origin main
