@@ -1,6 +1,6 @@
-/* nav.js — v CLD345702
-   Mobile nav overlay is injected here, NOT repeated in HTML.
-   Update this file to update the mobile menu on all pages. */
+/* nav.js — v CLD345703
+   Mobile nav overlay + desktop floating bar injected here.
+   Update this file to update navigation on all pages. */
 (function () {
   'use strict';
 
@@ -128,6 +128,34 @@
       }
     }, { passive: true });
   }
+
+  /* ── Desktop floating bottom bar (≥992px) ── */
+  var PINKMAN_SVG = '<svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.8368 4.41815H7.18411L0 47H14.5816L16.0042 38.637L36.703 43.8639C43.0335 45.4668 48.0126 42.3306 49.1507 35.222C51.5691 20.0292 49.5063 4 33.9289 4C29.1632 4 23.4017 7.13614 20.4143 12.0146L21.8368 4.41815ZM36.2051 29.9951L21.3389 26.2318C22.3348 21.9806 26.9582 16.6143 32.862 17.799C37.272 18.705 37.4143 25.5348 36.2051 29.9951Z" fill="currentColor"/></svg>';
+
+  var bar = document.createElement('div');
+  bar.className = 'pk-bar';
+  bar.innerHTML =
+    '<a class="pk-bar__logo" href="' + B + 'index.html">' + PINKMAN_SVG + '</a>' +
+    '<nav class="pk-bar__links">' +
+      '<a class="pk-bar__link' + (isHome      ? ' pk-bar__link--active' : '') + '" href="' + B + 'index.html">Главная</a>' +
+      '<a class="pk-bar__link' + (isPortfolio ? ' pk-bar__link--active' : '') + '" href="' + B + 'projects/">Портфолио</a>' +
+      '<div class="pk-bar__item">' +
+        '<span class="pk-bar__link' + (isServices ? ' pk-bar__link--active' : '') + '">Услуги</span>' +
+        '<div class="pk-bar__dropdown">' +
+          '<a class="pk-bar__drop-link' + (page === 'sites'                  ? ' pk-bar__drop-link--active' : '') + '" href="' + B + 'sites/">Сайты</a>' +
+          '<a class="pk-bar__drop-link' + (page === 'digital-products'       ? ' pk-bar__drop-link--active' : '') + '" href="' + B + 'digital-products/">Цифровые продукты</a>' +
+          '<a class="pk-bar__drop-link' + (page === 'communications-design'  ? ' pk-bar__drop-link--active' : '') + '" href="' + B + 'communications-design/">Дизайн коммуникаций</a>' +
+          '<a class="pk-bar__drop-link' + (page === 'multimedia-phygital'    ? ' pk-bar__drop-link--active' : '') + '" href="' + B + 'multimedia-phygital/">Multimedia\u00a0&\u00a0Phygital</a>' +
+          '<a class="pk-bar__drop-link' + (page === 'outsource-multimedia'   ? ' pk-bar__drop-link--active' : '') + '" href="' + B + 'outsource-multimedia/">Аутсорс мультимедиа</a>' +
+          '<a class="pk-bar__drop-link' + (page === 'outstaff-ai'            ? ' pk-bar__drop-link--active' : '') + '" href="' + B + 'outstaff-ai/">Аутстафф AI-дизайнеров</a>' +
+          '<a class="pk-bar__drop-link' + (page === 'ai-video'               ? ' pk-bar__drop-link--active' : '') + '" href="' + B + 'ai-video/">AI\u2011ролики для OLV\u00a0+\u00a0DOOH</a>' +
+        '</div>' +
+      '</div>' +
+      '<a class="pk-bar__link' + (isContacts ? ' pk-bar__link--active' : '') + '" href="' + B + 'contact-us/">Контакты</a>' +
+    '</nav>' +
+    '<a class="pk-bar__cta" href="' + B + 'contact-us/">Обсудить проект</a>';
+
+  document.body.appendChild(bar);
 
   /* ── Contact CTA — injected inside footer, skip if already on page ── */
   if (!document.querySelector('.contacts-card')) {
