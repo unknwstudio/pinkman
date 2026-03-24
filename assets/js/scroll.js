@@ -1,4 +1,4 @@
-/* scroll.js — v CLD345705
+/* scroll.js — v CLD345706
    Scroll-in animation engine for pinkman.ru
    Auto-tags structural elements with .anim, then triggers via IntersectionObserver.
    CSS for .anim / .anim.in lives in components.css. */
@@ -33,15 +33,19 @@
     });
   });
 
-  /* ── Trigger via IntersectionObserver ── */
+  /* ── Trigger via IntersectionObserver ──
+     rootMargin extends detection 160px below the fold so elements animate
+     before they're fully scrolled into view (triggers earlier).
+     No unobserve — watching both ways so .in is removed when scrolling back. */
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
         e.target.classList.add('in');
-        io.unobserve(e.target);
+      } else {
+        e.target.classList.remove('in');
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.08, rootMargin: '0px 0px 160px 0px' });
 
   document.querySelectorAll('.anim').forEach(function (el) {
     io.observe(el);
