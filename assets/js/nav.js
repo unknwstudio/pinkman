@@ -11,7 +11,7 @@
 
   var isHome      = page === '';
   var isPortfolio = page === 'projects';
-  var isServices  = ['sites', 'digital-products', 'communications-design', 'multimedia-phygital', 'outsource-multimedia', 'outstaff-ai'].indexOf(page) >= 0;
+  var isServices  = ['sites', 'digital-products', 'communications-design', 'multimedia-phygital', 'outsource-multimedia', 'outstaff-ai', 'ai-video'].indexOf(page) >= 0;
   var isContacts  = page === 'contact-us';
 
   /* ── Build mobile overlay HTML ── */
@@ -40,6 +40,7 @@
           '<a class="nav-mob__sub-link" href="', B, 'multimedia-phygital/">Multimedia &amp; Phygital</a>',
           '<a class="nav-mob__sub-link" href="', B, 'outsource-multimedia/">Аутсорс мультимедиа</a>',
           '<a class="nav-mob__sub-link" href="', B, 'outstaff-ai/">Аутстафф AI-дизайнеров</a>',
+          '<a class="nav-mob__sub-link" href="', B, 'ai-video/">AI-ролики для OLV&nbsp;+ DOOH</a>',
         '</div>',
       '</div>',
 
