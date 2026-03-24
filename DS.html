@@ -54,7 +54,7 @@
 
   <!-- ── Page header ── -->
   <p class="ds-page-title">Pinkman DS</p>
-  <p class="ds-page-sub">Design system reference &amp; component inventory · v CLD345707<br/>
+  <p class="ds-page-sub">Design system reference &amp; component inventory · v CLD345708<br/>
   Note: site uses <code>html { font-size: 1vw }</code> — at 1440px 1rem ≈ 14.4px, at 768px 1rem ≈ 7.68px, at 375px 1rem ≈ 3.75px.<br/>
   All Webflow px variables (--16px, --40px…) compensate so they always equal their named pixel value at each breakpoint.</p>
 
@@ -370,12 +370,12 @@
     </div>
   </div>
 
-  <!-- Contacts card -->
+  <!-- Contacts card — desktop -->
   <div class="ds-item" style="margin-bottom:32px;">
-    <p class="ds-label">Contacts CTA Card</p>
-    <p class="ds-class">.contacts-card  (injected by nav.js before .footer-top)</p>
-    <p class="ds-sub">Injected by nav.js on every page that doesn't already have .contacts-card · border-radius: 20px</p>
-    <div class="ds-preview--white ds-preview">
+    <p class="ds-label">Contacts CTA Card — Desktop</p>
+    <p class="ds-class">.contacts-main-section › .main-container › .contacts-card</p>
+    <p class="ds-sub">Injected by nav.js as standalone section before footer · .main-container handles all horizontal spacing</p>
+    <div class="ds-preview">
       <div class="contacts-card">
         <p class="contacts-intro">Обсудим проект?</p>
         <p class="contacts-role">Аккаунт-директор Юрий Григоренко — расскажет про состав команды, сроки и стоимость под ваш проект.</p>
@@ -383,6 +383,20 @@
           <a class="contacts-link-btn" href="#" onclick="return false">+7&nbsp;915&nbsp;311&nbsp;03&nbsp;32</a>
           <a class="contacts-link-btn contacts-link-btn--light" href="#" onclick="return false">grig@pinkman.ru</a>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contacts card — mobile simulation -->
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Contacts CTA Card — Mobile (375px)</p>
+    <p class="ds-class">same markup · mobile overrides applied via explicit px values</p>
+    <div style="max-width:375px;border:1px solid #ddd;border-radius:12px;overflow:hidden;padding:28px 16px;">
+      <p style="font-size:28px;font-weight:700;line-height:1.2;color:#0d0d0d;margin:0 0 12px;">Обсудим проект?</p>
+      <p style="font-size:15px;color:#666;line-height:1.5;margin:0 0 20px;">Аккаунт-директор Юрий Григоренко — расскажет про состав команды, сроки и стоимость под ваш проект.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <a style="display:flex;align-items:center;justify-content:center;padding:14px 12px;border-radius:999px;font-size:16px;font-weight:500;background:#0d0d0d;color:#fff;text-decoration:none;" href="#" onclick="return false">+7&nbsp;915&nbsp;311&nbsp;03&nbsp;32</a>
+        <a style="display:flex;align-items:center;justify-content:center;padding:14px 12px;border-radius:999px;font-size:16px;font-weight:500;background:#fff;color:#0d0d0d;border:1.5px solid #0d0d0d;text-decoration:none;" href="#" onclick="return false">grig@pinkman.ru</a>
       </div>
     </div>
   </div>

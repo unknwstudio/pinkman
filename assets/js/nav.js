@@ -1,4 +1,4 @@
-/* nav.js — v CLD345707
+/* nav.js — v CLD345708
    Mobile nav overlay + desktop floating bar injected here.
    Update this file to update navigation on all pages. */
 (function () {
@@ -157,23 +157,27 @@
 
   document.body.appendChild(bar);
 
-  /* ── Contact CTA — injected inside footer, skip if already on page ── */
+  /* ── Contact CTA — injected as its own section before the footer <section> ── */
   if (!document.querySelector('.contacts-card')) {
     var footerTop = document.querySelector('.footer-top');
     if (footerTop) {
       var cta = document.createElement('div');
       cta.className = 'contacts-main-section';
+      /* Wrap in .main-container so the layout system handles all horizontal spacing */
       cta.innerHTML =
-        '<div class="contacts-card">' +
-          '<p class="contacts-intro">Обсудим проект?</p>' +
-          '<p class="contacts-role">Аккаунт-директор Юрий Григоренко&nbsp;— расскажет про состав команды, сроки и&nbsp;стоимость под ваш проект.</p>' +
-          '<div class="contacts-links">' +
-            '<a class="contacts-link-btn" href="tel:+79153110332">+7&nbsp;915&nbsp;311&nbsp;03&nbsp;32</a>' +
-            '<a class="contacts-link-btn contacts-link-btn--light" href="mailto:grig@pinkman.ru">grig@pinkman.ru</a>' +
+        '<div class="main-container">' +
+          '<div class="contacts-card">' +
+            '<p class="contacts-intro">Обсудим проект?</p>' +
+            '<p class="contacts-role">Аккаунт-директор Юрий Григоренко&nbsp;— расскажет про состав команды, сроки и&nbsp;стоимость под ваш проект.</p>' +
+            '<div class="contacts-links">' +
+              '<a class="contacts-link-btn" href="tel:+79153110332">+7&nbsp;915&nbsp;311&nbsp;03&nbsp;32</a>' +
+              '<a class="contacts-link-btn contacts-link-btn--light" href="mailto:grig@pinkman.ru">grig@pinkman.ru</a>' +
+            '</div>' +
           '</div>' +
         '</div>';
-      /* Prepend inside the footer section's main-container, before footer-top */
-      footerTop.parentNode.insertBefore(cta, footerTop);
+      /* Insert before the <section> that wraps the footer, not inside .main-container */
+      var footerSection = footerTop.closest('section') || footerTop.parentNode.parentNode;
+      footerSection.parentNode.insertBefore(cta, footerSection);
     }
   }
 
