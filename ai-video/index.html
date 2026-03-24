@@ -3,251 +3,530 @@
 
 <div class="css w-embed"><style>
 html { font-size: 1vw; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; display: flex; flex-direction: column; }
+html, body { position: relative; height: 100%; }
+footer { flex: 0 0 auto; }
+a { color: inherit; text-decoration: none; }
+*:focus { outline: 0 !important; }
+* { -webkit-tap-highlight-color: transparent; }
+.big-button.bg-color-pink { display: flex; text-decoration: none; background-color: var(--pink); color: #ffffff; transition: all 0.3s ease; }
+.big-button p { margin: 0; }
+.button-arrow-wrapper { display: flex; transition: background-color 0.3s ease; }
+.button-arrow__not-active svg path { transition: fill 0.3s ease; fill: #818181; }
+.button-arrow__active, .button-arrow__not-active { transition: transform 0.3s ease; }
+.big-button:hover { background-color: transparent; color: var(--dark); }
+.big-button:hover .button-arrow-wrapper { background-color: var(--pink); }
+.big-button:hover .button-arrow__not-active svg path { fill: #FFFFFF; }
+.big-button:hover .button-arrow__active, .big-button:hover .button-arrow__not-active { transform: rotate(45deg); }
+.big-button:active { background-color: var(--pink); color: #ffffff; }
+.header-dropdown-link:hover .header-dropdown-img { opacity: 1; }
+/* Between-section spacing doubled — only after card grids */
+.service-points-section,
+.service-section,
+.service-cases-section { margin-bottom: 5rem !important; }
 </style></div>
 
-<!-- ── NAV ── -->
-<div><div class="menu-space"></div><div class="embed w-embed w-script"><script defer="" src="../assets/js/scrolldisable.js"></script><meta content="#EAEAEA" name="theme-color"/></div><div class="header-new w-nav" data-collapse="medium" data-doc-height="1" data-duration="400" data-easing="ease" data-easing2="ease" data-no-scroll="1" role="banner"><div class="header-container"><div class="div-block"><a class="brand-logo-link w-nav-brand" href="../index.html"><div class="menu__logo-new w-embed"><svg fill="none" height="100%" viewbox="0 0 50 50" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M21.8368 4.41815H7.18411L0 47H14.5816L16.0042 38.637L36.703 43.8639C43.0335 45.4668 48.0126 42.3306 49.1507 35.222C51.5691 20.0292 49.5063 4 33.9289 4C29.1632 4 23.4017 7.13614 20.4143 12.0146L21.8368 4.41815ZM36.2051 29.9951L21.3389 26.2318C22.3348 21.9806 26.9582 16.6143 32.862 17.799C37.272 18.705 37.4143 25.5348 36.2051 29.9951Z" fill="currentColor"></path></svg></div></a><div class="mobile-menu-btn w-nav-button"><div class="mobile-lottie"><span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span></div></div></div><nav class="nav-menu w-nav-menu" role="navigation"><div class="header-wrapper"><div class="header-links-list"><a class="header-btn" href="../index.html">Главная</a><a class="header-btn" href="../projects/">Портфолио</a><div class="header-dropdown-wrapper hide-desktop w-dropdown" data-delay="200" data-hover="false"><div class="dropdown-trigger w-dropdown-toggle"><div class="header-btn">Услуги</div><img alt="" class="dropdown-arrow-image" loading="lazy" src="../assets/images/67105d51be89304a2b3da27f_arrow-dropdown.svg"/></div><nav class="header-dropdown w-dropdown-list"><a class="header-dropdown-link w-inline-block" href="../sites/"><p class="text-regular middle">Сайты</p></a><a class="header-dropdown-link w-inline-block" href="../digital-products/"><p class="text-regular middle">Цифровые продукты</p></a><a class="header-dropdown-link w-inline-block" href="../communications-design/"><p class="text-regular middle">Дизайн коммуникаций</p></a><a class="header-dropdown-link w-inline-block" href="../multimedia-phygital/"><p class="text-regular middle">Multimedia &amp; Phygital</p></a><a class="header-dropdown-link w-inline-block" href="../outsource-multimedia/"><p class="text-regular middle">Аутсорс мультимедиа</p></a><a class="header-dropdown-link w-inline-block" href="../outstaff-ai/"><p class="text-regular middle">Аутстафф AI-дизайнеров</p></a><a aria-current="page" class="header-dropdown-link w-inline-block w--current" href="../ai-video/"><p class="text-regular middle">AI-ролики для OLV&nbsp;+ DOOH</p></a></nav></div><div class="header-dropdown-wrapper hide-mobile w-dropdown" data-delay="200" data-hover="true"><div class="dropdown-trigger w-dropdown-toggle"><div class="header-btn">Услуги</div></div><nav class="header-dropdown w-dropdown-list"><div class="header-dropdown-content-wrapper"><div class="header-dropdown-column"><a class="header-dropdown-link w-inline-block" href="../sites/"><p class="text-regular middle">Сайты</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../digital-products/"><p class="text-regular middle">Цифровые продукты</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../communications-design/"><p class="text-regular middle">Дизайн коммуникаций</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../multimedia-phygital/"><p class="text-regular middle">Multimedia &amp; Phygital</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../outsource-multimedia/"><p class="text-regular middle">Аутсорс мультимедиа</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../outstaff-ai/"><p class="text-regular middle">Аутстафф AI-дизайнеров</p><div class="header-dropdown-img"></div></a><a aria-current="page" class="header-dropdown-link w-inline-block w--current" href="../ai-video/"><p class="text-regular middle">AI-ролики для OLV&nbsp;+ DOOH</p><div class="header-dropdown-img"></div></a></div></div></nav></div><a class="header-btn" href="../contact-us/">Контакты</a><a class="mobile-nav-discuss" href="../contact-us/">Обсудить проект</a></div><div class="button-header-wrapper"><a class="big-button bg-color-pink w-inline-block" href="../contact-us/"><p class="text-regular middle font-color-white">Обсудить проект</p><div class="button-arrow-wrapper"><div class="button-arrow__not-active w-embed"><svg fill="none" height="100%" viewbox="0 0 16 16" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div><img alt="" class="button-arrow__active" loading="lazy" src="../assets/images/66f6e23524a454603f7d5540_arrow-white.svg"/></div></a></div></div></nav></div></div></div>
+<!-- NAV -->
+<div><div class="menu-space"></div><div class="embed w-embed w-script"><script defer="" src="../assets/js/scrolldisable.js"></script><meta content="#EAEAEA" name="theme-color"/></div><div class="header-new w-nav" data-collapse="medium" data-doc-height="1" data-duration="400" data-easing="ease" data-easing2="ease" data-no-scroll="1" role="banner"><div class="header-container"><div class="div-block"><a class="brand-logo-link w-nav-brand" href="../index.html"><div class="menu__logo-new w-embed"><svg fill="none" height="100%" viewbox="0 0 50 50" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M21.8368 4.41815H7.18411L0 47H14.5816L16.0042 38.637L36.703 43.8639C43.0335 45.4668 48.0126 42.3306 49.1507 35.222C51.5691 20.0292 49.5063 4 33.9289 4C29.1632 4 23.4017 7.13614 20.4143 12.0146L21.8368 4.41815ZM36.2051 29.9951L21.3389 26.2318C22.3348 21.9806 26.9582 16.6143 32.862 17.799C37.272 18.705 37.4143 25.5348 36.2051 29.9951Z" fill="currentColor"></path></svg></div></a><div class="mobile-menu-btn w-nav-button"><div class="mobile-lottie"><span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span></div></div></div><nav class="nav-menu w-nav-menu" role="navigation"><div class="header-wrapper"><div class="header-links-list"><a class="header-btn" href="../index.html">Главная</a><a class="header-btn" href="../projects/">Портфолио</a><div class="header-dropdown-wrapper hide-desktop w-dropdown" data-delay="200" data-hover="false"><div class="dropdown-trigger w-dropdown-toggle"><div class="header-btn">Услуги</div><img alt="" class="dropdown-arrow-image" loading="lazy" src="../assets/images/67105d51be89304a2b3da27f_arrow-dropdown.svg"/></div><nav class="header-dropdown w-dropdown-list"><a class="header-dropdown-link w-inline-block" href="../sites/"><p class="text-regular middle">Сайты</p></a><a class="header-dropdown-link w-inline-block" href="../digital-products/"><p class="text-regular middle">Цифровые продукты</p></a><a class="header-dropdown-link w-inline-block" href="../communications-design/"><p class="text-regular middle">Дизайн коммуникаций</p></a><a class="header-dropdown-link w-inline-block" href="../multimedia-phygital/"><p class="text-regular middle">Multimedia &amp; Phygital</p></a><a class="header-dropdown-link w-inline-block" href="../outsource-multimedia/"><p class="text-regular middle">Аутсорс мультимедиа</p></a><a class="header-dropdown-link w-inline-block" href="../outstaff-ai/"><p class="text-regular middle">Аутстафф AI-дизайнеров</p></a><a aria-current="page" class="header-dropdown-link w-inline-block w--current" href="../ai-video/"><p class="text-regular middle">AI-ролики для OLV&nbsp;+ DOOH</p></a></nav></div><div class="header-dropdown-wrapper hide-mobile w-dropdown" data-delay="200" data-hover="true"><div class="dropdown-trigger w-dropdown-toggle"><div class="header-btn">Услуги</div></div><nav class="header-dropdown w-dropdown-list"><div class="header-dropdown-content-wrapper"><div class="header-dropdown-column"><a class="header-dropdown-link w-inline-block" href="../sites/"><p class="text-regular middle">Сайты</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../digital-products/"><p class="text-regular middle">Цифровые продукты</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../communications-design/"><p class="text-regular middle">Дизайн коммуникаций</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../multimedia-phygital/"><p class="text-regular middle">Multimedia &amp; Phygital</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../outsource-multimedia/"><p class="text-regular middle">Аутсорс мультимедиа</p><div class="header-dropdown-img"></div></a><a class="header-dropdown-link w-inline-block" href="../outstaff-ai/"><p class="text-regular middle">Аутстафф AI-дизайнеров</p><div class="header-dropdown-img"></div></a><a aria-current="page" class="header-dropdown-link w-inline-block w--current" href="../ai-video/"><p class="text-regular middle">AI-ролики для OLV&nbsp;+ DOOH</p><div class="header-dropdown-img"></div></a></div></div></nav></div><a class="header-btn" href="../contact-us/">Контакты</a><a class="mobile-nav-discuss" href="../contact-us/">Обсудить проект</a></div><div class="button-header-wrapper"><a class="big-button bg-color-pink w-inline-block" href="../contact-us/"><p class="text-regular">Обсудить проект</p><div class="button-arrow-wrapper"><div class="button-arrow__not-active w-embed"><svg fill="none" height="100%" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M17.6677 15.2266C17.6677 15.4401 17.5948 15.6172 17.449 15.7578C17.3083 15.8984 17.1443 15.9688 16.9568 15.9688C16.7641 15.9688 16.5974 15.8958 16.4568 15.75C16.3214 15.6042 16.2537 15.4401 16.2537 15.2578V12.3672L16.3943 8.71875L15.1052 10.1797L7.34741 17.9297C7.20679 18.0703 7.04272 18.1406 6.85522 18.1406C6.72502 18.1406 6.60522 18.1068 6.49585 18.0391C6.38647 17.9714 6.29793 17.8828 6.23022 17.7734C6.16252 17.6589 6.12866 17.5391 6.12866 17.4141C6.12866 17.2318 6.20158 17.0677 6.34741 16.9219L14.0896 9.16406L15.5427 7.89062L11.7302 8.01562H9.01147C8.82918 8.01562 8.66512 7.94792 8.51929 7.8125C8.37866 7.67188 8.30835 7.50781 8.30835 7.32031C8.30835 7.13281 8.37606 6.96875 8.51147 6.82812C8.64689 6.68229 8.82397 6.60938 9.04272 6.60938H16.9021C17.1365 6.60938 17.3214 6.67969 17.4568 6.82031C17.5922 6.96094 17.6599 7.14323 17.6599 7.36719L17.6677 15.2266Z" fill="#818181"></path></svg></div><img alt="" class="button-arrow__active" loading="eager" src="../assets/images/66f6e23524a454603f7d5540_arrow-white.svg"/></div></a></div></div></nav></div></div></div>
 
 <!-- ── HERO ── -->
-<div class="portfolio-section"><div class="main-container"><div class="text-big-wrapper"><p class="text-big">Рекламные AI-ролики для OLV&nbsp;+ DOOH</p></div></div></div>
-<div class="portfolio-section"><div class="main-container"><div class="text-h2-wrapper"><h2>От сценария до&nbsp;финальных ресайзов для десятка поверхностей. Быстро, технически верно, без&nbsp;потери качества.</h2></div></div></div>
+<div class="portfolio-section">
+  <div class="main-container">
+    <div class="text-big-wrapper">
+      <p class="text-big">Рекламные AI-ролики для OLV&nbsp;+ DOOH</p>
+    </div>
+  </div>
+</div>
 
-<!-- ── PROBLEM ── -->
-<div class="portfolio-section"><div class="main-container">
-  <h2 class="font-color-black" style="margin-bottom:1rem;">Бюджет срезан, дедлайн вчера</h2>
-  <p class="font-color-dark-gray">Видеопродакшен дорожает, а&nbsp;сроки не&nbsp;растягиваются. AI&nbsp;даёт скорость — но&nbsp;требует экспертизы, чтобы результат выглядел на&nbsp;уровне, а&nbsp;не&nbsp;как генерация ради генерации.</p>
-</div></div>
+<div class="portfolio-section">
+  <div class="main-container">
+    <div class="text-h2-wrapper">
+      <h2>От&nbsp;сценария до&nbsp;финальных ресайзов для&nbsp;десятка поверхностей. Быстро, технически верно, без&nbsp;потери качества.</h2>
+    </div>
+  </div>
+</div>
 
-<!-- ── OFFER ── -->
-<div class="portfolio-section"><div class="main-container"><div class="text-h1-wrapper"><h2 class="h1">Что мы&nbsp;предлагаем</h2></div></div></div>
-<div class="service-section"><div class="main-container"><div class="service"><div class="service__text">
-  <p class="text-regular font-color-dark-gray">Разрабатываем идею и&nbsp;сценарий, производим реалистичные AI-ролики, адаптируем под&nbsp;OLV и&nbsp;DOOH с&nbsp;учётом технических требований каждой поверхности. AI-озвучка и&nbsp;музыка — включены.</p>
-  <p class="text-regular font-color-dark-gray" style="margin-top:1rem;">Мы мультидисциплинарны: комбинируем AI с&nbsp;3D, моушном и&nbsp;постпродакшеном — именно это даёт реалистичный результат, а&nbsp;не&nbsp;просто генерацию. Работаем как встроенный юнит вашей команды — с&nbsp;визуальным контролем и&nbsp;производственной дисциплиной.</p>
-</div></div></div></div>
+<!-- ── СИТУАЦИЯ ── -->
+<div class="portfolio-section">
+  <div class="main-container">
+    <div class="text-h1-wrapper" style="margin-bottom:1rem;">
+      <h2 class="h1">Бюджет срезан, дедлайн вчера</h2>
+    </div>
+    <p class="font-color-dark-gray">Видеопродакшен дорожает, а&nbsp;сроки не&nbsp;растягиваются. AI&nbsp;даёт скорость&nbsp;— но&nbsp;требует экспертизы, чтобы результат выглядел на&nbsp;уровне, а&nbsp;не&nbsp;как генерация ради генерации.</p>
+  </div>
+</div>
 
-<div class="service-points-section"><div class="main-container"><div class="service-points">
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Продюсер</h2>
-      <div class="service-point__tags"><span class="is__chip">статусы</span><span class="is__chip">сроки</span><span class="is__chip">координация</span></div>
+<!-- ── ЧТО МЫ ПРЕДЛАГАЕМ ── -->
+<div class="portfolio-section">
+  <div class="main-container">
+    <div class="text-h1-wrapper">
+      <h2 class="h1">Что мы&nbsp;предлагаем</h2>
     </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Контролирует ход работ, ведёт коммуникацию. Вы&nbsp;всегда знаете, что происходит.</p></div>
+    <p class="font-color-dark-gray">Разрабатываем идею и&nbsp;сценарий, производим реалистичные AI-ролики, адаптируем под&nbsp;OLV и&nbsp;DOOH с&nbsp;учётом технических требований каждой поверхности. AI-озвучка и&nbsp;музыка&nbsp;— включены.</p>
+    <p class="font-color-dark-gray" style="margin-top:1rem;">Мы мультидисциплинарны: комбинируем AI с&nbsp;3D, моушном и&nbsp;постпродакшеном&nbsp;— именно это даёт реалистичный результат, а&nbsp;не&nbsp;просто генерацию. Работаем как встроенный юнит вашей команды&nbsp;— с&nbsp;визуальным контролем и&nbsp;производственной дисциплиной.</p>
   </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Арт-директор</h2>
-      <div class="service-point__tags"><span class="is__chip">визуальная рамка</span><span class="is__chip">идея</span></div>
-    </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Держит визуальный язык от&nbsp;первого брифа до&nbsp;финального ролика.</p></div>
-  </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">AI-дизайнеры</h2>
-      <div class="service-point__tags"><span class="is__chip">3D</span><span class="is__chip">моушн</span><span class="is__chip">AI</span></div>
-    </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Мультидисциплинарная связка: графика, анимация и&nbsp;AI в&nbsp;одной роли. Состав — под специфику проекта.</p></div>
-  </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">2D-моушен, композер, саунд-дизайнер</h2>
-      <div class="service-point__tags"><span class="is__chip">по необходимости</span></div>
-    </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Подключаем при необходимости — озвучка и&nbsp;музыкальное сопровождение внутри команды.</p></div>
-  </div>
-</div></div></div>
+</div>
 
-<!-- ── WHO IT'S FOR ── -->
-<div class="portfolio-section"><div class="main-container"><div class="text-h1-wrapper"><h2 class="h1">Кому подходит</h2></div></div></div>
-<div class="service-section"><div class="main-container"><div class="service"><div class="service__text">
-  <p class="text-regular font-color-dark-gray">Запускаете рекламные кампании на&nbsp;несколько каналов и&nbsp;нужна поддержка при&nbsp;производстве роликов: от&nbsp;идеи до&nbsp;озвучки.</p>
-  <p class="text-regular font-color-dark-gray" style="margin-top:1rem;">Работаете с&nbsp;крупными брендами и&nbsp;корпоративными клиентами, где высокие репутационные риски и&nbsp;большие ожидания от&nbsp;результата.</p>
-</div></div></div></div>
+<!-- ── КОМАНДА ── -->
+<div class="service-points-section">
+  <div class="service-grid">
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Продюсер</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">статусы</p>
+          <p class="text-small is__chip">сроки</p>
+          <p class="text-small is__chip">координация</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Контролирует ход работ, ведёт коммуникацию. Вы&nbsp;всегда знаете, что происходит.</p>
+      </div>
+    </div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Арт-директор</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">визуальная рамка</p>
+          <p class="text-small is__chip">идея</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Держит визуальный язык от&nbsp;первого брифа до&nbsp;финального ролика.</p>
+      </div>
+    </div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">AI-дизайнеры</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">3D</p>
+          <p class="text-small is__chip">моушн</p>
+          <p class="text-small is__chip">AI</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Мультидисциплинарная связка: графика, анимация и&nbsp;AI в&nbsp;одной роли. Состав&nbsp;— под специфику проекта.</p>
+      </div>
+    </div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">2D-моушен, композер, саунд-дизайнер</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">по необходимости</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Подключаем при необходимости&nbsp;— озвучка и&nbsp;музыкальное сопровождение внутри команды.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class="service-points-section"><div class="main-container"><div class="service-points">
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Бренд-менеджер</h2>
-      <div class="service-point__tags"><span class="is__chip">рекламные кампании</span></div>
+<!-- ── КОМУ ПОДХОДИТ ── -->
+<div class="portfolio-section">
+  <div class="main-container">
+    <div class="text-h1-wrapper">
+      <h2 class="h1">Кому подходит</h2>
     </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Хочет результат — красивый, в&nbsp;срок, без&nbsp;сюрпризов.</p></div>
+    <p class="font-color-dark-gray">Запускаете рекламные кампании на&nbsp;несколько каналов и&nbsp;нужна поддержка при&nbsp;производстве роликов: от&nbsp;идеи до&nbsp;озвучки.</p>
+    <p class="font-color-dark-gray" style="margin-top:1rem;">Работаете с&nbsp;крупными брендами и&nbsp;корпоративными клиентами, где высокие репутационные риски и&nbsp;большие ожидания от&nbsp;результата.</p>
   </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Креативный директор</h2>
-      <div class="service-point__tags"><span class="is__chip">идея и качество</span></div>
-    </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Знает, чего хочет. Ценит экспертизу и&nbsp;визуальную дисциплину на&nbsp;каждом этапе.</p></div>
-  </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Руководитель продакшена</h2>
-      <div class="service-point__tags"><span class="is__chip">дедлайны</span><span class="is__chip">бюджет</span></div>
-    </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Следит за&nbsp;сроками и&nbsp;ресурсами — мы встраиваемся без&nbsp;трений и&nbsp;лишних вопросов.</p></div>
-  </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Продюсер</h2>
-      <div class="service-point__tags"><span class="is__chip">координация</span><span class="is__chip">процесс</span></div>
-    </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Знает цену хаосу. Ценит прозрачный процесс и&nbsp;предсказуемый результат.</p></div>
-  </div>
-</div></div></div>
+</div>
 
-<!-- ── RESULTS ── -->
-<div class="portfolio-section"><div class="main-container"><div class="text-h1-wrapper"><h2 class="h1">Что вы&nbsp;получите в&nbsp;результате</h2></div></div></div>
-<div class="service-points-section"><div class="main-container"><div class="service-points">
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Реалистичные AI-ролики</h2>
-      <div class="service-point__tags"><span class="is__chip">сценарий</span><span class="is__chip">озвучка</span><span class="is__chip">музыка</span></div>
+<div class="service-points-section">
+  <div class="service-grid">
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Бренд-менеджер</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">рекламные кампании</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Хочет результат&nbsp;— красивый, в&nbsp;срок, без&nbsp;сюрпризов.</p>
+      </div>
     </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Полный цикл: от&nbsp;идеи и&nbsp;раскадровки до&nbsp;финального ролика с&nbsp;AI-озвучкой и&nbsp;музыкальным сопровождением.</p></div>
-  </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Технически верные ресайзы</h2>
-      <div class="service-point__tags"><span class="is__chip">OLV</span><span class="is__chip">DOOH</span><span class="is__chip">все поверхности</span></div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Креативный директор</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">идея и качество</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Знает, чего хочет. Ценит экспертизу и&nbsp;визуальную дисциплину на&nbsp;каждом этапе.</p>
+      </div>
     </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Адаптация под&nbsp;каждый формат с&nbsp;учётом технических требований — от&nbsp;телевидения до&nbsp;фасадов.</p></div>
-  </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Мультидисциплинарное производство</h2>
-      <div class="service-point__tags"><span class="is__chip">AI + 3D + моушн</span></div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Руководитель продакшена</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">дедлайны</p>
+          <p class="text-small is__chip">бюджет</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Следит за&nbsp;сроками и&nbsp;ресурсами&nbsp;— мы встраиваемся без&nbsp;трений и&nbsp;лишних вопросов.</p>
+      </div>
     </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Всё в&nbsp;одной команде — никаких потерь на&nbsp;стыках, единая эстетика от&nbsp;первого кадра до&nbsp;последнего.</p></div>
-  </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Сдача в&nbsp;срок, в&nbsp;бюджет</h2>
-      <div class="service-point__tags"><span class="is__chip">без сюрпризов</span></div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Продюсер</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">координация</p>
+          <p class="text-small is__chip">процесс</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Знает цену хаосу. Ценит прозрачный процесс и&nbsp;предсказуемый результат.</p>
+      </div>
     </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Прозрачный процесс, чёткие статусы — без&nbsp;перерасхода бюджета и&nbsp;поиска ресурсов в&nbsp;спешке.</p></div>
   </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">Кейс для&nbsp;наград</h2>
-      <div class="service-point__tags"><span class="is__chip">индустриальный вес</span></div>
-    </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Оформляем результат как&nbsp;полноценный кейс, который имеет вес в&nbsp;индустрии.</p></div>
-  </div>
-  <div class="service-point">
-    <div class="service-point__left">
-      <h2 class="font-color-black">AI-экспертиза из&nbsp;первых рук</h2>
-      <div class="service-point__tags"><span class="is__chip">Сбер</span><span class="is__chip">Яндекс</span><span class="is__chip">ПСБ</span></div>
-    </div>
-    <div class="service-point__right"><p class="text-regular font-color-dark-gray">Команда с&nbsp;ежедневной AI-практикой на&nbsp;сотнях задач — обучаем дизайнеров Сбера, Яндекса и&nbsp;ПСБ.</p></div>
-  </div>
-</div></div></div>
+</div>
 
-<!-- ── PROCESS ── -->
-<div class="portfolio-section"><div class="main-container">
-  <div class="text-h1-wrapper"><h2 class="h1">Что мы&nbsp;делаем и&nbsp;как</h2></div>
-  <div class="list-wrapper padding-32px"><div class="list">
-    <div class="list-item-wrapper"><div class="bullet-wrapper-left"><h3>1.&nbsp;Погружаемся в&nbsp;контекст на&nbsp;брифе</h3></div></div>
-    <div class="list-item-wrapper"><div class="bullet-wrapper-left"><h3>2.&nbsp;Готовим решение под запрос и&nbsp;возможности AI</h3></div></div>
-    <div class="list-item-wrapper"><div class="bullet-wrapper-left"><h3>3.&nbsp;Разрабатываем сценарий, раскадровку, стилшоты</h3></div></div>
-    <div class="list-item-wrapper"><div class="bullet-wrapper-left"><h3>4.&nbsp;Производим AI-контент по&nbsp;утверждённой рамке: графика, озвучка, музыка</h3></div></div>
-    <div class="list-item-wrapper"><div class="bullet-wrapper-left"><h3>5.&nbsp;Утверждаем мастер-ролик, готовим технически верные ресайзы</h3></div></div>
-    <div class="list-item-wrapper"><div class="bullet-wrapper-left"><h3>6.&nbsp;Еженедельные синки и&nbsp;статусы</h3></div></div>
-    <div class="list-item-wrapper"><div class="bullet-wrapper-left"><h3>7.&nbsp;Общее облако с&nbsp;чистой структурой и&nbsp;неймингом файлов</h3></div></div>
-    <div class="list-item-wrapper"><div class="bullet-wrapper-left"><h3>8.&nbsp;Сопровождаем до&nbsp;финальной сдачи</h3></div></div>
-  </div></div>
-</div></div>
-
-<!-- ── CASES ── -->
-<div class="portfolio-section"><div class="main-container"><div class="text-h1-wrapper"><h2 class="h1">Кейсы</h2></div></div></div>
-<div class="service-cases-section"><div class="main-container"><div class="service-cases">
-
-  <div class="case-card-big">
-    <div class="case-card-big___left">
-      <div class="case-card-big__tags"><span class="is__chip">AI OLV</span><span class="is__chip">2026</span></div>
-      <h2 class="case-card-big__title">AI OLV-ролики для&nbsp;РК Яндекс Казахстан</h2>
-      <p class="case-card-big__text font-color-dark-gray">Серия рекламных AI-роликов для&nbsp;федеральной кампании Яндекса в&nbsp;Казахстане.</p>
+<!-- ── ЧТО ПОЛУЧИТЕ ── -->
+<div class="portfolio-section">
+  <div class="main-container">
+    <div class="text-h1-wrapper">
+      <h2 class="h1">Что вы&nbsp;получите в&nbsp;результате</h2>
     </div>
   </div>
+</div>
 
-  <div class="case-card-big">
-    <div class="case-card-big___left">
-      <div class="case-card-big__tags"><span class="is__chip">OLV</span><span class="is__chip">федеральная кампания</span><span class="is__chip">2025</span></div>
-      <h2 class="case-card-big__title">Яндекс Плюс AdTech&nbsp;— «Свои плюсы»</h2>
-      <p class="case-card-big__text font-color-dark-gray">Федеральная кампания с&nbsp;AI-роликами для&nbsp;одного из&nbsp;крупнейших рекламных продуктов Яндекса.</p>
+<div class="service-points-section">
+  <div class="service-grid">
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Реалистичные AI-ролики</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">сценарий</p>
+          <p class="text-small is__chip">озвучка</p>
+          <p class="text-small is__chip">музыка</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Полный цикл: от&nbsp;идеи и&nbsp;раскадровки до&nbsp;финального ролика с&nbsp;AI-озвучкой и&nbsp;музыкальным сопровождением.</p>
+      </div>
+    </div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Технически верные ресайзы</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">OLV</p>
+          <p class="text-small is__chip">DOOH</p>
+          <p class="text-small is__chip">все поверхности</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Адаптация под&nbsp;каждый формат с&nbsp;учётом технических требований&nbsp;— от&nbsp;телевидения до&nbsp;фасадов.</p>
+      </div>
+    </div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Мультидисциплинарное производство</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">AI + 3D + моушн</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Всё в&nbsp;одной команде&nbsp;— никаких потерь на&nbsp;стыках, единая эстетика от&nbsp;первого кадра до&nbsp;последнего.</p>
+      </div>
+    </div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Сдача в&nbsp;срок, в&nbsp;бюджет</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">без сюрпризов</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Прозрачный процесс, чёткие статусы&nbsp;— без&nbsp;перерасхода бюджета и&nbsp;поиска ресурсов в&nbsp;спешке.</p>
+      </div>
+    </div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">Кейс для&nbsp;наград</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">индустриальный вес</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Оформляем результат как&nbsp;полноценный кейс, который имеет вес в&nbsp;индустрии.</p>
+      </div>
+    </div>
+    <div class="service-point white">
+      <div class="service-point__left">
+        <h2 class="font-color-black">AI-экспертиза из&nbsp;первых рук</h2>
+        <div class="service-point__tags">
+          <p class="text-small is__chip">Сбер</p>
+          <p class="text-small is__chip">Яндекс</p>
+          <p class="text-small is__chip">ПСБ</p>
+        </div>
+      </div>
+      <div class="service-point__right">
+        <p class="font-color-dark-gray">Команда с&nbsp;ежедневной AI-практикой на&nbsp;сотнях задач&nbsp;— обучаем дизайнеров Сбера, Яндекса и&nbsp;ПСБ.</p>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="case-card-big">
-    <div class="case-card-big___left">
-      <div class="case-card-big__tags"><span class="is__chip">имиджевый ролик</span><span class="is__chip">2025</span></div>
-      <h2 class="case-card-big__title">Яндекс Сплит: «Умный дом»</h2>
-      <p class="case-card-big__text font-color-dark-gray">Имиджевая AI-кампания для&nbsp;сервиса рассрочки Яндекс Сплит.</p>
+<!-- ── КАК РАБОТАЕМ ── -->
+<div class="portfolio-section">
+  <div class="main-container">
+    <div class="text-h1-wrapper" style="margin-bottom:1rem;">
+      <h2 class="h1">Что мы&nbsp;делаем и&nbsp;как</h2>
+    </div>
+    <div class="list-wrapper padding-32px">
+      <div class="list">
+        <div class="list-item-wrapper">
+          <div class="bullet-wrapper-left"><h3>1.&nbsp;Погружаемся в&nbsp;контекст на&nbsp;брифе</h3></div>
+        </div>
+        <div class="list-item-wrapper">
+          <div class="bullet-wrapper-left"><h3>2.&nbsp;Готовим решение под запрос и&nbsp;возможности AI</h3></div>
+        </div>
+        <div class="list-item-wrapper">
+          <div class="bullet-wrapper-left"><h3>3.&nbsp;Разрабатываем сценарий, раскадровку, стилшоты</h3></div>
+        </div>
+        <div class="list-item-wrapper">
+          <div class="bullet-wrapper-left"><h3>4.&nbsp;Производим AI-контент по&nbsp;утверждённой рамке: графика, озвучка, музыка</h3></div>
+        </div>
+        <div class="list-item-wrapper">
+          <div class="bullet-wrapper-left"><h3>5.&nbsp;Утверждаем мастер-ролик, готовим технически верные ресайзы</h3></div>
+        </div>
+        <div class="list-item-wrapper">
+          <div class="bullet-wrapper-left"><h3>6.&nbsp;Еженедельные синки и&nbsp;статусы</h3></div>
+        </div>
+        <div class="list-item-wrapper">
+          <div class="bullet-wrapper-left"><h3>7.&nbsp;Общее облако с&nbsp;чистой структурой и&nbsp;неймингом файлов</h3></div>
+        </div>
+        <div class="list-item-wrapper">
+          <div class="bullet-wrapper-left"><h3>8.&nbsp;Сопровождаем до&nbsp;финальной сдачи</h3></div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="case-card-big">
-    <div class="case-card-big___left">
-      <div class="case-card-big__tags"><span class="is__chip">full AI</span><span class="is__chip">кинотеатры</span><span class="is__chip">2025</span></div>
-      <h2 class="case-card-big__title">Bootlegger — барный кейтеринг</h2>
-      <p class="case-card-big__text font-color-dark-gray">Полностью AI-ролик для&nbsp;показа в&nbsp;кинотеатрах. От&nbsp;сценария до&nbsp;финального монтажа.</p>
+<!-- ── КЕЙСЫ ── -->
+<div class="portfolio-section">
+  <div class="main-container">
+    <div class="text-h1-wrapper">
+      <h2 class="h1">Кейсы</h2>
     </div>
   </div>
+</div>
 
-  <div class="case-card-big">
-    <div class="case-card-big___left">
-      <div class="case-card-big__tags"><span class="is__chip">имиджевый</span><span class="is__chip">2025</span></div>
-      <h2 class="case-card-big__title">Яндекс Go&nbsp;— эволюция сервиса</h2>
-      <p class="case-card-big__text font-color-dark-gray">Имиджевый AI-ролик об&nbsp;эволюции Яндекс Go: от&nbsp;концепции до&nbsp;финального монтажа.</p>
+<div class="service-cases-section">
+  <div class="service-grid">
+
+    <div class="case-card-wrapper">
+      <div class="case-card-big">
+        <div class="case-card-big___left">
+          <div class="case-card-big-top">
+            <div class="cases-item__top-navigation">
+              <div class="cases-item__top-left">
+                <p class="text-small is__chip">AI OLV</p>
+              </div>
+              <p class="text-regular font-color-medium-grey mob-text-s">2026</p>
+            </div>
+            <div class="cases-item__title-wrapper">
+              <h3 class="h3-bold font-color-black">AI OLV-ролики для&nbsp;РК Яндекс Казахстан</h3>
+              <h3 class="font-color-dark-gray">Серия рекламных AI-роликов для&nbsp;федеральной кампании Яндекса в&nbsp;Казахстане.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="case-card-big">
-    <div class="case-card-big___left">
-      <div class="case-card-big__tags"><span class="is__chip">инсталляции</span><span class="is__chip">DOOH</span><span class="is__chip">2025</span></div>
-      <h2 class="case-card-big__title">Открытие Пермской галереи</h2>
-      <p class="case-card-big__text font-color-dark-gray">AI-контент для&nbsp;инсталляций к&nbsp;открытию нового здания Пермской государственной художественной галереи.</p>
+    <div class="case-card-wrapper">
+      <div class="case-card-big">
+        <div class="case-card-big___left">
+          <div class="case-card-big-top">
+            <div class="cases-item__top-navigation">
+              <div class="cases-item__top-left">
+                <p class="text-small is__chip">OLV</p>
+                <p class="text-small is__chip">федеральная кампания</p>
+              </div>
+              <p class="text-regular font-color-medium-grey mob-text-s">2025</p>
+            </div>
+            <div class="cases-item__title-wrapper">
+              <h3 class="h3-bold font-color-black">Яндекс Плюс AdTech&nbsp;— «Свои плюсы»</h3>
+              <h3 class="font-color-dark-gray">Федеральная кампания с&nbsp;AI-роликами для&nbsp;одного из&nbsp;крупнейших рекламных продуктов Яндекса.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="case-card-big">
-    <div class="case-card-big___left">
-      <div class="case-card-big__tags"><span class="is__chip">интерактивная выставка</span><span class="is__chip">2025</span></div>
-      <h2 class="case-card-big__title">Музей «Страна Побед»</h2>
-      <p class="case-card-big__text font-color-dark-gray">AI-контент для&nbsp;интерактивной выставки. Мультимедийные инсталляции и&nbsp;визуальные решения для&nbsp;экспозиции.</p>
+    <div class="case-card-wrapper">
+      <div class="case-card-big">
+        <div class="case-card-big___left">
+          <div class="case-card-big-top">
+            <div class="cases-item__top-navigation">
+              <div class="cases-item__top-left">
+                <p class="text-small is__chip">имиджевый ролик</p>
+              </div>
+              <p class="text-regular font-color-medium-grey mob-text-s">2025</p>
+            </div>
+            <div class="cases-item__title-wrapper">
+              <h3 class="h3-bold font-color-black">Яндекс Сплит: «Умный дом»</h3>
+              <h3 class="font-color-dark-gray">Имиджевая AI-кампания для&nbsp;сервиса рассрочки Яндекс Сплит.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="case-card-big">
-    <div class="case-card-big___left">
-      <div class="case-card-big__tags"><span class="is__chip">DOOH</span><span class="is__chip">коллаборация</span><span class="is__chip">декабрь 2025</span></div>
-      <h2 class="case-card-big__title">Синяя птица&nbsp;× Сила света</h2>
-      <p class="case-card-big__text font-color-dark-gray">AI-ролики для&nbsp;сценического шоу «Синяя птица» в&nbsp;коллаборации с&nbsp;командой «Сила света».</p>
+    <div class="case-card-wrapper">
+      <div class="case-card-big">
+        <div class="case-card-big___left">
+          <div class="case-card-big-top">
+            <div class="cases-item__top-navigation">
+              <div class="cases-item__top-left">
+                <p class="text-small is__chip">full AI</p>
+                <p class="text-small is__chip">кинотеатры</p>
+              </div>
+              <p class="text-regular font-color-medium-grey mob-text-s">2025</p>
+            </div>
+            <div class="cases-item__title-wrapper">
+              <h3 class="h3-bold font-color-black">Bootlegger&nbsp;— барный кейтеринг</h3>
+              <h3 class="font-color-dark-gray">Полностью AI-ролик для&nbsp;показа в&nbsp;кинотеатрах. От&nbsp;сценария до&nbsp;финального монтажа.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="case-card-big">
-    <div class="case-card-big___left">
-      <div class="case-card-big__tags"><span class="is__chip">AI + 3D</span><span class="is__chip">концерт</span><span class="is__chip">2025</span></div>
-      <h2 class="case-card-big__title">ANNA ASTI — 180+ минут AI-контента</h2>
-      <p class="case-card-big__text font-color-dark-gray">Более 180&nbsp;минут сгенерированного AI-контента (AI&nbsp;+&nbsp;3D) для&nbsp;концерта 14.06.2025.</p>
+    <div class="case-card-wrapper">
+      <div class="case-card-big">
+        <div class="case-card-big___left">
+          <div class="case-card-big-top">
+            <div class="cases-item__top-navigation">
+              <div class="cases-item__top-left">
+                <p class="text-small is__chip">имиджевый</p>
+              </div>
+              <p class="text-regular font-color-medium-grey mob-text-s">2025</p>
+            </div>
+            <div class="cases-item__title-wrapper">
+              <h3 class="h3-bold font-color-black">Яндекс Go&nbsp;— эволюция сервиса</h3>
+              <h3 class="font-color-dark-gray">Имиджевый AI-ролик об&nbsp;эволюции Яндекс Go: от&nbsp;концепции до&nbsp;финального монтажа.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-</div></div></div>
+    <div class="case-card-wrapper">
+      <div class="case-card-big">
+        <div class="case-card-big___left">
+          <div class="case-card-big-top">
+            <div class="cases-item__top-navigation">
+              <div class="cases-item__top-left">
+                <p class="text-small is__chip">инсталляции</p>
+                <p class="text-small is__chip">DOOH</p>
+              </div>
+              <p class="text-regular font-color-medium-grey mob-text-s">2025</p>
+            </div>
+            <div class="cases-item__title-wrapper">
+              <h3 class="h3-bold font-color-black">Открытие Пермской галереи</h3>
+              <h3 class="font-color-dark-gray">AI-контент для&nbsp;инсталляций к&nbsp;открытию нового здания Пермской государственной художественной галереи.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card-wrapper">
+      <div class="case-card-big">
+        <div class="case-card-big___left">
+          <div class="case-card-big-top">
+            <div class="cases-item__top-navigation">
+              <div class="cases-item__top-left">
+                <p class="text-small is__chip">интерактивная выставка</p>
+              </div>
+              <p class="text-regular font-color-medium-grey mob-text-s">2025</p>
+            </div>
+            <div class="cases-item__title-wrapper">
+              <h3 class="h3-bold font-color-black">Музей «Страна Побед»</h3>
+              <h3 class="font-color-dark-gray">AI-контент для&nbsp;интерактивной выставки. Мультимедийные инсталляции и&nbsp;визуальные решения для&nbsp;экспозиции.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card-wrapper">
+      <div class="case-card-big">
+        <div class="case-card-big___left">
+          <div class="case-card-big-top">
+            <div class="cases-item__top-navigation">
+              <div class="cases-item__top-left">
+                <p class="text-small is__chip">DOOH</p>
+                <p class="text-small is__chip">коллаборация</p>
+              </div>
+              <p class="text-regular font-color-medium-grey mob-text-s">декабрь 2025</p>
+            </div>
+            <div class="cases-item__title-wrapper">
+              <h3 class="h3-bold font-color-black">Синяя птица&nbsp;× Сила света</h3>
+              <h3 class="font-color-dark-gray">AI-ролики для&nbsp;сценического шоу «Синяя птица» в&nbsp;коллаборации с&nbsp;командой «Сила света».</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card-wrapper">
+      <div class="case-card-big">
+        <div class="case-card-big___left">
+          <div class="case-card-big-top">
+            <div class="cases-item__top-navigation">
+              <div class="cases-item__top-left">
+                <p class="text-small is__chip">AI + 3D</p>
+                <p class="text-small is__chip">концерт</p>
+              </div>
+              <p class="text-regular font-color-medium-grey mob-text-s">2025</p>
+            </div>
+            <div class="cases-item__title-wrapper">
+              <h3 class="h3-bold font-color-black">ANNA ASTI&nbsp;— 180+ минут AI-контента</h3>
+              <h3 class="font-color-dark-gray">Более 180&nbsp;минут сгенерированного AI-контента (AI&nbsp;+&nbsp;3D) для&nbsp;концерта 14.06.2025.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- ── CONTACTS ── -->
-<div class="portfolio-section contacts-main-section"><div class="main-container">
-  <div class="contacts-card">
-    <p class="contacts-intro">Обсудим проект?</p>
-    <p class="contacts-role">Аккаунт-директор Юрий Григоренко&nbsp;— расскажет про состав команды, сроки и&nbsp;стоимость под ваш проект.</p>
-    <div class="contacts-links">
-      <a class="contacts-link-btn" href="tel:+79153110332">+7&nbsp;915&nbsp;311&nbsp;03&nbsp;32</a>
-      <a class="contacts-link-btn contacts-link-btn--light" href="mailto:grig@pinkman.ru">grig@pinkman.ru</a>
+<div class="portfolio-section contacts-main-section">
+  <div class="main-container">
+    <div class="contacts-card">
+      <p class="contacts-intro">Обсудим проект?</p>
+      <p class="contacts-role">Аккаунт-директор Юрий Григоренко&nbsp;— расскажет про состав команды, сроки и&nbsp;стоимость под ваш проект.</p>
+      <div class="contacts-links">
+        <a class="contacts-link-btn" href="tel:+79153110332">+7&nbsp;915&nbsp;311&nbsp;03&nbsp;32</a>
+        <a class="contacts-link-btn contacts-link-btn--light" href="mailto:grig@pinkman.ru">grig@pinkman.ru</a>
+      </div>
     </div>
   </div>
-</div></div>
+</div>
 
 <!-- ── FOOTER ── -->
-<section class="portfolio-section"><div class="main-container"><div class="footer-top"><a class="logo w-inline-block" href="../index.html"><img alt="" class="footer-logo-img" loading="lazy" src="../assets/images/6707b04527ff818e4b97457d_pinkman-black.svg"/></a><div class="footer-right"><p class="text-regular font-color-black">© pinkman 2016—..</p><a class="text-regular font-color-black hover" href="../privacy-policy/" target="_blank">Политика обработки персональных данных</a></div></div></div></section>
-<span class="site-version">version CLD345701</span>
+<section class="portfolio-section">
+  <div class="main-container">
+    <div class="footer-top">
+      <a class="logo w-inline-block" href="../index.html">
+        <img alt="" class="footer-logo-img" loading="lazy" src="../assets/images/6707b04527ff818e4b97457d_pinkman-black.svg"/>
+      </a>
+      <div class="footer-right">
+        <p class="text-regular font-color-black">© pinkman 2016—..</p>
+        <a class="text-regular font-color-black hover" href="../privacy-policy/" target="_blank">Политика обработки персональных данных</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<span class="site-version">version CLD345702</span>
 <script src="../assets/js/nav.js"></script>
 </body></html>
