@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="assets/css/main.min.css" rel="stylesheet"/>
+  <link href="assets/css/components.css" rel="stylesheet"/>
+  <link href="assets/css/base.css" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <title>DS — Pinkman Design System</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <style>
+    /* ── DS page chrome — fixed pixel sizes so labels are always legible ── */
+    .ds-wrap            { max-width: 1200px; margin: 0 auto; padding: 48px 32px 160px; }
+    .ds-page-title      { font-size: 32px !important; font-weight: 700 !important; letter-spacing: -0.04em !important; margin: 0 0 8px !important; color: #0d0d0d; }
+    .ds-page-sub        { font-size: 14px !important; font-weight: 400 !important; color: #888 !important; margin: 0 0 80px !important; font-family: monospace; }
+    .ds-chapter         { margin-top: 80px; margin-bottom: 40px; padding-bottom: 16px; border-bottom: 2px solid #0d0d0d; }
+    .ds-chapter-title   { font-size: 22px !important; font-weight: 700 !important; letter-spacing: -0.02em !important; margin: 0 !important; color: #0d0d0d; }
+    .ds-row             { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-bottom: 32px; }
+    .ds-row--2          { grid-template-columns: repeat(2, 1fr); }
+    .ds-row--1          { grid-template-columns: 1fr; }
+    .ds-item            { display: flex; flex-direction: column; gap: 12px; }
+    .ds-label           { font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.08em !important; color: #888 !important; text-transform: uppercase !important; font-family: monospace !important; margin: 0 !important; }
+    .ds-class           { font-size: 12px !important; font-weight: 400 !important; color: #bbb !important; font-family: monospace !important; margin: 0 !important; }
+    .ds-preview         { background: #f5f5f5; border-radius: 12px; padding: 32px; overflow: hidden; }
+    .ds-preview--dark   { background: #1a1a1a; }
+    .ds-preview--white  { background: #fff; border: 1px solid #eee; }
+    .ds-sub             { font-size: 13px !important; font-weight: 400 !important; color: #aaa !important; font-family: monospace !important; margin: 4px 0 0 !important; }
+
+    /* Color swatches */
+    .ds-swatch          { border-radius: 12px; height: 80px; margin-bottom: 8px; }
+    .ds-color-name      { font-size: 13px !important; font-weight: 600 !important; color: #0d0d0d !important; margin: 0 !important; }
+    .ds-color-val       { font-size: 11px !important; color: #888 !important; font-family: monospace !important; margin: 0 !important; }
+
+    /* Type sample labels */
+    .ds-type-row        { display: flex; flex-direction: column; gap: 48px; }
+    .ds-type-item       { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; padding-bottom: 48px; border-bottom: 1px solid #eee; }
+    .ds-type-meta       { display: flex; flex-direction: column; gap: 4px; padding-top: 4px; }
+    .ds-type-label      { font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.08em; color: #f03882 !important; text-transform: uppercase; font-family: monospace; margin: 0; }
+    .ds-type-class-name { font-size: 12px !important; font-family: monospace !important; color: #555 !important; margin: 0; }
+    .ds-type-spec       { font-size: 11px !important; font-family: monospace !important; color: #bbb !important; margin: 0; line-height: 1.6; }
+    .ds-type-sample     { min-height: 60px; display: flex; align-items: center; }
+
+    /* Spacing between preview sub-rows */
+    .ds-preview + .ds-label  { margin-top: 8px !important; }
+
+    @media (max-width: 767px) {
+      .ds-wrap          { padding: 32px 16px 120px; }
+      .ds-type-item     { grid-template-columns: 1fr; gap: 12px; }
+      .ds-row--2        { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="ds-wrap">
+
+  <!-- ── Page header ── -->
+  <p class="ds-page-title">Pinkman DS</p>
+  <p class="ds-page-sub">Design system reference &amp; component inventory · v CLD345707<br/>
+  Note: site uses <code>html { font-size: 1vw }</code> — at 1440px 1rem ≈ 14.4px, at 768px 1rem ≈ 7.68px, at 375px 1rem ≈ 3.75px.<br/>
+  All Webflow px variables (--16px, --40px…) compensate so they always equal their named pixel value at each breakpoint.</p>
+
+
+  <!-- ══════════════════════════════════════════
+       1. TYPOGRAPHY
+  ══════════════════════════════════════════ -->
+  <div class="ds-chapter">
+    <p class="ds-chapter-title">1 · Typography</p>
+  </div>
+
+  <div class="ds-type-row">
+
+    <!-- text-big -->
+    <div class="ds-type-item">
+      <div class="ds-type-meta">
+        <p class="ds-type-label">Display</p>
+        <p class="ds-type-class-name">.text-big</p>
+        <p class="ds-type-spec">
+          desktop: var(--60px) = 60px<br/>
+          tablet:  var(--tablet--37px) = 37px<br/>
+          weight:  400 (700 w/ .text-bold)<br/>
+          leading: 90%<br/>
+          tracking: –0.05em
+        </p>
+      </div>
+      <div class="ds-type-sample">
+        <p class="text-big">Дизайн<br/>который работает</p>
+      </div>
+    </div>
+
+    <!-- h1 / .h1 -->
+    <div class="ds-type-item">
+      <div class="ds-type-meta">
+        <p class="ds-type-label">Heading 1</p>
+        <p class="ds-type-class-name">h1, .h1, &lt;h2 class="h1"&gt;</p>
+        <p class="ds-type-spec">
+          desktop: var(--40px) = 40px<br/>
+          weight:  700 (our override)<br/>
+          tracking: –0.04em
+        </p>
+      </div>
+      <div class="ds-type-sample">
+        <h2 class="h1">Сайты и цифровые продукты</h2>
+      </div>
+    </div>
+
+    <!-- h2 -->
+    <div class="ds-type-item">
+      <div class="ds-type-meta">
+        <p class="ds-type-label">Heading 2</p>
+        <p class="ds-type-class-name">h2</p>
+        <p class="ds-type-spec">
+          desktop: var(--26px) = 26px<br/>
+          weight:  400<br/>
+          tracking: –0.03em<br/>
+          color: var(--color--dark) = #555
+        </p>
+      </div>
+      <div class="ds-type-sample">
+        <h2>Делаем удобнее, круче, красивее и не собираемся останавливаться</h2>
+      </div>
+    </div>
+
+    <!-- h3 -->
+    <div class="ds-type-item">
+      <div class="ds-type-meta">
+        <p class="ds-type-label">Heading 3</p>
+        <p class="ds-type-class-name">h3, .h3-bold</p>
+        <p class="ds-type-spec">
+          desktop: var(--22px) = 22px<br/>
+          leading: var(--28px) = 28px<br/>
+          weight:  700 (our override)
+        </p>
+      </div>
+      <div class="ds-type-sample">
+        <h3>Аутсорс мультимедиа</h3>
+      </div>
+    </div>
+
+    <!-- text-regular -->
+    <div class="ds-type-item">
+      <div class="ds-type-meta">
+        <p class="ds-type-label">Body</p>
+        <p class="ds-type-class-name">.text-regular</p>
+        <p class="ds-type-spec">
+          all screens: var(--16px) = 16px<br/>
+          leading: var(--20px) = 20px<br/>
+          weight:  400
+        </p>
+      </div>
+      <div class="ds-type-sample">
+        <p class="text-regular">Делаем продуктовый дизайн для корпораций с 2015 года. Работаем с банками, ритейлом, страхованием, логистикой.</p>
+      </div>
+    </div>
+
+    <!-- text-small -->
+    <div class="ds-type-item">
+      <div class="ds-type-meta">
+        <p class="ds-type-label">Caption</p>
+        <p class="ds-type-class-name">.text-small</p>
+        <p class="ds-type-spec">
+          all screens: var(--12px) = 12px<br/>
+          leading: var(--16px) = 16px<br/>
+          weight:  400<br/>
+          tracking: –0.02em
+        </p>
+      </div>
+      <div class="ds-type-sample">
+        <p class="text-small">Аккаунт-директор Юрий Григоренко</p>
+      </div>
+    </div>
+
+    <!-- chip -->
+    <div class="ds-type-item">
+      <div class="ds-type-meta">
+        <p class="ds-type-label">Chip / Tag</p>
+        <p class="ds-type-class-name">.text-small.is__chip</p>
+        <p class="ds-type-spec">
+          font-size: 12px<br/>
+          bg: var(--lighter-grey) = #eaeaea<br/>
+          radius: 20px<br/>
+          padding: 4px 8px
+        </p>
+      </div>
+      <div class="ds-type-sample" style="gap: 8px; flex-wrap: wrap; align-items: flex-start;">
+        <p class="text-small is__chip">Моушен</p>
+        <p class="text-small is__chip">3D</p>
+        <p class="text-small is__chip">AI-генерация</p>
+        <p class="text-small is__chip">OLV / DOOH</p>
+      </div>
+    </div>
+
+  </div><!-- /ds-type-row -->
+
+
+  <!-- ══════════════════════════════════════════
+       2. COLOURS
+  ══════════════════════════════════════════ -->
+  <div class="ds-chapter">
+    <p class="ds-chapter-title">2 · Colours</p>
+  </div>
+
+  <div class="ds-row">
+    <div class="ds-item">
+      <div class="ds-swatch" style="background:#f03882;"></div>
+      <p class="ds-color-name">Pink</p>
+      <p class="ds-color-val">--pink / #f03882</p>
+    </div>
+    <div class="ds-item">
+      <div class="ds-swatch" style="background:#0d0d0d;"></div>
+      <p class="ds-color-name">Black</p>
+      <p class="ds-color-val">--black / #010101 ≈ #0d0d0d</p>
+    </div>
+    <div class="ds-item">
+      <div class="ds-swatch" style="background:#555;"></div>
+      <p class="ds-color-name">Dark / Medium</p>
+      <p class="ds-color-val">--dark / --color--dark / #555</p>
+    </div>
+    <div class="ds-item">
+      <div class="ds-swatch" style="background:#eaeaea; border: 1px solid #ddd;"></div>
+      <p class="ds-color-name">Lighter Grey</p>
+      <p class="ds-color-val">--lighter-grey / #eaeaea</p>
+    </div>
+    <div class="ds-item">
+      <div class="ds-swatch" style="background:#f8f8f8; border: 1px solid #eee;"></div>
+      <p class="ds-color-name">Light Grey</p>
+      <p class="ds-color-val">--light-grey / #f8f8f8</p>
+    </div>
+    <div class="ds-item">
+      <div class="ds-swatch" style="background:#ffffff; border: 1px solid #eee;"></div>
+      <p class="ds-color-name">White</p>
+      <p class="ds-color-val">--color--white / #fff</p>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       3. BUTTONS
+  ══════════════════════════════════════════ -->
+  <div class="ds-chapter">
+    <p class="ds-chapter-title">3 · Buttons</p>
+  </div>
+
+  <div class="ds-row--2 ds-row">
+
+    <div class="ds-item">
+      <p class="ds-label">Big Button — Pink CTA</p>
+      <p class="ds-class">.big-button .bg-color-pink</p>
+      <p class="ds-sub">Hover: bg transparent, dark text; arrow wrapper → pink</p>
+      <div class="ds-preview--white ds-preview">
+        <a class="big-button bg-color-pink w-inline-block" href="#" onclick="return false">
+          <p style="margin:0;">Обсудить проект</p>
+          <div class="button-arrow-wrapper">
+            <img class="button-arrow__not-active" loading="eager" src="assets/images/67152c3278a3dccbefe124b3_arrow-grey.svg" alt="" style="display:block;"/>
+            <img class="button-arrow__active" loading="eager" src="assets/images/66f6e23524a454603f7d5540_arrow-white.svg" alt="" style="display:none;position:absolute;"/>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="ds-item">
+      <p class="ds-label">Small Button — Service link</p>
+      <p class="ds-class">.small-button</p>
+      <p class="ds-sub">Hover: bg #010101, text white; arrow wrapper shows active arrow</p>
+      <div class="ds-preview--white ds-preview">
+        <a class="small-button w-inline-block" href="#" onclick="return false">
+          <p class="text-regular hide" style="margin:0;">Подробнее</p>
+          <div class="small-button-arrow-wrapper">
+            <img class="small-button-arrow" loading="eager" src="assets/images/67152c3278a3dccbefe124b3_arrow-grey.svg" alt=""/>
+            <img class="button-arrow__active" loading="eager" src="assets/images/66f6e23524a454603f7d5540_arrow-white.svg" alt=""/>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="ds-item">
+      <p class="ds-label">Contact Button — Dark</p>
+      <p class="ds-class">.contacts-link-btn</p>
+      <p class="ds-sub">Full-width on mobile · Hover: opacity 0.82 + translateY(−1px)</p>
+      <div class="ds-preview--white ds-preview">
+        <a class="contacts-link-btn" href="#" onclick="return false">+7 915 311 03 32</a>
+      </div>
+    </div>
+
+    <div class="ds-item">
+      <p class="ds-label">Contact Button — Light</p>
+      <p class="ds-class">.contacts-link-btn .contacts-link-btn--light</p>
+      <p class="ds-sub">White bg, dark border, dark text</p>
+      <div class="ds-preview--white ds-preview">
+        <a class="contacts-link-btn contacts-link-btn--light" href="#" onclick="return false">grig@pinkman.ru</a>
+      </div>
+    </div>
+
+    <div class="ds-item">
+      <p class="ds-label">Floating Nav CTA</p>
+      <p class="ds-class">.pk-bar__cta</p>
+      <p class="ds-sub">Pink pill · Hover: bg #c8296b + translateY(−1px)</p>
+      <div class="ds-preview--white ds-preview">
+        <a class="pk-bar__cta" href="#" onclick="return false">Обсудить проект</a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       4. CARDS
+  ══════════════════════════════════════════ -->
+  <div class="ds-chapter">
+    <p class="ds-chapter-title">4 · Cards</p>
+  </div>
+
+  <!-- Service point card -->
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Service Card</p>
+    <p class="ds-class">.service-point .white  (inside .service-grid)</p>
+    <p class="ds-sub">border-radius: 20px · white bg · chip tags with .text-small.is__chip · stagger via data-d="1..4"</p>
+    <div class="ds-preview--white ds-preview">
+      <div class="service-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;">
+        <div class="service-point white">
+          <div class="service-point__top">
+            <h3>Моушен и 3D</h3>
+          </div>
+          <div class="service-point__tags" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:12px;">
+            <p class="text-small is__chip">Видеоролики</p>
+            <p class="text-small is__chip">3D-анимация</p>
+            <p class="text-small is__chip">AI-генерация</p>
+          </div>
+        </div>
+        <div class="service-point white" data-d="1">
+          <div class="service-point__top">
+            <h3>Дизайн коммуникаций</h3>
+          </div>
+          <div class="service-point__tags" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:12px;">
+            <p class="text-small is__chip">Брендинг</p>
+            <p class="text-small is__chip">Презентации</p>
+          </div>
+        </div>
+        <div class="service-point white" data-d="2">
+          <div class="service-point__top">
+            <h3>Сайты</h3>
+          </div>
+          <div class="service-point__tags" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:12px;">
+            <p class="text-small is__chip">UX/UI</p>
+            <p class="text-small is__chip">Webflow</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case card big -->
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Case Card — Large</p>
+    <p class="ds-class">.case-card-wrapper › .case-card-big  (inside .service-grid)</p>
+    <p class="ds-sub">border-radius: 20px · white bg · left: text, chips, link · right: image</p>
+    <div class="ds-preview--white ds-preview">
+      <div class="case-card-wrapper">
+        <div class="case-card-big">
+          <div class="case-card-big___left">
+            <div class="case-card-big-top">
+              <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px;">
+                <p class="text-small is__chip">Моушен</p>
+                <p class="text-small is__chip">OLV</p>
+              </div>
+              <h3>Сделали ролик для ТВ-рекламы Ютеки</h3>
+            </div>
+          </div>
+          <div class="case-card-big___right" style="background:#eaeaea;min-height:200px;border-radius:8px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contacts card -->
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Contacts CTA Card</p>
+    <p class="ds-class">.contacts-card  (injected by nav.js before .footer-top)</p>
+    <p class="ds-sub">Injected by nav.js on every page that doesn't already have .contacts-card · border-radius: 20px</p>
+    <div class="ds-preview--white ds-preview">
+      <div class="contacts-card">
+        <p class="contacts-intro">Обсудим проект?</p>
+        <p class="contacts-role">Аккаунт-директор Юрий Григоренко — расскажет про состав команды, сроки и стоимость под ваш проект.</p>
+        <div class="contacts-links">
+          <a class="contacts-link-btn" href="#" onclick="return false">+7&nbsp;915&nbsp;311&nbsp;03&nbsp;32</a>
+          <a class="contacts-link-btn contacts-link-btn--light" href="#" onclick="return false">grig@pinkman.ru</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client logo cell -->
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Client Logo Cell</p>
+    <p class="ds-class">.clients-grid__item .bg-1  (inside .partners-wrapper)</p>
+    <p class="ds-sub">Background-image logo, contained · white bg · grid auto-fill</p>
+    <div class="ds-preview--white ds-preview">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+        <div class="clients-grid__item bg-1" style='background-image:url("assets/images/6733bf780dc545b33f50ef4b_tbank.svg")'></div>
+        <div class="clients-grid__item bg-1" style='background-image:url("assets/images/6733bfe242b98d8df14ca3b0_vtb.svg")'></div>
+        <div class="clients-grid__item bg-1" style='background-image:url("assets/images/6733c1add064e1d2c0ef7cc7_x5group.svg")'></div>
+        <div class="clients-grid__item bg-1" style='background-image:url("assets/images/6733c04f4652f9513c929588_sberbank.svg")'></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       5. LIST ITEM
+  ══════════════════════════════════════════ -->
+  <div class="ds-chapter">
+    <p class="ds-chapter-title">5 · List Items</p>
+  </div>
+
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Service List Row</p>
+    <p class="ds-class">.list-item-wrapper  (inside .list inside .list-wrapper)</p>
+    <p class="ds-sub">h3 left · .small-button right · .list-item-link covers full row (position:absolute,inset:0)</p>
+    <div class="ds-preview--white ds-preview">
+      <div class="list-wrapper padding-32px">
+        <div class="list">
+          <div class="list-item-wrapper" style="position:relative;">
+            <div class="bullet-wrapper-left"><h3>Сайты</h3></div>
+            <a class="small-button w-inline-block" href="#" onclick="return false">
+              <p class="text-regular hide" style="margin:0;">Подробнее</p>
+              <div class="small-button-arrow-wrapper">
+                <img class="small-button-arrow" src="assets/images/67152c3278a3dccbefe124b3_arrow-grey.svg" alt=""/>
+                <img class="button-arrow__active" src="assets/images/66f6e23524a454603f7d5540_arrow-white.svg" alt=""/>
+              </div>
+            </a>
+          </div>
+          <div class="list-item-wrapper" style="position:relative;">
+            <div class="bullet-wrapper-left"><h3>Цифровые продукты</h3></div>
+            <a class="small-button w-inline-block" href="#" onclick="return false">
+              <p class="text-regular hide" style="margin:0;">Подробнее</p>
+              <div class="small-button-arrow-wrapper">
+                <img class="small-button-arrow" src="assets/images/67152c3278a3dccbefe124b3_arrow-grey.svg" alt=""/>
+                <img class="button-arrow__active" src="assets/images/66f6e23524a454603f7d5540_arrow-white.svg" alt=""/>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       6. NAVIGATION
+  ══════════════════════════════════════════ -->
+  <div class="ds-chapter">
+    <p class="ds-chapter-title">6 · Navigation</p>
+  </div>
+
+  <!-- Desktop floating bar -->
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Desktop Floating Bar</p>
+    <p class="ds-class">.pk-bar  (injected by nav.js, position:fixed bottom:24px)</p>
+    <p class="ds-sub">Frosted glass pill · .pk-bar__logo · .pk-bar__links › .pk-bar__item (hover dropdown) · .pk-bar__cta · hidden on ≤991px</p>
+    <div class="ds-preview--white ds-preview" style="min-height:120px;position:relative;">
+      <div style="position:relative;display:inline-flex;align-items:center;gap:4px;padding:8px 8px 8px 20px;background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.08);border-radius:100px;box-shadow:0 4px 24px rgba(0,0,0,0.08);white-space:nowrap;">
+        <span style="font-size:15px;font-weight:500;color:rgba(13,13,13,0.55);padding:9px 16px;border-radius:100px;">Главная</span>
+        <span style="font-size:15px;font-weight:500;color:rgba(13,13,13,0.55);padding:9px 16px;border-radius:100px;">Портфолио</span>
+        <span style="font-size:15px;font-weight:500;color:#0d0d0d;padding:9px 16px;border-radius:100px;background:rgba(0,0,0,0.06);">Услуги ▾</span>
+        <span style="font-size:15px;font-weight:500;color:rgba(13,13,13,0.55);padding:9px 16px;border-radius:100px;">Контакты</span>
+        <a class="pk-bar__cta" href="#" onclick="return false">Обсудить проект</a>
+      </div>
+      <p class="ds-sub" style="margin-top:12px !important;">Services dropdown (.pk-bar__dropdown) opens upward from .pk-bar__item:hover</p>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Mobile Nav Overlay</p>
+    <p class="ds-class">.nav-mob-overlay .is-open  (injected by nav.js)</p>
+    <p class="ds-sub">Full-screen · bg #EAEAEA · .nav-mob__link rows · .nav-mob__services accordion · .nav-mob__cta pink pill · toggled by .mobile-menu-btn</p>
+    <div class="ds-preview ds-preview--white" style="max-width:375px;">
+      <div style="background:#EAEAEA;padding:80px 16px 40px;border-radius:12px;display:flex;flex-direction:column;gap:8px;min-height:500px;">
+        <a class="nav-mob__link" href="#" onclick="return false">Главная</a>
+        <div class="nav-mob__services">
+          <button class="nav-mob__services-trigger">Услуги <span style="margin-left:auto;opacity:0.5;">▾</span></button>
+        </div>
+        <a class="nav-mob__link" href="#" onclick="return false">Портфолио</a>
+        <a class="nav-mob__link" href="#" onclick="return false">Контакты</a>
+        <a class="nav-mob__cta" href="#" onclick="return false" style="margin-top:16px;">Обсудить проект</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       7. LAYOUT WRAPPERS
+  ══════════════════════════════════════════ -->
+  <div class="ds-chapter">
+    <p class="ds-chapter-title">7 · Layout &amp; Section Wrappers</p>
+  </div>
+
+  <div class="ds-row--1 ds-row" style="gap:16px;">
+
+    <div class="ds-item">
+      <p class="ds-label">.main-container</p>
+      <p class="ds-sub">
+        Desktop: margin-left: var(--64px), max-width: 45.5556rem = ~655px<br/>
+        Tablet: padding 0 16px, max-width: none, margin: auto<br/>
+        Mobile: padding 0 4.267rem = 16px each side
+      </p>
+    </div>
+
+    <div class="ds-item">
+      <p class="ds-label">.portfolio-section</p>
+      <p class="ds-sub">Page-level section wrapper · contains .main-container · used for all content rows</p>
+    </div>
+
+    <div class="ds-item">
+      <p class="ds-label">.service-points-section / .service-section / .service-cases-section</p>
+      <p class="ds-sub">margin-bottom: 5rem — consistent between-block spacing (our override)</p>
+    </div>
+
+    <div class="ds-item">
+      <p class="ds-label">.service-grid</p>
+      <p class="ds-sub">Grid container for .service-point and .case-card-wrapper · scroll.js adds data-d stagger to children</p>
+    </div>
+
+    <div class="ds-item">
+      <p class="ds-label">.text-h1-wrapper / .text-h2-wrapper / .text-big-wrapper</p>
+      <p class="ds-sub">
+        text-h1-wrapper: max-width var(--700px), padding-top var(--64px)<br/>
+        text-h2-wrapper: max-width 48.6rem, padding-top var(--16px)<br/>
+        text-big-wrapper: padding-top var(--64px)<br/>
+        All animated by scroll.js (.anim → .in)
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       8. SCROLL ANIMATIONS
+  ══════════════════════════════════════════ -->
+  <div class="ds-chapter">
+    <p class="ds-chapter-title">8 · Scroll Animations</p>
+  </div>
+
+  <div class="ds-row--1 ds-row">
+    <div class="ds-item">
+      <p class="ds-label">Animated elements (auto-tagged by scroll.js)</p>
+      <p class="ds-class">.anim → .anim.in</p>
+      <p class="ds-sub">
+        Selectors: .service-point · .case-card-wrapper · .text-h1-wrapper · .text-big-wrapper · .text-h2-wrapper · .list-item-wrapper · .contacts-card<br/><br/>
+        .anim: opacity 0, translateY(18px), transition 0.65s ease<br/>
+        .anim.in: opacity 1, translateY(0)<br/>
+        Stagger via data-d="1"…"4": transition-delay 0.1s…0.4s<br/>
+        IntersectionObserver: threshold 0.08, rootMargin 0px 0px 160px 0px<br/>
+        Two-way: .in added on enter, removed on leave (reverses on scroll-up)
+      </p>
+      <div class="ds-preview--white ds-preview" style="display:flex;gap:12px;flex-wrap:wrap;">
+        <div style="opacity:0;transform:translateY(18px);transition:opacity 0.65s ease,transform 0.65s ease;background:#f03882;color:#fff;padding:16px 24px;border-radius:12px;font-family:monospace;font-size:13px;">.anim (hidden)</div>
+        <div style="opacity:1;transform:translateY(0);background:#0d0d0d;color:#fff;padding:16px 24px;border-radius:12px;font-family:monospace;font-size:13px;">.anim.in (visible)</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       9. FOOTER
+  ══════════════════════════════════════════ -->
+  <div class="ds-chapter">
+    <p class="ds-chapter-title">9 · Footer</p>
+  </div>
+
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Footer Top</p>
+    <p class="ds-class">.footer-top  (inside .main-container inside &lt;section class="portfolio-section"&gt;)</p>
+    <p class="ds-sub">Flex row: logo left, copyright + policy right · padding-top: 7.08rem · color: var(--color--white) overridden by .font-color-black</p>
+    <div class="ds-preview--white ds-preview">
+      <div class="footer-top" style="background:#f8f8f8;border-radius:12px;padding:32px;color:#0d0d0d;">
+        <a class="logo w-inline-block" href="#" onclick="return false">
+          <img class="footer-logo-img" src="assets/images/6707b04527ff818e4b97457d_pinkman-black.svg" alt="" style="height:36px;width:auto;"/>
+        </a>
+        <div class="footer-right">
+          <p class="text-regular font-color-black" style="margin:0;">© pinkman 2016—..</p>
+          <a class="text-regular font-color-black" href="#" onclick="return false">Политика обработки персональных данных</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal / contacts-legal -->
+  <div class="ds-item" style="margin-bottom:32px;">
+    <p class="ds-label">Legal Text (contacts page)</p>
+    <p class="ds-class">.contacts-legal h3  (inside .contacts-legal-section)</p>
+    <p class="ds-sub">font-size: 12px mobile (our fix) · --font-color-medium-grey · line-height 1.6</p>
+    <div class="ds-preview--white ds-preview">
+      <div class="contacts-legal">
+        <h3 style="font-size:12px;color:#999;font-weight:400;line-height:1.6;">ООО «Студия Пинкман»<br/>ИНН 9721052900<br/>Основной код ОКВЭД 62.09<br/>Виды деятельности в области ИТ 1.01, 1.04, 1.05<br/>109507 Москва с. Самаркандский Бульвар 137А, корпус 11, квартира 119</h3>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /ds-wrap -->
+</body>
+</html>
