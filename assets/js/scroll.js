@@ -1,4 +1,4 @@
-/* scroll.js — v CLD345703
+/* scroll.js — v CLD345704
    Scroll-in animation engine for pinkman.ru
    Auto-tags structural elements with .anim, then triggers via IntersectionObserver.
    CSS for .anim / .anim.in lives in components.css. */
@@ -16,9 +16,16 @@
     '.contacts-card',
   ];
 
+  var winH = window.innerHeight;
+
   SELECTORS.forEach(function (sel) {
     document.querySelectorAll(sel).forEach(function (el) {
-      el.classList.add('anim');
+      /* Only animate elements that start below the visible area.
+         Elements already in viewport show normally — no invisible flash. */
+      var top = el.getBoundingClientRect().top;
+      if (top > winH * 0.85) {
+        el.classList.add('anim');
+      }
     });
   });
 
