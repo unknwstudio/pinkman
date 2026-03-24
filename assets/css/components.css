@@ -1,5 +1,5 @@
 /* ============================================================
-   components.css — v CLD345706
+   components.css — v CLD345707
    ============================================================ */
 
 /* ════════════════════════════════════════════════════════════
@@ -455,7 +455,12 @@ a { color: inherit; text-decoration: none; }
    CONTACTS
    ════════════════════════════════════════════════════════════ */
 .contacts-hero-section  { padding-bottom: 0 !important; }
-.contacts-main-section  { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+.contacts-main-section  {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 3rem;
+}
 .contacts-card          { max-width: 680px; }
 .contacts-intro {
   font-size: clamp(1.6rem, 3vw, 2.8rem);
@@ -500,8 +505,11 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 767px) {
   .contacts-intro { font-size: 1.5rem; }
   .contacts-role  { font-size: 0.95rem; }
+  /* Remove horizontal padding — injected section already lives inside .main-container */
+  .contacts-main-section { padding-left: 0 !important; padding-right: 0 !important; }
   .contacts-link-btn { width: 100%; justify-content: center; }
   .contacts-links { flex-direction: column; }
+  .contacts-legal h3 { font-size: 12px !important; line-height: 1.6 !important; }
 }
 
 /* ════════════════════════════════════════════════════════════
