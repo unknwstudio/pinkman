@@ -36,10 +36,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WEHHG5XKMC');` }} />
       </head>
       <body>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-        <ScrollAnimator />
+        {/* layout-wrap carries the flex column — keeping display:flex off <body>
+            fixes Chrome's backdrop-filter bug on position:fixed descendants */}
+        <div className="layout-wrap">
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+          <ScrollAnimator />
+        </div>
       </body>
     </html>
   )

@@ -59,11 +59,19 @@ html { font-size: 1vw; }
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* NOTE: display:flex intentionally NOT on body — Chrome has a bug where
+     body{display:flex} breaks backdrop-filter on position:fixed descendants.
+     Flex layout lives on .layout-wrap instead. */
+}
+html, body { position: relative; min-height: 100%; }
+
+/* Page layout wrapper — takes over flex-column from body */
+.layout-wrap {
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
 }
-html, body { position: relative; height: 100%; }
-footer { flex: 0 0 auto; }
+.layout-wrap footer { flex: 0 0 auto; }
 a { color: inherit; text-decoration: none; }
 *:focus { outline: 0 !important; }
 * { -webkit-tap-highlight-color: transparent; }
@@ -130,14 +138,17 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 5px;
   padding: 10px 10px 10px 26px;
-  background: rgba(255, 255, 255, 0.48);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 100px;
   white-space: nowrap;
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   pointer-events: all;
+  /* Belt-and-suspenders Chrome hints for backdrop-filter compositing */
+  will-change: backdrop-filter;
+  isolation: isolate;
 }
 .pk-bar__logo {
   display: flex;
@@ -963,7 +974,8 @@ a { color: inherit; text-decoration: none; }
 }
 .process-steps__list {
   display: grid;
-  grid-template-columns: repeat(var(--steps-count, 4), 1fr);
+  /* columns set via inline style on the element (repeat() count can't use CSS vars) */
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--8px);
 }
 .process-step {

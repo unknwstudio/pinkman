@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
+import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
 import ProcessSteps from '@/components/ProcessSteps/ProcessSteps'
 import CaseCard from '@/components/CaseCard/CaseCard'
 
@@ -68,39 +69,68 @@ export default function DigitalProductsPage() {
         </div>
       </div>
 
-      <Section><div className="text-h1-wrapper"><h2 className="h1">Как&nbsp;мы работаем</h2></div></Section>
+      {/* ── When to call us — horizontal row ── */}
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Когда обращаться</h2></div></Section>
+      <ServicePointRow>
+        <ServicePoint
+          tagsTop={['команда']}
+          title="Нет своей UX-команды"
+          description="Подключаемся как&nbsp;внешняя продуктовая команда: проектируем сценарии, делаем интерфейсы, помогаем запускать фичи — от&nbsp;аналитики до&nbsp;курирования разработки"
+        />
+        <ServicePoint
+          tagsTop={['данные']}
+          title="Мало данных для&nbsp;решений"
+          description="Интервью, поведенческий анализ, тесты&nbsp;— собираем инсайты, которые помогают принимать продуктовые решения на&nbsp;основе метрик и&nbsp;исследований"
+        />
+        <ServicePoint
+          tagsTop={['запуск']}
+          title="Нужен MVP"
+          description="Быстро проверим гипотезу без&nbsp;потери в&nbsp;качестве. Спроектируем логику, отрисуем интерфейсы, сопроводим на&nbsp;этапе разработки"
+        />
+      </ServicePointRow>
+
+      {/* ── How we work — process steps ── */}
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Как&nbsp;работаем</h2></div></Section>
       <ProcessSteps steps={[
         {
           num: '1',
           title: 'Погружение',
-          description: 'Изучаем продукт, бизнес-цели и&nbsp;пользователей. Проводим интервью, анализируем метрики',
+          description: 'Изучаем продукт, цели бизнеса и&nbsp;пользователей. Интервью, метрики, конкурентный анализ',
           tag: 'старт',
         },
         {
           num: '2',
           title: 'Исследование',
-          description: 'Юзабилити-тесты, карты сценариев, конкурентный анализ&nbsp;— находим проблемы и&nbsp;точки роста',
+          description: 'Юзабилити-тесты, карты сценариев&nbsp;— находим проблемы и&nbsp;точки роста до&nbsp;начала дизайна',
           tag: 'данные',
         },
         {
           num: '3',
           title: 'Проектирование',
-          description: 'Прорабатываем логику продукта: структуру, сценарии, wireframes и&nbsp;прототипы',
+          description: 'Логика продукта, структура, сценарии, wireframes и&nbsp;кликабельные прототипы',
           tag: 'дизайн',
         },
         {
           num: '4',
           title: 'Запуск',
-          description: 'Финальный UI, дизайн-система, сопровождение разработки и&nbsp;QA после релиза',
+          description: 'Финальный UI, дизайн-система, сопровождение разработки и&nbsp;QA после&nbsp;релиза',
           tag: 'итог',
         },
       ]} />
 
-      <Section><div className="text-h1-wrapper"><h2 className="h1">Когда обращаться</h2></div></Section>
+      {/* ── Extra detail ── */}
       <ServiceGrid>
-        <ServicePoint title="Нет своей UX-команды" tags={['пользовательские сценарии','интерфейсы','фичи','аналитика','разработка']} description="Подключаемся как&nbsp;внешняя продуктовая команда: разбираемся в&nbsp;задачах, проектируем пользовательские сценарии, делаем интерфейсы, помогаем запускать фичи. Берем на&nbsp;себя весь процесс&nbsp;— от&nbsp;аналитики до&nbsp;курирования разработки" />
-        <ServicePoint title="Мало данных для&nbsp;решений" tags={['интервью','поведенческий анализ','тесты','продуктовые решения','метрики','исследования']} description="Интервью, поведенческий анализ, тесты&nbsp;— собираем инсайты, которые помогают принимать продуктовые решения на&nbsp;основе метрик и&nbsp;исследований" />
-        <ServicePoint title="Нужен MVP" tags={['логика','интерфейсы','разработка']} description="Если нужно быстро проверить гипотезу&nbsp;— запустим пилотную версию, не&nbsp;теряя в&nbsp;качестве. Спроектируем логику, отрисуем интерфейсы, сопроводим на&nbsp;этапе разработки" />
+        <ServicePoint
+          title="Встраиваемся в&nbsp;команду"
+          tags={['agile', 'спринты', 'дизайн-поддержка']}
+          description="Работаем по&nbsp;спринтам, берем задачи в&nbsp;бэклог, участвуем в&nbsp;грумингах. Ни&nbsp;один процесс не&nbsp;прерывается"
+        />
+        <ServicePoint
+          title="Дизайн-система в&nbsp;комплекте"
+          tags={['компоненты', 'токены', 'документация']}
+          description="По&nbsp;итогам проекта передаем структурированную дизайн-систему с&nbsp;компонентами, токенами и&nbsp;документацией для&nbsp;разработчиков"
+          animDelay={2}
+        />
       </ServiceGrid>
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
@@ -112,7 +142,7 @@ export default function DigitalProductsPage() {
             year="2022-н.в."
             title="FUN&amp;SUN"
             subtitle="2 года улучшаем сайт и&nbsp;приложение туроператора"
-            description="Обновили личный кабинет, спроектировали раздел с&nbsp;экспертами, создали систему поддержки через чат и&nbsp;чат-бота, провели редизайн продуктовых страниц и&nbsp;карточек туров, добавили новый функционал для&nbsp;бронирования экскурсий через мобильное приложение"
+            description="Обновили личный кабинет, спроектировали раздел с&nbsp;экспертами, создали систему поддержки через чат и&nbsp;чат-бота, провели редизайн карточек туров и&nbsp;добавили бронирование экскурсий"
             result={{ label: 'Результат:', value: 'решили больше 400 задач за&nbsp;2 года' }}
             href="/projects/2-goda-uluchshaem-sayt-i-prilozhenie-turoperatora-fun-sun/"
             imgSrc="/images/682a6271c3ae6524b84292cb_Frame 174.webp"
@@ -124,8 +154,8 @@ export default function DigitalProductsPage() {
             year="2020-н.в."
             title="X5 Tech"
             subtitle="Помогаем развивать внутренние продукты ритейлера"
-            description="Спроектировали несколько важных сервисов для&nbsp;сотрудников и&nbsp;партнеров X5 Group для&nbsp;управления логистикой, складами, заказами и&nbsp;человеческими ресурсами. От&nbsp;запуска MVP до&nbsp;развития и&nbsp;дизайн-поддержки"
-            result={{ label: 'Результат:', value: 'снизили нагрузку на&nbsp;in-house команду X5 Tech, обеспечили X5 Group гибкими и&nbsp;масштабируемыми инструментами для&nbsp;роста' }}
+            description="Спроектировали сервисы для&nbsp;сотрудников и&nbsp;партнеров X5 Group: логистика, склады, заказы и&nbsp;HR. От&nbsp;запуска MVP до&nbsp;дизайн-поддержки"
+            result={{ label: 'Результат:', value: 'снизили нагрузку на&nbsp;in-house команду X5 Tech, обеспечили гибкими и&nbsp;масштабируемыми инструментами' }}
             imgSrc="/images/682a62c6379497ff572ac960_Frame 175.webp"
             imgSrcSet="/images/682a62c6379497ff572ac960_Frame 175-p-500.webp 500w, /images/682a62c6379497ff572ac960_Frame 175-p-800.webp 800w, /images/682a62c6379497ff572ac960_Frame 175-p-1080.webp 1080w, /images/682a62c6379497ff572ac960_Frame 175.webp 1248w"
           />
@@ -135,8 +165,8 @@ export default function DigitalProductsPage() {
             year="2022"
             title="Уралсиб"
             subtitle="Заложили дизайн-основу корпоративного портала банка"
-            description="Спроектировали корпоративный портал с&nbsp;удобной навигацией, понятной структурой и&nbsp;гибкой дизайн-системой за&nbsp;2 месяца. Объединили разрозненные HR-инструменты в&nbsp;единый сервис, улучшили юзабилити, создали единую точку входа для&nbsp;всех категорий пользователей"
-            result={{ label: 'Результат:', value: 'ускорили HR-процессы по&nbsp;разным направлениям в&nbsp;среднем в&nbsp;2-3 раза для&nbsp;8 тыс. сотрудников банка' }}
+            description="Спроектировали корпоративный портал с&nbsp;гибкой дизайн-системой за&nbsp;2 месяца. Объединили разрозненные HR-инструменты, создали единую точку входа для&nbsp;всех сотрудников"
+            result={{ label: 'Результат:', value: 'ускорили HR-процессы в&nbsp;среднем в&nbsp;2-3 раза для&nbsp;8 тыс. сотрудников банка' }}
             imgSrc="/images/682a64342e614eeb7f9c12b9_Frame 176.webp"
             imgSrcSet="/images/682a64342e614eeb7f9c12b9_Frame 176-p-500.webp 500w, /images/682a64342e614eeb7f9c12b9_Frame 176-p-800.webp 800w, /images/682a64342e614eeb7f9c12b9_Frame 176-p-1080.webp 1080w, /images/682a64342e614eeb7f9c12b9_Frame 176.webp 1248w"
           />
