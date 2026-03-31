@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
+import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
+import StatGrid from '@/components/StatGrid/StatGrid'
 import CaseCard from '@/components/CaseCard/CaseCard'
 
 export const metadata: Metadata = {
@@ -70,13 +72,32 @@ export default function SitesPage() {
         </div>
       </div>
 
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Результаты в&nbsp;цифрах</h2></div></Section>
+      <StatGrid items={[
+        { value: '10+', label: 'лет делаем сайты для&nbsp;крупного бизнеса' },
+        { value: '7+', label: 'российских и&nbsp;международных наград', note: 'только по проектам ВТБ' },
+        { value: '40%', label: 'средний рост конверсии', note: 'на проектах редизайна' },
+        { value: 'топ-2', label: 'рейтинга цифровой зрелости', note: 'SDI360, 2023 — ВТБ' },
+      ]} />
+
       <Section><div className="text-h1-wrapper"><h2 className="h1">Когда обращаться</h2></div></Section>
-      <ServiceGrid>
-        <ServicePoint title="У&nbsp;вас большой бизнес" tags={['веб-платформы','сложная инфраструктура','сценарии']} description="Банк? Корпорация? Множество направлений и&nbsp;целевых аудиторий? Мы именно для&nbsp;таких задач. Делаем масштабные веб-платформы с&nbsp;множеством разделов, сложной инфраструктурой и&nbsp;продуманными сценариями для&nbsp;разных целевых аудиторий" />
-        <ServicePoint title="Продукт сложно объяснить" tags={['ценность продукта','структура','язык','визуал']} description="У&nbsp;вас крутой продукт, но&nbsp;клиенты не&nbsp;понимают, зачем он им? Мы сделаем продуктовый сайт, который донесет ценность через структуру, язык и&nbsp;визуал" />
-        <ServicePoint title="Делаете масштабный веб-проект" tags={['интеграции','сложная логика','корпоративные клиенты']} description="Если ваш проект требует сложных инфраструктурных решений, интеграции с&nbsp;внутренними системами или&nbsp;поддержки сложной логики и&nbsp;пользовательских сценариев. Наш опыт работы с&nbsp;крупными корпоративными клиентами помогает решать такие задачи" />
-        <ServicePoint title="Сайт есть, результата нет" tags={['аналитика','редизайн','UX-решения','best practice','user data']} description="Когда сайт не&nbsp;помогает бизнесу и&nbsp;нужен редизайн на&nbsp;основе аналитики. Мы найдем проблемные места и&nbsp;предложим UX-решения, базирующиеся на&nbsp;пользовательских данных и&nbsp;лучших практиках" />
-      </ServiceGrid>
+      <ServicePointRow>
+        <ServicePoint
+          tagsTop={['01']}
+          title="У&nbsp;вас большой бизнес"
+          description="Банк? Корпорация? Множество направлений и&nbsp;целевых аудиторий? Мы именно для&nbsp;таких задач. Делаем масштабные веб-платформы с&nbsp;продуманными сценариями для&nbsp;разных аудиторий"
+        />
+        <ServicePoint
+          tagsTop={['02']}
+          title="Продукт сложно объяснить"
+          description="У&nbsp;вас крутой продукт, но&nbsp;клиенты не&nbsp;понимают, зачем он им? Мы сделаем продуктовый сайт, который донесет ценность через структуру, язык и&nbsp;визуал"
+        />
+        <ServicePoint
+          tagsTop={['03']}
+          title="Сайт есть, результата нет"
+          description="Когда сайт не&nbsp;помогает бизнесу и&nbsp;нужен редизайн на&nbsp;основе аналитики. Найдем проблемные места и&nbsp;предложим UX-решения, базирующиеся на&nbsp;реальных данных"
+        />
+      </ServicePointRow>
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
       <div className="service-cases-section">

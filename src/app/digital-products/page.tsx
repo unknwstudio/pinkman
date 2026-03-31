@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
+import ProcessSteps from '@/components/ProcessSteps/ProcessSteps'
 import CaseCard from '@/components/CaseCard/CaseCard'
 
 export const metadata: Metadata = {
@@ -66,6 +67,34 @@ export default function DigitalProductsPage() {
           </div>
         </div>
       </div>
+
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Как&nbsp;мы работаем</h2></div></Section>
+      <ProcessSteps steps={[
+        {
+          num: '1',
+          title: 'Погружение',
+          description: 'Изучаем продукт, бизнес-цели и&nbsp;пользователей. Проводим интервью, анализируем метрики',
+          tag: 'старт',
+        },
+        {
+          num: '2',
+          title: 'Исследование',
+          description: 'Юзабилити-тесты, карты сценариев, конкурентный анализ&nbsp;— находим проблемы и&nbsp;точки роста',
+          tag: 'данные',
+        },
+        {
+          num: '3',
+          title: 'Проектирование',
+          description: 'Прорабатываем логику продукта: структуру, сценарии, wireframes и&nbsp;прототипы',
+          tag: 'дизайн',
+        },
+        {
+          num: '4',
+          title: 'Запуск',
+          description: 'Финальный UI, дизайн-система, сопровождение разработки и&nbsp;QA после релиза',
+          tag: 'итог',
+        },
+      ]} />
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Когда обращаться</h2></div></Section>
       <ServiceGrid>

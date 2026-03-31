@@ -1,5 +1,5 @@
 /* ============================================================
-   components.css — v CLD345712
+   components.css — v CLDNXT-345727
    ============================================================ */
 
 /* ── FONTS ─────────────────────────────────────────────────── */
@@ -112,12 +112,20 @@ a { color: inherit; text-decoration: none; }
 /* ════════════════════════════════════════════════════════════
    DESKTOP FLOATING NAV BAR  (injected by nav.js for ≥992px)
    ════════════════════════════════════════════════════════════ */
-.pk-bar {
+/* Outer wrapper: handles fixed positioning without transform.
+   This is the Chrome fix — backdrop-filter + transform on the same
+   element breaks blur in Chrome. Outer positions, inner blurs. */
+.pk-bar-outer {
   position: fixed;
   bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
   z-index: 9100;
+  pointer-events: none;
+}
+.pk-bar {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -129,6 +137,7 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  pointer-events: all;
 }
 .pk-bar__logo {
   display: flex;
@@ -222,7 +231,7 @@ a { color: inherit; text-decoration: none; }
 .pk-bar__cta:hover { opacity: 0.88; }
 
 /* Hidden on mobile — mobile overlay handles navigation */
-@media (max-width: 991px) { .pk-bar { display: none !important; } }
+@media (max-width: 991px) { .pk-bar-outer { display: none !important; } }
 
 /* ════════════════════════════════════════════════════════════
    MOBILE NAV OVERLAY  (injected by nav.js — not in HTML)
@@ -852,4 +861,168 @@ a { color: inherit; text-decoration: none; }
 }
 .case-awards {
   padding-bottom: var(--32px);
+}
+
+/* ════════════════════════════════════════════════════════════
+   SERVICE POINT ROW  — 3-column horizontal layout (desktop)
+   ════════════════════════════════════════════════════════════ */
+.service-point-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--8px);
+  padding: 0 var(--64px);
+}
+/* In a row context, each ServicePoint stacks title over description */
+.service-point-row .service-point {
+  flex-direction: column;
+}
+.service-point-row .service-point__right {
+  padding-left: 0 !important;
+  border-left: none !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding-top: var(--16px) !important;
+  margin-top: auto;
+}
+@media (max-width: 991px) {
+  .service-point-row {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+  .service-point-row .service-point {
+    flex-direction: row;
+  }
+  .service-point-row .service-point__right {
+    border-left: 1px solid rgba(0, 0, 0, 0.07) !important;
+    border-top: none !important;
+    padding-left: var(--16px) !important;
+    padding-top: 0 !important;
+    margin-top: 0;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   STAT GRID  — key metric cards
+   ════════════════════════════════════════════════════════════ */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--8px);
+  padding: 0 var(--64px);
+  margin-bottom: 5rem;
+}
+.stat-grid__item {
+  background: #fff;
+  border-radius: 20px;
+  padding: var(--32px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.stat-grid__value {
+  font-family: 'Zonapro', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 4vw, 5.5rem);
+  line-height: 1;
+  color: #0d0d0d;
+  margin: 0;
+}
+.stat-grid__label {
+  font-size: var(--16px, 1rem);
+  font-weight: 400;
+  color: rgba(13, 13, 13, 0.55);
+  line-height: 1.4;
+  margin: 0;
+}
+.stat-grid__note {
+  font-size: 13px;
+  color: rgba(13, 13, 13, 0.35);
+  line-height: 1.4;
+  margin: 0;
+}
+@media (max-width: 991px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 16px;
+  }
+}
+@media (max-width: 479px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stat-grid__value {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   PROCESS STEPS  — numbered horizontal workflow
+   ════════════════════════════════════════════════════════════ */
+.process-steps {
+  padding: 0 var(--64px);
+  margin-bottom: 5rem;
+}
+.process-steps__list {
+  display: grid;
+  grid-template-columns: repeat(var(--steps-count, 4), 1fr);
+  gap: var(--8px);
+}
+.process-step {
+  background: #fff;
+  border-radius: 20px;
+  padding: var(--32px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--12px);
+}
+.process-step__num {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.process-step__num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #F03882;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.process-step__tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(13, 13, 13, 0.45);
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 100px;
+  padding: 4px 10px;
+}
+.process-step h3 {
+  margin: 0;
+  font-size: var(--18px, 1.1rem);
+  font-weight: 700;
+  color: #0d0d0d;
+  line-height: 1.25;
+}
+.process-step p {
+  margin: 0;
+  font-size: var(--16px, 1rem);
+  color: rgba(13, 13, 13, 0.55);
+  line-height: 1.5;
+}
+@media (max-width: 991px) {
+  .process-steps {
+    padding: 0 16px;
+  }
+  .process-steps__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 479px) {
+  .process-steps__list {
+    grid-template-columns: 1fr;
+  }
 }

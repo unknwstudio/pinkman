@@ -193,32 +193,36 @@ export default function Nav() {
       </div>
 
       {/* ── Desktop floating bottom bar ── */}
-      <div className="pk-bar">
-        <Link className="pk-bar__logo" href="/">{PINKMAN_SVG}</Link>
-        <nav className="pk-bar__links">
-          <Link className={`pk-bar__link${isHome ? ' pk-bar__link--active' : ''}`} href="/">Главная</Link>
-          <Link className={`pk-bar__link${isPortfolio ? ' pk-bar__link--active' : ''}`} href="/projects/">Портфолио</Link>
+      {/* pk-bar-outer handles position:fixed centering (no transform) so that
+          backdrop-filter works correctly in Chrome (transform + backdrop-filter conflict) */}
+      <div className="pk-bar-outer">
+        <div className="pk-bar">
+          <Link className="pk-bar__logo" href="/">{PINKMAN_SVG}</Link>
+          <nav className="pk-bar__links">
+            <Link className={`pk-bar__link${isHome ? ' pk-bar__link--active' : ''}`} href="/">Главная</Link>
+            <Link className={`pk-bar__link${isPortfolio ? ' pk-bar__link--active' : ''}`} href="/projects/">Портфолио</Link>
 
-          <div className="pk-bar__item" onMouseEnter={() => setPkServicesOpen(true)} onMouseLeave={() => setPkServicesOpen(false)}>
-            <span className={`pk-bar__link${isServices ? ' pk-bar__link--active' : ''}`}>Услуги</span>
-            {pkServicesOpen && (
-              <div className="pk-bar__dropdown">
-                {SERVICE_LINKS.map(({ href, label }) => (
-                  <Link
-                    key={href}
-                    className={`pk-bar__drop-link${pathname === href ? ' pk-bar__drop-link--active' : ''}`}
-                    href={href}
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+            <div className="pk-bar__item" onMouseEnter={() => setPkServicesOpen(true)} onMouseLeave={() => setPkServicesOpen(false)}>
+              <span className={`pk-bar__link${isServices ? ' pk-bar__link--active' : ''}`}>Услуги</span>
+              {pkServicesOpen && (
+                <div className="pk-bar__dropdown">
+                  {SERVICE_LINKS.map(({ href, label }) => (
+                    <Link
+                      key={href}
+                      className={`pk-bar__drop-link${pathname === href ? ' pk-bar__drop-link--active' : ''}`}
+                      href={href}
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-          <Link className={`pk-bar__link${isContacts ? ' pk-bar__link--active' : ''}`} href="/contact-us/">Контакты</Link>
-        </nav>
-        <Link className="pk-bar__cta" href="/contact-us/">Обсудить проект</Link>
+            <Link className={`pk-bar__link${isContacts ? ' pk-bar__link--active' : ''}`} href="/contact-us/">Контакты</Link>
+          </nav>
+          <Link className="pk-bar__cta" href="/contact-us/">Обсудить проект</Link>
+        </div>
       </div>
 
     </>
