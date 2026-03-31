@@ -22,6 +22,6 @@ jobs:
             git pull origin main
             npm install
             npm run build
-            cp -r public .next/standalone/
-            cp -r .next/static .next/standalone/.next/
+            cp -rf public .next/standalone/
+            cp -rf .next/static .next/standalone/.next/
             pm2 restart pinkman-next
