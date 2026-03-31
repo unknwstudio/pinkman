@@ -26,7 +26,7 @@ export default function ServicePoint({
     >
       <div className="service-point__left">
         {tagsTop && tagsTop.length > 0 && (
-          <div className="service-point__tags">
+          <div className="service-point__tags service-point__tags--top">
             {tagsTop.map((t) => (
               <p key={t} className="text-small is__chip">{t}</p>
             ))}
