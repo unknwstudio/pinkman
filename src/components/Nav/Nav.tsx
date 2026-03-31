@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { SERVICE_LINKS, SERVICE_SLUGS, SITE_VERSION, ACCENT_COLORS } from '@/lib/constants'
 
 const PINKMAN_SVG = (
@@ -13,10 +14,12 @@ const PINKMAN_SVG = (
 
 export default function Nav() {
   const pathname = usePathname()
-  const [menuOpen, setMenuOpen]       = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
-  const [scrollHidden, setScrollHidden] = useState(false)
+  const [menuOpen, setMenuOpen]           = useState(false)
+  const [servicesOpen, setServicesOpen]   = useState(false)
+  const [scrollHidden, setScrollHidden]   = useState(false)
   const [pkServicesOpen, setPkServicesOpen] = useState(false)
+  // mounted = true only after hydration — needed for createPortal (no SSR)
+  const [mounted, setMounted] = useState(false)
 
   // Derive active-state booleans from pathname
   const slug        = pathname.split('/').filter(Boolean)[0] ?? ''
@@ -55,6 +58,8 @@ export default function Nav() {
     setMenuOpen(false)
     setServicesOpen(false)
   }, [pathname])
+
+  useEffect(() => { setMounted(true) }, [])
 
   const closeMenu = () => { setMenuOpen(false); setServicesOpen(false) }
 
@@ -192,38 +197,43 @@ export default function Nav() {
         </nav>
       </div>
 
-      {/* ── Desktop floating bottom bar ── */}
-      {/* pk-bar-outer handles position:fixed centering (no transform) so that
-          backdrop-filter works correctly in Chrome (transform + backdrop-filter conflict) */}
-      <div className="pk-bar-outer">
-        <div className="pk-bar">
-          <Link className="pk-bar__logo" href="/">{PINKMAN_SVG}</Link>
-          <nav className="pk-bar__links">
-            <Link className={`pk-bar__link${isHome ? ' pk-bar__link--active' : ''}`} href="/">Главная</Link>
-            <Link className={`pk-bar__link${isPortfolio ? ' pk-bar__link--active' : ''}`} href="/projects/">Портфолио</Link>
+      {/* ── Desktop floating bottom bar ──
+          Rendered via createPortal directly into document.body.
+          This is the definitive Chrome backdrop-filter fix:
+          any flex/grid ancestor (including layout-wrap) prevents blur in Chrome.
+          Portal makes pk-bar-outer a direct child of <body> with no flex parent. */}
+      {mounted && createPortal(
+        <div className="pk-bar-outer">
+          <div className="pk-bar">
+            <Link className="pk-bar__logo" href="/">{PINKMAN_SVG}</Link>
+            <nav className="pk-bar__links">
+              <Link className={`pk-bar__link${isHome ? ' pk-bar__link--active' : ''}`} href="/">Главная</Link>
+              <Link className={`pk-bar__link${isPortfolio ? ' pk-bar__link--active' : ''}`} href="/projects/">Портфолио</Link>
 
-            <div className="pk-bar__item" onMouseEnter={() => setPkServicesOpen(true)} onMouseLeave={() => setPkServicesOpen(false)}>
-              <span className={`pk-bar__link${isServices ? ' pk-bar__link--active' : ''}`}>Услуги</span>
-              {pkServicesOpen && (
-                <div className="pk-bar__dropdown">
-                  {SERVICE_LINKS.map(({ href, label }) => (
-                    <Link
-                      key={href}
-                      className={`pk-bar__drop-link${pathname === href ? ' pk-bar__drop-link--active' : ''}`}
-                      href={href}
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+              <div className="pk-bar__item" onMouseEnter={() => setPkServicesOpen(true)} onMouseLeave={() => setPkServicesOpen(false)}>
+                <span className={`pk-bar__link${isServices ? ' pk-bar__link--active' : ''}`}>Услуги</span>
+                {pkServicesOpen && (
+                  <div className="pk-bar__dropdown">
+                    {SERVICE_LINKS.map(({ href, label }) => (
+                      <Link
+                        key={href}
+                        className={`pk-bar__drop-link${pathname === href ? ' pk-bar__drop-link--active' : ''}`}
+                        href={href}
+                      >
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-            <Link className={`pk-bar__link${isContacts ? ' pk-bar__link--active' : ''}`} href="/contact-us/">Контакты</Link>
-          </nav>
-          <Link className="pk-bar__cta" href="/contact-us/">Обсудить проект</Link>
-        </div>
-      </div>
+              <Link className={`pk-bar__link${isContacts ? ' pk-bar__link--active' : ''}`} href="/contact-us/">Контакты</Link>
+            </nav>
+            <Link className="pk-bar__cta" href="/contact-us/">Обсудить проект</Link>
+          </div>
+        </div>,
+        document.body
+      )}
 
     </>
   )

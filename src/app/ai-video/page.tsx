@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
+import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
+import ProcessSteps from '@/components/ProcessSteps/ProcessSteps'
+import StatGrid from '@/components/StatGrid/StatGrid'
 import ContactCard from '@/components/ContactCard/ContactCard'
 import CaseCard from '@/components/CaseCard/CaseCard'
 
@@ -20,65 +23,63 @@ export default function AiVideoPage() {
 
       <Section><div className="text-h2-wrapper"><h2>От&nbsp;сценария до&nbsp;финальных ресайзов для&nbsp;десятка поверхностей. Быстро, технически верно, без&nbsp;потери качества.</h2></div></Section>
 
+      {/* ── Scale in numbers ── */}
+      <StatGrid items={[
+        { value: '180+', label: 'минут AI-контента для одного концерта', note: 'ANNA ASTI, AI + 3D, 2025' },
+        { value: '9', label: 'крупных AI-видеопроектов', note: 'Яндекс, Сбер, ПСБ и другие' },
+        { value: '75+', label: 'форматов DOOH в одной кампании', note: 'Т-Банк, ребрендинг 2024' },
+      ]} />
+
       <Section>
         <div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Бюджет срезан, дедлайн вчера</h2></div>
         <p className="font-color-dark-gray">Видеопродакшен дорожает, а&nbsp;сроки не&nbsp;растягиваются. AI&nbsp;даёт скорость&nbsp;— но&nbsp;требует экспертизы, чтобы результат выглядел на&nbsp;уровне, а&nbsp;не&nbsp;как&nbsp;генерация ради генерации.</p>
       </Section>
 
       <Section>
-        <div className="text-h1-wrapper"><h2 className="h1">Что&nbsp;мы&nbsp;предлагаем</h2></div>
+        <div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Что&nbsp;мы&nbsp;предлагаем</h2></div>
         <p className="font-color-dark-gray">Разрабатываем идею и&nbsp;сценарий, производим реалистичные AI-ролики, адаптируем под&nbsp;OLV и&nbsp;DOOH с&nbsp;учётом технических требований каждой поверхности. AI-озвучка и&nbsp;музыка&nbsp;— включены.</p>
         <p className="font-color-dark-gray" style={{marginTop:'1rem'}}>Мы мультидисциплинарны: комбинируем AI с&nbsp;3D, моушном и&nbsp;постпродакшеном&nbsp;— именно это даёт реалистичный результат, а&nbsp;не&nbsp;просто генерацию. Работаем как&nbsp;встроенный юнит вашей команды&nbsp;— с&nbsp;визуальным контролем и&nbsp;производственной дисциплиной.</p>
       </Section>
 
+      {/* ── Team — 4 roles ── */}
       <ServiceGrid>
         <ServicePoint title="Продюсер" tags={['статусы','сроки','координация']} description="Контролирует ход работ, ведёт коммуникацию. Вы&nbsp;всегда знаете, что&nbsp;происходит." />
         <ServicePoint title="Арт-директор" tags={['визуальная рамка','идея']} description="Держит визуальный язык от&nbsp;первого брифа до&nbsp;финального ролика." />
         <ServicePoint title="AI-дизайнеры" tags={['3D','моушн','AI']} description="Мультидисциплинарная связка: графика, анимация и&nbsp;AI в&nbsp;одной роли. Состав&nbsp;— под&nbsp;специфику проекта." />
-        <ServicePoint title="2D-моушен, композер, саунд-дизайнер" tags={['по&nbsp;необходимости']} description="Подключаем при&nbsp;необходимости&nbsp;— озвучка и&nbsp;музыкальное сопровождение внутри команды." />
+        <ServicePoint title="2D-моушен, композер, саунд-дизайнер" tags={['по необходимости']} description="Подключаем при&nbsp;необходимости&nbsp;— озвучка и&nbsp;музыкальное сопровождение внутри команды." />
       </ServiceGrid>
 
-      <Section>
-        <div className="text-h1-wrapper"><h2 className="h1">Кому подходит</h2></div>
+      {/* ── For whom — 4 audience types as rows ── */}
+      <Section><div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Кому подходит</h2></div>
         <p className="font-color-dark-gray">Запускаете рекламные кампании на&nbsp;несколько каналов и&nbsp;нужна поддержка при&nbsp;производстве роликов: от&nbsp;идеи до&nbsp;озвучки.</p>
-        <p className="font-color-dark-gray" style={{marginTop:'1rem'}}>Работаете с&nbsp;крупными брендами и&nbsp;корпоративными клиентами, где&nbsp;высокие репутационные риски и&nbsp;большие ожидания от&nbsp;результата.</p>
       </Section>
-      <ServiceGrid>
-        <ServicePoint title="Бренд-менеджер" tags={['рекламные кампании']} description="Хочет результат&nbsp;— красивый, в&nbsp;срок, без&nbsp;сюрпризов." />
-        <ServicePoint title="Креативный директор" tags={['идея и&nbsp;качество']} description="Знает, чего хочет. Ценит экспертизу и&nbsp;визуальную дисциплину на&nbsp;каждом этапе." />
-        <ServicePoint title="Руководитель продакшена" tags={['дедлайны','бюджет']} description="Следит за&nbsp;сроками и&nbsp;ресурсами&nbsp;— мы встраиваемся без&nbsp;трений и&nbsp;лишних вопросов." />
-        <ServicePoint title="Продюсер" tags={['координация','процесс']} description="Знает цену хаосу. Ценит прозрачный процесс и&nbsp;предсказуемый результат." />
-      </ServiceGrid>
+      <ServicePointRow>
+        <ServicePoint tagsTop={['бренд']} title="Бренд-менеджер" description="Хочет результат&nbsp;— красивый, в&nbsp;срок, без&nbsp;сюрпризов." />
+        <ServicePoint tagsTop={['творчество']} title="Креативный директор" description="Знает, чего хочет. Ценит экспертизу и&nbsp;визуальную дисциплину на&nbsp;каждом этапе." />
+        <ServicePoint tagsTop={['производство']} title="Руководитель продакшена" description="Следит за&nbsp;сроками и&nbsp;ресурсами&nbsp;— мы встраиваемся без&nbsp;трений и&nbsp;лишних вопросов." />
+        <ServicePoint tagsTop={['процесс']} title="Продюсер" description="Знает цену хаосу. Ценит прозрачный процесс и&nbsp;предсказуемый результат." />
+      </ServicePointRow>
 
+      {/* ── What you get — 6 items 3+3 ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Что&nbsp;вы&nbsp;получите в&nbsp;результате</h2></div></Section>
-      <ServiceGrid>
-        <ServicePoint title="Реалистичные AI-ролики" tags={['сценарий','озвучка','музыка']} description="Полный цикл: от&nbsp;идеи и&nbsp;раскадровки до&nbsp;финального ролика с&nbsp;AI-озвучкой и&nbsp;музыкальным сопровождением." />
-        <ServicePoint title="Технически верные ресайзы" tags={['OLV','DOOH','все&nbsp;поверхности']} description="Адаптация под&nbsp;каждый формат с&nbsp;учётом технических требований&nbsp;— от&nbsp;телевидения до&nbsp;фасадов." />
-        <ServicePoint title="Мультидисциплинарное производство" tags={['AI + 3D + моушн']} description="Всё в&nbsp;одной команде&nbsp;— никаких потерь на&nbsp;стыках, единая эстетика от&nbsp;первого кадра до&nbsp;последнего." />
-        <ServicePoint title="Сдача в&nbsp;срок, в&nbsp;бюджет" tags={['без&nbsp;сюрпризов']} description="Прозрачный процесс, чёткие статусы&nbsp;— без&nbsp;перерасхода бюджета и&nbsp;поиска ресурсов в&nbsp;спешке." />
-        <ServicePoint title="Кейс для&nbsp;наград" tags={['индустриальный вес']} description="Оформляем результат как&nbsp;полноценный кейс, который имеет вес в&nbsp;индустрии." />
-        <ServicePoint title="AI-экспертиза из&nbsp;первых рук" tags={['Сбер','Яндекс','ПСБ']} description="Команда с&nbsp;ежедневной AI-практикой на&nbsp;сотнях задач&nbsp;— обучаем дизайнеров Сбера, Яндекса и&nbsp;ПСБ." />
-      </ServiceGrid>
+      <ServicePointRow>
+        <ServicePoint tagsTop={['01']} title="Реалистичные AI-ролики" description="Полный цикл: от&nbsp;идеи и&nbsp;раскадровки до&nbsp;финального ролика с&nbsp;AI-озвучкой и&nbsp;музыкальным сопровождением." />
+        <ServicePoint tagsTop={['02']} title="Технически верные ресайзы" description="Адаптация под&nbsp;каждый формат с&nbsp;учётом технических требований&nbsp;— от&nbsp;телевидения до&nbsp;фасадов." />
+        <ServicePoint tagsTop={['03']} title="Мультидисциплинарное производство" description="Всё в&nbsp;одной команде&nbsp;— никаких потерь на&nbsp;стыках, единая эстетика от&nbsp;первого кадра до&nbsp;последнего." />
+        <ServicePoint tagsTop={['04']} title="Сдача в&nbsp;срок, в&nbsp;бюджет" description="Прозрачный процесс, чёткие статусы&nbsp;— без&nbsp;перерасхода бюджета и&nbsp;поиска ресурсов в&nbsp;спешке." />
+        <ServicePoint tagsTop={['05']} title="Кейс для&nbsp;наград" description="Оформляем результат как&nbsp;полноценный кейс, который имеет вес в&nbsp;индустрии." />
+        <ServicePoint tagsTop={['06']} title="AI-экспертиза из&nbsp;первых рук" description="Команда с&nbsp;ежедневной AI-практикой на&nbsp;сотнях задач&nbsp;— обучаем дизайнеров Сбера, Яндекса и&nbsp;ПСБ." />
+      </ServicePointRow>
 
-      <Section>
-        <div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Что&nbsp;мы&nbsp;делаем и&nbsp;как</h2></div>
-        <div className="list-wrapper padding-32px"><div className="list">
-          {[
-            'Погружаемся в&nbsp;контекст на&nbsp;брифе',
-            'Готовим решение под&nbsp;запрос и&nbsp;возможности AI',
-            'Разрабатываем сценарий, раскадровку, стилшоты',
-            'Производим AI-контент по&nbsp;утверждённой рамке: графика, озвучка, музыка',
-            'Утверждаем мастер-ролик, готовим технически верные ресайзы',
-            'Еженедельные синки и&nbsp;статусы',
-            'Общее облако с&nbsp;чистой структурой и&nbsp;неймингом файлов',
-            'Сопровождаем до&nbsp;финальной сдачи',
-          ].map((s, i) => (
-            <div key={i} className="list-item-wrapper">
-              <div className="bullet-wrapper-left"><h3 dangerouslySetInnerHTML={{__html:`${i+1}.&nbsp;${s}`}} /></div>
-            </div>
-          ))}
-        </div></div>
-      </Section>
+      {/* ── Process steps ── */}
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Как&nbsp;работаем</h2></div></Section>
+      <ProcessSteps steps={[
+        { num: '1', title: 'Бриф', description: 'Погружаемся в&nbsp;контекст задачи, цели и&nbsp;ожидания от&nbsp;результата', tag: 'старт' },
+        { num: '2', title: 'Разработка', description: 'Сценарий, раскадровка, стилшоты&nbsp;— утверждаем рамку до&nbsp;продакшена', tag: 'план' },
+        { num: '3', title: 'Продакшен', description: 'AI-контент по&nbsp;утверждённой рамке: графика, озвучка, музыка', tag: 'создание' },
+        { num: '4', title: 'Постпродакшен', description: 'Мастер-ролик и&nbsp;технически верные ресайзы под&nbsp;все форматы', tag: 'финал' },
+        { num: '5', title: 'Сдача', description: 'Сопровождаем до&nbsp;финальной приёмки. Облако с&nbsp;чистой структурой', tag: 'итог' },
+      ]} />
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
       <div className="service-cases-section">

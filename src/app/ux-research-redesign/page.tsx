@@ -29,14 +29,12 @@ export default function UxResearchPage() {
       <Section><div className="text-big-wrapper"><p className="text-big">UX&#x2011;исследования при&nbsp;редизайне и&nbsp;запуске обновлений</p></div></Section>
       <Section><div className="text-h2-wrapper"><h2>Помогаем вносить изменения в&nbsp;продукт перед редизайном, после релиза фич и&nbsp;запуска новой стратегии&nbsp;— без&nbsp;риска просадки метрик.</h2></div></Section>
 
-      {/* ── When we help — 3+3 horizontal rows ── */}
+      {/* ── When we help — 6 items, 3+3 in single row ── */}
       <Section><div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">В&nbsp;каких ситуациях поможем</h2></div></Section>
       <ServicePointRow>
         <ServicePoint tagsTop={['с чего начать?']} title="Планируете редизайн, но&nbsp;не&nbsp;понимаете фокус и&nbsp;показатели" />
         <ServicePoint tagsTop={['прототип']} title="Новая версия готова, но&nbsp;нет уверенности, что&nbsp;она востребована" />
         <ServicePoint tagsTop={['бюджет и сроки']} title="Хотите разумно подойти к&nbsp;бюджету перед внедрением изменений" />
-      </ServicePointRow>
-      <ServicePointRow spaced={false}>
         <ServicePoint tagsTop={['после запуска']} title="После запуска метрики не&nbsp;растут или&nbsp;падают" />
         <ServicePoint tagsTop={['конверсия']} title="Есть трафик, но&nbsp;слабая конверсия" />
         <ServicePoint tagsTop={['что менять?']} title="Команда не&nbsp;уверена, что именно нужно изменить" />
@@ -82,7 +80,7 @@ export default function UxResearchPage() {
 
       {/* ── Команда ── */}
       <Section><div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Команда</h2></div>
-        <div className="list-wrapper padding-32px"><div className="list">
+        <div className="list-wrapper padding-32px" style={{paddingTop:'var(--16px)'}}><div className="list">
           {[
             '<strong>Продюсер</strong>&nbsp;— контролирует статусы, сроки, координирует команду',
             '<strong>Ведущий исследователь</strong>&nbsp;— настраивает исследовательские процессы, курирует работу команды, формирует список рекомендаций',
@@ -94,7 +92,7 @@ export default function UxResearchPage() {
       </Section>
 
       <Section><div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Кейсы</h2></div>
-        <div className="list-wrapper padding-32px"><div className="list">
+        <div className="list-wrapper padding-32px" style={{paddingTop:'var(--16px)'}}><div className="list">
           {cases.map(([name, desc], i) => (
             <div key={i} className="list-item-wrapper"><div className="bullet-wrapper-left">
               <h3 dangerouslySetInnerHTML={{__html:`<strong>${name}</strong>&nbsp;— ${desc}`}}/>

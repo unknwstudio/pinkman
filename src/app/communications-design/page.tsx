@@ -2,7 +2,11 @@ import type { Metadata } from 'next'
 import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
+import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
+import ProcessSteps from '@/components/ProcessSteps/ProcessSteps'
+import StatGrid from '@/components/StatGrid/StatGrid'
 import CaseCard from '@/components/CaseCard/CaseCard'
+import ContactCard from '@/components/ContactCard/ContactCard'
 
 export const metadata: Metadata = {
   title: 'Дизайн коммуникаций',
@@ -83,14 +87,33 @@ export default function CommunicationsDesignPage() {
         </div>
       </div>
 
-      <Section><div className="text-h1-wrapper"><h2 className="h1">Когда обращаться</h2></div></Section>
-      <ServiceGrid>
-        <ServicePoint title="Нужны большие объёмы и&nbsp;высокое качество" tags={['визуальный контент','гайдлайны','цели маркетинга']} description="Когда важно регулярно выпускать визуальный контент&nbsp;— в&nbsp;едином стиле, с&nbsp;вниманием к&nbsp;деталям, гайдлайнам и&nbsp;целям маркетинга" />
-        <ServicePoint title="Не&nbsp;хватает ресурсов в&nbsp;дизайн-команде" tags={['аутсорс','полный цикл','визуальные материалы']} description="Если нет своей команды или&nbsp;её не&nbsp;хватает на&nbsp;задачи&nbsp;— подключаемся и&nbsp;берём на&nbsp;себя полный цикл производства визуальных материалов" />
-        <ServicePoint title="Нужно упорядочить визуальные коммуникации" tags={['системный подход','дизайн-системы','единая логика']} description="Помогаем выстроить системный подход: создаём дизайн-системы, описываем стандарты, приводим визуал к&nbsp;единой логике" />
-        <ServicePoint title="Ищете современные и&nbsp;гибкие решения" tags={['3D','motion-графика','адаптирование']} description="Разрабатываем 3D и&nbsp;motion-графику, которую можно быстро адаптировать под&nbsp;разные каналы и&nbsp;форматы" />
-        <ServicePoint title="Нужен актуальный контент для&nbsp;соцсетей" tags={['AI','VFX','большие охваты']} description="Делаем видео с&nbsp;AI и&nbsp;VFX&nbsp;— если важны свежие идеи, внимание аудитории и&nbsp;большой охват" />
-      </ServiceGrid>
+      {/* ── Scale in numbers ── */}
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Масштаб в&nbsp;цифрах</h2></div></Section>
+      <StatGrid items={[
+        { value: '182', label: 'уникальных KV для Газпромбанка', note: '+ 3711 ресайзов, 52 иллюстрации' },
+        { value: '75+', label: 'форматов DOOH для ребрендинга Т-Банка', note: '4 ролика naked eye' },
+        { value: '100', label: 'моушн-роликов для брендов Яндекс Еды', note: '10 спецпроектов, премия E+ Awards' },
+      ]} />
+
+      {/* ── When to come — 5 points in a row ── */}
+      <Section><div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Когда обращаться</h2></div></Section>
+      <ServicePointRow>
+        <ServicePoint tagsTop={['объём']} title="Нужны большие объёмы и&nbsp;высокое качество" description="Регулярный поток визуального контента в&nbsp;едином стиле&nbsp;— с&nbsp;вниманием к&nbsp;деталям, гайдлайнам и&nbsp;целям маркетинга" />
+        <ServicePoint tagsTop={['ресурсы']} title="Не&nbsp;хватает ресурсов в&nbsp;дизайн-команде" description="Подключаемся и&nbsp;берём на&nbsp;себя полный цикл производства визуальных материалов" />
+        <ServicePoint tagsTop={['система']} title="Нужно упорядочить визуальные коммуникации" description="Создаём дизайн-системы, описываем стандарты, приводим визуал к&nbsp;единой логике" />
+        <ServicePoint tagsTop={['форматы']} title="Ищете современные и&nbsp;гибкие решения" description="3D и&nbsp;motion-графика, которую можно быстро адаптировать под&nbsp;разные каналы и&nbsp;форматы" />
+        <ServicePoint tagsTop={['охваты']} title="Нужен актуальный контент для&nbsp;соцсетей" description="Видео с&nbsp;AI и&nbsp;VFX&nbsp;— свежие идеи, внимание аудитории и&nbsp;большой охват" />
+      </ServicePointRow>
+
+      {/* ── How we work ── */}
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Как&nbsp;работаем</h2></div></Section>
+      <ProcessSteps steps={[
+        { num: '1', title: 'Бриф', description: 'Погружаемся в&nbsp;задачу, цели кампании и&nbsp;гайдлайны бренда', tag: 'старт' },
+        { num: '2', title: 'Стратегия', description: 'Определяем визуальную рамку, стиль и&nbsp;форматы для&nbsp;всех каналов', tag: 'рамка' },
+        { num: '3', title: 'Продакшен', description: 'Производим контент в&nbsp;рамках гайдлайнов&nbsp;— KV, баннеры, 3D, моушен', tag: 'создание' },
+        { num: '4', title: 'Адаптация', description: 'Ресайзим под&nbsp;все форматы и&nbsp;каналы, автоматизируем где возможно', tag: 'форматы' },
+        { num: '5', title: 'Сдача', description: 'Итоговые файлы с&nbsp;чистой структурой и&nbsp;понятным неймингом', tag: 'итог' },
+      ]} />
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
       <div className="service-cases-section">
@@ -133,6 +156,8 @@ export default function CommunicationsDesignPage() {
 
         </div>
       </div>
+
+      <ContactCard intro="Обсудим проект?" role="Аккаунт&#x2011;директор Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
     </>
   )
 }
