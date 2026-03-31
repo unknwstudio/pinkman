@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  trailingSlash: true,   // preserves /sites/ URL structure from the current site
+  output: 'standalone',  // optimised for Vercel / Docker
+}
 
-export default nextConfig;
+export default nextConfig

@@ -1,0 +1,849 @@
+/* ============================================================
+   components.css — v CLD345712
+   ============================================================ */
+
+/* ── FONTS ─────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Akkurat';
+  src: url('/fonts/66f6e23524a454603f7d542a_AkkuratLLCyrTT-Regular.ttf') format('truetype'),
+       url('/fonts/66f6e23524a454603f7d5430_AkkuratLLTT-Regular.ttf') format('truetype'),
+       url('/fonts/66f6e23524a454603f7d5432_AkkuratLLCyr-Regular.otf') format('opentype'),
+       url('/fonts/66f6e23524a454603f7d5435_AkkuratLL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Akkurat';
+  src: url('/fonts/66f6e23524a454603f7d542e_AkkuratLLCyrTT-Bold.ttf') format('truetype'),
+       url('/fonts/66f6e23524a454603f7d5434_AkkuratLLTT-Bold.ttf') format('truetype'),
+       url('/fonts/66f6e23524a454603f7d5431_AkkuratLLCyr-Bold.otf') format('opentype'),
+       url('/fonts/66f6e23524a454603f7d5438_AkkuratLL-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zonapro';
+  src: url('/fonts/69384e2d3086b231f6c744e7_ZonaPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zonapro';
+  src: url('/fonts/69384e26b9c5fff8e2da389d_ZonaPro-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zonapro';
+  src: url('/fonts/69384e014113c1591f24cc33_ZonaPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Druk Desktop';
+  src: url('/fonts/69384d58925ec22d3d838d8f_Druk-Bold-Desktop.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SHARED PAGE DEFAULTS  (moved from per-page inline <style>)
+   ════════════════════════════════════════════════════════════ */
+html { font-size: 1vw; }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+}
+html, body { position: relative; height: 100%; }
+footer { flex: 0 0 auto; }
+a { color: inherit; text-decoration: none; }
+*:focus { outline: 0 !important; }
+* { -webkit-tap-highlight-color: transparent; }
+
+/* Big button */
+.big-button.bg-color-pink { display: flex; text-decoration: none; background-color: var(--pink); color: #ffffff; transition: all 0.3s ease; }
+.big-button p { margin: 0; }
+.button-arrow-wrapper { display: flex; transition: background-color 0.3s ease; }
+.button-arrow__not-active svg path { transition: fill 0.3s ease; fill: #818181; }
+.button-arrow__active, .button-arrow__not-active { transition: transform 0.3s ease; }
+.big-button:hover { background-color: transparent; color: var(--dark); }
+.big-button:hover .button-arrow-wrapper { background-color: var(--pink); }
+.big-button:hover .button-arrow__not-active svg path { fill: #FFFFFF; }
+.big-button:hover .button-arrow__active, .big-button:hover .button-arrow__not-active { transform: rotate(45deg); }
+.big-button:active { background-color: var(--pink); color: #ffffff; }
+.header-dropdown-link:hover .header-dropdown-img { opacity: 1; }
+
+/* Between-section spacing */
+.service-points-section,
+.service-section,
+.service-cases-section { margin-bottom: 5rem !important; }
+
+/* ════════════════════════════════════════════════════════════
+   DESKTOP NAV — old Webflow header (hidden on desktop, kept for mobile hamburger)
+   ════════════════════════════════════════════════════════════ */
+
+/* On desktop: hide the old top header — replaced by the floating bottom bar */
+@media (min-width: 992px) {
+  .header-new  { display: none !important; }
+  .menu-space  { display: none !important; }
+  body { padding-top: 40px !important; }
+}
+
+/* On mobile: keep header visible for hamburger button */
+@media (max-width: 991px) {
+  /* Guarantee the header is always fixed */
+  .header-new { position: fixed !important; }
+  .header-container {
+    flex-flow: row !important;
+    align-items: center !important;
+  }
+  .nav-menu { float: none !important; flex: 1; }
+  .mobile-nav-discuss { display: none !important; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   DESKTOP FLOATING NAV BAR  (injected by nav.js for ≥992px)
+   ════════════════════════════════════════════════════════════ */
+.pk-bar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9100;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 10px 10px 26px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  white-space: nowrap;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+.pk-bar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 10px;
+  color: #0d0d0d;
+  opacity: 0.9;
+  transition: opacity 0.15s;
+}
+.pk-bar__logo:hover { opacity: 1; }
+.pk-bar__logo svg { display: block; height: 29px; width: auto; }
+.pk-bar__links { display: flex; align-items: center; gap: 3px; }
+.pk-bar__link {
+  font-size: 19px;
+  font-weight: 500;
+  color: rgba(13, 13, 13, 0.55);
+  text-decoration: none;
+  padding: 12px 21px;
+  border-radius: 100px;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+.pk-bar__link:hover { background: rgba(0, 0, 0, 0.06); color: #0d0d0d; }
+.pk-bar__link--active { color: #0d0d0d; }
+
+/* Services dropdown — opens UPWARD */
+.pk-bar__item { position: relative; display: flex; align-items: center; }
+.pk-bar__item::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0; right: 0;
+  height: 24px; /* hover bridge */
+}
+.pk-bar__dropdown {
+  position: absolute;
+  bottom: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 8px;
+  min-width: 286px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  z-index: 9200;
+}
+.pk-bar__item:hover .pk-bar__dropdown {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+.pk-bar__drop-link {
+  display: block;
+  padding: 12px 21px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0d0d0d;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: background 0.12s;
+  white-space: nowrap;
+}
+.pk-bar__drop-link:hover { background: rgba(0, 0, 0, 0.06); }
+.pk-bar__drop-link--active { font-weight: 600; }
+
+/* CTA button */
+.pk-bar__cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 19px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: #F03882;
+  padding: 13px 29px;
+  border-radius: 100px;
+  margin-left: 5px;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.pk-bar__cta:hover { opacity: 0.88; }
+
+/* Hidden on mobile — mobile overlay handles navigation */
+@media (max-width: 991px) { .pk-bar { display: none !important; } }
+
+/* ════════════════════════════════════════════════════════════
+   MOBILE NAV OVERLAY  (injected by nav.js — not in HTML)
+   ════════════════════════════════════════════════════════════ */
+
+/* BASE — overlay is always fixed + invisible at EVERY viewport.
+   Without this, at desktop (≥992px) the overlay has zero CSS
+   and renders as a visible block at the bottom of the body. */
+.nav-mob-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.nav-mob-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (max-width: 991px) {
+
+  /* Hide Webflow nav-menu — JS overlay takes over on mobile */
+  .nav-menu { display: none !important; }
+
+  /* Header above overlay */
+  .header-new { z-index: 9999 !important; }
+
+  /* ── Overlay visual styling (mobile only) ── */
+  .nav-mob-overlay {
+    background: #EAEAEA;
+    padding: 80px 16px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.22s ease, visibility 0.22s ease;
+  }
+
+  /* ── Nav list ── */
+  .nav-mob__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    margin-top: 8px; /* same gap as between buttons */
+  }
+
+  /* ── Shared button style (from Figma) ── */
+  .nav-mob__link {
+    display: flex;
+    padding: 16px;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: #FFF;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+    line-height: 1.5;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ── Services accordion ── */
+  .nav-mob__services {
+    border-radius: 12px;
+    background: #FFF;
+    overflow: hidden;
+  }
+  .nav-mob__services-trigger {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    cursor: pointer;
+    text-align: left;
+    line-height: 1.5;
+  }
+  .nav-mob__arrow {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    transform: rotate(180deg); /* default: points DOWN */
+  }
+  .nav-mob__sub {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 12px;
+  }
+  .nav-mob__sub[hidden] { display: none; }
+  .nav-mob__sub-link {
+    display: block;
+    padding: 10px 0;
+    border-top: 1px solid #f0f0f0;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+  }
+
+  /* ── CTA "Обсудить проект" (pink, Figma spec) ── */
+  .nav-mob__cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 4px 4px 24px;
+    border-radius: 12px;
+    background: #F03882;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 16px;
+    flex-shrink: 0;
+  }
+  .nav-mob__cta::after {
+    content: '↗';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border-radius: 10px;
+    color: #111;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* ── Hamburger button ── */
+  .mobile-menu-btn {
+    position: relative !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent !important;
+    border: none !important;
+    z-index: 10000;
+    flex-shrink: 0;
+  }
+
+  .nav-burger,
+  .nav-close {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+  .nav-burger {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .nav-burger i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #222;
+    border-radius: 2px;
+    font-style: normal;
+  }
+  .nav-close {
+    font-size: 22px;
+    color: #222;
+    line-height: 1;
+    opacity: 0;
+  }
+  .mobile-menu-btn.is-open .nav-burger { opacity: 0; }
+  .mobile-menu-btn.is-open .nav-close  { opacity: 1; }
+}
+
+@media (max-width: 479px) {
+  .nav-mob-overlay { padding-top: 70px; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   HEADER "ОБСУДИТЬ" BUTTON — desktop nav CTA
+   ════════════════════════════════════════════════════════════ */
+/* The button lives inside .nav-menu which is hidden on mobile,
+   so no extra rule needed. Shown automatically on desktop. */
+
+/* ════════════════════════════════════════════════════════════
+   SCROLL-HIDE HEADER
+   ════════════════════════════════════════════════════════════ */
+.header-new {
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+.header-new.header--hidden {
+  transform: translateY(-100%);
+}
+
+/* ════════════════════════════════════════════════════════════
+   HERO IMAGES — pointer fix + desktop hover popup + mobile carousel
+   ════════════════════════════════════════════════════════════ */
+.best-cases__link { pointer-events: auto !important; display: block; }
+
+@media (min-width: 992px) {
+  .features-grid___item.best-cases__popup {
+    display: flex !important;
+    pointer-events: none;
+    position: absolute;
+    inset: auto 0 0;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.28s ease, opacity 0.22s ease;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    border-radius: 0 0 8px 8px;
+    padding: 14px 18px 18px;
+  }
+  .best-cases__item:hover .features-grid___item.best-cases__popup {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .features-grid___item.best-cases__popup { display: none !important; }
+
+  .images-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
+  }
+
+  .images-list.best-cases__list {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px !important;
+    padding: 0 16px 6px !important;
+    scrollbar-width: none;
+  }
+  .images-list.best-cases__list::-webkit-scrollbar { display: none; }
+
+  .best-cases__item {
+    flex: 0 0 78vw !important;
+    min-width: 0;
+    scroll-snap-align: start;
+    aspect-ratio: 1 / 1;
+    height: auto !important;
+  }
+
+  .best-cases__img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 12px !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   BOLD HEADLINES
+   ════════════════════════════════════════════════════════════ */
+.text-big, h1, .h1, h2, .h2, h3, .h3, .h3-bold { font-weight: 700 !important; }
+
+/* ════════════════════════════════════════════════════════════
+   CONTACTS
+   ════════════════════════════════════════════════════════════ */
+.contacts-hero-section  { padding-bottom: 0 !important; }
+/* .contacts-main-section wraps a .main-container — no horizontal padding needed here.
+   padding-top matches .text-h1-wrapper so it feels like a proper section. */
+.contacts-main-section  {
+  padding-top: var(--64px);
+  padding-bottom: 4rem;
+}
+@media (max-width: 991px) { .contacts-main-section { padding-top: var(--tablet--48px); } }
+@media (max-width: 479px)  { .contacts-main-section { padding-top: var(--mobile--48px); } }
+.contacts-card          { max-width: 680px; }
+.contacts-intro {
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0d0d0d;
+  margin-bottom: 0.6em;
+}
+.contacts-role {
+  font-size: var(--16px);
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 2.4rem;
+}
+.contacts-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.contacts-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  background: #0d0d0d;
+  color: #fff;
+}
+.contacts-link-btn:hover { opacity: 0.82; transform: translateY(-1px); }
+.contacts-link-btn--light { background: #fff; color: #0d0d0d; border: 1.5px solid #0d0d0d; }
+.contacts-legal-section {
+  border-top: 1px solid #e8e8e8;
+  padding-top: 3rem !important;
+  margin-top: 1rem;
+}
+.contacts-legal h3 {
+  font-size: var(--16px);
+  font-weight: 400;
+  color: #999;
+  line-height: 1.6;
+}
+@media (max-width: 767px) {
+  .contacts-link-btn { width: 100%; justify-content: center; }
+  .contacts-links { flex-direction: column; }
+  .contacts-legal h3 { font-size: 12px !important; line-height: 1.6 !important; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   BIGGER CARD BORDER RADIUS
+   ════════════════════════════════════════════════════════════ */
+.service-point { border-radius: 20px !important; }
+.case-card-big { border-radius: 20px !important; }
+.contacts-card { border-radius: 20px !important; }
+
+/* ════════════════════════════════════════════════════════════
+   HOMEPAGE FIXES
+   ════════════════════════════════════════════════════════════ */
+/* Remove Webflow-set cursor:pointer on the decorative full-width image */
+.image-section { cursor: default !important; pointer-events: none !important; }
+.image-section * { pointer-events: none !important; }
+
+/* Small service buttons — smooth hover transitions */
+.small-button {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.small-button .small-button-arrow {
+  transition: opacity 0.2s ease !important;
+}
+.small-button .button-arrow__active {
+  transition: opacity 0.2s ease !important;
+}
+
+/* ServiceListItem: hovering the whole row activates the button visuals */
+.list-item-wrapper:hover .small-button {
+  background-color: var(--color--total-black) !important;
+  color: var(--color--white) !important;
+}
+.list-item-wrapper:hover .small-button .small-button-arrow {
+  opacity: 0 !important;
+}
+.list-item-wrapper:hover .small-button .button-arrow__active {
+  opacity: 1 !important;
+}
+/* Ensure the overlay link sits on top for clickability */
+.list-item-wrapper { position: relative; }
+.list-item-link { z-index: 1; }
+
+/* ════════════════════════════════════════════════════════════
+   FLOATING BAR CTA — better hover
+   ════════════════════════════════════════════════════════════ */
+.pk-bar__cta {
+  transition: background-color 0.2s ease, transform 0.15s ease !important;
+}
+.pk-bar__cta:hover {
+  background-color: #c8296b !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SCROLL-IN ANIMATIONS  (driven by scroll.js + IntersectionObserver)
+   ════════════════════════════════════════════════════════════ */
+/* Use !important to override main.min.css opacity rules */
+.anim {
+  opacity: 0 !important;
+  transform: translateY(18px) !important;
+  transition: opacity 0.65s ease, transform 0.65s ease !important;
+}
+.anim.in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.anim[data-d="1"] { transition-delay: 0.10s !important; }
+.anim[data-d="2"] { transition-delay: 0.20s !important; }
+.anim[data-d="3"] { transition-delay: 0.30s !important; }
+.anim[data-d="4"] { transition-delay: 0.40s !important; }
+
+@keyframes up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes su { from { opacity: 0; transform: translateY(108%); } to { opacity: 1; transform: translateY(0); } }
+
+/* ════════════════════════════════════════════════════════════
+   MOBILE CONTACTS — fix tiny text caused by 1vw base font size
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .contacts-intro { font-size: 28px !important; line-height: 1.2 !important; font-weight: 700 !important; }
+  .contacts-role  { font-size: 16px !important; margin-bottom: 20px !important; }
+  .contacts-legal h3 { font-size: 16px !important; }
+  .contacts-link-btn { font-size: 16px !important; padding: 14px 12px !important; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER LOGO — clamp to sensible size on our custom pages
+   ════════════════════════════════════════════════════════════ */
+.footer-logo-img {
+  width: auto !important;
+  height: 36px !important;
+  max-width: 200px !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   VERSION
+   ════════════════════════════════════════════════════════════ */
+.site-version {
+  display: block;
+  text-align: center;
+  padding: 8px 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #aaa;
+  font-family: monospace;
+}
+
+/* ════════════════════════════════════════════════════════════
+   BIG-BUTTON-BLACK  (case page "На сайт" button)
+   ════════════════════════════════════════════════════════════ */
+.big-button-black {
+  border: var(--1px) solid var(--color--white);
+  background-color: var(--color--white);
+  border-radius: .8rem;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 14.2rem;
+  padding: .0694445rem .0694445rem .0694445rem 1.5rem;
+  font-size: 1.06667rem;
+  font-weight: 400;
+  line-height: 1.06667rem;
+  text-decoration: none;
+  color: #000;
+  display: inline-flex;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.big-button-black.case-web {
+  min-width: auto;
+}
+.big-button-black p {
+  margin: 0;
+}
+.button-arrow-wrapper-black {
+  background-color: var(--color--total-black, #000);
+  border-radius: .625rem;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-left: 1rem;
+  padding: .8rem;
+  display: flex;
+  transition: background-color 0.3s ease;
+}
+.button-arrow__black {
+  transition: transform 0.3s ease;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.big-button-black:hover {
+  background-color: transparent;
+}
+.big-button-black:hover p {
+  color: #000;
+}
+.big-button-black:hover .button-arrow-wrapper-black {
+  background-color: #000;
+}
+.big-button-black:hover .button-arrow__black {
+  transform: rotate(45deg);
+}
+.big-button-black:active {
+  background-color: #fff;
+}
+.big-button-black:active .button-arrow-wrapper-black {
+  background-color: #fff;
+}
+
+/* case cover button — bottom-right of cover image */
+.case-cover-button {
+  position: absolute;
+  inset: auto 4.44444rem 0% auto;
+  padding-right: var(--28px);
+  padding-bottom: var(--28px);
+}
+@media (max-width: 991px) {
+  .case-cover-button {
+    right: var(--tablet--16px);
+    padding-right: var(--tablet--8px);
+    padding-bottom: var(--tablet--8px);
+  }
+}
+@media (max-width: 767px) {
+  .case-cover-button {
+    right: var(--mobile--16px);
+    padding-right: var(--mobile--8px);
+    padding-bottom: var(--mobile--8px);
+  }
+}
+.media-section.last {
+  position: relative;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CASE PAGE — MEDIA SECTION IMAGES
+   ════════════════════════════════════════════════════════════ */
+.picture {
+  border-radius: var(--8px);
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 767px) {
+  .picture { border-radius: var(--mobile--8px); }
+}
+
+.media-section {
+  padding: var(--32px) var(--64px);
+}
+.media-section.last {
+  padding-bottom: 0;
+  position: relative;
+}
+.media-section.last.full-size {
+  padding-top: var(--8px);
+}
+@media (max-width: 991px) {
+  .media-section.last {
+    padding-right: var(--tablet--16px);
+    padding-left: var(--tablet--16px);
+  }
+}
+@media (max-width: 767px) {
+  .media-section {
+    padding: var(--mobile--24px) var(--mobile--16px);
+  }
+  .media-section.last {
+    padding-right: var(--mobile--16px);
+    padding-left: var(--mobile--16px);
+  }
+}
+
+/* 2-column photo grid */
+.media-section__photos {
+  grid-column-gap: var(--4px);
+  grid-row-gap: var(--4px);
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+.media-section__photos--fullsize {
+  grid-template-columns: 1fr;
+}
+@media (max-width: 767px) {
+  .media-section__photos {
+    grid-column-gap: var(--mobile--2px);
+    grid-row-gap: var(--mobile--2px);
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   CONTENT WRAPPER VERTICAL RHYTHM
+   (ported from Webflow main.min.css + bottom indents added)
+   ════════════════════════════════════════════════════════════ */
+.text-big-wrapper {
+  padding-top: var(--64px);
+  padding-bottom: var(--32px);
+}
+.text-h2-wrapper {
+  padding-top: var(--16px);
+  padding-bottom: var(--16px);
+  max-width: 48.6111rem;
+}
+.text-h1-wrapper {
+  max-width: var(--700px);
+  padding-top: var(--64px);
+  padding-bottom: var(--16px);
+}
+@media (max-width: 991px) {
+  .text-big-wrapper { padding-top: var(--tablet--32px); padding-bottom: var(--tablet--16px); }
+  .text-h2-wrapper  { padding-top: var(--tablet--16px); max-width: none; }
+  .text-h1-wrapper  { padding-top: var(--tablet--48px); max-width: 100%; }
+}
+@media (max-width: 767px) {
+  .text-big-wrapper { padding-top: var(--mobile--32px); }
+  .text-h2-wrapper  { padding-top: var(--mobile--16px); }
+  .text-h1-wrapper  { padding-top: var(--mobile--48px); max-width: 100%; }
+}
+
+/* case media blocks — bottom spacing */
+.case-media-block {
+  padding-bottom: var(--32px);
+}
+.case-awards {
+  padding-bottom: var(--32px);
+}

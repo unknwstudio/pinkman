@@ -1,0 +1,372 @@
+'use client'
+
+import { useState } from 'react'
+
+const CATEGORIES = [
+  'Все проекты',
+  'Веб-дизайн',
+  'Бренд и\u00a0контент',
+  'Спецпроекты',
+  'BTL и\u00a0ивенты',
+  'Брендинг',
+  'Исследования',
+  'Сайты на\u00a0no-code',
+  'Дизайн коммуникаций',
+  '3D/Motion-design',
+  'Интерфейсы',
+  'Сайты корпораций',
+]
+
+type Case = {
+  title: string
+  desc: string
+  year: string
+  cats: string[]
+  img?: string
+  imgSrcSet?: string
+  href?: string
+}
+
+const CASES: Case[] = [
+  {
+    title: 'Свои Плюсы',
+    desc: 'Всего за\u00a02 месяца сделали редизайн и\u00a0полностью обновили ключевой канал коммуникации',
+    year: '2025',
+    cats: ['Бренд и\u00a0контент', '3D/Motion-design'],
+    img: '/images/69a43d4c9c4d979bb18d08a3_Frame 174.webp',
+    imgSrcSet: '/images/69a43d4c9c4d979bb18d08a3_Frame 174-p-500.webp 500w, /images/69a43d4c9c4d979bb18d08a3_Frame 174-p-800.webp 800w, /images/69a43d4c9c4d979bb18d08a3_Frame 174-p-1080.webp 1080w, /images/69a43d4c9c4d979bb18d08a3_Frame 174.webp 1248w',
+    href: '/projects/masshtabirovali-svoi-plyusy----programmu-loyalnosti-yandeksa',
+  },
+  {
+    title: 'Сбер НПФ',
+    desc: 'Обновили сайт негосударственного пенсионного фонда Сбербанка',
+    year: '2025',
+    cats: ['Веб-дизайн', 'Исследования', 'Сайты корпораций'],
+    img: '/images/68d55d1e9a752dbe263fe0fe_Frame 174 (4).webp',
+    imgSrcSet: '/images/68d55d1e9a752dbe263fe0fe_Frame 174 (4)-p-500.webp 500w, /images/68d55d1e9a752dbe263fe0fe_Frame 174 (4)-p-800.webp 800w, /images/68d55d1e9a752dbe263fe0fe_Frame 174 (4)-p-1080.webp 1080w, /images/68d55d1e9a752dbe263fe0fe_Frame 174 (4).webp 1248w',
+    href: '/projects/sdelali-novyy-sayt-dlya-sber-npf',
+  },
+  {
+    title: 'Prodamus',
+    desc: 'Сделали брендинг для\u00a0экосистемы финтех-сервисов и\u00a0гайдлайн для\u00a0масштабирования и\u00a0развития',
+    year: '2025',
+    cats: ['Бренд и\u00a0контент'],
+    img: '/images/689de85cb9c4e911a3a1dbd3_Frame 174 (3).webp',
+    imgSrcSet: '/images/689de85cb9c4e911a3a1dbd3_Frame 174 (3)-p-500.webp 500w, /images/689de85cb9c4e911a3a1dbd3_Frame 174 (3)-p-800.webp 800w, /images/689de85cb9c4e911a3a1dbd3_Frame 174 (3)-p-1080.webp 1080w, /images/689de85cb9c4e911a3a1dbd3_Frame 174 (3).webp 1248w',
+    href: '/projects/sdelali-brending-dlya-ekosistemy-finteh-servisov-prodamus',
+  },
+  {
+    title: 'ОТП Банк',
+    desc: '1,5 года делаем сайт банка лучше — увеличили конверсию на\u00a040%',
+    year: '2025',
+    cats: ['Веб-дизайн', 'Исследования', 'Сайты корпораций'],
+    img: '/images/680b76c9f1bb4eb6c0f384fb_otp.webp',
+    imgSrcSet: '/images/680b76c9f1bb4eb6c0f384fb_otp-p-500.webp 500w, /images/680b76c9f1bb4eb6c0f384fb_otp-p-800.webp 800w, /images/680b76c9f1bb4eb6c0f384fb_otp-p-1080.webp 1080w, /images/680b76c9f1bb4eb6c0f384fb_otp.webp 1248w',
+    href: '/projects/1-5-goda-razvivaem-sayt-otp-banka-uvelichili-konversiyu-na-40',
+  },
+  {
+    title: 'Яндекс Еда',
+    desc: '2 года работаем с\u00a0дизайном коммуникаций фудтех-проектов Яндекса в\u00a0нескольких странах',
+    year: '2025',
+    cats: ['Дизайн коммуникаций', '3D/Motion-design'],
+    img: '/images/683eccfa54b8a997cf797735_Frame 174 (2).webp',
+    imgSrcSet: '/images/683eccfa54b8a997cf797735_Frame 174 (2)-p-500.webp 500w, /images/683eccfa54b8a997cf797735_Frame 174 (2)-p-800.webp 800w, /images/683eccfa54b8a997cf797735_Frame 174 (2)-p-1080.webp 1080w, /images/683eccfa54b8a997cf797735_Frame 174 (2).webp 1248w',
+    href: '/projects/2-goda-dizayn-podderzhki-yandeks-edy',
+  },
+  {
+    title: 'Международный жилищный конгресс',
+    desc: 'Сделали сайт для\u00a0ведущего делового мероприятия в\u00a0сфере недвижимости',
+    year: '2025',
+    cats: ['Веб-дизайн'],
+  },
+  {
+    title: 'Газпромбанк',
+    desc: '1,5 года помогаем поддерживать дизайн коммуникаций банка на\u00a0аутстаффе',
+    year: '2025',
+    cats: ['Дизайн коммуникаций', '3D/Motion-design'],
+    img: '/images/680b764199c920914c0a7c5b_gpb.webp',
+    imgSrcSet: '/images/680b764199c920914c0a7c5b_gpb-p-500.webp 500w, /images/680b764199c920914c0a7c5b_gpb-p-800.webp 800w, /images/680b764199c920914c0a7c5b_gpb-p-1080.webp 1080w, /images/680b764199c920914c0a7c5b_gpb.webp 1248w',
+    href: '/projects/1-5-goda-pomogaem-podderzhivat-dizayn-kommunikaciy-gazprombanka-na-autstaffe',
+  },
+  {
+    title: 'Синяя птица',
+    desc: 'Подготовили 19 видеофонов и\u00a0оживили персонажей для номеров шоу',
+    year: '2025',
+    cats: ['Бренд и\u00a0контент', 'Спецпроекты'],
+    img: '/images/69aae24b7c2dab0e74e8a302_Frame-2136139030.webp',
+    imgSrcSet: '/images/69aae24b7c2dab0e74e8a302_Frame-2136139030-p-500.webp 500w, /images/69aae24b7c2dab0e74e8a302_Frame-2136139030-p-800.webp 800w, /images/69aae24b7c2dab0e74e8a302_Frame-2136139030-p-1080.webp 1080w, /images/69aae24b7c2dab0e74e8a302_Frame-2136139030.webp 1248w',
+    href: '/projects/scenicheskiy-vizual-dlya-siney-pticy-fony-k-nomeram-shou',
+  },
+  {
+    title: 'Daily 3D',
+    desc: '366 дней подряд рисовали и\u00a0выкладывали уникальные 3D',
+    year: '2025',
+    cats: ['3D/Motion-design'],
+    img: '/images/680b75d20c163d6e81d4418e_daily3d.webp',
+    imgSrcSet: '/images/680b75d20c163d6e81d4418e_daily3d-p-500.webp 500w, /images/680b75d20c163d6e81d4418e_daily3d-p-800.webp 800w, /images/680b75d20c163d6e81d4418e_daily3d-p-1080.webp 1080w, /images/680b75d20c163d6e81d4418e_daily3d.webp 1248w',
+    href: '/projects/366-dney-podryad-risovali-i-vykladyvali-3d',
+  },
+  {
+    title: 'ОТП Банк',
+    desc: 'Меняем дизайн коммуникаций банка в\u00a0офлайне: видео, велком-паки и\u00a0т.д.',
+    year: '2025',
+    cats: ['Бренд и\u00a0контент', 'Дизайн коммуникаций', '3D/Motion-design'],
+  },
+  {
+    title: 'Ютека',
+    desc: 'Сделали ролик для\u00a0ТВ-кампании большого аптечного маркетплейса.',
+    year: '2025',
+    cats: ['Бренд и\u00a0контент', '3D/Motion-design'],
+    img: '/images/680b768db1c5ee1deb64c739_uteka.webp',
+    imgSrcSet: '/images/680b768db1c5ee1deb64c739_uteka-p-500.webp 500w, /images/680b768db1c5ee1deb64c739_uteka-p-800.webp 800w, /images/680b768db1c5ee1deb64c739_uteka-p-1080.webp 1080w, /images/680b768db1c5ee1deb64c739_uteka.webp 1248w',
+    href: '/projects/sdelali-rolik-dlya-tv-reklamy-yuteki',
+  },
+  {
+    title: 'X5 Tech',
+    desc: '5 лет работаем над\u00a0внутренними продуктами крупного ритейлера',
+    year: '2024',
+    cats: ['Интерфейсы', 'Исследования'],
+  },
+  {
+    title: 'Т-Банк',
+    desc: 'Сделали стиль и\u00a0лендинг для\u00a0спецпроекта Т=Математика с\u00a0нуля за\u00a03 недели',
+    year: '2024',
+    cats: ['Веб-дизайн', '3D/Motion-design'],
+    img: '/images/68237c69e06cd1f8df488716_Frame 174.webp',
+    imgSrcSet: '/images/68237c69e06cd1f8df488716_Frame 174-p-500.webp 500w, /images/68237c69e06cd1f8df488716_Frame 174-p-800.webp 800w, /images/68237c69e06cd1f8df488716_Frame 174-p-1080.webp 1080w, /images/68237c69e06cd1f8df488716_Frame 174.webp 1248w',
+    href: '/projects/sdelali-stil-i-lending-dlya-specproekta-t-banka-za-3-nedeli',
+  },
+  {
+    title: 'Сбер х Пушкинский музей',
+    desc: 'Спроектировали приложение и\u00a0AR-активности для\u00a0выставки Снейдерса',
+    year: '2024',
+    cats: ['BTL и\u00a0ивенты', '3D/Motion-design', 'Интерфейсы'],
+    img: '/images/680b77bf92a7c82e815dca6d_sneyders.webp',
+    imgSrcSet: '/images/680b77bf92a7c82e815dca6d_sneyders-p-500.webp 500w, /images/680b77bf92a7c82e815dca6d_sneyders-p-800.webp 800w, /images/680b77bf92a7c82e815dca6d_sneyders-p-1080.webp 1080w, /images/680b77bf92a7c82e815dca6d_sneyders.webp 1248w',
+    href: '/projects/sproektirovali-prilozhenie-i-ar-aktivnosti-dlya-vystavki-sneydersa-v-pushkinskom-muzee',
+  },
+  {
+    title: 'FUN&SUN',
+    desc: '2 года улучшаем сайт и\u00a0приложение туроператора',
+    year: '2024',
+    cats: ['Интерфейсы', 'Исследования', 'Веб-дизайн'],
+    img: '/images/680b76236866e23af5ff4c24_funsun.webp',
+    imgSrcSet: '/images/680b76236866e23af5ff4c24_funsun-p-500.webp 500w, /images/680b76236866e23af5ff4c24_funsun-p-800.webp 800w, /images/680b76236866e23af5ff4c24_funsun-p-1080.webp 1080w, /images/680b76236866e23af5ff4c24_funsun.webp 1248w',
+    href: '/projects/2-goda-uluchshaem-sayt-i-prilozhenie-turoperatora-fun-sun',
+  },
+  {
+    title: 'VK',
+    desc: 'Подготовили VFX-ролик для\u00a0спецпроекта «Мамин лайк»',
+    year: '2024',
+    cats: ['Бренд и\u00a0контент', '3D/Motion-design'],
+  },
+  {
+    title: 'Сбер х Еврейский музей',
+    desc: 'Мобильное приложение и\u00a0дизайн-поддержка выставки про Бродского',
+    year: '2024',
+    cats: ['BTL и\u00a0ивенты', '3D/Motion-design', 'Интерфейсы'],
+    img: '/images/681229f38e06cabc183bbec4_Frame 174.webp',
+    imgSrcSet: '/images/681229f38e06cabc183bbec4_Frame 174-p-500.webp 500w, /images/681229f38e06cabc183bbec4_Frame 174-p-800.webp 800w, /images/681229f38e06cabc183bbec4_Frame 174-p-1080.webp 1080w, /images/681229f38e06cabc183bbec4_Frame 174.webp 1248w',
+    href: '/projects/mobilnoe-prilozhenie-i-dizayn-podderzhka-vystavki-pro-brodskogo',
+  },
+  {
+    title: 'ВТБ',
+    desc: '5 лет развивали сайт и\u00a0цифровые коммуникации ТОП-3 банка России',
+    year: '2024',
+    cats: ['Веб-дизайн', 'Интерфейсы', '3D/Motion-design', 'Сайты корпораций'],
+  },
+  {
+    title: 'Hamkor Bank',
+    desc: 'Трансформировали сайт банка из\u00a0Узбекистана в\u00a0цифровой канал продаж',
+    year: '2024',
+    cats: ['Веб-дизайн', 'Интерфейсы'],
+    img: '/images/680b765f6caf19b581dcc03f_hamkor.webp',
+    imgSrcSet: '/images/680b765f6caf19b581dcc03f_hamkor-p-500.webp 500w, /images/680b765f6caf19b581dcc03f_hamkor-p-800.webp 800w, /images/680b765f6caf19b581dcc03f_hamkor-p-1080.webp 1080w, /images/680b765f6caf19b581dcc03f_hamkor.webp 1248w',
+    href: '/projects/transformirovali-sayt-banka-hamkor-v-cifrovoy-kanal-prodazh',
+  },
+  {
+    title: 'X5 Dialog',
+    desc: 'Провели исследования, сделали редизайн и\u00a0увеличили в\u00a02 раза конверсию платформы',
+    year: '2024',
+    cats: ['Веб-дизайн', 'Исследования'],
+    img: '/images/680b7652098cf4449bc913de_x5dialog.webp',
+    imgSrcSet: '/images/680b7652098cf4449bc913de_x5dialog-p-500.webp 500w, /images/680b7652098cf4449bc913de_x5dialog-p-800.webp 800w, /images/680b7652098cf4449bc913de_x5dialog-p-1080.webp 1080w, /images/680b7652098cf4449bc913de_x5dialog.webp 1248w',
+    href: '/projects/uvelichili-v-2-raza-konversiyu-platformy-servisov-dlya-partnerov-x5',
+  },
+  {
+    title: 'Росбанк',
+    desc: '4 года работали на\u00a0аутстаффе: провели рефакторинг дизайн-системы, сделали редизайн',
+    year: '2024',
+    cats: ['Интерфейсы', 'Исследования', 'Сайты корпораций'],
+  },
+  {
+    title: 'API Яндекс Карты',
+    desc: 'Сделали редизайн сайта геосервисов Яндекса для\u00a0бизнеса и\u00a0получили кучу наград',
+    year: '2024',
+    cats: ['Веб-дизайн', 'Интерфейсы', 'Сайты корпораций'],
+    img: '/images/6818bccf9f96a2532b76569c_Frame 176 (2).webp',
+    imgSrcSet: '/images/6818bccf9f96a2532b76569c_Frame 176 (2)-p-500.webp 500w, /images/6818bccf9f96a2532b76569c_Frame 176 (2)-p-800.webp 800w, /images/6818bccf9f96a2532b76569c_Frame 176 (2)-p-1080.webp 1080w, /images/6818bccf9f96a2532b76569c_Frame 176 (2).webp 1248w',
+    href: '/projects/sdelali-redizayn-sayta-geoservisov-yandeksa-dlya-biznesa',
+  },
+  {
+    title: 'Сбер х Пушкинский музей',
+    desc: 'Сделали игровое мобильное приложение со\u00a0Сберкотом и\u00a0ИИ к\u00a0112-му дню рождения музея',
+    year: '2024',
+    cats: ['BTL и\u00a0ивенты', 'Интерфейсы', 'Дизайн коммуникаций'],
+    img: '/images/68122eb9ab3c926efd770f2f_Frame 174.webp',
+    imgSrcSet: '/images/68122eb9ab3c926efd770f2f_Frame 174-p-500.webp 500w, /images/68122eb9ab3c926efd770f2f_Frame 174-p-800.webp 800w, /images/68122eb9ab3c926efd770f2f_Frame 174-p-1080.webp 1080w, /images/68122eb9ab3c926efd770f2f_Frame 174.webp 1248w',
+    href: '/projects/igrovoe-mobilnoe-prilozhenie-so-sberkotom-i-ii',
+  },
+  {
+    title: 'Т-Банк',
+    desc: 'Сделали моушен про\u00a0ренейминг банка для\u00a03D-кубов и\u00a0медиафасадов по\u00a0всей России',
+    year: '2024',
+    cats: ['Бренд и\u00a0контент', '3D/Motion-design'],
+    img: '/images/680b761258fa82867ec8654d_tbankvideo.webp',
+    imgSrcSet: '/images/680b761258fa82867ec8654d_tbankvideo-p-500.webp 500w, /images/680b761258fa82867ec8654d_tbankvideo-p-800.webp 800w, /images/680b761258fa82867ec8654d_tbankvideo-p-1080.webp 1080w, /images/680b761258fa82867ec8654d_tbankvideo.webp 1248w',
+    href: '/projects/sdelali-moushen-dlya-rebrendinga-t-banka',
+  },
+  {
+    title: 'МТС',
+    desc: 'Поддержали дизайном HR-коммуникаций телеком-оператора',
+    year: '2023',
+    cats: ['Дизайн коммуникаций', '3D/Motion-design'],
+  },
+  {
+    title: 'Сбербанк',
+    desc: 'Разработали лендинг для\u00a0аудитории молодых предпринимателей с\u00a03D-иллюстрациями',
+    year: '2023',
+    cats: ['Веб-дизайн', '3D/Motion-design', 'Сайты корпораций'],
+  },
+  {
+    title: 'Центр Зотов',
+    desc: 'Нарисовали баннеры, ресайзы и\u00a0анимацию для\u00a0цифровых коммуникаций культурного центра',
+    year: '2023',
+    cats: ['Дизайн коммуникаций', '3D/Motion-design'],
+  },
+  {
+    title: 'Paynet',
+    desc: 'Сделали редизайн приложения узбекской платежной системы за\u00a0месяц с\u00a0ростом конверсии',
+    year: '2023',
+    cats: ['Интерфейсы', 'Исследования'],
+    img: '/images/680b8288f5c20f2e9eb565ab_paynet.webp',
+    imgSrcSet: '/images/680b8288f5c20f2e9eb565ab_paynet-p-500.webp 500w, /images/680b8288f5c20f2e9eb565ab_paynet-p-800.webp 800w, /images/680b8288f5c20f2e9eb565ab_paynet-p-1080.webp 1080w, /images/680b8288f5c20f2e9eb565ab_paynet.webp 1248w',
+    href: '/projects/sproektirovali-mvp-prilozheniya-paynet-za-mesyac',
+  },
+  {
+    title: 'МТС',
+    desc: 'Помогли в\u00a0развитии дизайн-системы бренда',
+    year: '2023',
+    cats: ['Веб-дизайн'],
+  },
+  {
+    title: 'VK Порталы',
+    desc: 'Спроектировали чат-бота и\u00a0100 экранов для\u00a0управления мультимедийным проектом',
+    year: '2023',
+    cats: ['BTL и\u00a0ивенты', 'Интерфейсы'],
+    img: '/images/680b76b7c91ad25c42587b6c_vkportal.webp',
+    imgSrcSet: '/images/680b76b7c91ad25c42587b6c_vkportal-p-500.webp 500w, /images/680b76b7c91ad25c42587b6c_vkportal-p-800.webp 800w, /images/680b76b7c91ad25c42587b6c_vkportal-p-1080.webp 1080w, /images/680b76b7c91ad25c42587b6c_vkportal.webp 1248w',
+    href: '/projects/sdelali-chat-bota-i-sproektirovali-100-ekranov-dlya-proekta-vk-portaly',
+  },
+]
+
+export default function ProjectsPage() {
+  const [active, setActive] = useState('Все проекты')
+
+  const filtered = active === 'Все проекты'
+    ? CASES
+    : CASES.filter(c => c.cats.includes(active))
+
+  return (
+    <>
+      <div className="portfolio-section">
+        <div className="main-container">
+          <div className="text-big-wrapper">
+            <p className="text-big">Портфолио (2016—..)</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="portfolio-section">
+        <div className="main-container">
+          <div className="filter-chips-wrapper" style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
+            {CATEGORIES.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActive(cat)}
+                className={`text-small is__chip${active === cat ? ' is__chip--active' : ''}`}
+                style={{
+                  background: active === cat ? '#1a1a1a' : undefined,
+                  color: active === cat ? '#fff' : undefined,
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                }}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="service-cases-section">
+        <div className="service-grid">
+          {filtered.map((c, i) => (
+            <div key={i} className="case-card-wrapper">
+              <div className="case-card-big">
+                <div className="case-card-big___left">
+                  <div className="case-card-big-top">
+                    <div className="cases-item__top-navigation">
+                      <div className="cases-item__top-left">
+                        {c.cats.map(cat => (
+                          <p key={cat} className="text-small is__chip">{cat}</p>
+                        ))}
+                      </div>
+                      <p className="text-regular font-color-medium-grey mob-text-s">{c.year}</p>
+                    </div>
+                    <div className="cases-item__title-wrapper">
+                      <h3 className="h3-bold font-color-black">{c.title}</h3>
+                      <h3 className="font-color-dark-gray mb-20">{c.desc}</h3>
+                      {c.href && (
+                        <div className="case-card-big__btn-wrapper">
+                          <a className="small-button small-button--cases w-inline-block" href={c.href}>
+                            <p className="text-regular small-button-text">Подробнее</p>
+                            <div className="small-button-arrow-wrapper">
+                              <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                              <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                            </div>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                {c.img && (
+                  <div className="case-card-big___right">
+                    <img
+                      alt={c.title}
+                      className="case-card-big___image hide-mobile"
+                      loading="lazy"
+                      sizes="(max-width: 1248px) 100vw, 1248px"
+                      src={c.img}
+                      srcSet={c.imgSrcSet}
+                    />
+                    <img
+                      alt={c.title}
+                      className="case-card-big___image hide-desktop"
+                      loading="lazy"
+                      sizes="100vw"
+                      src={c.img}
+                      srcSet={c.imgSrcSet}
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  )
+}
