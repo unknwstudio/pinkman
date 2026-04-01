@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ContactCard from '@/components/ContactCard/ContactCard'
 import ServiceListItem from '@/components/ServiceListItem/ServiceListItem'
+import HeroCarousel from '@/components/HeroCarousel/HeroCarousel'
 
 export const metadata: Metadata = {
   title: 'Студия Пинкман\u00a0— AI\u2011дизайн бизнес партнер',
@@ -10,36 +11,6 @@ export const metadata: Metadata = {
   },
 }
 
-const BEST_CASES = [
-  {
-    href: '/projects/masshtabirovali-svoi-plyusy----programmu-loyalnosti-yandeksa',
-    img: '/images/69a43d8682e24dd9d01b242b_main_img.webp',
-    imgSrcSet: '/images/69a43d8682e24dd9d01b242b_main_img-p-500.webp 500w, /images/69a43d8682e24dd9d01b242b_main_img-p-800.webp 800w, /images/69a43d8682e24dd9d01b242b_main_img.webp 822w',
-    title: 'Свои Плюсы',
-    desc: 'Всего за\u00a02 месяца сделали редизайн и\u00a0полностью обновили ключевой канал коммуникации',
-  },
-  {
-    href: '/projects/1-5-goda-razvivaem-sayt-otp-banka-uvelichili-konversiyu-na-40',
-    img: '/images/680b7895ba6f13ca36ae9bf6_otp_main.webp',
-    imgSrcSet: '/images/680b7895ba6f13ca36ae9bf6_otp_main-p-500.webp 500w, /images/680b7895ba6f13ca36ae9bf6_otp_main-p-800.webp 800w, /images/680b7895ba6f13ca36ae9bf6_otp_main.webp 822w',
-    title: 'ОТП Банк',
-    desc: '1,5 года делаем сайт банка лучше — увеличили конверсию на\u00a040%',
-  },
-  {
-    href: '/projects/2-goda-dizayn-podderzhki-yandeks-edy',
-    img: '/images/683ecd04fac8dd1348e3435b_Frame 2131331939 (1).webp',
-    imgSrcSet: '/images/683ecd04fac8dd1348e3435b_Frame 2131331939 (1)-p-500.webp 500w, /images/683ecd04fac8dd1348e3435b_Frame 2131331939 (1)-p-800.webp 800w, /images/683ecd04fac8dd1348e3435b_Frame 2131331939 (1).webp 822w',
-    title: 'Яндекс Еда',
-    desc: '2 года работаем с\u00a0дизайном коммуникаций фудтех-проектов Яндекса в\u00a0нескольких странах',
-  },
-  {
-    href: '/projects/scenicheskiy-vizual-dlya-siney-pticy-fony-k-nomeram-shou',
-    img: '/images/69aae251c1f68ad37034d168_cov.webp',
-    imgSrcSet: '/images/69aae251c1f68ad37034d168_cov-p-500.webp 500w, /images/69aae251c1f68ad37034d168_cov-p-800.webp 800w, /images/69aae251c1f68ad37034d168_cov.webp 822w',
-    title: 'Синяя птица',
-    desc: 'Подготовили 19 видеофонов и\u00a0оживили персонажей для номеров шоу',
-  },
-]
 
 const SERVICES = [
   { label: 'Сайты', href: '/sites' },
@@ -78,53 +49,19 @@ const CLIENT_LOGOS = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Best cases grid ── */}
-      <div className="portfolio-section">
-        <div className="images-container">
-          <div className="best-cases">
-            <div className="images-list best-cases__list">
-              {BEST_CASES.map((c, i) => (
-                <div key={i} className="best-cases__item anim">
-                  <a className="best-cases__link w-inline-block" href={c.href}>
-                    <img
-                      alt={c.title}
-                      className="best-cases__img"
-                      loading="lazy"
-                      sizes="(max-width: 991px) 100vw, 822px, 100vw"
-                      src={c.img}
-                      srcSet={c.imgSrcSet}
-                    />
-                  </a>
-                  <div className="features-grid___item best-cases__popup">
-                    <div className="features-grid___item-bottom best-cases__popup-text">
-                      <h3 className="h3 font-color-black">{c.title}</h3>
-                      <p className="text-regular font-color-dark-grey">{c.desc}</p>
-                    </div>
-                    <div className="btn-wrapper">
-                      <a className="small-button w-inline-block" href={c.href}>
-                        <p className="text-regular hide">Подробнее</p>
-                        <div className="small-button-arrow-wrapper">
-                          <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
-                          <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="spacing" />
-
       {/* ── Hero ── */}
       <div className="portfolio-section">
         <div className="main-container">
           <div className="text-big-wrapper">
             <p className="text-big anim">пинкман&nbsp;—&nbsp;AI&#x2011;дизайн бизнес&nbsp;партнер</p>
           </div>
+        </div>
+      </div>
+
+      {/* ── Hero carousel ── */}
+      <div className="portfolio-section">
+        <div className="main-container">
+          <HeroCarousel />
         </div>
       </div>
 
