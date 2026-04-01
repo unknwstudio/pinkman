@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { SERVICE_LINKS, SERVICE_SLUGS, SITE_VERSION, ACCENT_COLORS } from '@/lib/constants'
+import TransitionLink from '@/components/TransitionLink/TransitionLink'
 
 const PINKMAN_SVG = (
   <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
@@ -74,9 +75,9 @@ export default function Nav() {
         >
           <div className="header-container">
             <div className="div-block">
-              <Link className="brand-logo-link w-nav-brand" href="/">
+              <TransitionLink className="brand-logo-link w-nav-brand" href="/">
                 <div className="menu__logo-new w-embed">{PINKMAN_SVG}</div>
-              </Link>
+              </TransitionLink>
 
               {/* Hamburger button */}
               <button
@@ -96,8 +97,8 @@ export default function Nav() {
             <nav className="nav-menu w-nav-menu" role="navigation">
               <div className="header-wrapper">
                 <div className="header-links-list">
-                  <Link className="header-btn" href="/">Главная</Link>
-                  <Link className="header-btn" href="/projects/">Портфолио</Link>
+                  <TransitionLink className="header-btn" href="/">Главная</TransitionLink>
+                  <TransitionLink className="header-btn" href="/projects/">Портфолио</TransitionLink>
 
                   {/* Services dropdown — desktop */}
                   <div className="header-dropdown-wrapper hide-mobile w-dropdown">
@@ -108,7 +109,7 @@ export default function Nav() {
                       <div className="header-dropdown-content-wrapper">
                         <div className="header-dropdown-column">
                           {SERVICE_LINKS.map(({ href, label }) => (
-                            <Link
+                            <TransitionLink
                               key={href}
                               href={href}
                               className={`header-dropdown-link w-inline-block${pathname === href ? ' w--current' : ''}`}
@@ -116,19 +117,19 @@ export default function Nav() {
                             >
                               <p className="text-regular middle">{label}</p>
                               <div className="header-dropdown-img" />
-                            </Link>
+                            </TransitionLink>
                           ))}
                         </div>
                       </div>
                     </nav>
                   </div>
 
-                  <Link className="header-btn" href="/contact-us/">Контакты</Link>
-                  <Link className="mobile-nav-discuss" href="/contact-us/">Обсудить проект</Link>
+                  <TransitionLink className="header-btn" href="/contact-us/">Контакты</TransitionLink>
+                  <TransitionLink className="mobile-nav-discuss" href="/contact-us/">Обсудить проект</TransitionLink>
                 </div>
 
                 <div className="button-header-wrapper">
-                  <Link className="big-button bg-color-pink w-inline-block" href="/contact-us/">
+                  <TransitionLink className="big-button bg-color-pink w-inline-block" href="/contact-us/">
                     <p className="text-regular">Обсудить проект</p>
                     <div className="button-arrow-wrapper">
                       <div className="button-arrow__not-active w-embed">
@@ -139,7 +140,7 @@ export default function Nav() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg"/>
                     </div>
-                  </Link>
+                  </TransitionLink>
                 </div>
               </div>
             </nav>
@@ -153,12 +154,12 @@ export default function Nav() {
         aria-hidden={!menuOpen}
       >
         <nav className="nav-mob__list">
-          <Link className={`nav-mob__link${isHome ? ' nav-mob__link--active' : ''}`} href="/" onClick={closeMenu}>
+          <TransitionLink className={`nav-mob__link${isHome ? ' nav-mob__link--active' : ''}`} href="/" onClick={closeMenu}>
             Главная
-          </Link>
-          <Link className={`nav-mob__link${isPortfolio ? ' nav-mob__link--active' : ''}`} href="/projects/" onClick={closeMenu}>
+          </TransitionLink>
+          <TransitionLink className={`nav-mob__link${isPortfolio ? ' nav-mob__link--active' : ''}`} href="/projects/" onClick={closeMenu}>
             Портфолио
-          </Link>
+          </TransitionLink>
 
           {/* Services accordion */}
           <div className="nav-mob__services">
@@ -180,20 +181,20 @@ export default function Nav() {
             {servicesOpen && (
               <div className="nav-mob__sub">
                 {SERVICE_LINKS.map(({ href, label }) => (
-                  <Link key={href} className="nav-mob__sub-link" href={href} onClick={closeMenu}>
+                  <TransitionLink key={href} className="nav-mob__sub-link" href={href} onClick={closeMenu}>
                     {label}
-                  </Link>
+                  </TransitionLink>
                 ))}
               </div>
             )}
           </div>
 
-          <Link className={`nav-mob__link${isContacts ? ' nav-mob__link--active' : ''}`} href="/contact-us/" onClick={closeMenu}>
+          <TransitionLink className={`nav-mob__link${isContacts ? ' nav-mob__link--active' : ''}`} href="/contact-us/" onClick={closeMenu}>
             Контакты
-          </Link>
-          <Link className="nav-mob__cta" href="/contact-us/" onClick={closeMenu}>
+          </TransitionLink>
+          <TransitionLink className="nav-mob__cta" href="/contact-us/" onClick={closeMenu}>
             Обсудить проект
-          </Link>
+          </TransitionLink>
         </nav>
       </div>
 
@@ -205,31 +206,31 @@ export default function Nav() {
       {mounted && createPortal(
         <div className="pk-bar-outer">
           <div className="pk-bar">
-            <Link className="pk-bar__logo" href="/">{PINKMAN_SVG}</Link>
+            <TransitionLink className="pk-bar__logo" href="/">{PINKMAN_SVG}</TransitionLink>
             <nav className="pk-bar__links">
-              <Link className={`pk-bar__link${isHome ? ' pk-bar__link--active' : ''}`} href="/">Главная</Link>
-              <Link className={`pk-bar__link${isPortfolio ? ' pk-bar__link--active' : ''}`} href="/projects/">Портфолио</Link>
+              <TransitionLink className={`pk-bar__link${isHome ? ' pk-bar__link--active' : ''}`} href="/">Главная</TransitionLink>
+              <TransitionLink className={`pk-bar__link${isPortfolio ? ' pk-bar__link--active' : ''}`} href="/projects/">Портфолио</TransitionLink>
 
               <div className="pk-bar__item" onMouseEnter={() => setPkServicesOpen(true)} onMouseLeave={() => setPkServicesOpen(false)}>
                 <span className={`pk-bar__link${isServices ? ' pk-bar__link--active' : ''}`}>Услуги</span>
                 {pkServicesOpen && (
                   <div className="pk-bar__dropdown">
                     {SERVICE_LINKS.map(({ href, label }) => (
-                      <Link
+                      <TransitionLink
                         key={href}
                         className={`pk-bar__drop-link${pathname === href ? ' pk-bar__drop-link--active' : ''}`}
                         href={href}
                       >
                         {label}
-                      </Link>
+                      </TransitionLink>
                     ))}
                   </div>
                 )}
               </div>
 
-              <Link className={`pk-bar__link${isContacts ? ' pk-bar__link--active' : ''}`} href="/contact-us/">Контакты</Link>
+              <TransitionLink className={`pk-bar__link${isContacts ? ' pk-bar__link--active' : ''}`} href="/contact-us/">Контакты</TransitionLink>
             </nav>
-            <Link className="pk-bar__cta" href="/contact-us/">Обсудить проект</Link>
+            <TransitionLink className="pk-bar__cta" href="/contact-us/">Обсудить проект</TransitionLink>
           </div>
         </div>,
         document.body

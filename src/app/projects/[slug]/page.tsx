@@ -1,7 +1,19 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import casesData from '@/lib/cases.json'
+import imageDims from '@/lib/image-dims.json'
 import { ruNbsp, ruNbspHtml } from '@/lib/ru-nbsp'
+
+type ImgDims = Record<string, { w: number; h: number }>
+const dims = imageDims as ImgDims
+
+/** Return width/height props for a /images/… path */
+function imgSize(src: string): { width: number; height: number } | Record<string, never> {
+  // src may be a full path like /images/foo.jpg or just foo.jpg
+  const key = src.replace(/^\/images\//, '')
+  const d = dims[key]
+  return d ? { width: d.w, height: d.h } : {}
+}
 
 type MediaBlock = {
   heading: string | null
@@ -63,6 +75,7 @@ export default async function CasePage({ params }: Props) {
             loading="eager"
             sizes="100vw"
             src={`/images/${cover_image}`}
+            {...imgSize(cover_image!)}
           />
           {website_url && (
             <div className="case-cover-button">
@@ -255,6 +268,7 @@ export default async function CasePage({ params }: Props) {
                 loading="lazy"
                 sizes="100vw"
                 src={`/images/${block.images[0]}`}
+                {...imgSize(block.images[0])}
               />
             </div>
           )}
@@ -270,6 +284,7 @@ export default async function CasePage({ params }: Props) {
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, 50vw"
                       src={`/images/${img}`}
+                      {...imgSize(img)}
                     />
                   </div>
                 ))}
