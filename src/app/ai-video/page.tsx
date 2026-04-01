@@ -33,36 +33,40 @@ export default function AiVideoPage() {
       {/* ── Реализованные проекты ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Реализованные проекты</h2></div></Section>
 
-      <CaseCard
-        chips={['Бренд и\u00a0контент', 'AI', '3D/Motion-design']}
-        year="2026"
-        title="Яндекс Го Казахстан"
-        subtitle="AI+CGI Campaign"
-        description="Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов"
-        href="/projects/yandex-go-kazakhstan"
-        imgSrc="/images/_cases/yagno-kazakh/horizontal.png"
-        imgAlt="Яндекс Го Казахстан"
-      />
-      <CaseCard
-        chips={['Бренд и\u00a0контент', 'AI', '3D/Motion-design']}
-        year="2026"
-        title="AI-ролик для Яндекс.Сплит"
-        subtitle="AI+CGI Campaign"
-        description="Рекламный AI-ролик для различных каналов коммуникации"
-        href="/projects/ai-rolik-dlya-yandex-split"
-        imgSrc="/images/_cases/yandex-split/image 2090012112.png"
-        imgAlt="AI-ролик для Яндекс.Сплит"
-      />
-      <CaseCard
-        chips={['Бренд и\u00a0контент', 'AI', '3D/Motion-design']}
-        year="2026"
-        title="AI-ролик для Bootlegger"
-        subtitle="AI+CGI Campaign"
-        description="Рекламный AI-ролик для трансляции в\u00a0кинотеатре Пионер"
-        href="/projects/ai-rolik-dlya-bootlegger"
-        imgSrc="/images/_cases/bootlegger/image 2090012112.png"
-        imgAlt="AI-ролик для Bootlegger"
-      />
+      <div className="service-cases-section">
+        <div className="service-grid">
+          <CaseCard
+            chips={['Бренд и\u00a0контент', 'AI', '3D/Motion-design']}
+            year="2026"
+            title="Яндекс Го Казахстан"
+            subtitle="AI+CGI Campaign"
+            description="Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов"
+            href="/projects/yandex-go-kazakhstan"
+            imgSrc="/images/_cases/yagno-kazakh/horizontal.png"
+            imgAlt="Яндекс Го Казахстан"
+          />
+          <CaseCard
+            chips={['Бренд и\u00a0контент', 'AI', '3D/Motion-design']}
+            year="2026"
+            title="AI-ролик для Яндекс.Сплит"
+            subtitle="AI+CGI Campaign"
+            description="Рекламный AI-ролик для различных каналов коммуникации"
+            href="/projects/ai-rolik-dlya-yandex-split"
+            imgSrc="/images/_cases/yandex-split/image 2090012112.png"
+            imgAlt="AI-ролик для Яндекс.Сплит"
+          />
+          <CaseCard
+            chips={['Бренд и\u00a0контент', 'AI', '3D/Motion-design']}
+            year="2026"
+            title="AI-ролик для Bootlegger"
+            subtitle="AI+CGI Campaign"
+            description="Рекламный AI-ролик для трансляции в\u00a0кинотеатре Пионер"
+            href="/projects/ai-rolik-dlya-bootlegger"
+            imgSrc="/images/_cases/bootlegger/image 2090012112.png"
+            imgAlt="AI-ролик для Bootlegger"
+          />
+        </div>
+      </div>
 
       <Section>
         <div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Бюджет срезан, дедлайн вчера</h2></div>
