@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
+import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
+import ProcessSteps from '@/components/ProcessSteps/ProcessSteps'
+import StatGrid from '@/components/StatGrid/StatGrid'
 import ContactCard from '@/components/ContactCard/ContactCard'
 import CaseCard from '@/components/CaseCard/CaseCard'
 
@@ -20,15 +23,25 @@ export default function OutsourceMultimediaPage() {
 
       <Section><div className="text-h2-wrapper"><h2>Встраиваемся в&nbsp;ваш проект уже&nbsp;завтра. CGI, motion, UI, AI-контент&nbsp;— в&nbsp;срок, в&nbsp;бюджет, без&nbsp;потери смысла.</h2></div></Section>
 
+      {/* ── Numbers ── */}
+      <StatGrid items={[
+        { value: '1 день', label: 'до старта работы команды', note: 'сетап под проект за 24 часа' },
+        { value: '80+', label: 'рабочих часов освобождается', note: 'не тратите на поиск и координацию подрядчиков' },
+        { value: '4 в 1', label: '3D · motion · UI · AI из одних рук', note: 'единая эстетика, без потерь на стыках' },
+      ]} />
+
+      {/* ── Problem ── */}
       <Section>
         <div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Нет времени и&nbsp;проверенных подрядчиков</h2></div>
         <p className="font-color-dark-gray">Мультимедиа-студии рождают идеи внутри, реализация&nbsp;— снаружи. Сильные подрядчики заняты на&nbsp;месяц вперёд, сборная из&nbsp;фрилансеров&nbsp;— риск. А&nbsp;старт нужен уже&nbsp;завтра.</p>
       </Section>
-      <ServiceGrid>
-        <ServicePoint title="Нет времени на&nbsp;раскачку" tags={['жёсткие дедлайны','старт завтра']} description="Проект должен идти с&nbsp;первого дня&nbsp;— сплачивать команду некогда." />
-        <ServicePoint title="Высокие репутационные риски" tags={['топовые клиенты','нельзя облажаться']} description="Работаете с&nbsp;топовыми клиентами. Ошибка подрядчика&nbsp;— ваша репутация перед заказчиком." />
-      </ServiceGrid>
+      <ServicePointRow>
+        <ServicePoint tagsTop={['жёсткие дедлайны']} title="Нет времени на&nbsp;раскачку" description="Проект должен идти с&nbsp;первого дня&nbsp;— сплачивать команду некогда." />
+        <ServicePoint tagsTop={['репутация']} title="Высокие репутационные риски" description="Работаете с&nbsp;топовыми клиентами. Ошибка подрядчика&nbsp;— ваша репутация." />
+        <ServicePoint tagsTop={['масштаб']} title="Задача требует широкой экспертизы" description="3D, motion, UI, AI&nbsp;— всё нужно, но&nbsp;в&nbsp;разных студиях." />
+      </ServicePointRow>
 
+      {/* ── Team ── */}
       <Section>
         <div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Аутсорс вовлечённой команды</h2></div>
         <p className="font-color-dark-gray">Встраиваемся как&nbsp;внутренний юнит&nbsp;— с&nbsp;визуальным контролем и&nbsp;производственной дисциплиной. Сетапимся под&nbsp;проект, стартуем завтра.</p>
@@ -40,32 +53,24 @@ export default function OutsourceMultimediaPage() {
         <ServicePoint title="Мультидисциплинарные дизайнеры" tags={['3D','UX/UI','моушн','AI']} description="Всё в&nbsp;одной команде. Состав&nbsp;— под&nbsp;специфику и&nbsp;масштаб проекта." />
       </ServiceGrid>
 
+      {/* ── What you get ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Что&nbsp;вы получите в&nbsp;результате</h2></div></Section>
-      <ServiceGrid>
-        <ServicePoint title="Сдача в&nbsp;срок и&nbsp;в&nbsp;бюджет" tags={['качество','сроки','бюджет']} description="Высокий уровень, выдержанные сроки, бюджет без&nbsp;сюрпризов. Результат, который работает в&nbsp;индустрии." />
-        <ServicePoint title="Репутационные риски сняты" tags={['перед клиентом','без&nbsp;сюрпризов']} description="Берём ответственность за&nbsp;результат&nbsp;— ваш клиент не&nbsp;пострадает. В&nbsp;день монтажа ничего не&nbsp;ломается." />
-        <ServicePoint title="Мультидисциплинарный результат" tags={['3D','motion','UI','AI']} description="3D, motion, UI, AI&nbsp;— из&nbsp;одних рук, в&nbsp;единой эстетике." />
-        <ServicePoint title="80+ часов освобождены" tags={['эффективность']} description="Не&nbsp;тратите время на&nbsp;поиск подрядчиков, фиксацию договорённостей и&nbsp;координацию с&nbsp;каждым." />
-      </ServiceGrid>
+      <ServicePointRow>
+        <ServicePoint tagsTop={['01']} title="Сдача в&nbsp;срок и&nbsp;в&nbsp;бюджет" description="Высокий уровень, выдержанные сроки, бюджет без&nbsp;сюрпризов." />
+        <ServicePoint tagsTop={['02']} title="Репутационные риски сняты" description="Берём ответственность за&nbsp;результат&nbsp;— ваш клиент не&nbsp;пострадает." />
+        <ServicePoint tagsTop={['03']} title="Мультидисциплинарный результат" description="3D, motion, UI, AI&nbsp;— из&nbsp;одних рук, в&nbsp;единой эстетике." />
+        <ServicePoint tagsTop={['04']} title="80+ рабочих часов освобождены" description="Не&nbsp;тратите время на&nbsp;поиск подрядчиков, фиксацию договорённостей и&nbsp;координацию." />
+      </ServicePointRow>
 
-      <Section>
-        <div className="text-h1-wrapper" style={{marginBottom:'1rem'}}><h2 className="h1">Что&nbsp;мы делаем и&nbsp;как</h2></div>
-        <div className="list-wrapper padding-32px"><div className="list">
-          {[
-            'Встраиваемся в&nbsp;структуру проекта',
-            'Синхронизируемся с&nbsp;архитектурой, ограничениями и&nbsp;дедлайнами',
-            'Разрабатываем единую визуальную систему для&nbsp;всех точек контакта',
-            'Производим 3D, моушн, UI, AI-контент',
-            'Еженедельные синки, структурированная коммуникация',
-            'Общее облако с&nbsp;чистой структурой и&nbsp;неймингом файлов',
-            'Сопровождаем до&nbsp;финальной сдачи',
-          ].map((s, i) => (
-            <div key={i} className="list-item-wrapper">
-              <div className="bullet-wrapper-left"><h3 dangerouslySetInnerHTML={{__html:`${i+1}.&nbsp;${s}`}} /></div>
-            </div>
-          ))}
-        </div></div>
-      </Section>
+      {/* ── Process ── */}
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Как&nbsp;встраиваемся</h2></div></Section>
+      <ProcessSteps steps={[
+        { num: '1', title: 'Старт', description: 'Встраиваемся в&nbsp;структуру проекта. Сетап за&nbsp;24&nbsp;часа', tag: 'завтра' },
+        { num: '2', title: 'Синхронизация', description: 'Погружаемся в&nbsp;архитектуру, ограничения и&nbsp;дедлайны проекта', tag: 'контекст' },
+        { num: '3', title: 'Дизайн', description: 'Разрабатываем единую визуальную систему для&nbsp;всех точек контакта', tag: 'рамка' },
+        { num: '4', title: 'Продакшен', description: '3D, моушн, UI, AI-контент. Еженедельные синки, прозрачные статусы', tag: 'создание' },
+        { num: '5', title: 'Сдача', description: 'Сопровождаем до&nbsp;финальной приёмки. Чистое облако, структурированный нейминг', tag: 'итог' },
+      ]} />
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
       <div className="service-cases-section">
@@ -84,48 +89,16 @@ export default function OutsourceMultimediaPage() {
             imgAlt="Сбер × Пушкинский музей"
           />
 
-          <CaseCard
-            chips={['шоу-контент', 'графика сцены']}
-            year="2026"
-            title="The Game Awards"
-            subtitle="Шоу-контент и&nbsp;графика сцены для&nbsp;крупнейшей игровой премии"
-          />
-
-          <CaseCard
-            chips={['инсталляции', 'expo']}
-            year="2026"
-            title="The World Health Expo, Дубай"
-            subtitle="Контент для&nbsp;инсталляций международной выставки здоровья"
-          />
-
-          <CaseCard
-            chips={['инсталляции', 'открытие']}
-            year="2025"
-            title="Открытие Пермской галереи"
-            subtitle="Контент для&nbsp;инсталляций к&nbsp;открытию галереи"
-          />
-
-          <CaseCard
-            chips={['интерактивная выставка']}
-            year="2025"
-            title="Музей «Страна Побед»"
-            subtitle="Контент для&nbsp;интерактивной выставки"
-          />
-
-          <CaseCard
-            chips={['3D-мэппинг', 'motion', 'концерт']}
-            year="2025"
-            title="Pinkman&nbsp;× Сила света"
-            subtitle="Center of&nbsp;Islamic Civilization, 3D-мэппинг для&nbsp;«Манжерок», 180+ минут видео для&nbsp;концерта ANNA ASTI"
-          />
+          <CaseCard chips={['шоу-контент', 'графика сцены']} year="2026" title="The Game Awards" subtitle="Шоу-контент и&nbsp;графика сцены для&nbsp;крупнейшей игровой премии" />
+          <CaseCard chips={['инсталляции', 'expo']} year="2026" title="The World Health Expo, Дубай" subtitle="Контент для&nbsp;инсталляций международной выставки здоровья" />
+          <CaseCard chips={['инсталляции', 'открытие']} year="2025" title="Открытие Пермской галереи" subtitle="Контент для&nbsp;инсталляций к&nbsp;открытию галереи" />
+          <CaseCard chips={['интерактивная выставка']} year="2025" title="Музей «Страна Побед»" subtitle="Контент для&nbsp;интерактивной выставки" />
+          <CaseCard chips={['3D-мэппинг', 'motion', 'концерт']} year="2025" title="Pinkman&nbsp;× Сила света" subtitle="Center of&nbsp;Islamic Civilization, 3D-мэппинг для&nbsp;«Манжерок», 180+ минут видео для&nbsp;концерта ANNA ASTI" />
 
         </div>
       </div>
 
-      <ContactCard
-        intro="Обсудим проект?"
-        role="Аккаунт-директор Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект."
-      />
+      <ContactCard intro="Обсудим проект?" role="Аккаунт-директор Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
     </>
   )
 }

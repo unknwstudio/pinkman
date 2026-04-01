@@ -79,10 +79,10 @@ export default function OutstaffAiPage() {
         { num: '4', title: 'Результат', description: 'Работаем, масштабируемся при&nbsp;пиках, оформляем кейс', tag: 'итог' },
       ]} />
 
-      <Section><div className="text-h1-wrapper" style={{marginBottom:'1.5rem'}}><h2 className="h1">Уже&nbsp;работаем с</h2></div>
-        <div style={{display:'flex',flexWrap:'wrap',gap:'8px'}}>
+      <Section><div className="text-h1-wrapper" style={{marginBottom:'var(--32px)'}}><h2 className="h1">Уже&nbsp;работаем с</h2></div>
+        <div className="chip-list--lg">
           {['Яндекс AdTech','Яндекс Еда','Яндекс Сплит','ВТБ','ОТП\u00a0Банк','Газпромбанк','Открытая Кухня'].map(c => (
-            <p key={c} className="text-small is__chip">{c}</p>
+            <span key={c} className="chip--lg">{c}</span>
           ))}
         </div>
       </Section>
