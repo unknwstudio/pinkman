@@ -495,8 +495,6 @@ export default function ProjectsPage() {
                       sizes="(max-width: 1248px) 100vw, 1248px"
                       src={c.img}
                       srcSet={c.imgSrcSet}
-                      width={1248}
-                      height={823}
                     />
                     <img
                       alt={c.title}
@@ -505,8 +503,6 @@ export default function ProjectsPage() {
                       sizes="100vw"
                       src={c.img}
                       srcSet={c.imgSrcSet}
-                      width={1248}
-                      height={823}
                     />
                   </div>
                 )}

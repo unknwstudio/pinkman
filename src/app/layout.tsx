@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             fixes Chrome's backdrop-filter bug on position:fixed descendants */}
         <div className="layout-wrap">
           <Nav />
-          <main style={{ viewTransitionName: 'main-content' }}>{children}</main>
+          <main>{children}</main>
           <Footer />
           <ScrollAnimator />
         </div>
