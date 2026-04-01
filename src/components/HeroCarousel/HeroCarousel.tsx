@@ -15,6 +15,35 @@ type Slide = {
 }
 
 const SLIDES: Slide[] = [
+  // ── 2026 AI+CGI — first ───────────────────────────────────
+  {
+    chips: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
+    year: '2026',
+    title: 'Яндекс Го Казахстан',
+    subtitle: 'AI+CGI Campaign',
+    description: 'Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов',
+    imgSrc: '/images/_cases/yagno-kazakh/horizontal.png',
+    href: '/projects/yandex-go-kazakhstan',
+  },
+  {
+    chips: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
+    year: '2026',
+    title: 'AI-ролик для Яндекс.Сплит',
+    subtitle: 'AI+CGI Campaign',
+    description: 'Рекламный AI-ролик для различных каналов коммуникации',
+    imgSrc: '/images/_cases/yandex-split/image 2090012112.png',
+    href: '/projects/ai-rolik-dlya-yandex-split',
+  },
+  {
+    chips: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
+    year: '2026',
+    title: 'AI-ролик для Bootlegger',
+    subtitle: 'AI+CGI Campaign',
+    description: 'Рекламный AI-ролик для трансляции в\u00a0кинотеатре Пионер',
+    imgSrc: '/images/_cases/bootlegger/image 2090012112.png',
+    href: '/projects/ai-rolik-dlya-bootlegger',
+  },
+  // ── 2025 ─────────────────────────────────────────────────
   {
     chips: ['Бренд и\u00a0контент', '3D/Motion-design'],
     year: '2025',
@@ -56,33 +85,6 @@ const SLIDES: Slide[] = [
     imgSrcSet:
       '/images/68d55d1e9a752dbe263fe0fe_Frame 174 (4)-p-500.webp 500w, /images/68d55d1e9a752dbe263fe0fe_Frame 174 (4)-p-800.webp 800w, /images/68d55d1e9a752dbe263fe0fe_Frame 174 (4)-p-1080.webp 1080w, /images/68d55d1e9a752dbe263fe0fe_Frame 174 (4).webp 1248w',
     href: '/projects/sdelali-novyy-sayt-dlya-sber-npf',
-  },
-  {
-    chips: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
-    year: '2026',
-    title: 'Яндекс Го Казахстан',
-    subtitle: 'AI+CGI Campaign',
-    description: 'Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов',
-    imgSrc: '/images/_cases/yagno-kazakh/horizontal.png',
-    href: '/projects/yandex-go-kazakhstan',
-  },
-  {
-    chips: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
-    year: '2026',
-    title: 'AI-ролик для Яндекс.Сплит',
-    subtitle: 'AI+CGI Campaign',
-    description: 'Рекламный AI-ролик для различных каналов коммуникации',
-    imgSrc: '/images/_cases/yandex-split/image 2090012112.png',
-    href: '/projects/ai-rolik-dlya-yandex-split',
-  },
-  {
-    chips: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
-    year: '2026',
-    title: 'AI-ролик для Bootlegger',
-    subtitle: 'AI+CGI Campaign',
-    description: 'Рекламный AI-ролик для трансляции в\u00a0кинотеатре Пионер',
-    imgSrc: '/images/_cases/bootlegger/image 2090012112.png',
-    href: '/projects/ai-rolik-dlya-bootlegger',
   },
 ]
 
