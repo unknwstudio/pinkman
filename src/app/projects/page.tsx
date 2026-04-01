@@ -28,6 +28,42 @@ type Case = {
 }
 
 const CASES: Case[] = [
+  // ── 2026 ──────────────────────────────────────────────────────────────
+  {
+    title: 'Иви',
+    desc: '1200 изображений за\u00a0месяц: постеры, обложки и\u00a0фоны для\u00a0стримингового каталога',
+    year: '2026',
+    cats: ['Дизайн коммуникаций'],
+    img: '/images/67dc4a4830ca6ba1d7b154f0_Rectangle 1004241 (7).webp',
+    imgSrcSet: '/images/67dc4a4830ca6ba1d7b154f0_Rectangle 1004241 (7)-p-500.webp 500w, /images/67dc4a4830ca6ba1d7b154f0_Rectangle 1004241 (7)-p-800.webp 800w, /images/67dc4a4830ca6ba1d7b154f0_Rectangle 1004241 (7)-p-1080.webp 1080w, /images/67dc4a4830ca6ba1d7b154f0_Rectangle 1004241 (7).webp 1248w',
+    href: '/projects/1000-izobrazheniy-dlya-onlayn-kinoteatra-ivi-za-mesyac',
+  },
+  {
+    title: 'Chatex',
+    desc: 'Брендинг, чат-бот и\u00a0сайт для\u00a0криптовалютной биржи',
+    year: '2026',
+    cats: ['Брендинг', 'Бренд и\u00a0контент', 'Веб-дизайн'],
+    img: '/images/69aac395a0d2361a5273370f_1.webp',
+    imgSrcSet: '/images/69aac395a0d2361a5273370f_1-p-500.webp 500w, /images/69aac395a0d2361a5273370f_1-p-800.webp 800w, /images/69aac395a0d2361a5273370f_1-p-1080.webp 1080w, /images/69aac395a0d2361a5273370f_1.webp 1248w',
+    href: '/projects/brending-chat-bot-i-sayt-dlya-kriptovalyutnoy-birzhi-chatex',
+  },
+  {
+    title: 'ПСБ Академия',
+    desc: 'Объединили два образовательных продукта банка в\u00a0единую платформу за\u00a03 месяца',
+    year: '2026',
+    cats: ['Веб-дизайн', 'Интерфейсы'],
+    img: '/images/68062c43896b5aacc7d1381f_Frame 2131331568 (2).webp',
+    href: '/projects/sdelali-dizayn-dlya-edinoy-obrazovatelnoy-platformy-akademii-psb-za-3-mesyaca',
+  },
+  {
+    title: '3D-иконки',
+    desc: 'Создали масштабный коммерческий пак из\u00a0сотен уникальных 3D-иконок для\u00a0дизайнеров',
+    year: '2026',
+    cats: ['3D/Motion-design', 'Бренд и\u00a0контент'],
+    img: '/images/67fd2a4c99621f7b4fbabcfc_Frame 65.webp',
+    href: '/projects/sdelali-ogromnyy-3d-pak-ikonok-dlya-kommercheskogo-ispolzovaniya',
+  },
+  // ── 2025 ──────────────────────────────────────────────────────────────
   {
     title: 'Свои Плюсы',
     desc: 'Всего за\u00a02 месяца сделали редизайн и\u00a0полностью обновили ключевой канал коммуникации',
@@ -121,6 +157,32 @@ const CASES: Case[] = [
     imgSrcSet: '/images/680b768db1c5ee1deb64c739_uteka-p-500.webp 500w, /images/680b768db1c5ee1deb64c739_uteka-p-800.webp 800w, /images/680b768db1c5ee1deb64c739_uteka-p-1080.webp 1080w, /images/680b768db1c5ee1deb64c739_uteka.webp 1248w',
     href: '/projects/sdelali-rolik-dlya-tv-reklamy-yuteki',
   },
+  {
+    title: 'X5 Group',
+    desc: 'Сделали корпоративный сайт для\u00a0крупнейшего российского ритейлера',
+    year: '2025',
+    cats: ['Веб-дизайн', 'Сайты корпораций'],
+    img: '/images/682375ca350bb8620663152f_Frame 1948760326.webp',
+    imgSrcSet: '/images/682375ca350bb8620663152f_Frame 1948760326-p-500.webp 500w, /images/682375ca350bb8620663152f_Frame 1948760326-p-800.webp 800w, /images/682375ca350bb8620663152f_Frame 1948760326-p-1080.webp 1080w, /images/682375ca350bb8620663152f_Frame 1948760326.webp 1248w',
+    href: '/projects/sdelali-korporativnyy-sayt-dlya-krupneyshego-rossiyskogo-riteylera-x5-group',
+  },
+  {
+    title: 'Азбука Вкуса',
+    desc: 'Сделали праздничный моушен для\u00a03D-кубов и\u00a0других поверхностей',
+    year: '2025',
+    cats: ['Бренд и\u00a0контент', '3D/Motion-design'],
+    img: '/images/67f64d243eb24d45fb193fca_Rectangle 1004241 (16).webp',
+    href: '/projects/novogodnee-promo-dlya-azbuki-vkusa',
+  },
+  {
+    title: 'VK',
+    desc: 'Моушн для\u00a0кампании «VK под\u00a0шубой» для\u00a03D-куба Catcher в\u00a0Москве',
+    year: '2025',
+    cats: ['Бренд и\u00a0контент', '3D/Motion-design'],
+    img: '/images/67f64a6d38e338cd9daf066b_Rectangle 1004241 (13).webp',
+    href: '/projects/novogodniy-promo-rolik-dlya-vk',
+  },
+  // ── 2024 ──────────────────────────────────────────────────────────────
   {
     title: 'X5 Tech',
     desc: '5 лет работаем над\u00a0внутренними продуктами крупного ритейлера',
@@ -226,6 +288,7 @@ const CASES: Case[] = [
     imgSrcSet: '/images/680b761258fa82867ec8654d_tbankvideo-p-500.webp 500w, /images/680b761258fa82867ec8654d_tbankvideo-p-800.webp 800w, /images/680b761258fa82867ec8654d_tbankvideo-p-1080.webp 1080w, /images/680b761258fa82867ec8654d_tbankvideo.webp 1248w',
     href: '/projects/sdelali-moushen-dlya-rebrendinga-t-banka',
   },
+  // ── 2023 ──────────────────────────────────────────────────────────────
   {
     title: 'МТС',
     desc: 'Поддержали дизайном HR-коммуникаций телеком-оператора',
