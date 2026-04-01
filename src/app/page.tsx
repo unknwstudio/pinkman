@@ -53,7 +53,7 @@ export default function HomePage() {
       <div className="portfolio-section">
         <div className="main-container">
           <div className="text-big-wrapper">
-            <p className="text-big anim">пинкман&nbsp;—&nbsp;AI&#x2011;дизайн бизнес&nbsp;партнер</p>
+            <p className="text-big text-hero anim">пинкман&nbsp;—&nbsp;AI&#x2011;дизайн бизнес&nbsp;партнер</p>
           </div>
         </div>
       </div>
@@ -64,6 +64,8 @@ export default function HomePage() {
           <HeroCarousel />
         </div>
       </div>
+
+      <div className="spacing" />
 
       <div className="portfolio-section">
         <div className="main-container">

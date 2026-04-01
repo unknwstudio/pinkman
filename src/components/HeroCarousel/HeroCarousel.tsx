@@ -1,47 +1,58 @@
 'use client'
 
 import { useState, useRef, useCallback, useEffect } from 'react'
+import CaseCard from '@/components/CaseCard/CaseCard'
 
 type Slide = {
+  chips: string[]
+  year: string
   title: string
-  tag?: string
-  desc: string
-  img: string
-  imgSrcSet?: string
+  subtitle?: string
+  description?: string
   href: string
+  imgSrc?: string
+  imgSrcSet?: string
 }
 
 const SLIDES: Slide[] = [
   {
+    chips: ['Бренд и\u00a0контент', '3D/Motion-design'],
+    year: '2025',
     title: 'Свои Плюсы',
-    tag: 'AI-Campaign',
-    desc: 'Всего за\u00a02 месяца сделали редизайн и\u00a0полностью обновили ключевой канал коммуникации',
-    img: '/images/69a43d4c9c4d979bb18d08a3_Frame 174.webp',
+    subtitle: 'AI-Campaign',
+    description: 'Всего за\u00a02 месяца сделали редизайн и\u00a0полностью обновили ключевой канал коммуникации',
+    imgSrc: '/images/69a43d4c9c4d979bb18d08a3_Frame 174.webp',
     imgSrcSet:
       '/images/69a43d4c9c4d979bb18d08a3_Frame 174-p-500.webp 500w, /images/69a43d4c9c4d979bb18d08a3_Frame 174-p-800.webp 800w, /images/69a43d4c9c4d979bb18d08a3_Frame 174-p-1080.webp 1080w, /images/69a43d4c9c4d979bb18d08a3_Frame 174.webp 1248w',
     href: '/projects/masshtabirovali-svoi-plyusy----programmu-loyalnosti-yandeksa',
   },
   {
+    chips: ['Бренд и\u00a0контент', 'Спецпроекты'],
+    year: '2025',
     title: 'Синяя птица',
-    tag: 'AI-контент на\u00a0Телеканал «Россия»',
-    desc: 'Подготовили 19 видеофонов и\u00a0оживили персонажей для номеров шоу',
-    img: '/images/69aae24b7c2dab0e74e8a302_Frame-2136139030.webp',
+    subtitle: 'AI-контент на\u00a0Телеканал «Россия»',
+    description: 'Подготовили 19 видеофонов и\u00a0оживили персонажей для номеров шоу',
+    imgSrc: '/images/69aae24b7c2dab0e74e8a302_Frame-2136139030.webp',
     imgSrcSet:
       '/images/69aae24b7c2dab0e74e8a302_Frame-2136139030-p-500.webp 500w, /images/69aae24b7c2dab0e74e8a302_Frame-2136139030-p-800.webp 800w, /images/69aae24b7c2dab0e74e8a302_Frame-2136139030-p-1080.webp 1080w, /images/69aae24b7c2dab0e74e8a302_Frame-2136139030.webp 1248w',
     href: '/projects/scenicheskiy-vizual-dlya-siney-pticy-fony-k-nomeram-shou',
   },
   {
+    chips: ['Дизайн коммуникаций', '3D/Motion-design'],
+    year: '2025',
     title: 'Яндекс Еда',
-    desc: '2 года работаем с\u00a0дизайном коммуникаций фудтех-проектов Яндекса в\u00a0нескольких странах',
-    img: '/images/683eccfa54b8a997cf797735_Frame 174 (2).webp',
+    description: '2 года работаем с\u00a0дизайном коммуникаций фудтех-проектов Яндекса в\u00a0нескольких странах',
+    imgSrc: '/images/683eccfa54b8a997cf797735_Frame 174 (2).webp',
     imgSrcSet:
       '/images/683eccfa54b8a997cf797735_Frame 174 (2)-p-500.webp 500w, /images/683eccfa54b8a997cf797735_Frame 174 (2)-p-800.webp 800w, /images/683eccfa54b8a997cf797735_Frame 174 (2)-p-1080.webp 1080w, /images/683eccfa54b8a997cf797735_Frame 174 (2).webp 1248w',
     href: '/projects/2-goda-dizayn-podderzhki-yandeks-edy',
   },
   {
+    chips: ['Веб-дизайн', 'Исследования', 'Сайты корпораций'],
+    year: '2025',
     title: 'Сбер НПФ',
-    desc: 'Обновили сайт негосударственного пенсионного фонда Сбербанка',
-    img: '/images/68d55d1e9a752dbe263fe0fe_Frame 174 (4).webp',
+    description: 'Обновили сайт негосударственного пенсионного фонда Сбербанка',
+    imgSrc: '/images/68d55d1e9a752dbe263fe0fe_Frame 174 (4).webp',
     imgSrcSet:
       '/images/68d55d1e9a752dbe263fe0fe_Frame 174 (4)-p-500.webp 500w, /images/68d55d1e9a752dbe263fe0fe_Frame 174 (4)-p-800.webp 800w, /images/68d55d1e9a752dbe263fe0fe_Frame 174 (4)-p-1080.webp 1080w, /images/68d55d1e9a752dbe263fe0fe_Frame 174 (4).webp 1248w',
     href: '/projects/sdelali-novyy-sayt-dlya-sber-npf',
@@ -76,7 +87,6 @@ export default function HeroCarousel() {
     })
   }, [])
 
-  // Keyboard navigation
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') goTo(active - 1)
@@ -101,47 +111,17 @@ export default function HeroCarousel() {
             className="hero-carousel__slide"
             aria-hidden={i !== active}
           >
-            <a className="hero-carousel__img-wrap" href={slide.href} tabIndex={i !== active ? -1 : 0}>
-              <img
-                alt={slide.title}
-                className="hero-carousel__img"
-                loading={i === 0 ? 'eager' : 'lazy'}
-                src={slide.img}
-                srcSet={slide.imgSrcSet}
-                sizes="(max-width: 767px) 100vw, (max-width: 1199px) 100vw, 1248px"
-              />
-            </a>
-            <div className="hero-carousel__info">
-              <div className="hero-carousel__info-text">
-                {slide.tag && (
-                  <span className="hero-carousel__tag">{slide.tag}</span>
-                )}
-                <h3 className="hero-carousel__title">{slide.title}</h3>
-                <p className="hero-carousel__desc">{slide.desc}</p>
-              </div>
-              <a
-                className="small-button w-inline-block"
-                href={slide.href}
-                tabIndex={i !== active ? -1 : 0}
-                aria-label={`Подробнее о ${slide.title}`}
-              >
-                <p className="text-regular hide">Подробнее</p>
-                <div className="small-button-arrow-wrapper">
-                  <img
-                    alt=""
-                    className="small-button-arrow"
-                    loading="eager"
-                    src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg"
-                  />
-                  <img
-                    alt=""
-                    className="button-arrow__active"
-                    loading="eager"
-                    src="/images/66f6e23524a454603f7d5540_arrow-white.svg"
-                  />
-                </div>
-              </a>
-            </div>
+            <CaseCard
+              chips={slide.chips}
+              year={slide.year}
+              title={slide.title}
+              subtitle={slide.subtitle}
+              description={slide.description}
+              href={slide.href}
+              imgSrc={slide.imgSrc}
+              imgSrcSet={slide.imgSrcSet}
+              imgAlt={slide.title}
+            />
           </div>
         ))}
       </div>
