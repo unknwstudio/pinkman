@@ -7,6 +7,7 @@ type MediaBlock = {
   heading: string | null
   subheading?: string
   images: string[]
+  video_url?: string
 }
 
 type CaseData = {
@@ -231,6 +232,18 @@ export default async function CasePage({ params }: Props) {
                 <div className="text-h2-wrapper">
                   <div className="rich-text w-richtext" dangerouslySetInnerHTML={{ __html: ruNbspHtml(block.subheading!) }} />
                 </div>
+              </div>
+            </div>
+          )}
+          {block.video_url && (
+            <div className="media-section last">
+              <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+                {/* eslint-disable-next-line jsx-a11y/iframe-has-title */}
+                <iframe
+                  src={block.video_url}
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                  allowFullScreen
+                />
               </div>
             </div>
           )}
