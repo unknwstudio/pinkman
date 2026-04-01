@@ -1450,5 +1450,85 @@
       "сделали портрет аудитории и Customer Journey Map",
       "разработали прототипы и дизайн-концепцию новых посадочных"
     ]
+  },
+  "yandex-go-kazakhstan": {
+    "hero": "Яндекс Го Казахстан",
+    "subtitle": "AI+CGI Campaign — подготовили AI-ролики для федеральной рекламной кампании с множеством ресайзов",
+    "results": [],
+    "awards": [],
+    "media_blocks": [
+      {
+        "heading": null,
+        "video_url": "https://kinescope.io/embed/6GN6taAzyWFBc7WSdZAT4T",
+        "images": []
+      },
+      {
+        "heading": null,
+        "video_url": "https://kinescope.io/embed/234bizFeSmx474dFLKbkzp",
+        "images": []
+      },
+      {
+        "heading": null,
+        "video_url": "https://kinescope.io/embed/uwjgmJo8Rdi45kV6FdKudu",
+        "images": []
+      },
+      {
+        "heading": null,
+        "images": [
+          "_cases/yagno-kazakh/horizontal.png"
+        ]
+      },
+      {
+        "heading": null,
+        "images": [
+          "_cases/yagno-kazakh/quads.png"
+        ]
+      }
+    ]
+  },
+  "ai-rolik-dlya-yandex-split": {
+    "hero": "AI-ролик для Яндекс.Сплит",
+    "subtitle": "AI+CGI Campaign — рекламный AI-ролик для различных каналов коммуникации",
+    "results": [],
+    "awards": [],
+    "media_blocks": [
+      {
+        "heading": null,
+        "video_url": "https://kinescope.io/embed/cgF8zFM5RfN9ipct4iiCwt",
+        "images": []
+      },
+      {
+        "heading": null,
+        "images": [
+          "_cases/yandex-split/image 2090012112.png",
+          "_cases/yandex-split/image 2090012113.png",
+          "_cases/yandex-split/image 2090012114.png",
+          "_cases/yandex-split/image 2090012115.png"
+        ]
+      }
+    ]
+  },
+  "ai-rolik-dlya-bootlegger": {
+    "hero": "AI-ролик для Bootlegger",
+    "subtitle": "AI+CGI Campaign — рекламный AI-ролик для трансляции в кинотеатре Пионер",
+    "results": [],
+    "awards": [],
+    "media_blocks": [
+      {
+        "heading": null,
+        "video_url": "https://kinescope.io/embed/sKidRXur2aot1pWGhX8EX3",
+        "images": []
+      },
+      {
+        "heading": null,
+        "images": [
+          "_cases/bootlegger/image 2090012112.png",
+          "_cases/bootlegger/image 2090012113.png",
+          "_cases/bootlegger/image 2090012114.png",
+          "_cases/bootlegger/image 2090012115.png",
+          "_cases/bootlegger/image 2090012116.png"
+        ]
+      }
+    ]
   }
 }

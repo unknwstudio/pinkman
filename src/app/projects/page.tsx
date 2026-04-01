@@ -28,6 +28,31 @@ type Case = {
 }
 
 const CASES: Case[] = [
+  // ── 2026 ──────────────────────────────────────────────────────────────
+  {
+    title: 'Яндекс Го Казахстан',
+    desc: 'Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов',
+    year: '2026',
+    cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
+    img: '/images/_cases/yagno-kazakh/horizontal.png',
+    href: '/projects/yandex-go-kazakhstan',
+  },
+  {
+    title: 'AI-ролик для Яндекс.Сплит',
+    desc: 'Рекламный AI-ролик для различных каналов коммуникации',
+    year: '2026',
+    cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
+    img: '/images/_cases/yandex-split/image 2090012112.png',
+    href: '/projects/ai-rolik-dlya-yandex-split',
+  },
+  {
+    title: 'AI-ролик для Bootlegger',
+    desc: 'Рекламный AI-ролик для трансляции в\u00a0кинотеатре Пионер',
+    year: '2026',
+    cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
+    img: '/images/_cases/bootlegger/image 2090012112.png',
+    href: '/projects/ai-rolik-dlya-bootlegger',
+  },
   // ── 2025 ──────────────────────────────────────────────────────────────
   {
     title: 'Синяя птица',
