@@ -17,6 +17,11 @@ const SERVICES = [
   { label: 'Цифровые продукты', href: '/digital-products' },
   { label: 'Дизайн коммуникаций', href: '/communications-design' },
   { label: 'Multimedia\u00a0& Phygital', href: '/multimedia-phygital' },
+  { label: 'Аутсорс мультимедиа', href: '/outsource-multimedia' },
+  { label: 'Аутстафф AI\u2011дизайнеров', href: '/outstaff-ai' },
+  { label: 'AI\u2011ролики для OLV\u00a0+\u00a0DOOH', href: '/ai-video' },
+  { label: 'UX\u2011исследования при редизайне', href: '/ux-research-redesign' },
+  { label: 'Креатив и\u00a0съёмка роликов', href: '/creative-movie-production' },
 ]
 
 const CLIENT_LOGOS = [
@@ -60,7 +65,7 @@ export default function HomePage() {
 
       {/* ── Hero carousel ── */}
       <div className="portfolio-section">
-        <div className="main-container">
+        <div className="images-container">
           <HeroCarousel />
         </div>
       </div>

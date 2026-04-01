@@ -102,7 +102,7 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 992px) {
   .header-new  { display: none !important; }
   .menu-space  { display: none !important; }
-  body { padding-top: 40px !important; }
+  body { padding-top: 20px !important; }
 }
 
 /* On mobile: keep header visible for hamburger button */
@@ -1166,20 +1166,19 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ════════════════════════════════════════════════════════════
-   HERO HEADLINE — exception style (2× text-big)
-   text-big desktop = var(--60px) = 4.17rem
+   HERO HEADLINE — exception style (~1.4× text-big, tight leading)
+   text-big desktop = var(--60px) = 4.17rem → ×1.4 ≈ 84px
+   line-height: 90% → –15% = ~77%
    ════════════════════════════════════════════════════════════ */
 .text-hero {
-  font-size: calc(var(--60px) * 2);
+  font-size: calc(var(--60px) * 1.4);
   letter-spacing: -0.05em;
   font-weight: 400;
-  line-height: 90%;
+  line-height: 77%;
 }
 @media (max-width: 991px) {
-  /* tablet: 2× var(--tablet--37px) = 4.818rem × 2 */
-  .text-hero { font-size: calc(var(--tablet--37px) * 2); }
+  .text-hero { font-size: calc(var(--tablet--37px) * 1.4); }
 }
 @media (max-width: 767px) {
-  /* mobile: target ~56px at 375px viewport */
-  .text-hero { font-size: var(--mobile--48px); }
+  .text-hero { font-size: var(--mobile--37px); }
 }
