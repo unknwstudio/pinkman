@@ -1,4 +1,4 @@
-export const SITE_VERSION = 'CLDNXT-346229'
+export const SITE_VERSION = 'CLDNXT-346295'
 
 /** All service-page slugs — used by Nav to flag the Услуги tab as active */
 export const SERVICE_SLUGS = [
