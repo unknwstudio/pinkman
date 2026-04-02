@@ -34,13 +34,15 @@ export default function PageTransition({ children }: { children: React.ReactNode
   const pendingChildren = useRef<React.ReactNode>(children)
 
   // ── 1. Initial mount: snap to final state — NO animation ────────────────
-  // SSR delivers fully-visible HTML; animating it in on hydration would cause
-  // a visible flash. gsap.set() just ensures GSAP's internal state matches.
+  // The wrapper starts opacity:0 / visibility:hidden (inline style below) so
+  // there is zero chance of the browser painting content before GSAP is ready.
+  // useLayoutEffect fires synchronously BEFORE the browser's first paint, so
+  // by the time the user sees anything the element is already at full opacity.
   useLayoutEffect(() => {
     const el = containerRef.current
     if (!el) return
     console.log('[PageTransition] first render skipped — snapping to final state')
-    gsap.set(el, { opacity: 1, y: 0 })
+    gsap.set(el, { opacity: 1, visibility: 'visible', y: 0 })
   }, [])
 
   // ── 2. Exit on route change ───────────────────────────────────────────────
@@ -88,11 +90,23 @@ export default function PageTransition({ children }: { children: React.ReactNode
         y: 0,
         duration: 0.4,
         ease: 'power2.out',
+        // Restore visibility the instant the tween starts — guarantees the
+        // element is never painted as a blank space between the content swap
+        // and the first animated frame.
+        onStart: () => { el.style.visibility = 'visible' },
         clearProps: 'transform,opacity',
         onComplete: () => setIsEntering(false),
       }
     )
   }, [isEntering])
 
-  return <div ref={containerRef}>{displayChildren}</div>
+  // The wrapper starts invisible so the browser never paints it before GSAP
+  // has had a chance to either snap (first load) or animate it in (navigation).
+  // React only writes these values on the very first render; subsequent renders
+  // see no change in the declared style prop so GSAP's overrides are preserved.
+  return (
+    <div ref={containerRef} style={{ opacity: 0, visibility: 'hidden' }}>
+      {displayChildren}
+    </div>
+  )
 }
