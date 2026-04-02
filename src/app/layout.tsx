@@ -3,6 +3,7 @@ import './globals.css'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import ScrollAnimator from '@/components/ScrollAnimator/ScrollAnimator'
+import SmoothScroller from '@/components/SmoothScroller/SmoothScroller'
 
 const OG_IMAGE = '/images/6717d958e16fdfb6e86dc87d_og.jpg'
 const DEFAULT_DESCRIPTION = 'Делаем продуктовый дизайн для корпораций с 2015 года. Обновляем сайт и коммуникации банка ВТБ, создаем внутренние продукты X5. Работаем с банками, ритейлом, страхованием, логистикой.'
@@ -36,14 +37,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WEHHG5XKMC');` }} />
       </head>
       <body>
-        {/* layout-wrap carries the flex column — keeping display:flex off <body>
-            fixes Chrome's backdrop-filter bug on position:fixed descendants */}
-        <div className="layout-wrap">
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-          <ScrollAnimator />
+        {/* smooth-wrapper / smooth-content are required by GSAP ScrollSmoother.
+            The outer div is made position:fixed by ScrollSmoother; the inner div
+            is the actual scrollable content that gets translated. */}
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            {/* layout-wrap carries the flex column — keeping display:flex off <body>
+                fixes Chrome's backdrop-filter bug on position:fixed descendants */}
+            <div className="layout-wrap">
+              <Nav />
+              <main>{children}</main>
+              <Footer />
+              <ScrollAnimator />
+            </div>
+          </div>
         </div>
+        {/* SmoothScroller is a null-render client component — just bootstraps GSAP */}
+        <SmoothScroller />
       </body>
     </html>
   )
