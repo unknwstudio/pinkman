@@ -421,16 +421,19 @@ export default function ProjectsPage() {
   // Stores the Flip state captured BEFORE React updates the DOM
   const flipStateRef = useRef<ReturnType<typeof Flip.getState> | null>(null)
 
-  const filtered = active === 'Все проекты'
-    ? CASES
-    : CASES.filter(c => c.cats.includes(active))
+  /** Whether a case card should be visible under the current filter */
+  const isVisible = (c: Case) =>
+    active === 'Все проекты' || c.cats.includes(active)
 
-  /** Capture Flip snapshot, then let React re-render */
+  /** Capture Flip snapshot BEFORE React touches the DOM, then update state */
   function handleFilter(cat: string) {
     if (cat === active) return
     const grid = gridRef.current
     if (grid) {
-      flipStateRef.current = Flip.getState(grid.querySelectorAll('[data-flip-id]'))
+      // All [data-flip-id] elements must be in the DOM — even hidden ones
+      const items = grid.querySelectorAll('[data-flip-id]')
+      console.log('[Flip] elements before getState:', items.length, items)
+      flipStateRef.current = Flip.getState(items)
     }
     setActive(cat)
   }
@@ -488,11 +491,15 @@ export default function ProjectsPage() {
 
       <div className="service-cases-section">
         <div className="service-grid" ref={gridRef}>
-          {filtered.map((c, i) => (
+          {CASES.map((c) => {
+            const visible = isVisible(c)
+            const flipId = `case-${c.title}-${c.year}-${c.cats[0]}`
+            return (
             <div
-              key={`${c.title}-${c.year}-${c.cats[0]}`}
-              data-flip-id={`case-${c.title}-${c.year}-${c.cats[0]}`}
+              key={flipId}
+              data-flip-id={flipId}
               className="case-card-wrapper"
+              style={visible ? undefined : { display: 'none' }}
             >
               <div className="case-card-big">
                 <div className="case-card-big___left">
@@ -548,7 +555,8 @@ export default function ProjectsPage() {
                 )}
               </div>
             </div>
-          ))}
+          )
+          })}
         </div>
       </div>
     </>

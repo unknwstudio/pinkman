@@ -13,7 +13,8 @@ import gsap from '@/lib/gsap'
  *    OLD page visible while the exit animation plays.
  *  - On pathname change: animate the container OUT → swap displayChildren →
  *    animate the container IN.
- *  - On first mount: animate IN only (no exit needed).
+ *  - On FIRST mount: NO animation — gsap.set() to final state immediately so
+ *    SSR-hydrated content is not hidden/re-animated on load.
  */
 export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -32,15 +33,14 @@ export default function PageTransition({ children }: { children: React.ReactNode
   // the closure inside onComplete always has the right value
   const pendingChildren = useRef<React.ReactNode>(children)
 
-  // ── 1. Initial enter animation ───────────────────────────────────────────
+  // ── 1. Initial mount: snap to final state — NO animation ────────────────
+  // SSR delivers fully-visible HTML; animating it in on hydration would cause
+  // a visible flash. gsap.set() just ensures GSAP's internal state matches.
   useLayoutEffect(() => {
     const el = containerRef.current
     if (!el) return
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out', clearProps: 'transform,opacity' }
-    )
+    console.log('[PageTransition] first render skipped — snapping to final state')
+    gsap.set(el, { opacity: 1, y: 0 })
   }, [])
 
   // ── 2. Exit on route change ───────────────────────────────────────────────
