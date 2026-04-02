@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useLayoutEffect } from 'react'
+import gsap, { Flip } from '@/lib/gsap'
 
 const CATEGORIES = [
   'Все проекты',
@@ -416,10 +417,41 @@ const CASES: Case[] = [
 
 export default function ProjectsPage() {
   const [active, setActive] = useState('Все проекты')
+  const gridRef = useRef<HTMLDivElement>(null)
+  // Stores the Flip state captured BEFORE React updates the DOM
+  const flipStateRef = useRef<ReturnType<typeof Flip.getState> | null>(null)
 
   const filtered = active === 'Все проекты'
     ? CASES
     : CASES.filter(c => c.cats.includes(active))
+
+  /** Capture Flip snapshot, then let React re-render */
+  function handleFilter(cat: string) {
+    if (cat === active) return
+    const grid = gridRef.current
+    if (grid) {
+      flipStateRef.current = Flip.getState(grid.querySelectorAll('[data-flip-id]'))
+    }
+    setActive(cat)
+  }
+
+  /** After React commits the new DOM, animate from the captured snapshot */
+  useLayoutEffect(() => {
+    const state = flipStateRef.current
+    if (!state) return
+    flipStateRef.current = null
+
+    Flip.from(state, {
+      duration: 0.55,
+      ease: 'power1.inOut',
+      absolute: true,   // keeps grid height stable during animation
+      stagger: 0.04,
+      onLeave: (els) =>
+        gsap.to(els, { opacity: 0, scale: 0.85, duration: 0.25 }),
+      onEnter: (els) =>
+        gsap.fromTo(els, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35 }),
+    })
+  }, [active])
 
   return (
     <>
@@ -437,7 +469,7 @@ export default function ProjectsPage() {
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
-                onClick={() => setActive(cat)}
+                onClick={() => handleFilter(cat)}
                 className={`text-small is__chip${active === cat ? ' is__chip--active' : ''}`}
                 style={{
                   background: active === cat ? '#1a1a1a' : undefined,
@@ -455,9 +487,13 @@ export default function ProjectsPage() {
       </div>
 
       <div className="service-cases-section">
-        <div className="service-grid">
+        <div className="service-grid" ref={gridRef}>
           {filtered.map((c, i) => (
-            <div key={i} className="case-card-wrapper">
+            <div
+              key={`${c.title}-${c.year}-${c.cats[0]}`}
+              data-flip-id={`case-${c.title}-${c.year}-${c.cats[0]}`}
+              className="case-card-wrapper"
+            >
               <div className="case-card-big">
                 <div className="case-card-big___left">
                   <div className="case-card-big-top">

@@ -27,6 +27,7 @@ export default function SmoothScroller() {
       smooth: 1.5,
       effects: true,
     })
+    console.log('[GSAP] ScrollSmoother initialized', smootherRef.current)
 
     return () => {
       smootherRef.current?.kill()
