@@ -597,6 +597,10 @@ a { color: inherit; text-decoration: none; }
 .image-section { cursor: default !important; pointer-events: none !important; }
 .image-section * { pointer-events: none !important; }
 
+/* Ensure HTML width/height attrs act as aspect-ratio hints, not fixed sizes */
+.developing-image { height: auto; }
+.image { height: auto; }
+
 /* Small service buttons — smooth hover transitions */
 .small-button {
   transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
