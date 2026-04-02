@@ -37,10 +37,12 @@ export default function SmoothScroller() {
 
   // Refresh triggers after every client-side navigation so scroll
   // positions and ScrollTrigger pin-spacers update correctly.
+  // scrollTo(0, false) is called here (instant, no animation) so the scroll
+  // position resets BEFORE PageTransition's enter animation plays — prevents
+  // the page from appearing to jump mid-transition.
   useEffect(() => {
-    ScrollTrigger.refresh()
-    // Scroll to top on route change
     smootherRef.current?.scrollTo(0, false)
+    ScrollTrigger.refresh()
   }, [pathname])
 
   return null

@@ -33,6 +33,7 @@
 /* ── Minimal reset ── */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* scroll-behavior: smooth removed — ScrollSmoother handles all smooth scrolling.
+   The CSS property fights Next.js scroll-reset on navigation and triggers a warning. */
 
 body { background-color: #f5f5f5; }

@@ -491,9 +491,11 @@ export default function ProjectsPage() {
 
       <div className="service-cases-section">
         <div className="service-grid" ref={gridRef}>
-          {CASES.map((c) => {
+          {CASES.map((c, index) => {
             const visible = isVisible(c)
-            const flipId = `case-${c.title}-${c.year}-${c.cats[0]}`
+            // Include index to guarantee uniqueness even when title+year+cats[0] collide
+            // (e.g. two "Сбер х Пушкинский музей 2024" entries with the same first category)
+            const flipId = `case-${c.title}-${c.year}-${index}`
             return (
             <div
               key={flipId}
