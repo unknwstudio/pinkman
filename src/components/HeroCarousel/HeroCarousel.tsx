@@ -125,6 +125,24 @@ export default function HeroCarousel() {
     return () => window.removeEventListener('keydown', onKey)
   }, [active, goTo])
 
+  // Prevent the carousel from capturing vertical wheel/trackpad scroll —
+  // pass vertical intent straight through to the page.
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track) return
+    const onWheel = (e: WheelEvent) => {
+      const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY)
+      if (isHorizontal) {
+        // Horizontal intent → let the track scroll itself, block page
+        e.preventDefault()
+        track.scrollLeft += e.deltaX
+      }
+      // Vertical intent → do nothing; browser scrolls the page naturally
+    }
+    track.addEventListener('wheel', onWheel, { passive: false })
+    return () => track.removeEventListener('wheel', onWheel)
+  }, [])
+
   return (
     <div className="hero-carousel">
       {/* Track */}
