@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import ContactCard from '@/components/ContactCard/ContactCard'
 import ServiceListItem from '@/components/ServiceListItem/ServiceListItem'
 import HeroCarousel from '@/components/HeroCarousel/HeroCarousel'
+import ParallaxPhoto from '@/components/ScrollReveal/ParallaxPhoto'
+import ClientLogosGrid from '@/components/ClientLogosGrid/ClientLogosGrid'
 
 export const metadata: Metadata = {
   title: 'Студия Пинкман\u00a0— AI\u2011дизайн бизнес партнер',
@@ -129,15 +131,13 @@ export default function HomePage() {
       {/* ── Full-width photo ── */}
       <div className="image-section">
         <div className="image-section__img">
-          <img
-            alt=""
-            className="image"
-            loading="lazy"
-            sizes="(max-width: 2880px) 100vw, 2880px"
+          <ParallaxPhoto
             src="/images/670ea6853791772722428373_home-page-image.webp"
             srcSet="/images/670ea6853791772722428373_home-page-image-p-500.webp 500w, /images/670ea6853791772722428373_home-page-image-p-800.webp 800w, /images/670ea6853791772722428373_home-page-image-p-1080.webp 1080w, /images/670ea6853791772722428373_home-page-image-p-1600.webp 1600w, /images/670ea6853791772722428373_home-page-image-p-2000.webp 2000w, /images/670ea6853791772722428373_home-page-image-p-2600.webp 2600w, /images/670ea6853791772722428373_home-page-image.webp 2880w"
+            sizes="(max-width: 2880px) 100vw, 2880px"
             width={2880}
             height={3334}
+            speed={0.18}
           />
         </div>
       </div>
@@ -521,13 +521,7 @@ export default function HomePage() {
 
       <div className="portfolio-section">
         <div className="main-container padding-0">
-          <div className="partners-wrapper">
-            <div className="row">
-              {CLIENT_LOGOS.map((logo) => (
-                <div key={logo.src} className="clients-grid__item bg-1" style={{ backgroundImage: `url("${logo.src}")` }} aria-label={logo.alt} />
-              ))}
-            </div>
-          </div>
+          <ClientLogosGrid logos={CLIENT_LOGOS} />
         </div>
       </div>
 

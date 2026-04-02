@@ -2,6 +2,7 @@
 
 import { useState, useRef, useLayoutEffect } from 'react'
 import gsap, { Flip } from '@/lib/gsap'
+import { useStaggerReveal } from '@/hooks/useScrollReveal'
 
 const CATEGORIES = [
   'Все проекты',
@@ -420,6 +421,15 @@ export default function ProjectsPage() {
   const gridRef = useRef<HTMLDivElement>(null)
   // Stores the Flip state captured BEFORE React updates the DOM
   const flipStateRef = useRef<ReturnType<typeof Flip.getState> | null>(null)
+
+  // Stagger-reveal cards on initial page load
+  useStaggerReveal(gridRef, {
+    childSelector: '.case-card-wrapper',
+    y: 36,
+    duration: 0.6,
+    stagger: 0.05,
+    start: 'top 90%',
+  })
 
   /** Whether a case card should be visible under the current filter */
   const isVisible = (c: Case) =>
