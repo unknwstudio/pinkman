@@ -29,10 +29,11 @@ export default function DigitalProductsPage() {
           </div>
           <div className="service__picture">
             <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a60386fd9bb45b8360898_dp1 (1).webp" />
+              src="/images/682a60386fd9bb45b8360898_dp1 (1).webp" width={2624} height={852} />
             <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
               src="/images/682a605d92514d91b4f789c1_dp1mob.webp"
-              srcSet="/images/682a605d92514d91b4f789c1_dp1mob-p-500.webp 500w, /images/682a605d92514d91b4f789c1_dp1mob.webp 688w" />
+              srcSet="/images/682a605d92514d91b4f789c1_dp1mob-p-500.webp 500w, /images/682a605d92514d91b4f789c1_dp1mob.webp 688w"
+              width={688} height={2004} />
           </div>
         </div>
       </div>
@@ -45,10 +46,11 @@ export default function DigitalProductsPage() {
           </div>
           <div className="service__picture">
             <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6089a4b3f53ee86c0baf_dp2.webp" />
+              src="/images/682a6089a4b3f53ee86c0baf_dp2.webp" width={2624} height={852} />
             <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
               src="/images/682a609b00d93f05c1cb5467_dp2mob.webp"
-              srcSet="/images/682a609b00d93f05c1cb5467_dp2mob-p-500.webp 500w, /images/682a609b00d93f05c1cb5467_dp2mob.webp 686w" />
+              srcSet="/images/682a609b00d93f05c1cb5467_dp2mob-p-500.webp 500w, /images/682a609b00d93f05c1cb5467_dp2mob.webp 686w"
+              width={686} height={1540} />
           </div>
         </div>
       </div>
@@ -61,10 +63,11 @@ export default function DigitalProductsPage() {
           </div>
           <div className="service__picture">
             <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a60d1413f6b916e3cf518_dp3.webp" />
+              src="/images/682a60d1413f6b916e3cf518_dp3.webp" width={2624} height={824} />
             <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
               src="/images/682a60e3379497ff5729c636_dp3mob.webp"
-              srcSet="/images/682a60e3379497ff5729c636_dp3mob-p-500.webp 500w, /images/682a60e3379497ff5729c636_dp3mob.webp 686w" />
+              srcSet="/images/682a60e3379497ff5729c636_dp3mob-p-500.webp 500w, /images/682a60e3379497ff5729c636_dp3mob.webp 686w"
+              width={686} height={868} />
           </div>
         </div>
       </div>

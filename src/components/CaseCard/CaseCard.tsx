@@ -99,6 +99,8 @@ export default function CaseCard({
               sizes="(max-width: 1248px) 100vw, 1248px"
               src={imgSrc}
               srcSet={imgSrcSet}
+              width={1248}
+              height={823}
             />
             <img
               alt={imgAlt}
@@ -107,6 +109,8 @@ export default function CaseCard({
               sizes="100vw"
               src={imgSrcMobile ?? imgSrc}
               srcSet={imgSrcSetMobile ?? imgSrcSet}
+              width={1248}
+              height={823}
             />
           </div>
         )}

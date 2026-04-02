@@ -600,6 +600,8 @@ a { color: inherit; text-decoration: none; }
 /* Ensure HTML width/height attrs act as aspect-ratio hints, not fixed sizes */
 .developing-image { height: auto; }
 .image { height: auto; }
+.service__img { height: auto; }
+.case-card-big___image { height: auto; }
 
 /* Small service buttons — smooth hover transitions */
 .small-button {

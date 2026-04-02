@@ -369,6 +369,8 @@ export default function DesignSystemPage() {
           description="Десятки разделов. Множество аудиторий. Сложная структура. Наша специализация&nbsp;— масштабные веб-проекты для&nbsp;крупного бизнеса."
           imgSrc="/images/6829dd5bc35528c6ea9fe39a_Frame 174.webp"
           imgSrcSet="/images/6829dd5bc35528c6ea9fe39a_Frame 174-p-500.webp 500w, /images/6829dd5bc35528c6ea9fe39a_Frame 174-p-800.webp 800w, /images/6829dd5bc35528c6ea9fe39a_Frame 174-p-1080.webp 1080w, /images/6829dd5bc35528c6ea9fe39a_Frame 174.webp 2624w"
+          imgWidth={2624}
+          imgHeight={852}
         />
       </DSBlock>
 

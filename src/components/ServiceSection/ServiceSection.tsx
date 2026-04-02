@@ -6,6 +6,10 @@ type ServiceSectionProps = {
   imgSrcMobile?: string
   imgSrcSetMobile?: string
   imgAlt?: string
+  imgWidth?: number
+  imgHeight?: number
+  imgMobileWidth?: number
+  imgMobileHeight?: number
 }
 
 export default function ServiceSection({
@@ -16,6 +20,10 @@ export default function ServiceSection({
   imgSrcMobile,
   imgSrcSetMobile,
   imgAlt = '',
+  imgWidth,
+  imgHeight,
+  imgMobileWidth,
+  imgMobileHeight,
 }: ServiceSectionProps) {
   return (
     <div className="service-section anim">
@@ -32,6 +40,8 @@ export default function ServiceSection({
             sizes="100vw"
             src={imgSrc}
             srcSet={imgSrcSet}
+            width={imgWidth}
+            height={imgHeight}
           />
           <img
             alt={imgAlt}
@@ -40,6 +50,8 @@ export default function ServiceSection({
             sizes="100vw"
             src={imgSrcMobile ?? imgSrc}
             srcSet={imgSrcSetMobile ?? imgSrcSet}
+            width={imgMobileWidth ?? imgWidth}
+            height={imgMobileHeight ?? imgHeight}
           />
         </div>
       </div>

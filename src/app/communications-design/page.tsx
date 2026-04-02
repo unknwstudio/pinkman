@@ -31,10 +31,11 @@ export default function CommunicationsDesignPage() {
           </div>
           <div className="service__picture">
             <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6b06d7d614e5dbce03ec_dc1.webp" />
+              src="/images/682a6b06d7d614e5dbce03ec_dc1.webp" width={2624} height={852} />
             <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
               src="/images/682a6b4a315fe0e5d7f437bf_dc1mob.webp"
-              srcSet="/images/682a6b4a315fe0e5d7f437bf_dc1mob-p-500.webp 500w, /images/682a6b4a315fe0e5d7f437bf_dc1mob.webp 686w" />
+              srcSet="/images/682a6b4a315fe0e5d7f437bf_dc1mob-p-500.webp 500w, /images/682a6b4a315fe0e5d7f437bf_dc1mob.webp 686w"
+              width={686} height={1845} />
           </div>
         </div>
       </div>
@@ -47,10 +48,11 @@ export default function CommunicationsDesignPage() {
           </div>
           <div className="service__picture">
             <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6b83b04cabb3d464a3b5_dc2.webp" />
+              src="/images/682a6b83b04cabb3d464a3b5_dc2.webp" width={2624} height={852} />
             <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
               src="/images/682a6b98292840b5a7ae3c85_dc2mob.webp"
-              srcSet="/images/682a6b98292840b5a7ae3c85_dc2mob-p-500.webp 500w, /images/682a6b98292840b5a7ae3c85_dc2mob.webp 692w" />
+              srcSet="/images/682a6b98292840b5a7ae3c85_dc2mob-p-500.webp 500w, /images/682a6b98292840b5a7ae3c85_dc2mob.webp 692w"
+              width={692} height={937} />
           </div>
         </div>
       </div>
@@ -63,10 +65,11 @@ export default function CommunicationsDesignPage() {
           </div>
           <div className="service__picture">
             <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6bdc3520fbfb6ffab04c_dc3.webp" />
+              src="/images/682a6bdc3520fbfb6ffab04c_dc3.webp" width={2624} height={852} />
             <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
               src="/images/682a6bf4a5ca3597ed9994b6_dc3mob.webp"
-              srcSet="/images/682a6bf4a5ca3597ed9994b6_dc3mob-p-500.webp 500w, /images/682a6bf4a5ca3597ed9994b6_dc3mob.webp 689w" />
+              srcSet="/images/682a6bf4a5ca3597ed9994b6_dc3mob-p-500.webp 500w, /images/682a6bf4a5ca3597ed9994b6_dc3mob.webp 689w"
+              width={689} height={1977} />
           </div>
         </div>
       </div>
@@ -79,10 +82,11 @@ export default function CommunicationsDesignPage() {
           </div>
           <div className="service__picture">
             <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6c28876c3a1a4098d33a_dc4.webp" />
+              src="/images/682a6c28876c3a1a4098d33a_dc4.webp" width={2624} height={852} />
             <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
               src="/images/682a6c445f3ba61580a05292_dc4mob.webp"
-              srcSet="/images/682a6c445f3ba61580a05292_dc4mob-p-500.webp 500w, /images/682a6c445f3ba61580a05292_dc4mob.webp 686w" />
+              srcSet="/images/682a6c445f3ba61580a05292_dc4mob-p-500.webp 500w, /images/682a6c445f3ba61580a05292_dc4mob.webp 686w"
+              width={686} height={1490} />
           </div>
         </div>
       </div>
