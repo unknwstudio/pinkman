@@ -16,27 +16,31 @@ export default function HeroSection() {
     const carouselSection = carouselSectionRef.current
     if (!text || !textSection || !carouselSection) return
 
+    const isMobile = window.matchMedia('(max-width: 767px)').matches
+
     const ctx = gsap.context(() => {
-      // ── Hero text entrance (page load, no trigger) ──────────────────────
+      // ── Hero text entrance (page load) ───────────────────────────────────
       gsap.from(text, {
-        y: 120,
+        y: isMobile ? 60 : 120,
         opacity: 0,
         duration: 1.2,
         ease: 'power4.out',
       })
 
       // ── Hero text scroll exit ────────────────────────────────────────────
-      gsap.to(text, {
-        y: -80,
-        opacity: 0,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: textSection,
-          start: 'top top',
-          end: '80% top',
-          scrub: true,
-        },
-      })
+      if (!isMobile) {
+        gsap.to(text, {
+          y: -80,
+          opacity: 0,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: textSection,
+            start: 'top top',
+            end: '80% top',
+            scrub: true,
+          },
+        })
+      }
 
       // ── Carousel entrance (page load, slight delay) ──────────────────────
       gsap.from(carouselSection, {
@@ -47,18 +51,20 @@ export default function HeroSection() {
         delay: 0.15,
       })
 
-      // ── Carousel parallax scrub ──────────────────────────────────────────
-      ScrollTrigger.create({
-        trigger: carouselSection,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-        onUpdate: (self) => {
-          gsap.set(carouselSection, {
-            yPercent: -15 * self.progress,
-          })
-        },
-      })
+      // ── Carousel parallax scrub — desktop only ───────────────────────────
+      if (!isMobile) {
+        ScrollTrigger.create({
+          trigger: carouselSection,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          onUpdate: (self) => {
+            gsap.set(carouselSection, {
+              yPercent: -15 * self.progress,
+            })
+          },
+        })
+      }
     })
 
     return () => ctx.revert()

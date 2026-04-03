@@ -5,6 +5,7 @@ import Footer from '@/components/Footer/Footer'
 import ScrollAnimator from '@/components/ScrollAnimator/ScrollAnimator'
 import SmoothScroller from '@/components/SmoothScroller/SmoothScroller'
 import Cursor from '@/components/Cursor/Cursor'
+import ServicePageAnimator from '@/components/ServicePageAnimator/ServicePageAnimator'
 
 const OG_IMAGE = '/images/6717d958e16fdfb6e86dc87d_og.jpg'
 const DEFAULT_DESCRIPTION = 'Делаем продуктовый дизайн для корпораций с 2015 года. Обновляем сайт и коммуникации банка ВТБ, создаем внутренние продукты X5. Работаем с банками, ритейлом, страхованием, логистикой.'
@@ -59,6 +60,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SmoothScroller />
         {/* Custom cursor — only renders on pointer:fine (desktop) */}
         <Cursor />
+        {/* Service page scroll animations — runs on every route */}
+        <ServicePageAnimator />
       </body>
     </html>
   )

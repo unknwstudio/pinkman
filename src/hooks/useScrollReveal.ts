@@ -24,10 +24,13 @@ export function useScrollReveal(
     const el = ref.current
     if (!el) return
 
+    const isMobile = window.matchMedia('(max-width: 767px)').matches
+    const actualY = isMobile ? Math.round(y / 2) : y
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el,
-        { opacity: 0, y },
+        { opacity: 0, y: actualY },
         {
           opacity: 1,
           y: 0,
@@ -74,13 +77,16 @@ export function useStaggerReveal(
     const container = containerRef.current
     if (!container) return
 
+    const isMobile = window.matchMedia('(max-width: 767px)').matches
+    const actualY = isMobile ? Math.round(y / 2) : y
+
     const targets = container.querySelectorAll<HTMLElement>(childSelector)
     if (!targets.length) return
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
         Array.from(targets),
-        { opacity: 0, y },
+        { opacity: 0, y: actualY },
         {
           opacity: 1,
           y: 0,
@@ -102,6 +108,7 @@ export function useStaggerReveal(
 
 // ─── useParallax ────────────────────────────────────────────────────────────
 // Scrubs a translateY offset on an element as the page scrolls past it.
+// No-op on mobile — scrub parallax is too heavy on touch devices.
 
 interface ParallaxOptions {
   speed?: number   // 0 = static, 1 = scroll 1:1. Typical values 0.15–0.4
@@ -118,6 +125,9 @@ export function useParallax(
   useEffect(() => {
     const el = ref.current
     if (!el) return
+
+    // Disable on mobile — native scroll and scrub effects conflict on touch
+    if (window.matchMedia('(max-width: 767px)').matches) return
 
     const ctx = gsap.context(() => {
       const distance = el.offsetHeight * speed * -1

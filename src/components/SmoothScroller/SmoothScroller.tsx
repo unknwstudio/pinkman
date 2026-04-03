@@ -21,6 +21,9 @@ export default function SmoothScroller() {
     // Create once
     if (smootherRef.current) return
 
+    // Disable on mobile — native scroll performs better on touch devices
+    if (window.matchMedia('(max-width: 767px)').matches) return
+
     smootherRef.current = ScrollSmoother.create({
       wrapper: '#smooth-wrapper',
       content: '#smooth-content',
