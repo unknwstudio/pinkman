@@ -6,7 +6,6 @@ import ScrollAnimator from '@/components/ScrollAnimator/ScrollAnimator'
 import SmoothScroller from '@/components/SmoothScroller/SmoothScroller'
 import Cursor from '@/components/Cursor/Cursor'
 import ServicePageAnimator from '@/components/ServicePageAnimator/ServicePageAnimator'
-import BackgroundPulse from '@/components/BackgroundPulse/BackgroundPulse'
 
 const OG_IMAGE = '/images/6717d958e16fdfb6e86dc87d_og.jpg'
 const DEFAULT_DESCRIPTION = 'Делаем продуктовый дизайн для корпораций с 2015 года. Обновляем сайт и коммуникации банка ВТБ, создаем внутренние продукты X5. Работаем с банками, ритейлом, страхованием, логистикой.'
@@ -63,8 +62,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Cursor />
         {/* Service page scroll animations — runs on every route */}
         <ServicePageAnimator />
-        {/* Background brightness pulse tied to scroll — desktop only */}
-        <BackgroundPulse />
       </body>
     </html>
   )
