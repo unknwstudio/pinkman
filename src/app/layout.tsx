@@ -13,7 +13,7 @@ const DEFAULT_DESCRIPTION = 'Делаем продуктовый дизайн д
 export const metadata: Metadata = {
   metadataBase: new URL('https://pinkman.ru'),
   title: {
-    default: 'Студия Пинкман\u00a0\u2014 AI\u2011дизайн бизнес партнер',
+    default: 'Студия Пинкман\u00a0\u2014 AI-партнёр в дизайне',
     template: '%s \u2014 Студия Пинкман',
   },
   description: DEFAULT_DESCRIPTION,

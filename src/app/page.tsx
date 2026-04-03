@@ -6,7 +6,7 @@ import ParallaxPhoto from '@/components/ScrollReveal/ParallaxPhoto'
 import ClientLogosGrid from '@/components/ClientLogosGrid/ClientLogosGrid'
 
 export const metadata: Metadata = {
-  title: 'Студия Пинкман\u00a0— AI\u2011дизайн бизнес партнер',
+  title: 'Студия Пинкман\u00a0— AI-партнёр в дизайне',
   description: 'Делаем продуктовый дизайн для корпораций с 2015 года. Обновляем сайт и коммуникации банка ВТБ, создаем внутренние продукты X5. Работаем с банками, ритейлом, страхованием, логистикой.',
   alternates: {
     canonical: 'https://pinkman.ru/',
@@ -58,8 +58,6 @@ export default function HomePage() {
     <>
       {/* ── Hero (entrance + parallax handled by HeroSection client component) ── */}
       <HeroSection />
-
-      <div className="spacing" />
 
       <div className="portfolio-section">
         <div className="main-container">
