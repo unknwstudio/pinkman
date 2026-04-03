@@ -33,12 +33,14 @@ const TOP_CASES = [
 
 export default function HeroSection() {
   const textRef = useRef<HTMLParagraphElement>(null)
+  const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const text = textRef.current
     if (!text) return
 
     const isMobile = window.matchMedia('(max-width: 767px)').matches
+    const isPointerFine = window.matchMedia('(pointer: fine)').matches
 
     const ctx = gsap.context(() => {
       // One-shot entrance — no scroll trigger, no scrub
@@ -50,7 +52,38 @@ export default function HeroSection() {
       })
     })
 
-    return () => ctx.revert()
+    // Horizontal hover — same as portfolio cards, pointer:fine only
+    const cleanups: (() => void)[] = []
+
+    if (isPointerFine && gridRef.current) {
+      const cards = Array.from(gridRef.current.querySelectorAll<HTMLElement>(':scope > a'))
+
+      cards.forEach((card) => {
+        const img = card.querySelector<HTMLElement>('img.case-card-big___image')
+
+        const onEnter = () => {
+          gsap.to(card, { x: 8, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
+          if (img) gsap.to(img, { scale: 1.05, duration: 0.5, ease: 'power2.out' })
+        }
+
+        const onLeave = () => {
+          gsap.to(card, { x: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)', overwrite: 'auto' })
+          if (img) gsap.to(img, { scale: 1, duration: 0.6, ease: 'power2.out' })
+        }
+
+        card.addEventListener('mouseenter', onEnter)
+        card.addEventListener('mouseleave', onLeave)
+        cleanups.push(() => {
+          card.removeEventListener('mouseenter', onEnter)
+          card.removeEventListener('mouseleave', onLeave)
+        })
+      })
+    }
+
+    return () => {
+      ctx.revert()
+      cleanups.forEach((fn) => fn())
+    }
   }, [])
 
   return (
@@ -68,7 +101,7 @@ export default function HeroSection() {
 
       {/* ── Top 3 cases (replaces carousel) ── */}
       <div className="service-cases-section">
-        <div className="service-grid">
+        <div className="service-grid" ref={gridRef}>
           {TOP_CASES.map((c) => (
             <Link
               key={c.href}
