@@ -1,70 +1,53 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Link from 'next/link'
 import gsap from '@/lib/gsap'
-import { ScrollTrigger } from '@/lib/gsap'
-import HeroCarousel from '@/components/HeroCarousel/HeroCarousel'
+
+const TOP_CASES = [
+  {
+    title: 'Яндекс Го Казахстан',
+    desc: 'Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов',
+    year: '2026',
+    cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
+    img: '/images/_cases/yagno-kazakh/horizontal.png',
+    href: '/projects/yandex-go-kazakhstan',
+  },
+  {
+    title: 'AI-ролик для Яндекс.Сплит',
+    desc: 'Рекламный AI-ролик для различных каналов коммуникации',
+    year: '2026',
+    cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
+    img: '/images/_cases/yandex-split/image 2090012112.png',
+    href: '/projects/ai-rolik-dlya-yandex-split',
+  },
+  {
+    title: 'AI-ролик для Bootlegger',
+    desc: 'Рекламный AI-ролик для трансляции в\u00a0кинотеатре Пионер',
+    year: '2026',
+    cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
+    img: '/images/_cases/bootlegger/image 2090012112.png',
+    href: '/projects/ai-rolik-dlya-bootlegger',
+  },
+]
 
 export default function HeroSection() {
-  const textSectionRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLParagraphElement>(null)
-  const carouselSectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const textSection = textSectionRef.current
     const text = textRef.current
-    const carouselSection = carouselSectionRef.current
-    if (!text || !textSection || !carouselSection) return
+    if (!text) return
 
     const isMobile = window.matchMedia('(max-width: 767px)').matches
 
     const ctx = gsap.context(() => {
-      // ── Hero text entrance (page load) ───────────────────────────────────
+      // One-shot entrance — no scroll trigger, no scrub
       gsap.from(text, {
         y: isMobile ? 60 : 120,
         opacity: 0,
         duration: 1.2,
         ease: 'power4.out',
       })
-
-      // ── Hero text scroll exit ────────────────────────────────────────────
-      if (!isMobile) {
-        gsap.to(text, {
-          y: -80,
-          opacity: 0,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: textSection,
-            start: 'top top',
-            end: '80% top',
-            scrub: true,
-          },
-        })
-      }
-
-      // ── Carousel entrance (page load, slight delay) ──────────────────────
-      gsap.from(carouselSection, {
-        scale: 1.04,
-        opacity: 0,
-        duration: 1.6,
-        ease: 'power3.out',
-        delay: 0.15,
-      })
-
-      // ── Carousel parallax scrub — desktop only ───────────────────────────
-      if (!isMobile) {
-        ScrollTrigger.create({
-          trigger: carouselSection,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-          onUpdate: (self) => {
-            gsap.set(carouselSection, {
-              yPercent: -15 * self.progress,
-            })
-          },
-        })
-      }
     })
 
     return () => ctx.revert()
@@ -73,7 +56,7 @@ export default function HeroSection() {
   return (
     <>
       {/* ── Hero text ── */}
-      <div className="portfolio-section" ref={textSectionRef}>
+      <div className="portfolio-section">
         <div className="main-container">
           <div className="text-big-wrapper">
             <p className="text-big text-hero" ref={textRef}>
@@ -83,10 +66,65 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── Hero carousel ── */}
-      <div className="portfolio-section" ref={carouselSectionRef} data-cursor="VIEW">
-        <div className="images-container">
-          <HeroCarousel />
+      {/* ── Top 3 cases (replaces carousel) ── */}
+      <div className="service-cases-section">
+        <div className="service-grid">
+          {TOP_CASES.map((c) => (
+            <Link
+              key={c.href}
+              href={c.href}
+              style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+              data-cursor="VIEW"
+            >
+              <div className="case-card-big">
+                <div className="case-card-big___left">
+                  <div className="case-card-big-top">
+                    <div className="cases-item__top-navigation">
+                      <div className="cases-item__top-left">
+                        {c.cats.map((cat) => (
+                          <p key={cat} className="text-small is__chip">{cat}</p>
+                        ))}
+                      </div>
+                      <p className="text-regular font-color-medium-grey mob-text-s">{c.year}</p>
+                    </div>
+                    <div className="cases-item__title-wrapper">
+                      <h3 className="h3-bold font-color-black">{c.title}</h3>
+                      <h3 className="font-color-dark-gray mb-20">{c.desc}</h3>
+                      <div className="case-card-big__btn-wrapper" style={{ pointerEvents: 'none' }}>
+                        <span className="small-button small-button--cases w-inline-block">
+                          <p className="text-regular small-button-text">Подробнее</p>
+                          <div className="small-button-arrow-wrapper">
+                            <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                            <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="case-card-big___right">
+                  <img
+                    alt={c.title}
+                    className="case-card-big___image hide-mobile"
+                    loading="eager"
+                    sizes="(max-width: 1248px) 100vw, 1248px"
+                    src={c.img}
+                    width={1248}
+                    height={823}
+                  />
+                  <img
+                    alt={c.title}
+                    className="case-card-big___image hide-desktop"
+                    loading="eager"
+                    sizes="100vw"
+                    src={c.img}
+                    width={1248}
+                    height={823}
+                  />
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </>
