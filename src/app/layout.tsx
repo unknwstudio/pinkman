@@ -4,6 +4,7 @@ import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import ScrollAnimator from '@/components/ScrollAnimator/ScrollAnimator'
 import SmoothScroller from '@/components/SmoothScroller/SmoothScroller'
+import Cursor from '@/components/Cursor/Cursor'
 
 const OG_IMAGE = '/images/6717d958e16fdfb6e86dc87d_og.jpg'
 const DEFAULT_DESCRIPTION = 'Делаем продуктовый дизайн для корпораций с 2015 года. Обновляем сайт и коммуникации банка ВТБ, создаем внутренние продукты X5. Работаем с банками, ритейлом, страхованием, логистикой.'
@@ -56,6 +57,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         {/* SmoothScroller is a null-render client component — just bootstraps GSAP */}
         <SmoothScroller />
+        {/* Custom cursor — only renders on pointer:fine (desktop) */}
+        <Cursor />
       </body>
     </html>
   )

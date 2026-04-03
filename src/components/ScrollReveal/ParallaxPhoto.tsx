@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
-import { useParallax } from '@/hooks/useScrollReveal'
+import { useRef, useEffect } from 'react'
+import gsap from '@/lib/gsap'
 
 interface ParallaxPhotoProps {
   src: string
@@ -11,8 +11,6 @@ interface ParallaxPhotoProps {
   width?: number
   height?: number
   className?: string
-  /** 0–1 fraction of element height to shift across the full scroll distance */
-  speed?: number
 }
 
 export default function ParallaxPhoto({
@@ -23,22 +21,64 @@ export default function ParallaxPhoto({
   width,
   height,
   className = 'image',
-  speed = 0.18,
 }: ParallaxPhotoProps) {
+  const wrapRef = useRef<HTMLDivElement>(null)
   const imgRef = useRef<HTMLImageElement>(null)
-  useParallax(imgRef, { speed })
+
+  useEffect(() => {
+    const wrap = wrapRef.current
+    const img = imgRef.current
+    if (!wrap || !img) return
+
+    const ctx = gsap.context(() => {
+      // ── Curtain wipe (clip-path) + zoom reveal ─────────────────────────
+      gsap.fromTo(
+        wrap,
+        { clipPath: 'inset(100% 0% 0% 0%)' },
+        {
+          clipPath: 'inset(0% 0% 0% 0%)',
+          duration: 1.0,
+          ease: 'power4.inOut',
+          scrollTrigger: {
+            trigger: wrap,
+            start: 'top 80%',
+            once: true,
+          },
+        },
+      )
+      gsap.fromTo(
+        img,
+        { scale: 1.18 },
+        {
+          scale: 1,
+          duration: 1.0,
+          ease: 'power4.inOut',
+          scrollTrigger: {
+            trigger: wrap,
+            start: 'top 80%',
+            once: true,
+          },
+        },
+      )
+    }, wrap)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <img
-      ref={imgRef}
-      src={src}
-      srcSet={srcSet}
-      sizes={sizes}
-      alt={alt}
-      className={className}
-      loading="lazy"
-      width={width}
-      height={height}
-    />
+    <div ref={wrapRef} style={{ overflow: 'hidden', lineHeight: 0 }}>
+      <img
+        ref={imgRef}
+        src={src}
+        srcSet={srcSet}
+        sizes={sizes}
+        alt={alt}
+        className={className}
+        loading="lazy"
+        width={width}
+        height={height}
+        style={{ display: 'block', width: '100%', transformOrigin: 'center center' }}
+      />
+    </div>
   )
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import ContactCard from '@/components/ContactCard/ContactCard'
 import ServiceListItem from '@/components/ServiceListItem/ServiceListItem'
-import HeroCarousel from '@/components/HeroCarousel/HeroCarousel'
+import HeroSection from '@/components/HeroSection/HeroSection'
 import ParallaxPhoto from '@/components/ScrollReveal/ParallaxPhoto'
 import ClientLogosGrid from '@/components/ClientLogosGrid/ClientLogosGrid'
 
@@ -56,21 +56,8 @@ const CLIENT_LOGOS = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero ── */}
-      <div className="portfolio-section">
-        <div className="main-container">
-          <div className="text-big-wrapper">
-            <p className="text-big text-hero anim">пинкман&nbsp;—&nbsp;AI&#x2011;дизайн бизнес&nbsp;партнер</p>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Hero carousel ── */}
-      <div className="portfolio-section">
-        <div className="images-container">
-          <HeroCarousel />
-        </div>
-      </div>
+      {/* ── Hero (entrance + parallax handled by HeroSection client component) ── */}
+      <HeroSection />
 
       <div className="spacing" />
 
@@ -137,7 +124,6 @@ export default function HomePage() {
             sizes="(max-width: 2880px) 100vw, 2880px"
             width={2880}
             height={3334}
-            speed={0.18}
           />
         </div>
       </div>
