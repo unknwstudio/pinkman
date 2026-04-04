@@ -597,6 +597,9 @@ a { color: inherit; text-decoration: none; }
 .image-section { cursor: default !important; pointer-events: none !important; }
 .image-section * { pointer-events: none !important; }
 
+/* OTP Bank block: restore row gap so "Бронза" text doesn't overlap images */
+.developing-block.col-1 { grid-row-gap: var(--10px); }
+
 /* Ensure HTML width/height attrs act as aspect-ratio hints, not fixed sizes */
 .developing-image { height: auto; }
 .image { height: auto; }
