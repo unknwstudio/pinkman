@@ -4,7 +4,7 @@ import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
 import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
 import StatGrid from '@/components/StatGrid/StatGrid'
-import CaseCard from '@/components/CaseCard/CaseCard'
+import ServiceCasesGrid from '@/components/ServiceCasesGrid/ServiceCasesGrid'
 
 export const metadata: Metadata = {
   title: 'Сайты',
@@ -123,52 +123,34 @@ export default function SitesPage() {
       </ServiceGrid>
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
-      <div className="service-cases-section">
-        <div className="service-grid">
-
-          <CaseCard
-            chips={['банки', 'корпоративный сайт']}
-            year="2019–2025"
-            title="ВТБ"
-            subtitle="5 лет развивали сайт топ-3 банка России"
-            description="Спроектировали и&nbsp;реализовали комплексный сайт с&nbsp;продуманной продуктовой структурой. Создали и&nbsp;внедрили единую дизайн-систему, новую систему навигации, архитектуру сайта и&nbsp;пользовательский опыт"
-            result={{ label: 'Результат:', value: '7+ российских и&nbsp;международных наград, банк в&nbsp;топ-2 рейтинга цифровой зрелости (SDI360, 2023)' }}
-            imgSrc="/images/682a4691d3200066718f09bc_Frame 174 (1).webp"
-            imgSrcSet="/images/682a4691d3200066718f09bc_Frame 174 (1)-p-500.webp 500w, /images/682a4691d3200066718f09bc_Frame 174 (1)-p-800.webp 800w, /images/682a4691d3200066718f09bc_Frame 174 (1)-p-1080.webp 1080w, /images/682a4691d3200066718f09bc_Frame 174 (1).webp 1248w"
-            imgSrcMobile="/images/682a469c3da8b54b3e2f3a83_Frame 175 (1).webp"
-            imgSrcSetMobile="/images/682a469c3da8b54b3e2f3a83_Frame 175 (1)-p-500.webp 500w, /images/682a469c3da8b54b3e2f3a83_Frame 175 (1).webp 622w"
-          />
-
-          <CaseCard
-            chips={['банки', 'корпоративный сайт']}
-            year="2023-н.в."
-            title="ОТП Банк"
-            subtitle="1,5 года делаем сайт международного банка лучше"
-            description="Создали масштабную корпоративную платформу с&nbsp;десятками разделов для&nbsp;различных целевых аудиторий. Разработали сложную информационную архитектуру для&nbsp;частных лиц, бизнеса и&nbsp;премиальных клиентов"
-            result={{ label: 'Результат:', value: '40% — средний рост конверсии по&nbsp;продуктам' }}
-            href="/projects/1-5-goda-razvivaem-sayt-otp-banka-uvelichili-konversiyu-na-40/"
-            imgSrc="/images/682a586162b17387d3a5d03b_Frame 176.webp"
-            imgSrcSet="/images/682a586162b17387d3a5d03b_Frame 176-p-500.webp 500w, /images/682a586162b17387d3a5d03b_Frame 176-p-800.webp 800w, /images/682a586162b17387d3a5d03b_Frame 176-p-1080.webp 1080w, /images/682a586162b17387d3a5d03b_Frame 176.webp 1248w"
-            imgSrcMobile="/images/682a58746fd9bb45b831e79c_Frame 177 (1).webp"
-            imgSrcSetMobile="/images/682a58746fd9bb45b831e79c_Frame 177 (1)-p-500.webp 500w, /images/682a58746fd9bb45b831e79c_Frame 177 (1).webp 622w"
-          />
-
-          <CaseCard
-            chips={['цифровые продукты']}
-            year="2023–2024"
-            title="API Яндекс Карты"
-            subtitle="Сделали лучший сайт года для&nbsp;геосервисов Яндекса"
-            description="Разработали продуктовый сайт, демонстрирующий возможности API-инструментов. Понятная система навигации помогает разработчикам и&nbsp;бизнесу быстро находить нужную информацию"
-            result={{ label: 'Результат:', value: 'Лучший сайт года (Tagline Awards 2024), конверсия выросла на&nbsp;1,1 п.п.' }}
-            href="/projects/sdelali-redizayn-sayta-geoservisov-yandeksa-dlya-biznesa/"
-            imgSrc="/images/682a5bc4a5ca3597ed91714a_Frame 178.webp"
-            imgSrcSet="/images/682a5bc4a5ca3597ed91714a_Frame 178-p-500.webp 500w, /images/682a5bc4a5ca3597ed91714a_Frame 178-p-800.webp 800w, /images/682a5bc4a5ca3597ed91714a_Frame 178-p-1080.webp 1080w, /images/682a5bc4a5ca3597ed91714a_Frame 178.webp 1248w"
-            imgSrcMobile="/images/682a5be32e614eeb7f97cab6_Frame 179 (2).webp"
-            imgSrcSetMobile="/images/682a5be32e614eeb7f97cab6_Frame 179 (2)-p-500.webp 500w, /images/682a5be32e614eeb7f97cab6_Frame 179 (2).webp 622w"
-          />
-
-        </div>
-      </div>
+      <ServiceCasesGrid cases={[
+        {
+          title: 'ВТБ',
+          desc: '5 лет развивали сайт и\u00a0цифровые коммуникации ТОП-3 банка России',
+          year: '2024',
+          cats: ['Веб-дизайн', 'Интерфейсы', '3D/Motion-design', 'Сайты корпораций'],
+          img: '/images/682a4691d3200066718f09bc_Frame 174 (1).webp',
+          imgSrcSet: '/images/682a4691d3200066718f09bc_Frame 174 (1)-p-500.webp 500w, /images/682a4691d3200066718f09bc_Frame 174 (1)-p-800.webp 800w, /images/682a4691d3200066718f09bc_Frame 174 (1)-p-1080.webp 1080w, /images/682a4691d3200066718f09bc_Frame 174 (1).webp 1248w',
+        },
+        {
+          title: 'ОТП Банк',
+          desc: '1,5 года делаем сайт банка лучше\u00a0— увеличили конверсию на\u00a040%',
+          year: '2025',
+          cats: ['Веб-дизайн', 'Исследования', 'Сайты корпораций'],
+          img: '/images/680b76c9f1bb4eb6c0f384fb_otp.webp',
+          imgSrcSet: '/images/680b76c9f1bb4eb6c0f384fb_otp-p-500.webp 500w, /images/680b76c9f1bb4eb6c0f384fb_otp-p-800.webp 800w, /images/680b76c9f1bb4eb6c0f384fb_otp-p-1080.webp 1080w, /images/680b76c9f1bb4eb6c0f384fb_otp.webp 1248w',
+          href: '/projects/1-5-goda-razvivaem-sayt-otp-banka-uvelichili-konversiyu-na-40',
+        },
+        {
+          title: 'API Яндекс Карты',
+          desc: 'Сделали редизайн сайта геосервисов Яндекса для\u00a0бизнеса и\u00a0получили кучу наград',
+          year: '2024',
+          cats: ['Веб-дизайн', 'Интерфейсы', 'Сайты корпораций'],
+          img: '/images/6818bccf9f96a2532b76569c_Frame 176 (2).webp',
+          imgSrcSet: '/images/6818bccf9f96a2532b76569c_Frame 176 (2)-p-500.webp 500w, /images/6818bccf9f96a2532b76569c_Frame 176 (2)-p-800.webp 800w, /images/6818bccf9f96a2532b76569c_Frame 176 (2)-p-1080.webp 1080w, /images/6818bccf9f96a2532b76569c_Frame 176 (2).webp 1248w',
+          href: '/projects/sdelali-redizayn-sayta-geoservisov-yandeksa-dlya-biznesa',
+        },
+      ]} />
     </>
   )
 }

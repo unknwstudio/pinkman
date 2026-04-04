@@ -4,7 +4,7 @@ import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
 import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
 import ProcessSteps from '@/components/ProcessSteps/ProcessSteps'
-import CaseCard from '@/components/CaseCard/CaseCard'
+import ServiceCasesGrid from '@/components/ServiceCasesGrid/ServiceCasesGrid'
 
 export const metadata: Metadata = {
   title: 'Цифровые продукты',
@@ -137,45 +137,33 @@ export default function DigitalProductsPage() {
       </ServiceGrid>
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
-      <div className="service-cases-section">
-        <div className="service-grid">
-
-          <CaseCard
-            chips={['трэвел', 'интерфейсы']}
-            year="2022-н.в."
-            title="FUN&amp;SUN"
-            subtitle="2 года улучшаем сайт и&nbsp;приложение туроператора"
-            description="Обновили личный кабинет, спроектировали раздел с&nbsp;экспертами, создали систему поддержки через чат и&nbsp;чат-бота, провели редизайн карточек туров и&nbsp;добавили бронирование экскурсий"
-            result={{ label: 'Результат:', value: 'решили больше 400 задач за&nbsp;2 года' }}
-            href="/projects/2-goda-uluchshaem-sayt-i-prilozhenie-turoperatora-fun-sun/"
-            imgSrc="/images/682a6271c3ae6524b84292cb_Frame 174.webp"
-            imgSrcSet="/images/682a6271c3ae6524b84292cb_Frame 174-p-500.webp 500w, /images/682a6271c3ae6524b84292cb_Frame 174-p-800.webp 800w, /images/682a6271c3ae6524b84292cb_Frame 174-p-1080.webp 1080w, /images/682a6271c3ae6524b84292cb_Frame 174.webp 1248w"
-          />
-
-          <CaseCard
-            chips={['ритейл', 'интерфейсы']}
-            year="2020-н.в."
-            title="X5 Tech"
-            subtitle="Помогаем развивать внутренние продукты ритейлера"
-            description="Спроектировали сервисы для&nbsp;сотрудников и&nbsp;партнеров X5 Group: логистика, склады, заказы и&nbsp;HR. От&nbsp;запуска MVP до&nbsp;дизайн-поддержки"
-            result={{ label: 'Результат:', value: 'снизили нагрузку на&nbsp;in-house команду X5 Tech, обеспечили гибкими и&nbsp;масштабируемыми инструментами' }}
-            imgSrc="/images/682a62c6379497ff572ac960_Frame 175.webp"
-            imgSrcSet="/images/682a62c6379497ff572ac960_Frame 175-p-500.webp 500w, /images/682a62c6379497ff572ac960_Frame 175-p-800.webp 800w, /images/682a62c6379497ff572ac960_Frame 175-p-1080.webp 1080w, /images/682a62c6379497ff572ac960_Frame 175.webp 1248w"
-          />
-
-          <CaseCard
-            chips={['MVP', 'HR']}
-            year="2022"
-            title="Уралсиб"
-            subtitle="Заложили дизайн-основу корпоративного портала банка"
-            description="Спроектировали корпоративный портал с&nbsp;гибкой дизайн-системой за&nbsp;2 месяца. Объединили разрозненные HR-инструменты, создали единую точку входа для&nbsp;всех сотрудников"
-            result={{ label: 'Результат:', value: 'ускорили HR-процессы в&nbsp;среднем в&nbsp;2-3 раза для&nbsp;8 тыс. сотрудников банка' }}
-            imgSrc="/images/682a64342e614eeb7f9c12b9_Frame 176.webp"
-            imgSrcSet="/images/682a64342e614eeb7f9c12b9_Frame 176-p-500.webp 500w, /images/682a64342e614eeb7f9c12b9_Frame 176-p-800.webp 800w, /images/682a64342e614eeb7f9c12b9_Frame 176-p-1080.webp 1080w, /images/682a64342e614eeb7f9c12b9_Frame 176.webp 1248w"
-          />
-
-        </div>
-      </div>
+      <ServiceCasesGrid cases={[
+        {
+          title: 'FUN&SUN',
+          desc: '2 года улучшаем сайт и\u00a0приложение туроператора',
+          year: '2024',
+          cats: ['Интерфейсы', 'Исследования', 'Веб-дизайн'],
+          img: '/images/680b76236866e23af5ff4c24_funsun.webp',
+          imgSrcSet: '/images/680b76236866e23af5ff4c24_funsun-p-500.webp 500w, /images/680b76236866e23af5ff4c24_funsun-p-800.webp 800w, /images/680b76236866e23af5ff4c24_funsun-p-1080.webp 1080w, /images/680b76236866e23af5ff4c24_funsun.webp 1248w',
+          href: '/projects/2-goda-uluchshaem-sayt-i-prilozhenie-turoperatora-fun-sun',
+        },
+        {
+          title: 'X5 Tech',
+          desc: '5 лет работаем над\u00a0внутренними продуктами крупного ритейлера',
+          year: '2025',
+          cats: ['Интерфейсы', 'Исследования'],
+          img: '/images/682a62c6379497ff572ac960_Frame 175.webp',
+          imgSrcSet: '/images/682a62c6379497ff572ac960_Frame 175-p-500.webp 500w, /images/682a62c6379497ff572ac960_Frame 175-p-800.webp 800w, /images/682a62c6379497ff572ac960_Frame 175-p-1080.webp 1080w, /images/682a62c6379497ff572ac960_Frame 175.webp 1248w',
+        },
+        {
+          title: 'Уралсиб',
+          desc: 'Заложили дизайн-основу корпоративного портала банка',
+          year: '2022',
+          cats: ['Интерфейсы', 'Исследования'],
+          img: '/images/682a64342e614eeb7f9c12b9_Frame 176.webp',
+          imgSrcSet: '/images/682a64342e614eeb7f9c12b9_Frame 176-p-500.webp 500w, /images/682a64342e614eeb7f9c12b9_Frame 176-p-800.webp 800w, /images/682a64342e614eeb7f9c12b9_Frame 176-p-1080.webp 1080w, /images/682a64342e614eeb7f9c12b9_Frame 176.webp 1248w',
+        },
+      ]} />
     </>
   )
 }

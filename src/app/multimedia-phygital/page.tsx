@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
-import CaseCard from '@/components/CaseCard/CaseCard'
+import ServiceCasesGrid from '@/components/ServiceCasesGrid/ServiceCasesGrid'
 
 export const metadata: Metadata = {
   title: 'Multimedia & Phygital',
@@ -79,47 +79,35 @@ export default function MultimediaPhygitalPage() {
       </ServiceGrid>
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
-      <div className="service-cases-section">
-        <div className="service-grid">
-
-          <CaseCard
-            chips={['AR/VR', 'инсталляции']}
-            year="2024"
-            title="Сбер х Пушкинский музей"
-            subtitle="Спроектировали приложение и&nbsp;AR-активности для&nbsp;выставки Снейдерса"
-            description="Вместе с&nbsp;командами Sber Metaverse Tech и&nbsp;Event Lab СберМаркетинга работали над&nbsp;AR-контентом. Разработали дизайн-концепцию приложения выставки, оживили картины с&nbsp;помощью AR, спроектировали масштабную AR-инсталляцию для&nbsp;входа в&nbsp;музей, разработали и&nbsp;внедрили в&nbsp;приложение партнерский квест от&nbsp;Купера"
-            result={{ label: 'Результат:', value: 'запустили проект за&nbsp;1 месяц вместе с&nbsp;разработкой' }}
-            href="/projects/sproektirovali-prilozhenie-i-ar-aktivnosti-dlya-vystavki-sneydersa-v-pushkinskom-muzee/"
-            imgSrc="/images/682b086c2526a109f26f4986_Frame 174.webp"
-            imgSrcSet="/images/682b086c2526a109f26f4986_Frame 174-p-500.webp 500w, /images/682b086c2526a109f26f4986_Frame 174-p-800.webp 800w, /images/682b086c2526a109f26f4986_Frame 174-p-1080.webp 1080w, /images/682b086c2526a109f26f4986_Frame 174.webp 1248w"
-          />
-
-          <CaseCard
-            chips={['выставочные проекты', 'интерфейсы']}
-            year="2024"
-            title="Сбер х Еврейский музей"
-            subtitle="Мобильное приложение и&nbsp;дизайн-поддержка выставки про&nbsp;Бродского"
-            description="Помогли сделать фиджитал-активности для&nbsp;выставочного проекта Еврейского музея и&nbsp;Сбера «Иосиф Бродский. Место не&nbsp;хуже любого». Разработали дизайн-концепцию приложения и&nbsp;дизайн-материалов для&nbsp;пространств выставки, покрыли работы от&nbsp;копирайтинга до&nbsp;3d-моделирования и&nbsp;анимации экспонатов выставки внутри приложения"
-            result={{ label: 'Результат:', value: 'запустили проект за&nbsp;1 месяц вместе с&nbsp;разработкой' }}
-            href="/projects/mobilnoe-prilozhenie-i-dizayn-podderzhka-vystavki-pro-brodskogo/"
-            imgSrc="/images/682b08d4551152a1ec96f4f2_Frame 175.webp"
-            imgSrcSet="/images/682b08d4551152a1ec96f4f2_Frame 175-p-500.webp 500w, /images/682b08d4551152a1ec96f4f2_Frame 175-p-800.webp 800w, /images/682b08d4551152a1ec96f4f2_Frame 175-p-1080.webp 1080w, /images/682b08d4551152a1ec96f4f2_Frame 175.webp 1248w"
-          />
-
-          <CaseCard
-            chips={['phygital', 'интерфейсы']}
-            year="2023"
-            title="VK Порталы"
-            subtitle="Спроектировали чат-бота для&nbsp;управления спецпроектом"
-            description="Проект соцсети приурочен ко&nbsp;Дню России: каждый год на&nbsp;улицах нескольких городов страны устанавливаются большие интерактивные экраны&nbsp;— Порталы, через которые жители могут общаться друг с&nbsp;другом посредством телемоста. Мы с&nbsp;нуля разработали чат-бот и&nbsp;придумали логику его взаимодействия с&nbsp;порталами в&nbsp;9 городах России в&nbsp;10 разных сценариях"
-            result={{ label: 'Результат:', value: 'спроектировали 100+ экранов интерфейса за&nbsp;2 недели' }}
-            href="/projects/sdelali-chat-bota-i-sproektirovali-100-ekranov-dlya-proekta-vk-portaly/"
-            imgSrc="/images/682b092689078f3c00738049_Frame 176.webp"
-            imgSrcSet="/images/682b092689078f3c00738049_Frame 176-p-500.webp 500w, /images/682b092689078f3c00738049_Frame 176-p-800.webp 800w, /images/682b092689078f3c00738049_Frame 176-p-1080.webp 1080w, /images/682b092689078f3c00738049_Frame 176.webp 1248w"
-          />
-
-        </div>
-      </div>
+      <ServiceCasesGrid cases={[
+        {
+          title: 'Сбер х Пушкинский музей',
+          desc: 'Спроектировали приложение и\u00a0AR-активности для\u00a0выставки Снейдерса',
+          year: '2024',
+          cats: ['BTL и\u00a0ивенты', '3D/Motion-design', 'Интерфейсы'],
+          img: '/images/680b77bf92a7c82e815dca6d_sneyders.webp',
+          imgSrcSet: '/images/680b77bf92a7c82e815dca6d_sneyders-p-500.webp 500w, /images/680b77bf92a7c82e815dca6d_sneyders-p-800.webp 800w, /images/680b77bf92a7c82e815dca6d_sneyders-p-1080.webp 1080w, /images/680b77bf92a7c82e815dca6d_sneyders.webp 1248w',
+          href: '/projects/sproektirovali-prilozhenie-i-ar-aktivnosti-dlya-vystavki-sneydersa-v-pushkinskom-muzee',
+        },
+        {
+          title: 'Сбер х Еврейский музей',
+          desc: 'Мобильное приложение и\u00a0дизайн-поддержка выставки про\u00a0Бродского',
+          year: '2024',
+          cats: ['BTL и\u00a0ивенты', '3D/Motion-design', 'Интерфейсы'],
+          img: '/images/681229f38e06cabc183bbec4_Frame 174.webp',
+          imgSrcSet: '/images/681229f38e06cabc183bbec4_Frame 174-p-500.webp 500w, /images/681229f38e06cabc183bbec4_Frame 174-p-800.webp 800w, /images/681229f38e06cabc183bbec4_Frame 174-p-1080.webp 1080w, /images/681229f38e06cabc183bbec4_Frame 174.webp 1248w',
+          href: '/projects/mobilnoe-prilozhenie-i-dizayn-podderzhka-vystavki-pro-brodskogo',
+        },
+        {
+          title: 'VK Порталы',
+          desc: 'Спроектировали чат-бота и\u00a0100 экранов для\u00a0управления мультимедийным проектом',
+          year: '2023',
+          cats: ['BTL и\u00a0ивенты', 'Интерфейсы'],
+          img: '/images/680b76b7c91ad25c42587b6c_vkportal.webp',
+          imgSrcSet: '/images/680b76b7c91ad25c42587b6c_vkportal-p-500.webp 500w, /images/680b76b7c91ad25c42587b6c_vkportal-p-800.webp 800w, /images/680b76b7c91ad25c42587b6c_vkportal-p-1080.webp 1080w, /images/680b76b7c91ad25c42587b6c_vkportal.webp 1248w',
+          href: '/projects/sdelali-chat-bota-i-sproektirovali-100-ekranov-dlya-proekta-vk-portaly',
+        },
+      ]} />
     </>
   )
 }

@@ -5,7 +5,7 @@ import ServicePoint from '@/components/ServicePoint/ServicePoint'
 import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
 import ProcessSteps from '@/components/ProcessSteps/ProcessSteps'
 import StatGrid from '@/components/StatGrid/StatGrid'
-import CaseCard from '@/components/CaseCard/CaseCard'
+import ServiceCasesGrid from '@/components/ServiceCasesGrid/ServiceCasesGrid'
 import ContactCard from '@/components/ContactCard/ContactCard'
 
 export const metadata: Metadata = {
@@ -120,46 +120,35 @@ export default function CommunicationsDesignPage() {
       ]} />
 
       <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
-      <div className="service-cases-section">
-        <div className="service-grid">
-
-          <CaseCard
-            chips={['банки', 'дизайн коммуникаций']}
-            year="2023-н.в."
-            title="Газпромбанк"
-            subtitle="1,5 года помогаем поддерживать дизайн коммуникаций банка"
-            description="Мы предоставили квалифицированных дизайнеров для&nbsp;работы в&nbsp;рамках существующих дизайн-процессов банка, обеспечили быструю и&nbsp;качественную интеграцию дизайнеров в&nbsp;инхаус-команду банка, поддержали направление перформанс-маркетинга в&nbsp;создании креативов и&nbsp;сократили time-to-market"
-            result={{ label: 'Результат:', value: 'сделали 182 уникальных кей вижуала, 3711 ресайзов, 52 иллюстрации, 34 анимации' }}
-            href="/projects/1-5-goda-pomogaem-podderzhivat-dizayn-kommunikaciy-gazprombanka-na-autstaffe/"
-            imgSrc="/images/682aee8146f1e27a3163a9ef_Frame 174.webp"
-            imgSrcSet="/images/682aee8146f1e27a3163a9ef_Frame 174-p-500.webp 500w, /images/682aee8146f1e27a3163a9ef_Frame 174-p-800.webp 800w, /images/682aee8146f1e27a3163a9ef_Frame 174-p-1080.webp 1080w, /images/682aee8146f1e27a3163a9ef_Frame 174.webp 1248w"
-          />
-
-          <CaseCard
-            chips={['банки', 'моушен']}
-            year="2024"
-            title="Т-Банк"
-            subtitle="Сделали моушен для&nbsp;рекламной кампании ребрендинга банка"
-            description="Взяли горящую задачу и&nbsp;в&nbsp;сжатые сроки сделали видео для&nbsp;naked eye и&nbsp;десятки форматов DOOH. Ускорили работу в&nbsp;2,5 раза за&nbsp;счет автоматизации ресайзов. Помогли запустить масштабную кампанию по&nbsp;всей России с&nbsp;high-end моушеном"
-            result={{ label: 'Результат:', value: '4 ролика для&nbsp;naked eye, 75+ ресайзов для&nbsp;DOOH' }}
-            href="/projects/sdelali-moushen-dlya-rebrendinga-t-banka/"
-            imgSrc="/images/682aef0460393fd7bfbd9ca6_Frame 175.webp"
-            imgSrcSet="/images/682aef0460393fd7bfbd9ca6_Frame 175-p-500.webp 500w, /images/682aef0460393fd7bfbd9ca6_Frame 175-p-800.webp 800w, /images/682aef0460393fd7bfbd9ca6_Frame 175-p-1080.webp 1080w, /images/682aef0460393fd7bfbd9ca6_Frame 175.webp 1248w"
-          />
-
-          <CaseCard
-            chips={['фудтех', 'дизайн коммуникаций']}
-            year="2023-н.в."
-            title="Яндекс Еда"
-            subtitle="Больше года работаем на&nbsp;дизайн-поддержке фудтех-брендов Яндекса"
-            description="Работаем с&nbsp;ценовой и&nbsp;имиджевой коммуникацией. Делаем буквально всё, что&nbsp;приходит в&nbsp;голову, когда думаешь про&nbsp;коммуникационный дизайн: KV, 3D, моушен, гайдлайны, лендинги, POSM, спецпроекты"
-            result={{ label: 'Результат:', value: '100 моушн-роликов, 10 спецпроектов, сотни баннеров и&nbsp;3D для&nbsp;5 разных брендов, премия E+ Awards за&nbsp;лучший партнёрский спецпроект' }}
-            imgSrc="/images/682aefc9b8d3564d1df58dcd_Frame 176.webp"
-            imgSrcSet="/images/682aefc9b8d3564d1df58dcd_Frame 176-p-500.webp 500w, /images/682aefc9b8d3564d1df58dcd_Frame 176-p-800.webp 800w, /images/682aefc9b8d3564d1df58dcd_Frame 176-p-1080.webp 1080w, /images/682aefc9b8d3564d1df58dcd_Frame 176.webp 1248w"
-          />
-
-        </div>
-      </div>
+      <ServiceCasesGrid cases={[
+        {
+          title: 'Газпромбанк',
+          desc: '1,5 года помогаем поддерживать дизайн коммуникаций банка на\u00a0аутстаффе',
+          year: '2025',
+          cats: ['Дизайн коммуникаций', '3D/Motion-design'],
+          img: '/images/680b764199c920914c0a7c5b_gpb.webp',
+          imgSrcSet: '/images/680b764199c920914c0a7c5b_gpb-p-500.webp 500w, /images/680b764199c920914c0a7c5b_gpb-p-800.webp 800w, /images/680b764199c920914c0a7c5b_gpb-p-1080.webp 1080w, /images/680b764199c920914c0a7c5b_gpb.webp 1248w',
+          href: '/projects/1-5-goda-pomogaem-podderzhivat-dizayn-kommunikaciy-gazprombanka-na-autstaffe',
+        },
+        {
+          title: 'Т-Банк',
+          desc: 'Сделали моушен про\u00a0ренейминг банка для\u00a03D-кубов и\u00a0медиафасадов по\u00a0всей России',
+          year: '2024',
+          cats: ['Бренд и\u00a0контент', '3D/Motion-design'],
+          img: '/images/680b761258fa82867ec8654d_tbankvideo.webp',
+          imgSrcSet: '/images/680b761258fa82867ec8654d_tbankvideo-p-500.webp 500w, /images/680b761258fa82867ec8654d_tbankvideo-p-800.webp 800w, /images/680b761258fa82867ec8654d_tbankvideo-p-1080.webp 1080w, /images/680b761258fa82867ec8654d_tbankvideo.webp 1248w',
+          href: '/projects/sdelali-moushen-dlya-rebrendinga-t-banka',
+        },
+        {
+          title: 'Яндекс Еда',
+          desc: '2 года работаем с\u00a0дизайном коммуникаций фудтех-проектов Яндекса в\u00a0нескольких странах',
+          year: '2025',
+          cats: ['Дизайн коммуникаций', '3D/Motion-design'],
+          img: '/images/683eccfa54b8a997cf797735_Frame 174 (2).webp',
+          imgSrcSet: '/images/683eccfa54b8a997cf797735_Frame 174 (2)-p-500.webp 500w, /images/683eccfa54b8a997cf797735_Frame 174 (2)-p-800.webp 800w, /images/683eccfa54b8a997cf797735_Frame 174 (2)-p-1080.webp 1080w, /images/683eccfa54b8a997cf797735_Frame 174 (2).webp 1248w',
+          href: '/projects/2-goda-dizayn-podderzhki-yandeks-edy',
+        },
+      ]} />
 
       <ContactCard intro="Обсудим проект?" role="Аккаунт&#x2011;директор Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
     </>
