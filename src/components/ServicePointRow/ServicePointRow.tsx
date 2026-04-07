@@ -14,14 +14,24 @@ interface ServicePointRowProps {
   children: React.ReactNode
   /** Adds .service-points-section spacing wrapper (default true) */
   spaced?: boolean
+  /** Keeps side padding but reduces bottom margin to match card gap (default false) */
+  compact?: boolean
 }
 
 export default function ServicePointRow({
   children,
   spaced = true,
+  compact = false,
 }: ServicePointRowProps) {
+  const style = compact
+    ? { marginBottom: 'var(--8px)', paddingTop: 0 }
+    : undefined
+
   return (
-    <div className={spaced ? 'service-points-section' : ''}>
+    <div
+      className={spaced || compact ? 'service-points-section' : ''}
+      style={style}
+    >
       <div className="service-point-row">
         {children}
       </div>

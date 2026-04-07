@@ -48,10 +48,10 @@ export default function EventIdentityPage() {
           <h2 className="h1">Какие проблемы мы&nbsp;решаем</h2>
         </div>
       </Section>
-      <ServicePointRow>
+      <ServicePointRow compact>
         <ServicePoint
           tagsTop={['идея']}
-          title="Нет идеи и&nbsp;визуала в&nbsp;виде KV для&nbsp;конференции, нужно оперативно придумать"
+          title="Мероприятие совсем скоро, сроки поджимают, а&nbsp;KV ещё не&nbsp;готов"
         />
         <ServicePoint
           tagsTop={['масштабирование']}
@@ -86,32 +86,32 @@ export default function EventIdentityPage() {
         <div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}>
           <h2 className="h1">Что мы&nbsp;предлагаем</h2>
         </div>
-        <p className="font-color-dark-gray">
-          Комплексную поддержку: от&nbsp;креативной идеи до&nbsp;визуальной
-          реализации и&nbsp;масштабирования на&nbsp;любые носители
-          и&nbsp;поверхности&nbsp;&mdash; от&nbsp;листовок
-          до&nbsp;нестандартных экранов.
-        </p>
       </Section>
-      <ServiceGrid>
+      <ServicePointRow compact>
         <ServicePoint
-          title="AI + мультидисциплина"
-          tags={['скорость', 'качество']}
-          description="Понимаем, что применение AI даёт скорость, но&nbsp;требует внимания к&nbsp;нюансам. Комбинируем инструменты с&nbsp;AI&nbsp;&mdash; качественный результат в&nbsp;короткие сроки."
+          tagsTop={['комплексно']}
+          title="Комплексную поддержку: от&nbsp;креативной идеи до&nbsp;визуальной реализации и&nbsp;масштабирования на&nbsp;любые носители&nbsp;&mdash; от&nbsp;листовок до&nbsp;нестандартных экранов"
         />
         <ServicePoint
-          title="Управление ёмкостью"
-          tags={['база талантов', 'гибкость']}
-          description="Самостоятельно управляем ёмкостью команд под&nbsp;ваши задачи, имеем базу талантов для&nbsp;любого типа задачи."
+          tagsTop={['скорость', 'качество']}
+          title="AI + мультидисциплина"
+          description="Понимаем, что применение AI даёт скорость, но&nbsp;требует внимания к&nbsp;нюансам. Комбинируем инструменты с&nbsp;AI&nbsp;&mdash; качественный результат в&nbsp;короткие сроки."
           animDelay={2}
         />
         <ServicePoint
-          title="Встроенный юнит"
-          tags={['продакшен', 'дисциплина']}
-          description="Отдельная команда продакшена. Работаем как&nbsp;встроенный юнит вашей команды&nbsp;&mdash; с&nbsp;визуальным контролем и&nbsp;производственной дисциплиной."
+          tagsTop={['база талантов', 'гибкость']}
+          title="Управление ёмкостью"
+          description="Самостоятельно управляем ёмкостью команд под&nbsp;ваши задачи, имеем базу талантов для&nbsp;любого типа задачи."
           animDelay={3}
         />
-      </ServiceGrid>
+      </ServicePointRow>
+      <ServicePointRow>
+        <ServicePoint
+          tagsTop={['продакшен', 'дисциплина']}
+          title="Встроенный юнит"
+          description="Отдельная команда продакшена. Работаем как&nbsp;встроенный юнит вашей команды&nbsp;&mdash; с&nbsp;визуальным контролем и&nbsp;производственной дисциплиной."
+        />
+      </ServicePointRow>
 
       {/* ── Команда ── */}
       <Section>
@@ -146,7 +146,7 @@ export default function EventIdentityPage() {
           <h2 className="h1">Кому подходит</h2>
         </div>
       </Section>
-      <ServicePointRow>
+      <ServicePointRow compact>
         <ServicePoint
           tagsTop={['мероприятия']}
           title="Часто запускаете конференции, мероприятия, сезонные кампании"
@@ -162,11 +162,11 @@ export default function EventIdentityPage() {
           animDelay={3}
         />
       </ServicePointRow>
-      <ServiceGrid spaced={false}>
+      <ServicePointRow>
         <ServicePoint
           title="Руководителям маркетинга, бренд-менеджерам, креативным директорам, руководителям продакшена и&nbsp;продюсерам"
         />
-      </ServiceGrid>
+      </ServicePointRow>
 
       {/* ── Что вы получите ── */}
       <Section>
@@ -174,7 +174,7 @@ export default function EventIdentityPage() {
           <h2 className="h1">Что вы&nbsp;получите</h2>
         </div>
       </Section>
-      <ServicePointRow>
+      <ServicePointRow compact>
         <ServicePoint
           tagsTop={['01']}
           title="Креатив, айдентику, тексты"
@@ -193,13 +193,13 @@ export default function EventIdentityPage() {
           animDelay={3}
         />
       </ServicePointRow>
-      <ServiceGrid spaced={false}>
+      <ServicePointRow>
         <ServicePoint
           tagsTop={['04']}
           title="Проект на&nbsp;высоком уровне"
           description="Будет сдан в&nbsp;срок, в&nbsp;рамках бюджета, на&nbsp;высоком уровне качества."
         />
-      </ServiceGrid>
+      </ServicePointRow>
 
       {/* ── Как работаем — процесс ── */}
       <Section>
@@ -213,6 +213,10 @@ export default function EventIdentityPage() {
           { num: '2', title: 'Креативная идея', description: 'Готовим концепцию и&nbsp;KV', tag: 'концепт' },
           { num: '3', title: 'Согласование', description: 'Презентуем решение для&nbsp;согласования со&nbsp;всеми ЛПР', tag: 'утверждение' },
           { num: '4', title: 'Мастер-макеты', description: 'Определяем ключевые макеты для&nbsp;масштабирования', tag: 'макеты' },
+        ]}
+      />
+      <ProcessSteps
+        steps={[
           { num: '5', title: 'Продакшен', description: 'Производим контент с&nbsp;AI: статика и&nbsp;motion', tag: 'AI' },
           { num: '6', title: 'Носители', description: 'Готовим технически верные носители', tag: 'финал' },
           { num: '7', title: 'Синки', description: 'Еженедельные синки, общее облако, сопровождение до&nbsp;финальной сдачи', tag: 'контроль' },
