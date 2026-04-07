@@ -19,7 +19,8 @@ jobs:
           port: 22
           script: |
             cd /var/www/pinkman-next
-            git pull origin main
+            git fetch origin main
+            git reset --hard origin/main
             npm install
             npm run build
             cp -rf public .next/standalone/
