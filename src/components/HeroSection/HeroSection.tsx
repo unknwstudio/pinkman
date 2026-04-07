@@ -93,7 +93,7 @@ export default function HeroSection() {
         <div className="main-container">
           <div className="text-big-wrapper">
             <p className="text-big text-hero" ref={textRef}>
-              пинкман&nbsp;—&nbsp;AI&#x2011;партнёр в&nbsp;дизайне
+              пинкман — AI-партнёр в дизайне
             </p>
           </div>
         </div>
