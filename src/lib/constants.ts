@@ -11,6 +11,7 @@ export const SERVICE_SLUGS = [
   'ai-video',
   'ux-research-redesign',
   'creative-movie-production',
+  'event-identity',
 ] as const
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number]
@@ -30,6 +31,7 @@ export const ACCENT_COLORS: Record<string, string> = {
   '/ai-video/':                  '#f5f5f5',
   '/ux-research-redesign/':      '#EBFAF3',
   '/creative-movie-production/': '#FFF3E6',
+  '/event-identity/':            '#F3EAFF',
 }
 
 /** Nav links shown in mobile overlay + desktop bar */
@@ -50,4 +52,5 @@ export const SERVICE_LINKS = [
   { href: '/ai-video/',                  label: 'AI\u2011ролики для OLV\u00a0+\u00a0DOOH' },
   { href: '/ux-research-redesign/',      label: 'UX\u2011исследования при редизайне' },
   { href: '/creative-movie-production/', label: 'Креатив и съёмка роликов' },
+  { href: '/event-identity/',            label: 'Айдентика мероприятий' },
 ] as const
