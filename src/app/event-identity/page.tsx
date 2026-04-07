@@ -208,6 +208,7 @@ export default function EventIdentityPage() {
         </div>
       </Section>
       <ProcessSteps
+        compact
         steps={[
           { num: '1', title: 'Брифинг', description: 'Погружаемся в&nbsp;контекст задачи', tag: 'старт' },
           { num: '2', title: 'Креативная идея', description: 'Готовим концепцию и&nbsp;KV', tag: 'концепт' },

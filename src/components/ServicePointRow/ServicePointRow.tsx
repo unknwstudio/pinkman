@@ -23,15 +23,14 @@ export default function ServicePointRow({
   spaced = true,
   compact = false,
 }: ServicePointRowProps) {
-  const style = compact
-    ? { marginBottom: 'var(--8px)', paddingTop: 0 }
-    : undefined
+  const cls = compact
+    ? 'service-points-section is--compact'
+    : spaced
+      ? 'service-points-section'
+      : ''
 
   return (
-    <div
-      className={spaced || compact ? 'service-points-section' : ''}
-      style={style}
-    >
+    <div className={cls}>
       <div className="service-point-row">
         {children}
       </div>

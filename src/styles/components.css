@@ -94,6 +94,12 @@ a { color: inherit; text-decoration: none; }
 .service-section,
 .service-cases-section { margin-bottom: 5rem !important; }
 
+/* Compact variant — vertical gap between rows matches horizontal card gap */
+.service-points-section.is--compact {
+  margin-bottom: var(--8px) !important;
+  padding-top: 0 !important;
+}
+
 /* ════════════════════════════════════════════════════════════
    DESKTOP NAV — old Webflow header (hidden on desktop, kept for mobile hamburger)
    ════════════════════════════════════════════════════════════ */
