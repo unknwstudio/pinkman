@@ -195,7 +195,7 @@ export default function TalentHubPage() {
           animDelay={2}
         />
       </ServicePointRow>
-      <ServicePointRow compact>
+      <ServicePointRow compact full>
         <ServicePoint
           title="Веселых)"
           description="Шутка) Но&nbsp;если честно, мы&nbsp;много времени проводим за&nbsp;работой, с&nbsp;таким настроем все получается по-красоте и&nbsp;как-то легче"
@@ -303,7 +303,7 @@ export default function TalentHubPage() {
           animDelay={2}
         />
       </ServicePointRow>
-      <ServicePointRow>
+      <ServicePointRow compact>
         <ServicePoint
           tagsTop={['03']}
           title="Попроектно / занятость на&nbsp;квартал"
