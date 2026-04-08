@@ -198,18 +198,20 @@ export default function TalentHubPage() {
         />
       </ServicePointRow>
 
-      {/* ── Callout — Особенно ищем ── */}
-      <Section>
-        <div className="callout-box th-two-col-width anim">
-          <h3 className="font-color-black" style={{ marginBottom: 'var(--8px)' }}>
-            Особенно ищем прямо сейчас ⭐️
-          </h3>
-          <p className="text-regular font-color-dark-gray">
-            Дизайнеров на&nbsp;концепты интерфейсов, AI-дизайнеров на&nbsp;статику
-            и&nbsp;ролики, CG-специалистов, motion-дизайнеров, 3D-дизайнеров
-          </p>
+      {/* ── Callout — Особенно ищем (inside grid for perfect edge alignment) ── */}
+      <div className="service-points-section">
+        <div className="service-point-row service-point-row--full">
+          <div className="callout-box anim" style={{ gridColumn: '1 / -1' }}>
+            <h3 className="font-color-black" style={{ marginBottom: 'var(--8px)' }}>
+              Особенно ищем прямо сейчас ⭐️
+            </h3>
+            <p className="text-regular font-color-dark-gray">
+              Дизайнеров на&nbsp;концепты интерфейсов, AI-дизайнеров на&nbsp;статику
+              и&nbsp;ролики, CG-специалистов, motion-дизайнеров, 3D-дизайнеров
+            </p>
+          </div>
         </div>
-      </Section>
+      </div>
 
       {/* ── Что нужно сделать (п.7: text inside step 2 card) ── */}
       <Section>
