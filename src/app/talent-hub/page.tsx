@@ -144,18 +144,18 @@ export default function TalentHubPage() {
         </div>
       </Section>
 
-      {/* Плашка с зачёркиванием (п.4: extra bottom margin) */}
-      <Section>
-        <div className="callout-box callout-box--yellow th-two-col-width anim" style={{ marginBottom: 'var(--32px)' }}>
+      {/* Плашка с зачёркиванием — inside grid, 2 columns wide */}
+      <ServicePointRow compact twoCol>
+        <div className="callout-box callout-box--yellow anim">
           <p className="text-regular font-color-black">
             <s>Ищем крепких дизайнеров</s> так обычно пишут
             в&nbsp;99% вакансий, но&nbsp;мы&nbsp;постараемся рассказать,
             что это значит именно для&nbsp;нас
           </p>
         </div>
-      </Section>
+      </ServicePointRow>
 
-      {/* п.5: grid layout — cards in rows of 2 */}
+      {/* Cards in rows of 2 */}
       <ServicePointRow compact>
         <ServicePoint
           title="AI-ориентированных, кто может с&nbsp;помощью технологий получить необходимый результат"
@@ -191,27 +191,25 @@ export default function TalentHubPage() {
           animDelay={2}
         />
       </ServicePointRow>
-      <ServicePointRow compact full>
+      <ServicePointRow compact twoCol>
         <ServicePoint
           title="Веселых)"
           description="Шутка) Но&nbsp;если честно, мы&nbsp;много времени проводим за&nbsp;работой, с&nbsp;таким настроем все получается по-красоте и&nbsp;как-то легче"
         />
       </ServicePointRow>
 
-      {/* ── Callout — Особенно ищем (inside grid for perfect edge alignment) ── */}
-      <div className="service-points-section">
-        <div className="service-point-row service-point-row--full">
-          <div className="callout-box anim" style={{ gridColumn: '1 / -1' }}>
-            <h3 className="font-color-black" style={{ marginBottom: 'var(--8px)' }}>
-              Особенно ищем прямо сейчас ⭐️
-            </h3>
-            <p className="text-regular font-color-dark-gray">
-              Дизайнеров на&nbsp;концепты интерфейсов, AI-дизайнеров на&nbsp;статику
-              и&nbsp;ролики, CG-специалистов, motion-дизайнеров, 3D-дизайнеров
-            </p>
-          </div>
+      {/* ── Callout — Особенно ищем (inside grid, 2 columns) ── */}
+      <ServicePointRow twoCol>
+        <div className="callout-box anim">
+          <h3 className="font-color-black" style={{ marginBottom: 'var(--8px)' }}>
+            Особенно ищем прямо сейчас ⭐️
+          </h3>
+          <p className="text-regular font-color-dark-gray">
+            Дизайнеров на&nbsp;концепты интерфейсов, AI-дизайнеров на&nbsp;статику
+            и&nbsp;ролики, CG-специалистов, motion-дизайнеров, 3D-дизайнеров
+          </p>
         </div>
-      </div>
+      </ServicePointRow>
 
       {/* ── Что нужно сделать (п.7: text inside step 2 card) ── */}
       <Section>
