@@ -32,6 +32,7 @@ export const ACCENT_COLORS: Record<string, string> = {
   '/ux-research-redesign/':      '#EBFAF3',
   '/creative-movie-production/': '#FFF3E6',
   '/event-identity/':            '#F3EAFF',
+  '/talent-hub/':                '#f5f5f5',
 }
 
 /** Nav links shown in mobile overlay + desktop bar */
