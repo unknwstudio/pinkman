@@ -7,6 +7,7 @@ import { createPortal } from 'react-dom'
  * Floating sticky CTA bar for the /talent-hub/ page.
  * Replaces the default pk-bar with two action buttons.
  * Hides when inline CTA buttons (.th-intro-buttons) are visible in viewport.
+ * Also hides the Webflow deepdive CTA circle and mobile header on this page.
  */
 export default function TalentHubBar() {
   const [mounted, setMounted] = useState(false)
@@ -14,11 +15,25 @@ export default function TalentHubBar() {
 
   useEffect(() => { setMounted(true) }, [])
 
-  // Hide the default pk-bar while this page is mounted
+  // Hide the default pk-bar, deepdive CTA circle, and mobile header
   useEffect(() => {
-    const el = document.querySelector('.pk-bar-outer') as HTMLElement | null
-    if (el) el.style.display = 'none'
-    return () => { if (el) el.style.display = '' }
+    if (!mounted) return
+    const pkBar = document.querySelector('.pk-bar-outer') as HTMLElement | null
+    const deepdive = document.querySelector('.deepdive-cta-button') as HTMLElement | null
+    const header = document.querySelector('.header-new') as HTMLElement | null
+    const menuSpace = document.querySelector('.menu-space') as HTMLElement | null
+
+    if (pkBar) pkBar.style.display = 'none'
+    if (deepdive) deepdive.style.display = 'none'
+    if (header) header.style.display = 'none'
+    if (menuSpace) menuSpace.style.display = 'none'
+
+    return () => {
+      if (pkBar) pkBar.style.display = ''
+      if (deepdive) deepdive.style.display = ''
+      if (header) header.style.display = ''
+      if (menuSpace) menuSpace.style.display = ''
+    }
   }, [mounted])
 
   // IntersectionObserver: hide sticky bar when ANY .th-intro-buttons is in viewport
@@ -29,12 +44,9 @@ export default function TalentHubBar() {
     const observer = new IntersectionObserver(
       (entries) => {
         const anyVisible = entries.some((e) => e.isIntersecting)
-        // If any inline CTA block is visible → hide the sticky bar
-        // We need to check ALL observed elements, not just changed ones
         if (anyVisible) {
           setVisible(false)
         } else {
-          // Double-check: none of the targets are intersecting
           setVisible(true)
         }
       },
@@ -47,7 +59,6 @@ export default function TalentHubBar() {
 
   useEffect(() => {
     if (!mounted) return
-    // Small delay to ensure DOM is ready
     const timer = setTimeout(observeButtons, 100)
     return () => clearTimeout(timer)
   }, [mounted, observeButtons])
