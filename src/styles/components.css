@@ -320,7 +320,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 65px;
   line-height: 1.12;
   font-weight: 600;
-  color: #999;
+  color: #777;
   letter-spacing: -0.03em;
 }
 @media (max-width: 991px) { .th-accent-text { font-size: 48px; } }
