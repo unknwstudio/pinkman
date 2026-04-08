@@ -134,6 +134,10 @@ export default function TalentHubPage() {
             </svg>
             Спросить, если что-то непонятно
           </a>
+          <p className="th-intro-note" style={{ marginTop: 'var(--8px)' }}>
+            Если очень хочется через почту оставить отклик, лучше не&nbsp;надо,
+            минус балл:) Для&nbsp;этого есть общая форма и&nbsp;форма с&nbsp;тестовыми заданиями
+          </p>
         </div>
       </Section>
 
@@ -191,7 +195,7 @@ export default function TalentHubPage() {
           animDelay={2}
         />
       </ServicePointRow>
-      <ServicePointRow>
+      <ServicePointRow compact>
         <ServicePoint
           title="Веселых)"
           description="Шутка) Но&nbsp;если честно, мы&nbsp;много времени проводим за&nbsp;работой, с&nbsp;таким настроем все получается по-красоте и&nbsp;как-то легче"
@@ -218,17 +222,18 @@ export default function TalentHubPage() {
         </div>
       </Section>
       <ProcessSteps
+        compact
         steps={[
           {
             num: '1',
             title: 'Заполнить форму',
-            description: '<a href="https://airtable.com/appNFasdKaA7VMRcv/pagNXJJsEKtJhwys5/form" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Оставить отклик</a>',
+            description: '<a class="th-intro-btn th-intro-btn--secondary th-step-btn" href="https://airtable.com/appNFasdKaA7VMRcv/pagNXJJsEKtJhwys5/form" target="_blank" rel="noopener noreferrer">Оставить отклик</a>',
             tag: 'отклик',
           },
           {
             num: '2',
             title: 'Сделать тестовое задание по\u00a0интересующему направлению',
-            description: '<a href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Пройти тестовые</a><p style="margin-top:16px;font-size:14px;line-height:1.5;color:rgba(0,0,0,0.55)">Задания подготовлены на&nbsp;основе реальных задач, в&nbsp;случае успешного выполнения, мы&nbsp;добавляем вас в&nbsp;нашу \u2728базу талантов\u2728 и&nbsp;активно зовем на&nbsp;задачи. Дополнительно, можно самостоятельно откликаться на&nbsp;задачи на&nbsp;нашей платформе.<br/><br/>Все тестовые задания отсматривают наши арт-директора, лиды студии и&nbsp;ведущие дизайнеры, мы&nbsp;отправляем обратную связь каждому лично на&nbsp;почту.</p>',
+            description: '<div class="th-intro-buttons"><a class="th-intro-btn th-intro-btn--primary th-step-btn" href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form" target="_blank" rel="noopener noreferrer">Пройти тестовые</a></div><p class="th-intro-note" style="margin-top:12px">Задания подготовлены на&nbsp;основе реальных задач, в&nbsp;случае успешного выполнения, мы&nbsp;добавляем вас в&nbsp;нашу \u2728базу талантов\u2728 и&nbsp;активно зовем на&nbsp;задачи. Дополнительно, можно самостоятельно откликаться на&nbsp;задачи на&nbsp;нашей платформе.<br/><br/>Все тестовые задания отсматривают наши арт-директора, лиды студии и&nbsp;ведущие дизайнеры, мы&nbsp;отправляем обратную связь каждому лично на&nbsp;почту.</p>',
             tag: 'тестовое',
           },
         ]}
@@ -430,11 +435,11 @@ export default function TalentHubPage() {
             </svg>
             Спросить, если что-то непонятно
           </a>
+          <p className="th-intro-note" style={{ marginTop: 'var(--8px)' }}>
+            Если очень хочется через почту оставить отклик, лучше не&nbsp;надо,
+            минус балл:) Для&nbsp;этого есть формы выше
+          </p>
         </div>
-        <p className="text-small font-color-medium-grey" style={{ marginTop: 'var(--16px)' }}>
-          Если очень хочется через почту оставить отклик, лучше не&nbsp;надо,
-          минус балл:) Для&nbsp;этого есть формы выше
-        </p>
       </Section>
 
       {/* Bottom padding so sticky bar doesn't overlap content */}

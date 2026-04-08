@@ -158,7 +158,7 @@ a { color: inherit; text-decoration: none; }
 .th-bar {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
   padding: 10px;
   background: #0d0d0d;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -170,7 +170,7 @@ a { color: inherit; text-decoration: none; }
 .th-bar__group {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
 }
 .th-bar__primary,
@@ -182,10 +182,12 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
   color: #fff;
   text-decoration: none;
-  padding: 14px 28px;
+  padding: 14px 36px;
   border-radius: 100px;
   transition: opacity 0.15s, background 0.15s, color 0.15s;
   white-space: nowrap;
+  flex: 1;
+  min-width: 0;
 }
 .th-bar__primary {
   background: #F03882;
@@ -197,17 +199,17 @@ a { color: inherit; text-decoration: none; }
 }
 .th-bar__secondary:hover { background: rgba(255, 255, 255, 0.2); color: #fff; }
 .th-bar__note {
-  font-size: 13px;
-  line-height: 1.35;
+  font-size: 16px;
+  line-height: 1.4;
   color: rgba(255, 255, 255, 0.55);
-  max-width: 340px;
-  text-align: center;
-  padding: 0 8px;
+  max-width: 380px;
+  text-align: left;
+  padding: 0 4px;
 }
 @media (max-width: 767px) {
   .th-bar { flex-direction: column; align-items: stretch; gap: 8px; border-radius: 20px; padding: 12px; }
   .th-bar__primary, .th-bar__secondary { font-size: 15px; padding: 12px 20px; }
-  .th-bar__note { font-size: 12px; max-width: 280px; }
+  .th-bar__note { font-size: 14px; max-width: 280px; }
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -291,6 +293,7 @@ a { color: inherit; text-decoration: none; }
   counter-increment: th-num;
   display: flex;
   gap: 10px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
   line-height: 1.5;
 }
@@ -308,8 +311,8 @@ a { color: inherit; text-decoration: none; }
   border-radius: 12px;
   background: rgba(255, 220, 80, 0.18);
   border-left: 3px solid #E5B800;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.4;
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -367,6 +370,9 @@ a { color: inherit; text-decoration: none; }
   .th-intro-buttons { flex-direction: column; }
   .th-intro-btn { font-size: 15px; padding: 12px 20px; justify-content: center; }
 }
+
+/* Step card buttons */
+.th-step-btn { margin-top: 8px; }
 
 /* Page-level logo for standalone pages (e.g. /talent-hub/) */
 .th-page-logo {
