@@ -20,32 +20,32 @@ const FAQ_ITEMS = [
   {
     question: 'Как попасть в&nbsp;штат?',
     answer:
-      'Только опытному специалисту, который поработал с&nbsp;нами попроектно и&nbsp;зарекомендовал себя.',
+      'В&nbsp;штат студии можно попасть только опытному специалисту, который поработал с&nbsp;нами попроектно и&nbsp;зарекомендовал себя. Хочет в&nbsp;дальнейшем развиваться как ведущий специалист, вырасти в&nbsp;дизайн-лида.',
   },
   {
-    question: 'Как поработать попроектно?',
+    question: 'Как можно с&nbsp;вами поработать попроектно?',
     answer:
-      'Заполнить форму и&nbsp;пройти тестовые задания.',
+      'Заполнить <a href="https://airtable.com/appNFasdKaA7VMRcv/pagNXJJsEKtJhwys5/form" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">форму</a>, пройти <a href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">тестовые задания</a>. На&nbsp;основе отклика и&nbsp;тестового задания мы&nbsp;добавим тебя в&nbsp;нашу базу талантов и&nbsp;будем активно звать на&nbsp;проекты + можно самостоятельно откликаться на&nbsp;задачи на&nbsp;нашей платформе.',
   },
   {
-    question: 'Есть ли&nbsp;стажировки?',
+    question: 'У&nbsp;вас есть бесплатные / платные стажировки для&nbsp;начинающих?',
     answer:
-      'Бесплатных стажировок нет, но&nbsp;есть тестовые задания на&nbsp;основе реальных задач с&nbsp;оплачиваемым результатом.',
+      'Мы&nbsp;не&nbsp;предлагаем бесплатные стажировки, не&nbsp;нанимаем в&nbsp;штат студии на&nbsp;таком этапе развития, но&nbsp;у&nbsp;нас есть тестовые задания на&nbsp;основе реальных задач. Если вы&nbsp;делаете их&nbsp;на&nbsp;высоком уровне качества, креативно, продюсеры и&nbsp;лиды студии позовут вас для&nbsp;проектного сотрудничества на&nbsp;оплачиваемые задачи!',
   },
   {
-    question: 'Нет опыта, но&nbsp;хочу с&nbsp;вами работать',
+    question: 'У&nbsp;меня нет опыта, но&nbsp;я&nbsp;хочу с&nbsp;вами работать',
     answer:
-      'Рекомендуем начать с&nbsp;курсов <a href="https://wannabe.ru" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">wannabe.ru</a>, потом пройти тестовые.',
+      'Скажем честно, придется потрудиться. Лучше начать с&nbsp;курсов <a href="https://wannabe.ru/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">wannabe.ru</a>, очень-очень стараться и&nbsp;проявляться. После&nbsp;&mdash; пройти тестовые. Это сложный путь, но&nbsp;стойкость, упорство и&nbsp;старания будут вознаграждены, все мы&nbsp;(дизайн-директора / дизайн-лиды) были когда-то начинающими дизайнерами.',
   },
   {
-    question: 'Оставил отклик, что дальше?',
+    question: 'Я&nbsp;оставил отклик, что дальше?',
     answer:
-      'Отклик отсмотрит дизайн-директор или&nbsp;лид. Тестовые идут в&nbsp;приоритет.',
+      'На&nbsp;одну размещенную вакансию мы&nbsp;в&nbsp;среднем получаем от&nbsp;500 откликов, очень рекомендуем отклик сопровождать тестовым заданием, они для&nbsp;нас идут в&nbsp;приоритетном порядке. Ваш отклик отсмотрит дизайн-директор, лид студии или ведущий дизайнер. На&nbsp;основе портфолио мы&nbsp;добавим вас в&nbsp;базу талантов или отправим отказ. Мы&nbsp;не&nbsp;используем AI для&nbsp;оценки портфолио и&nbsp;навыков, отсматриваем все вручную! Поэтому ценим отклики, которым уделили время и&nbsp;дополнили тестовыми заданиями.',
   },
   {
-    question: 'Сделал тестовое, что дальше?',
+    question: 'Я&nbsp;сделал тестовое, что дальше?',
     answer:
-      'Придёт письмо с&nbsp;ревью с&nbsp;talent@pinkman.studio в&nbsp;течение 3&nbsp;дней&nbsp;&mdash; 2&nbsp;недель.',
+      'Супер! Отклики с&nbsp;тестовыми заданиями отсматриваются в&nbsp;приоритетном порядке нашими дизайн-директорами / лидами / ведущими дизайнерами. С&nbsp;почты talent@pinkman.studio вам придет письмо с&nbsp;подробным ревью. Обычно это занимает от&nbsp;3-х дней до&nbsp;2-х недель, в&nbsp;зависимости от&nbsp;нагрузки команды. По&nbsp;результатам тестового вас добавят в&nbsp;базу талантов и&nbsp;будут активно звать на&nbsp;проекты, в&nbsp;случае отказа&nbsp;&mdash; отправим развернутый фидбек.',
   },
 ]
 
@@ -81,21 +81,57 @@ export default function TalentHubPage() {
           <h2>
             Собираем вокруг себя талантливых специалистов с&nbsp;опытом,
             чтобы делать вместе проекты фестивального уровня
-            в&nbsp;рамках проектного сотрудничества. Чтобы попасть
-            в&nbsp;нашу базу талантов, нужно оставить отклик через форму
-            и&nbsp;пройти тестовые задания.
+            в&nbsp;рамках проектного сотрудничества.
           </h2>
         </div>
       </Section>
-
-      {/* ── Плашка с зачёркнутым текстом ── */}
       <Section>
-        <div className="callout-box callout-box--yellow anim">
-          <p className="text-regular font-color-black">
-            <s>Ищем крепких дизайнеров</s> &mdash; так обычно пишут
-            в&nbsp;99% вакансий, но&nbsp;мы&nbsp;постараемся рассказать,
-            что это значит именно для&nbsp;нас
+        <div className="text-h2-wrapper" style={{ paddingTop: 0 }}>
+          <p className="font-color-dark-gray text-regular">
+            Чтобы попасть в&nbsp;нашу базу талантов, нужно оставить отклик
+            через форму и&nbsp;пройти тестовые задания. Ребята из&nbsp;базы
+            талантов получают доступ к&nbsp;задачам, которые можно взять
+            в&nbsp;работу + активные предложения о&nbsp;проектном сотрудничестве
+            со&nbsp;стороны продюсеров и&nbsp;лидов студии.
           </p>
+        </div>
+      </Section>
+
+      {/* ── Intro CTA buttons ── */}
+      <Section>
+        <div className="th-intro-buttons anim">
+          <a
+            className="th-intro-btn th-intro-btn--secondary"
+            href="https://airtable.com/appNFasdKaA7VMRcv/pagNXJJsEKtJhwys5/form"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Оставить отклик через форму
+          </a>
+          <a
+            className="th-intro-btn th-intro-btn--primary"
+            href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Пройти тестовые задания
+          </a>
+        </div>
+        <p className="text-small font-color-medium-grey" style={{ marginTop: 'var(--8px)' }}>
+          Все отклики с&nbsp;тестовыми имеют высокий приоритет для&nbsp;нас
+          и&nbsp;разбираются в&nbsp;первую очередь
+        </p>
+        <div style={{ marginTop: 'var(--16px)' }}>
+          <a
+            href="mailto:talent@pinkman.studio"
+            className="contacts-link-btn contacts-link-btn--light"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+          >
+            <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor" />
+            </svg>
+            Спросить, если что-то непонятно
+          </a>
         </div>
       </Section>
 
@@ -105,22 +141,46 @@ export default function TalentHubPage() {
           <h2 className="h1">Кого мы&nbsp;ищем</h2>
         </div>
       </Section>
+
+      {/* Плашка с зачёркиванием */}
+      <Section>
+        <div className="callout-box callout-box--yellow anim">
+          <p className="text-regular font-color-black">
+            <s>Ищем крепких дизайнеров</s> так обычно пишут
+            в&nbsp;99% вакансий, но&nbsp;мы&nbsp;постараемся рассказать,
+            что это значит именно для&nbsp;нас
+          </p>
+        </div>
+      </Section>
+
       <ServicePointRow compact>
         <ServicePoint
           title="AI-ориентированных, кто может с&nbsp;помощью технологий получить необходимый результат"
+          description="Мы&nbsp;ищем дизайнеров, которые кратно ускоряют свою работу с&nbsp;AI без&nbsp;потери качества. Сейчас кто угодно может произвести контент, но&nbsp;лишь единицы доводят его до&nbsp;необходимого качества на&nbsp;постпродакшене. Да, например, нужно до&nbsp;сих пор открывать фотошоп и&nbsp;знать, как поправить цветокоррекцию, как устранить артефакты, это базовые технические скиллы, которые мы&nbsp;ожидаем от&nbsp;дизайнеров в&nbsp;совокупности с&nbsp;AI-навыками."
         />
+      </ServicePointRow>
+      <ServicePointRow compact>
         <ServicePoint
           title="С&nbsp;опытом на&nbsp;реальных проектах. Со&nbsp;знанием того, как строится дизайн-процесс"
-          animDelay={2}
+          description="В&nbsp;студии проекты с&nbsp;разной направленностью: от&nbsp;создания KV для&nbsp;рекламной кампании до&nbsp;полномасштабных музейных проектов. На&nbsp;отдельные части проекта нам нужны опытные дизайнеры, которые идейно, технически качественно и&nbsp;в&nbsp;срок смогут сделать свою часть работы."
+        />
+      </ServicePointRow>
+      <ServicePointRow compact>
+        <ServicePoint
+          title="Обязательных и&nbsp;ответственных"
+          description="Тех, кто:<br/>1. погружается в&nbsp;задачу, формирует решение и&nbsp;образ результата, утверждает подход с&nbsp;командой<br/>2. сообщает команде, когда и&nbsp;с&nbsp;чем вернется и&nbsp;правда возвращается :)<br/>3. информирует о&nbsp;задержках и&nbsp;сложностях заранее и&nbsp;предлагает возможные решения<br/><br/>Если вы&nbsp;делаете так, поздравляем, вы&nbsp;входите в&nbsp;2% всех дизайнеров, если нет, начинайте как можно скорее!"
+        />
+      </ServicePointRow>
+      <ServicePointRow compact>
+        <ServicePoint
+          title="С&nbsp;большим потенциалом (high potential)"
+          description="Дизайнерам с&nbsp;небольшим опытом непросто, но&nbsp;мы&nbsp;даем шанс проактивным, тем, кто обучается с&nbsp;невероятной скоростью и&nbsp;выдает хорошее качество после фидбека лида. Нет, мы&nbsp;не&nbsp;предлагаем бесплатные стажировки, не&nbsp;нанимаем в&nbsp;студию на&nbsp;таком этапе развития, но&nbsp;у&nbsp;нас есть тестовые задания на&nbsp;основе реальных задач. Если вы&nbsp;делаете их&nbsp;на&nbsp;высоком уровне качества, креативно, продюсеры и&nbsp;лиды студии будут постоянно предлагать вам работу!"
         />
       </ServicePointRow>
       <ServicePointRow>
         <ServicePoint
-          title="Обязательных и&nbsp;ответственных"
-        />
-        <ServicePoint
-          title="С&nbsp;большим потенциалом (high potential)"
-          animDelay={2}
+          title="Веселых)"
+          description="Шутка) Но&nbsp;если честно, мы&nbsp;много времени проводим за&nbsp;работой, с&nbsp;таким настроем все получается по-красоте и&nbsp;как-то легче"
         />
       </ServicePointRow>
 
@@ -128,7 +188,7 @@ export default function TalentHubPage() {
       <Section>
         <div className="callout-box anim">
           <h3 className="font-color-black" style={{ marginBottom: 'var(--8px)' }}>
-            Особенно ищем прямо сейчас
+            Особенно ищем прямо сейчас ⭐️
           </h3>
           <p className="text-regular font-color-dark-gray">
             Дизайнеров на&nbsp;концепты интерфейсов, AI-дизайнеров на&nbsp;статику
@@ -140,7 +200,7 @@ export default function TalentHubPage() {
       {/* ── Что нужно сделать ── */}
       <Section>
         <div className="text-h1-wrapper">
-          <h2 className="h1">Что нужно сделать, чтобы начать работать с&nbsp;нами попроектно</h2>
+          <h2 className="h1">Что нужно сделать, чтобы начать с&nbsp;нами работать попроектно?</h2>
         </div>
       </Section>
       <ProcessSteps
@@ -154,7 +214,7 @@ export default function TalentHubPage() {
           },
           {
             num: '2',
-            title: 'Сделать тестовое задание',
+            title: 'Сделать тестовое задание по\u00a0интересующему направлению',
             description: '<a href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Пройти тестовые</a>',
             tag: 'тестовое',
           },
@@ -163,9 +223,67 @@ export default function TalentHubPage() {
       <Section>
         <div className="text-h2-wrapper" style={{ paddingTop: 0 }}>
           <p className="font-color-dark-gray text-regular">
+            Задания подготовлены на&nbsp;основе реальных задач, в&nbsp;случае
+            успешного выполнения, мы&nbsp;добавляем вас в&nbsp;нашу ✨базу
+            талантов✨ и&nbsp;активно зовем на&nbsp;задачи. Дополнительно,
+            можно самостоятельно откликаться на&nbsp;задачи на&nbsp;нашей платформе.
+          </p>
+        </div>
+      </Section>
+      <Section>
+        <div className="text-h2-wrapper" style={{ paddingTop: 0 }}>
+          <p className="font-color-dark-gray text-regular">
             Все тестовые задания отсматривают наши арт-директора, лиды студии
             и&nbsp;ведущие дизайнеры, мы&nbsp;отправляем обратную связь каждому
             лично на&nbsp;почту.
+          </p>
+        </div>
+      </Section>
+
+      {/* ── Некоторые наблюдения ── */}
+      <Section>
+        <div className="callout-box callout-box--yellow anim">
+          <h3 className="font-color-black" style={{ marginBottom: 'var(--8px)' }}>
+            Некоторые наблюдения:
+          </h3>
+          <p className="text-regular font-color-dark-gray" style={{ marginBottom: 'var(--16px)' }}>
+            Тестовые дают шанс вам заявить о&nbsp;себе среди 500 откликов
+            (столько в&nbsp;среднем откликаются на&nbsp;одну нашу вакансию),
+            даже если ваше портфолио давно не&nbsp;обновлялось / проекты
+            под&nbsp;nda.
+          </p>
+          <p className="text-regular font-color-dark-gray" style={{ marginBottom: 'var(--16px)' }}>
+            Мы&nbsp;разработали их&nbsp;с&nbsp;заботой о&nbsp;вас и&nbsp;индустрии,
+            чтобы оценивать ваш профиль не&nbsp;только по&nbsp;красивому портфолио,
+            но&nbsp;и&nbsp;по&nbsp;результатам реальных задач, так как люди нанимают
+            вас на&nbsp;конкретные работы&nbsp;&mdash; сделать анимацию, сделать
+            баннер и&nbsp;др. Дополнительно, у&nbsp;вас появляется классная
+            возможность получить качественный фидбек по&nbsp;своей работе
+            от&nbsp;топовых дизайн-директоров, лидов, ведущих дизайнеров студии.
+          </p>
+          <p className="text-regular font-color-dark-gray">
+            Опытные специалисты проактивно делают тестовые, так как ищут
+            постоянный поток интересных проектов, которые можно получить
+            только через студии. Ребята&nbsp;же без&nbsp;опыта /
+            с&nbsp;низким качеством работ пишут нам и&nbsp;находят множество
+            отговорок. Всем есть над&nbsp;чем подумать
+          </p>
+        </div>
+      </Section>
+
+      {/* ── Что дальше? ── */}
+      <Section>
+        <div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}>
+          <h2 className="h1">Что дальше?</h2>
+        </div>
+      </Section>
+      <Section>
+        <div className="text-h2-wrapper" style={{ paddingTop: 0 }}>
+          <p className="font-color-dark-gray text-regular">
+            Самых-самых мы&nbsp;добавляем в&nbsp;нашу базу талантов, где продюсеры,
+            лиды, ведущие дизайнеры ищут специалистов для&nbsp;разных задач
+            и&nbsp;проектов. Самые опытные и&nbsp;талантливые в&nbsp;дальнейшем
+            загружены работой на&nbsp;несколько месяцев вперед.
           </p>
         </div>
       </Section>
@@ -179,11 +297,12 @@ export default function TalentHubPage() {
       <ServicePointRow compact>
         <ServicePoint
           tagsTop={['01']}
-          title="Все официально&nbsp;&mdash; договор, NDA, СЗ или ИП. Оплата обсуждается перед стартом по&nbsp;каждой задаче"
+          title="Все официально, заключаем Договор, подписываем NDA, потребуется СЗ или ИП. Оплата обсуждается перед стартом работ по&nbsp;каждой задаче и&nbsp;проекту"
         />
         <ServicePoint
           tagsTop={['02']}
           title="Краткосрочно / на&nbsp;отдельные задачи"
+          description="Можно поделать небольшие интересные задачки и&nbsp;заработать деньги, особенно, если на&nbsp;основной работе нет места креативным задачам."
           animDelay={2}
         />
       </ServicePointRow>
@@ -191,10 +310,11 @@ export default function TalentHubPage() {
         <ServicePoint
           tagsTop={['03']}
           title="Попроектно / занятость на&nbsp;квартал"
+          description="Если ты&nbsp;суперский специалист, наши продюсеры от&nbsp;тебя не&nbsp;отстанут и&nbsp;обеспечат тебя проектами вдолгую."
         />
         <ServicePoint
           tagsTop={['04']}
-          title="После проектной работы&nbsp;&mdash; возможность попасть в&nbsp;штат студии"
+          title="Если ты&nbsp;зарекомендовал себя попроектно и&nbsp;у&nbsp;нас случился метч, зовем в&nbsp;штат студии!"
           animDelay={2}
         />
       </ServicePointRow>
@@ -202,7 +322,15 @@ export default function TalentHubPage() {
       {/* ── Почему ребятам нравится ── */}
       <Section>
         <div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}>
-          <h2 className="h1">Почему ребятам нравится работать с&nbsp;нами</h2>
+          <h2 className="h1">Почему ребятам нравится работать с&nbsp;нами попроектно и&nbsp;они хотят попасть в&nbsp;базу талантов?</h2>
+        </div>
+      </Section>
+      <Section>
+        <div className="text-h2-wrapper" style={{ paddingTop: 0 }}>
+          <p className="font-color-dark-gray text-regular">
+            Мы&nbsp;спросили у&nbsp;ребят, которые уже с&nbsp;нами, что их&nbsp;привлекает
+            в&nbsp;работе с&nbsp;pinkman. И&nbsp;вот, что они особенно отметили:
+          </p>
         </div>
       </Section>
       <ServicePointRow compact>
@@ -212,44 +340,45 @@ export default function TalentHubPage() {
         />
         <ServicePoint
           tagsTop={['02']}
-          title="Приятная и&nbsp;чёткая коммуникация, здоровая атмосфера"
+          title="Приятная и&nbsp;четкая коммуникация на&nbsp;всех этапах, здоровая атмосфера, без&nbsp;токсиков"
           animDelay={2}
         />
         <ServicePoint
           tagsTop={['03']}
-          title="Очень интересные проекты: музейные, концертные, рекламные кампании"
+          title="Очень-очень интересные проекты, которые можно найти только в&nbsp;студии: музейные проекты, концертные мероприятия, рекламные кампании"
           animDelay={3}
         />
       </ServicePointRow>
       <ServicePointRow compact>
         <ServicePoint
           tagsTop={['04']}
-          title="Разнообразные проекты: от&nbsp;мелких задачек до&nbsp;фуллтайм вызовов"
+          title="Разнообразные проекты: от&nbsp;мелких задачек на&nbsp;пару часов до&nbsp;профессиональных фуллтайм вызовов"
         />
         <ServicePoint
           tagsTop={['05']}
-          title="Развитие скиллов благодаря команде"
+          title="Развитие собственных скиллов благодаря команде"
           animDelay={2}
         />
         <ServicePoint
           tagsTop={['06']}
-          title="Оплата чётко и&nbsp;вовремя"
+          title="Оплата всегда четко и&nbsp;вовремя"
           animDelay={3}
         />
       </ServicePointRow>
       <ServicePointRow>
         <ServicePoint
           tagsTop={['07']}
-          title="Ноль бюрократии, электронный документооборот"
+          title="Ноль бюрократии, электронный документооборот без&nbsp;сканов и&nbsp;подписей. Пару кликов и&nbsp;готово"
         />
         <ServicePoint
           tagsTop={['08']}
-          title="Причастность к&nbsp;команде и&nbsp;результату"
+          title="Причастность к&nbsp;команде и&nbsp;к&nbsp;результату"
+          description="Несмотря на&nbsp;проектную работу, ты&nbsp;часть команды, которая делает качественный результат, приглашаем тебя на&nbsp;демо, внутренние обучения и&nbsp;хихикаем в&nbsp;чатиках."
           animDelay={2}
         />
         <ServicePoint
           tagsTop={['09']}
-          title="Внутри все без&nbsp;исключения профессионалы"
+          title="Pinkman вдохновляет, внутри все без&nbsp;исключения профессионалы"
           animDelay={3}
         />
       </ServicePointRow>
@@ -269,7 +398,34 @@ export default function TalentHubPage() {
         <div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}>
           <h2 className="h1">Контакты</h2>
         </div>
-        <div style={{ paddingTop: 'var(--8px)' }}>
+      </Section>
+      <Section>
+        <div className="th-intro-buttons anim">
+          <a
+            className="th-intro-btn th-intro-btn--secondary"
+            href="https://airtable.com/appNFasdKaA7VMRcv/pagNXJJsEKtJhwys5/form"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Оставить отклик через форму
+          </a>
+          <a
+            className="th-intro-btn th-intro-btn--primary"
+            href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Пройти тестовые задания
+          </a>
+        </div>
+        <p className="text-regular font-color-dark-gray" style={{ marginTop: 'var(--16px)' }}>
+          Все отклики с&nbsp;тестовыми имеют высокий приоритет для&nbsp;нас
+          и&nbsp;разбираются в&nbsp;первую очередь. Мы&nbsp;не&nbsp;используем
+          AI для&nbsp;оценки портфолио и&nbsp;навыков, отсматриваем все
+          вручную! Поэтому ценим отклики, которым уделили время
+          и&nbsp;дополнили тестовыми заданиями.
+        </p>
+        <div style={{ marginTop: 'var(--16px)' }}>
           <a
             href="mailto:talent@pinkman.studio"
             className="contacts-link-btn contacts-link-btn--light"
@@ -278,9 +434,13 @@ export default function TalentHubPage() {
             <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor" />
             </svg>
-            talent@pinkman.studio
+            Спросить, если что-то непонятно
           </a>
         </div>
+        <p className="text-small font-color-medium-grey" style={{ marginTop: 'var(--16px)' }}>
+          Если очень хочется через почту оставить отклик, лучше не&nbsp;надо,
+          минус балл:) Для&nbsp;этого есть формы выше
+        </p>
       </Section>
 
       {/* Bottom padding so sticky bar doesn't overlap content */}

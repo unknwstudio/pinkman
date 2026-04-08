@@ -261,6 +261,38 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 767px) { .callout-box { padding: 24px 20px; } }
 
+/* Inline CTA buttons for /talent-hub/ intro & contacts */
+.th-intro-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.th-intro-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 100px;
+  transition: opacity 0.15s, background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.th-intro-btn--primary {
+  background: #F03882;
+  color: #fff;
+}
+.th-intro-btn--primary:hover { opacity: 0.88; }
+.th-intro-btn--secondary {
+  background: #0d0d0d;
+  color: #fff;
+}
+.th-intro-btn--secondary:hover { opacity: 0.88; }
+@media (max-width: 767px) {
+  .th-intro-buttons { flex-direction: column; }
+  .th-intro-btn { font-size: 15px; padding: 12px 20px; justify-content: center; }
+}
+
 /* Page-level logo for standalone pages (e.g. /talent-hub/) */
 .th-page-logo {
   display: block;
