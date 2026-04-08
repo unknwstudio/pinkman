@@ -97,23 +97,21 @@ export default function TalentHubPage() {
         </div>
       </Section>
 
-      {/* ── Intro CTA buttons (п.2: тестовые first, п.3: note tied to тестовые) ── */}
+      {/* ── Intro CTA buttons ── */}
       <Section>
-        <div className="th-intro-buttons anim">
-          <div className="th-intro-btn-group">
-            <a
-              className="th-intro-btn th-intro-btn--primary"
-              href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Пройти тестовые задания
-            </a>
-            <p className="th-intro-note">
-              Все отклики с&nbsp;тестовыми имеют высокий приоритет для&nbsp;нас
-              и&nbsp;разбираются в&nbsp;первую очередь
-            </p>
-          </div>
+        <div className="th-intro-buttons th-intro-buttons--fixed anim">
+          <a
+            className="th-intro-btn th-intro-btn--primary"
+            href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Пройти тестовые задания
+          </a>
+          <p className="th-intro-note">
+            Все отклики с&nbsp;тестовыми имеют высокий приоритет для&nbsp;нас
+            и&nbsp;разбираются в&nbsp;первую очередь
+          </p>
           <a
             className="th-intro-btn th-intro-btn--secondary"
             href="https://airtable.com/appNFasdKaA7VMRcv/pagNXJJsEKtJhwys5/form"
@@ -122,21 +120,19 @@ export default function TalentHubPage() {
           >
             Оставить отклик через форму
           </a>
-        </div>
-        <div style={{ marginTop: 'var(--16px)' }}>
           <a
             href="mailto:talent@pinkman.studio"
             className="contacts-link-btn contacts-link-btn--light"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: 'var(--8px)' }}
           >
             <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor" />
             </svg>
             Спросить, если что-то непонятно
           </a>
-          <p className="th-intro-note" style={{ marginTop: 'var(--8px)' }}>
+          <p className="th-intro-note">
             Если очень хочется через почту оставить отклик, лучше не&nbsp;надо,
-            минус балл:) Для&nbsp;этого есть общая форма и&nbsp;форма с&nbsp;тестовыми заданиями
+            минус балл:) Для&nbsp;этого есть общая форму и&nbsp;форма с&nbsp;тестовыми заданиями
           </p>
         </div>
       </Section>
@@ -150,7 +146,7 @@ export default function TalentHubPage() {
 
       {/* Плашка с зачёркиванием (п.4: extra bottom margin) */}
       <Section>
-        <div className="callout-box callout-box--yellow anim" style={{ marginBottom: 'var(--32px)' }}>
+        <div className="callout-box callout-box--yellow th-two-col-width anim" style={{ marginBottom: 'var(--32px)' }}>
           <p className="text-regular font-color-black">
             <s>Ищем крепких дизайнеров</s> так обычно пишут
             в&nbsp;99% вакансий, но&nbsp;мы&nbsp;постараемся рассказать,
@@ -204,7 +200,7 @@ export default function TalentHubPage() {
 
       {/* ── Callout — Особенно ищем ── */}
       <Section>
-        <div className="callout-box anim">
+        <div className="callout-box th-two-col-width anim">
           <h3 className="font-color-black" style={{ marginBottom: 'var(--8px)' }}>
             Особенно ищем прямо сейчас ⭐️
           </h3>
@@ -397,23 +393,21 @@ export default function TalentHubPage() {
         </div>
       </Section>
       <Section>
-        <div className="th-intro-buttons anim">
-          <div className="th-intro-btn-group">
-            <a
-              className="th-intro-btn th-intro-btn--primary"
-              href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Пройти тестовые задания
-            </a>
-            <div className="callout-box callout-box--pink-sm">
-              Все отклики с&nbsp;тестовыми имеют высокий приоритет для&nbsp;нас
-              и&nbsp;разбираются в&nbsp;первую очередь. Мы&nbsp;не&nbsp;используем
-              AI для&nbsp;оценки портфолио и&nbsp;навыков, отсматриваем все
-              вручную! Поэтому ценим отклики, которым уделили время
-              и&nbsp;дополнили тестовыми заданиями.
-            </div>
+        <div className="th-intro-buttons th-intro-buttons--fixed anim">
+          <a
+            className="th-intro-btn th-intro-btn--primary"
+            href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Пройти тестовые задания
+          </a>
+          <div className="callout-box callout-box--pink-sm">
+            Все отклики с&nbsp;тестовыми имеют высокий приоритет для&nbsp;нас
+            и&nbsp;разбираются в&nbsp;первую очередь. Мы&nbsp;не&nbsp;используем
+            AI для&nbsp;оценки портфолио и&nbsp;навыков, отсматриваем все
+            вручную! Поэтому ценим отклики, которым уделили время
+            и&nbsp;дополнили тестовыми заданиями.
           </div>
           <a
             className="th-intro-btn th-intro-btn--secondary"
@@ -423,19 +417,17 @@ export default function TalentHubPage() {
           >
             Оставить отклик через форму
           </a>
-        </div>
-        <div style={{ marginTop: 'var(--16px)' }}>
           <a
             href="mailto:talent@pinkman.studio"
             className="contacts-link-btn contacts-link-btn--light"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: 'var(--8px)' }}
           >
             <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor" />
             </svg>
             Спросить, если что-то непонятно
           </a>
-          <p className="th-intro-note" style={{ marginTop: 'var(--8px)' }}>
+          <p className="th-intro-note">
             Если очень хочется через почту оставить отклик, лучше не&nbsp;надо,
             минус балл:) Для&nbsp;этого есть формы выше
           </p>

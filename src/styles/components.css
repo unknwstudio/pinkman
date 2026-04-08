@@ -156,8 +156,9 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none !important;
 }
 .th-bar {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
   gap: 14px;
   padding: 14px;
   background: #0d0d0d;
@@ -182,10 +183,12 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
   color: #fff;
   text-decoration: none;
-  padding: 14px 36px;
+  padding: 14px 24px;
   border-radius: 100px;
   transition: opacity 0.15s, background 0.15s, color 0.15s;
   white-space: nowrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 .th-bar__primary {
   background: #F03882;
@@ -204,7 +207,7 @@ a { color: inherit; text-decoration: none; }
   padding: 0 4px;
 }
 @media (max-width: 767px) {
-  .th-bar { flex-direction: column; align-items: stretch; gap: 10px; border-radius: 20px; padding: 12px; }
+  .th-bar { grid-template-columns: 1fr; gap: 10px; border-radius: 20px; padding: 12px; }
   .th-bar__primary, .th-bar__secondary { font-size: 15px; padding: 12px 20px; }
   .th-bar__note { font-size: 14px; max-width: 280px; }
 }
@@ -272,7 +275,6 @@ a { color: inherit; text-decoration: none; }
   font-size: 14px;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.6);
-  max-width: 420px;
 }
 @media (max-width: 767px) { .callout-box { padding: 24px 20px; } }
 
@@ -315,13 +317,14 @@ a { color: inherit; text-decoration: none; }
 
 /* Large pink accent text for "Что дальше?" */
 .th-accent-text {
-  font-size: 36px;
-  line-height: 1.25;
+  font-size: 54px;
+  line-height: 1.15;
   font-weight: 600;
-  color: #F03882;
-  letter-spacing: -0.02em;
+  color: var(--color--dark-gray, #555);
+  letter-spacing: -0.03em;
 }
-@media (max-width: 767px) { .th-accent-text { font-size: 24px; } }
+@media (max-width: 991px) { .th-accent-text { font-size: 40px; } }
+@media (max-width: 767px) { .th-accent-text { font-size: 28px; line-height: 1.2; } }
 
 /* Inline CTA buttons for /talent-hub/ intro & contacts */
 .th-intro-buttons {
@@ -340,6 +343,21 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.45);
   padding-left: 4px;
+}
+/* Fixed-width column layout for equal-length buttons */
+.th-intro-buttons--fixed {
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+}
+.th-intro-buttons--fixed .th-intro-btn,
+.th-intro-buttons--fixed .contacts-link-btn {
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.th-intro-buttons--fixed .th-intro-note {
+  padding-left: 0;
 }
 .th-intro-btn {
   display: inline-flex;
@@ -362,9 +380,20 @@ a { color: inherit; text-decoration: none; }
   color: #fff;
 }
 .th-intro-btn--secondary:hover { opacity: 0.88; }
+
+/* Constrain callouts to 2/3 grid width (matches 2 cards in a 3-col row) */
+.th-two-col-width {
+  max-width: calc(66.8% - 3px);
+}
+
+@media (max-width: 991px) {
+  .th-two-col-width { max-width: 100%; }
+}
 @media (max-width: 767px) {
   .th-intro-buttons { flex-direction: column; }
-  .th-intro-btn { font-size: 15px; padding: 12px 20px; justify-content: center; }
+  .th-intro-btn { font-size: 15px; padding: 12px 20px; justify-content: center; width: 100%; box-sizing: border-box; }
+  .th-intro-buttons--fixed { width: 100%; }
+  .th-intro-buttons--fixed .th-intro-note { padding-left: 0; }
 }
 
 /* Step card buttons */
