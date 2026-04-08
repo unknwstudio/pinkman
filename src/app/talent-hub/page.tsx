@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Section from '@/components/Section/Section'
 import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
@@ -48,11 +49,26 @@ const FAQ_ITEMS = [
   },
 ]
 
+const PINKMAN_LOGO = (
+  <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <path d="M21.8368 4.41815H7.18411L0 47H14.5816L16.0042 38.637L36.703 43.8639C43.0335 45.4668 48.0126 42.3306 49.1507 35.222C51.5691 20.0292 49.5063 4 33.9289 4C29.1632 4 23.4017 7.13614 20.4143 12.0146L21.8368 4.41815ZM36.2051 29.9951L21.3389 26.2318C22.3348 21.9806 26.9582 16.6143 32.862 17.799C37.272 18.705 37.4143 25.5348 36.2051 29.9951Z" fill="currentColor"/>
+  </svg>
+)
+
 export default function TalentHubPage() {
   return (
     <>
       {/* ── Custom sticky bar ── */}
       <TalentHubBar />
+
+      {/* ── Logo ── */}
+      <Section>
+        <div style={{ paddingTop: 'var(--16px)', paddingBottom: 0 }}>
+          <Link href="https://pinkman.ru" className="th-page-logo">
+            {PINKMAN_LOGO}
+          </Link>
+        </div>
+      </Section>
 
       {/* ── Hero ── */}
       <Section>
@@ -65,15 +81,20 @@ export default function TalentHubPage() {
           <h2>
             Собираем вокруг себя талантливых специалистов с&nbsp;опытом,
             чтобы делать вместе проекты фестивального уровня
-            в&nbsp;рамках проектного сотрудничества.
+            в&nbsp;рамках проектного сотрудничества. Чтобы попасть
+            в&nbsp;нашу базу талантов, нужно оставить отклик через форму
+            и&nbsp;пройти тестовые задания.
           </h2>
         </div>
       </Section>
+
+      {/* ── Плашка с зачёркнутым текстом ── */}
       <Section>
-        <div className="text-h2-wrapper" style={{ paddingTop: 0 }}>
-          <p className="font-color-dark-gray text-regular">
-            Чтобы попасть в&nbsp;нашу базу талантов, нужно оставить отклик
-            через форму и&nbsp;пройти тестовые задания.
+        <div className="callout-box callout-box--yellow anim">
+          <p className="text-regular font-color-black">
+            <s>Ищем крепких дизайнеров</s> &mdash; так обычно пишут
+            в&nbsp;99% вакансий, но&nbsp;мы&nbsp;постараемся рассказать,
+            что это значит именно для&nbsp;нас
           </p>
         </div>
       </Section>
@@ -86,25 +107,19 @@ export default function TalentHubPage() {
       </Section>
       <ServicePointRow compact>
         <ServicePoint
-          tagsTop={['AI']}
-          title="AI-ориентированных"
-          description="Кто может с&nbsp;помощью технологий получить необходимый результат."
+          title="AI-ориентированных, кто может с&nbsp;помощью технологий получить необходимый результат"
         />
         <ServicePoint
-          tagsTop={['опыт']}
-          title="С&nbsp;опытом на&nbsp;реальных проектах"
-          description="Со&nbsp;знанием того, как строится дизайн-процесс."
+          title="С&nbsp;опытом на&nbsp;реальных проектах. Со&nbsp;знанием того, как строится дизайн-процесс"
           animDelay={2}
         />
       </ServicePointRow>
       <ServicePointRow>
         <ServicePoint
-          tagsTop={['ответственность']}
           title="Обязательных и&nbsp;ответственных"
         />
         <ServicePoint
-          tagsTop={['high potential']}
-          title="С&nbsp;большим потенциалом"
+          title="С&nbsp;большим потенциалом (high potential)"
           animDelay={2}
         />
       </ServicePointRow>
@@ -125,7 +140,7 @@ export default function TalentHubPage() {
       {/* ── Что нужно сделать ── */}
       <Section>
         <div className="text-h1-wrapper">
-          <h2 className="h1">Что нужно сделать, чтобы начать работать с&nbsp;нами</h2>
+          <h2 className="h1">Что нужно сделать, чтобы начать работать с&nbsp;нами попроектно</h2>
         </div>
       </Section>
       <ProcessSteps
@@ -139,7 +154,7 @@ export default function TalentHubPage() {
           },
           {
             num: '2',
-            title: 'Пройти тестовое задание',
+            title: 'Сделать тестовое задание',
             description: '<a href="https://airtable.com/appNFasdKaA7VMRcv/pagIoxATuyvLeg6FS/form" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Пройти тестовые</a>',
             tag: 'тестовое',
           },
@@ -149,7 +164,7 @@ export default function TalentHubPage() {
         <div className="text-h2-wrapper" style={{ paddingTop: 0 }}>
           <p className="font-color-dark-gray text-regular">
             Все тестовые задания отсматривают наши арт-директора, лиды студии
-            и&nbsp;ведущие дизайнеры. Мы&nbsp;отправляем обратную связь каждому
+            и&nbsp;ведущие дизайнеры, мы&nbsp;отправляем обратную связь каждому
             лично на&nbsp;почту.
           </p>
         </div>
@@ -164,26 +179,22 @@ export default function TalentHubPage() {
       <ServicePointRow compact>
         <ServicePoint
           tagsTop={['01']}
-          title="Всё официально"
-          description="Договор, NDA, СЗ или ИП. Оплата обсуждается перед стартом по&nbsp;каждой задаче."
+          title="Все официально&nbsp;&mdash; договор, NDA, СЗ или ИП. Оплата обсуждается перед стартом по&nbsp;каждой задаче"
         />
         <ServicePoint
           tagsTop={['02']}
-          title="Краткосрочно"
-          description="На&nbsp;отдельные задачи."
+          title="Краткосрочно / на&nbsp;отдельные задачи"
           animDelay={2}
         />
       </ServicePointRow>
       <ServicePointRow>
         <ServicePoint
           tagsTop={['03']}
-          title="Попроектно"
-          description="Занятость на&nbsp;квартал."
+          title="Попроектно / занятость на&nbsp;квартал"
         />
         <ServicePoint
           tagsTop={['04']}
-          title="Путь в&nbsp;штат"
-          description="После проектной работы&nbsp;&mdash; возможность попасть в&nbsp;штат студии."
+          title="После проектной работы&nbsp;&mdash; возможность попасть в&nbsp;штат студии"
           animDelay={2}
         />
       </ServicePointRow>
@@ -197,32 +208,27 @@ export default function TalentHubPage() {
       <ServicePointRow compact>
         <ServicePoint
           tagsTop={['01']}
-          title="Внимательный арт-дирекшен"
-          description="С&nbsp;корректной обратной связью."
+          title="Внимательный арт-дирекшен с&nbsp;корректной обратной связью"
         />
         <ServicePoint
           tagsTop={['02']}
-          title="Приятная и&nbsp;чёткая коммуникация"
-          description="Здоровая атмосфера."
+          title="Приятная и&nbsp;чёткая коммуникация, здоровая атмосфера"
           animDelay={2}
         />
         <ServicePoint
           tagsTop={['03']}
-          title="Интересные проекты"
-          description="Музейные, концертные, рекламные кампании."
+          title="Очень интересные проекты: музейные, концертные, рекламные кампании"
           animDelay={3}
         />
       </ServicePointRow>
       <ServicePointRow compact>
         <ServicePoint
           tagsTop={['04']}
-          title="Разнообразные проекты"
-          description="От&nbsp;мелких задачек до&nbsp;фуллтайм вызовов."
+          title="Разнообразные проекты: от&nbsp;мелких задачек до&nbsp;фуллтайм вызовов"
         />
         <ServicePoint
           tagsTop={['05']}
-          title="Развитие скиллов"
-          description="Благодаря команде."
+          title="Развитие скиллов благодаря команде"
           animDelay={2}
         />
         <ServicePoint
@@ -234,19 +240,16 @@ export default function TalentHubPage() {
       <ServicePointRow>
         <ServicePoint
           tagsTop={['07']}
-          title="Ноль бюрократии"
-          description="Электронный документооборот."
+          title="Ноль бюрократии, электронный документооборот"
         />
         <ServicePoint
           tagsTop={['08']}
-          title="Причастность к&nbsp;команде"
-          description="Причастность к&nbsp;команде и&nbsp;результату."
+          title="Причастность к&nbsp;команде и&nbsp;результату"
           animDelay={2}
         />
         <ServicePoint
           tagsTop={['09']}
-          title="Профессионалы"
-          description="Внутри все без&nbsp;исключения профессионалы."
+          title="Внутри все без&nbsp;исключения профессионалы"
           animDelay={3}
         />
       </ServicePointRow>
