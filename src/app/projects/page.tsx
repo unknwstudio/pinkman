@@ -429,6 +429,8 @@ export default function ProjectsPage() {
   const gridRef = useRef<HTMLDivElement>(null)
   // Stores the Flip state captured BEFORE React updates the DOM
   const flipStateRef = useRef<ReturnType<typeof Flip.getState> | null>(null)
+  // Guard: skip hover tweens while Flip animation is running
+  const isFlipping = useRef(false)
 
   // ── Card grid: stagger entrance + horizontal hover ───────────────────────
   useEffect(() => {
@@ -465,11 +467,13 @@ export default function ProjectsPage() {
         const img = card.querySelector<HTMLElement>('img.case-card-big___image')
 
         const onEnter = () => {
+          if (isFlipping.current) return
           gsap.to(card, { x: 8, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
           if (img) gsap.to(img, { scale: 1.05, duration: 0.5, ease: 'power2.out' })
         }
 
         const onLeave = () => {
+          if (isFlipping.current) return
           gsap.to(card, { x: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)', overwrite: 'auto' })
           if (img) gsap.to(img, { scale: 1, duration: 0.6, ease: 'power2.out' })
         }
@@ -514,6 +518,7 @@ export default function ProjectsPage() {
     if (!state) return
     flipStateRef.current = null
 
+    isFlipping.current = true
     Flip.from(state, {
       duration: 0.55,
       ease: 'power1.inOut',
@@ -523,6 +528,17 @@ export default function ProjectsPage() {
         gsap.to(els, { opacity: 0, scale: 0.85, duration: 0.25 }),
       onEnter: (els) =>
         gsap.fromTo(els, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35 }),
+      onComplete: () => {
+        isFlipping.current = false
+        // Clear Flip's leftover inline scale/opacity so hover starts from a clean slate
+        const grid = gridRef.current
+        if (!grid) return
+        grid.querySelectorAll<HTMLElement>('.case-card-wrapper').forEach((c) => {
+          if (c.style.display !== 'none') {
+            gsap.set(c, { clearProps: 'scale,opacity,x,y' })
+          }
+        })
+      },
     })
   }, [active])
 
