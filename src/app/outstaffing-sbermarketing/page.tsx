@@ -92,7 +92,7 @@ const COSTS = [
 
 export default function OutstaffingSbermarketingPage() {
   return (
-    <>
+    <div style={{ maxWidth: '1440px', margin: '0 auto', width: '100%' }}>
       {/* ── Hero ── */}
       <Section>
         <div className="text-big-wrapper">
@@ -300,6 +300,6 @@ export default function OutstaffingSbermarketingPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
