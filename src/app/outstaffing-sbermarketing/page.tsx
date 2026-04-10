@@ -65,16 +65,33 @@ const OFFER_ITEMS: { left: string; hl: string; right: string }[] = [
   },
 ]
 
-const TABLE_ROWS: [string, string, string][] = [
-  ['Зарплата на\u00a0руки', '~200\u00a0000\u00a0₽', '\u2014'],
-  ['Gross (с\u00a0учётом НДФЛ\u00a013%)', '~230\u00a0000\u00a0₽', '\u2014'],
-  ['Страховые взносы (~30% от\u00a0gross)', '~69\u00a0000\u00a0₽', '\u2014'],
-  ['Итого: зарплата\u00a0+ налоги', '~299\u00a0000\u00a0₽', '\u2014'],
-  ['Техника и\u00a0ПО (Figma, Adobe и\u00a0др.)', '~15\u00a0000–20\u00a0000\u00a0₽/мес', 'включено'],
-  ['Онбординг и\u00a0обучение', '~20\u00a0000–50\u00a0000\u00a0₽ разово', 'включено'],
-  ['HR-поддержка (рекрутер, кадровик)', '~10\u00a0000–15\u00a0000\u00a0₽/мес', 'включено'],
-  ['Больничные и\u00a0отпуска', 'риск простоя, замену ищете сами', 'замена на\u00a0стороне студии'],
-  ['Сорсинг и\u00a0найм (4–8\u00a0недель)', 'время HR\u00a0+ руководителя', 'не\u00a0требуется'],
+type TableRow = {
+  label: string
+  staff: string
+  pinkman: string
+  note?: string
+}
+
+const TABLE_ROWS: TableRow[] = [
+  { label: 'Зарплата на\u00a0руки', staff: '~200\u00a0000\u00a0₽', pinkman: '\u2014' },
+  { label: 'Gross (с\u00a0учётом НДФЛ\u00a013%)', staff: '~230\u00a0000\u00a0₽', pinkman: '\u2014' },
+  { label: 'Страховые взносы (~30% от\u00a0gross)', staff: '~69\u00a0000\u00a0₽', pinkman: '\u2014' },
+  { label: 'Итого: зарплата\u00a0+ налоги', staff: '~299\u00a0000\u00a0₽', pinkman: '\u2014' },
+  { label: 'Техника и\u00a0ПО (Figma, Adobe и\u00a0др.)', staff: '~15\u00a0000–20\u00a0000\u00a0₽/мес', pinkman: 'включено' },
+  { label: 'Онбординг и\u00a0обучение', staff: '~20\u00a0000–50\u00a0000\u00a0₽ разово', pinkman: 'включено' },
+  { label: 'HR-поддержка (рекрутер, кадровик)', staff: '~10\u00a0000–15\u00a0000\u00a0₽/мес', pinkman: 'включено' },
+  {
+    label: 'Больничные и\u00a0отпуска',
+    staff: 'риск простоя, замену ищете сами',
+    pinkman: 'замена на\u00a0стороне студии',
+    note: '~640\u00a0000\u00a0₽/год на\u00a0двух дизайнеров: отпускные (~510\u00a0000\u00a0₽) + больничные (~127\u00a0000\u00a0₽)\u00a0— деньги уходят, задачи стоят. При\u00a0аутстаффе замена на\u00a0стороне студии, простоев нет.',
+  },
+  {
+    label: 'Сорсинг и\u00a0найм (4–8\u00a0недель)',
+    staff: 'время HR\u00a0+ руководителя',
+    pinkman: 'не\u00a0требуется',
+    note: '~160\u00a0000–240\u00a0000\u00a0₽ на\u00a0закрытие двух позиций (время HR\u00a0+ нанимающего менеджера) + 4–8\u00a0недель без\u00a0дизайнеров. При\u00a0аутстаффе команда готова к\u00a0работе сразу.',
+  },
 ]
 
 const RISKS = [
@@ -170,14 +187,30 @@ export default function OutstaffingSbermarketingPage() {
               </tr>
             </thead>
             <tbody>
-              {TABLE_ROWS.map(([label, staff, pinkman], i) => (
+              {TABLE_ROWS.map(({ label, staff, pinkman, note }, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid #f0f0f0' }}>
-                  <td style={{ padding: '11px 16px', color: '#555' }}>{label}</td>
-                  <td style={{ padding: '11px 16px', color: '#555' }}>{staff}</td>
+                  <td style={{ padding: '11px 16px', color: '#555', verticalAlign: 'top' }}>{label}</td>
+                  <td style={{ padding: '11px 16px', color: '#555', verticalAlign: 'top' }}>
+                    {staff}
+                    {note && (
+                      <div
+                        style={{
+                          marginTop: '6px',
+                          fontSize: '0.82em',
+                          lineHeight: 1.45,
+                          color: '#888',
+                          fontWeight: 400,
+                        }}
+                      >
+                        {note}
+                      </div>
+                    )}
+                  </td>
                   <td
                     style={{
                       padding: '11px 16px',
                       color: pinkman === 'включено' ? '#1a9e5c' : pinkman === '\u2014' ? '#bbb' : '#555',
+                      verticalAlign: 'top',
                     }}
                   >
                     {pinkman}
@@ -269,7 +302,7 @@ export default function OutstaffingSbermarketingPage() {
       <div className="portfolio-section contacts-main-section">
         <div className="main-container">
           <div className="contacts-card">
-            <p className="contacts-intro">Аккаунт-директор: Юрий&nbsp;Григоренко</p>
+            <p className="contacts-intro">Управляющий партнер: Юрий&nbsp;Григоренко</p>
             <p className="contacts-role">
               <a href="https://t.me/grig44" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>@grig44</a>
               &nbsp;&nbsp;·&nbsp;&nbsp;
