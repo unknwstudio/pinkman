@@ -6,6 +6,14 @@ import gsap from '@/lib/gsap'
 
 const TOP_CASES = [
   {
+    title: 'СИБУР',
+    desc: 'Зонтичный карьерный бренд для нефтехимической компании',
+    year: '2026',
+    cats: ['Брендинг'],
+    img: '/images/_cases/sibur/smena-cover.webp',
+    href: '/projects/sibur-kariernyy-brend',
+  },
+  {
     title: 'Яндекс Го Казахстан',
     desc: 'Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов',
     year: '2026',
@@ -28,6 +36,30 @@ const TOP_CASES = [
     cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
     img: '/images/_cases/bootlegger/image 2090012112.png',
     href: '/projects/ai-rolik-dlya-bootlegger',
+  },
+  {
+    title: 'Синяя птица',
+    desc: 'Подготовили 19 видеофонов и\u00a0оживили персонажей для номеров шоу',
+    year: '2025',
+    cats: ['Бренд и\u00a0контент', 'Спецпроекты'],
+    img: '/images/69aae24b7c2dab0e74e8a302_Frame-2136139030.webp',
+    href: '/projects/scenicheskiy-vizual-dlya-siney-pticy-fony-k-nomeram-shou',
+  },
+  {
+    title: 'Свои Плюсы',
+    desc: 'Всего за\u00a02 месяца сделали редизайн и\u00a0полностью обновили ключевой канал коммуникации',
+    year: '2025',
+    cats: ['Бренд и\u00a0контент', '3D/Motion-design'],
+    img: '/images/69a43d4c9c4d979bb18d08a3_Frame 174.webp',
+    href: '/projects/masshtabirovali-svoi-plyusy----programmu-loyalnosti-yandeksa',
+  },
+  {
+    title: 'Сбер НПФ',
+    desc: 'Обновили сайт негосударственного пенсионного фонда Сбербанка',
+    year: '2025',
+    cats: ['Веб-дизайн', 'Исследования', 'Сайты корпораций'],
+    img: '/images/68d55d1e9a752dbe263fe0fe_Frame 174 (4).webp',
+    href: '/projects/sdelali-novyy-sayt-dlya-sber-npf',
   },
 ]
 
