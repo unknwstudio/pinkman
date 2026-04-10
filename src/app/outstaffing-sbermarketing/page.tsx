@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Section from '@/components/Section/Section'
-import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
 import styles from './page.module.css'
 
@@ -252,17 +251,19 @@ export default function OutstaffingSbermarketingPage() {
           <h2 className="h1">Итого</h2>
         </div>
       </Section>
-      <ServicePointRow>
-        <ServicePoint
-          title="Аутстафф от&nbsp;Pinkman"
-          description="250&nbsp;000&nbsp;₽/мес"
-        />
-        <ServicePoint
-          title="Штатный дизайнер"
-          description="~325&nbsp;000–340&nbsp;000&nbsp;₽/мес"
-          animDelay={2}
-        />
-      </ServicePointRow>
+      <Section>
+        <div className="service-grid">
+          <ServicePoint
+            title="Аутстафф от&nbsp;Pinkman"
+            description="250&nbsp;000&nbsp;₽/мес"
+          />
+          <ServicePoint
+            title="Штатный дизайнер"
+            description="~325&nbsp;000–340&nbsp;000&nbsp;₽/мес"
+            animDelay={2}
+          />
+        </div>
+      </Section>
 
       {/* ── Контакты ── */}
       <div className="portfolio-section contacts-main-section">
