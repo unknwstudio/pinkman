@@ -84,7 +84,7 @@ export default async function CasePage({ params }: Props) {
 
       {/* ── Cover image ── */}
       {cover_image && (
-        <div className="media-section last">
+        <div className="media-section last" style={{ marginBottom: 'var(--32px)' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             alt=""
