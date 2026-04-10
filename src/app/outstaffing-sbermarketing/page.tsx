@@ -16,7 +16,7 @@ function accent(text: string, term: string): ReactNode {
   return (
     <>
       {text.slice(0, idx)}
-      <span style={{ color: 'var(--ai-blue)' }}>{text.slice(idx, idx + term.length)}</span>
+      <span style={{ color: '#f03882' }}>{text.slice(idx, idx + term.length)}</span>
       {text.slice(idx + term.length)}
     </>
   )
