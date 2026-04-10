@@ -254,7 +254,7 @@ export default function HomePage() {
               {/* Desktop row 1: logo left, stats+image right */}
               <div className="developing-row col-2">
                 <div className="developing-logo">
-                  <img alt="ОТП Банк" className="developing-logo__img" src="/images/681ba9d2154bb4307b274549_ОТП Банк.svg" />
+                  <img alt="ОТП Банк" className="developing-logo__img" src="/images/681ba9d2154bb4307b274549.svg" />
                   <h2>2023-н.в.</h2>
                 </div>
                 <div className="col-2">
@@ -323,7 +323,7 @@ export default function HomePage() {
               {/* Mobile-only row */}
               <div className="developing-row col-1 mobile">
                 <div className="developing-logo">
-                  <img alt="ОТП Банк" className="developing-logo__img" src="/images/681ba9d2154bb4307b274549_ОТП Банк.svg" />
+                  <img alt="ОТП Банк" className="developing-logo__img" src="/images/681ba9d2154bb4307b274549.svg" />
                   <h2>2023-н.в.</h2>
                 </div>
                 <img
