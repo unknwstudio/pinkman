@@ -55,14 +55,26 @@ export default function Cursor() {
       })
     }
 
+    const onReset = () => {
+      setLabel('')
+      gsap.to(follower, {
+        width: 40,
+        height: 40,
+        duration: 0.5,
+        ease: 'elastic.out(1, 0.5)',
+      })
+    }
+
     document.addEventListener('mousemove', onMove)
     document.addEventListener('mouseover', onOver)
     document.addEventListener('mouseout', onOut)
+    document.addEventListener('click', onReset)
 
     return () => {
       document.removeEventListener('mousemove', onMove)
       document.removeEventListener('mouseover', onOver)
       document.removeEventListener('mouseout', onOut)
+      document.removeEventListener('click', onReset)
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
