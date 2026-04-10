@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import Section from '@/components/Section/Section'
 import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
+import styles from './page.module.css'
 
 export const metadata: Metadata = {
   title: 'Аутстафф дизайнеров pinkman для Сбермаркетинга',
@@ -92,7 +93,7 @@ const COSTS = [
 
 export default function OutstaffingSbermarketingPage() {
   return (
-    <div style={{ maxWidth: '1440px', margin: '0 auto', width: '100%' }}>
+    <div className={styles.page} style={{ maxWidth: '1440px', margin: '0 auto', width: '100%' }}>
       {/* ── Hero ── */}
       <Section>
         <div className="text-big-wrapper">

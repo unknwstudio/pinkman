@@ -1,0 +1,8 @@
+/* Override main-container centering for this page only.
+   Webflow's global rule uses margin-left: var(--64px) which left-aligns
+   the container. Here we force both sides to auto so the content centers
+   inside the 1440px page wrapper. */
+.page :global(.main-container) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
