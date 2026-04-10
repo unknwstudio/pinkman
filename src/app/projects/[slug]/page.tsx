@@ -62,6 +62,26 @@ export default async function CasePage({ params }: Props) {
 
   return (
     <>
+      {/* ── Hero ── */}
+      <div className="portfolio-section">
+        <div className="main-container">
+          <div className="text-big-wrapper">
+            <p className="text-big" dangerouslySetInnerHTML={{ __html: ruNbspHtml(hero) }} />
+          </div>
+        </div>
+      </div>
+
+      {/* ── Subtitle ── */}
+      {subtitle && (
+        <div className="portfolio-section">
+          <div className="main-container">
+            <div className="text-h2-wrapper">
+              <h2 dangerouslySetInnerHTML={{ __html: ruNbspHtml(subtitle) }} />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ── Cover image ── */}
       {cover_image && (
         <div className="media-section last">
@@ -93,26 +113,6 @@ export default async function CasePage({ params }: Props) {
               </a>
             </div>
           )}
-        </div>
-      )}
-
-      {/* ── Hero ── */}
-      <div className="portfolio-section">
-        <div className="main-container">
-          <div className="text-big-wrapper">
-            <p className="text-big" dangerouslySetInnerHTML={{ __html: ruNbspHtml(hero) }} />
-          </div>
-        </div>
-      </div>
-
-      {/* ── Subtitle ── */}
-      {subtitle && (
-        <div className="portfolio-section">
-          <div className="main-container">
-            <div className="text-h2-wrapper">
-              <h2 dangerouslySetInnerHTML={{ __html: ruNbspHtml(subtitle) }} />
-            </div>
-          </div>
         </div>
       )}
 
