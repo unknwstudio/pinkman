@@ -10,7 +10,7 @@ const TOP_CASES = [
     desc: 'Зонтичный карьерный бренд для нефтехимической компании',
     year: '2026',
     cats: ['Брендинг'],
-    img: '/images/_cases/sibur/smena-cover.webp',
+    img: '/images/_cases/sibur/sibur-cover.webp',
     href: '/projects/sibur-kariernyy-brend',
   },
   {
