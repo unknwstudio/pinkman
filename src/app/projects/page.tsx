@@ -34,7 +34,7 @@ const CASES: Case[] = [
   {
     title: 'Nova Creative Group',
     desc: 'Спроектировали сайт с\u00a0нуля для компании, которая объединяет издательство и\u00a0маркетинговое агентство',
-    year: '2026',
+    year: '2025',
     cats: ['Веб-дизайн'],
     img: '/images/_cases/nova/nova-cover.webp',
     href: '/projects/nova-creative-group',

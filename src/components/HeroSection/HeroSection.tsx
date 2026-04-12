@@ -6,14 +6,6 @@ import gsap from '@/lib/gsap'
 
 const TOP_CASES = [
   {
-    title: 'Nova Creative Group',
-    desc: 'Спроектировали сайт с\u00a0нуля для компании, которая объединяет издательство и\u00a0маркетинговое агентство',
-    year: '2026',
-    cats: ['Веб-дизайн'],
-    img: '/images/_cases/nova/nova-cover.webp',
-    href: '/projects/nova-creative-group',
-  },
-  {
     title: 'Норма',
     desc: 'Разработали брендинг, мобильное приложение и сайт для сети химчисток',
     year: '2026',
