@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useRef, useLayoutEffect, useEffect } from 'react'
+import { useState, useRef, useLayoutEffect, useEffect, useTransition } from 'react'
 import Link from 'next/link'
-import gsap, { Flip } from '@/lib/gsap'
+import gsap from '@/lib/gsap'
 
 const CATEGORIES = [
   'Все проекты',
@@ -434,11 +434,12 @@ const CASES: Case[] = [
 
 export default function ProjectsPage() {
   const [active, setActive] = useState('Все проекты')
+  const [isPending, startTransition] = useTransition()
   const gridRef = useRef<HTMLDivElement>(null)
-  // Stores the Flip state captured BEFORE React updates the DOM
-  const flipStateRef = useRef<ReturnType<typeof Flip.getState> | null>(null)
-  // Guard: skip hover tweens while Flip animation is running
-  const isFlipping = useRef(false)
+  // Guard: skip hover tweens while filter transition is running
+  const isTransitioning = useRef(false)
+  // Skip the initial mount in useLayoutEffect
+  const isMounted = useRef(false)
 
   // ── Card grid: stagger entrance + horizontal hover ───────────────────────
   useEffect(() => {
@@ -475,13 +476,13 @@ export default function ProjectsPage() {
         const img = card.querySelector<HTMLElement>('img.case-card-big___image')
 
         const onEnter = () => {
-          if (isFlipping.current) return
+          if (isTransitioning.current) return
           gsap.to(card, { x: 8, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
           if (img) gsap.to(img, { scale: 1.05, duration: 0.5, ease: 'power2.out' })
         }
 
         const onLeave = () => {
-          if (isFlipping.current) return
+          if (isTransitioning.current) return
           gsap.to(card, { x: 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
           if (img) gsap.to(img, { scale: 1, duration: 0.4, ease: 'power2.out' })
         }
@@ -507,50 +508,47 @@ export default function ProjectsPage() {
   const isVisible = (c: Case) =>
     active === 'Все проекты' || c.cats.includes(active)
 
-  /** Capture Flip snapshot BEFORE React touches the DOM, then update state */
+  /** Lock grid height, then defer the state update so the main thread stays responsive */
   function handleFilter(cat: string) {
-    if (cat === active) return
+    if (cat === active || isPending) return
     const grid = gridRef.current
     if (grid) {
-      // Lock current height so the grid never collapses while cards are display:none
+      // Pin the current height — grid won't collapse while cards swap display:none
       grid.style.minHeight = grid.offsetHeight + 'px'
-      // All [data-flip-id] elements must be in the DOM — even hidden ones
-      const items = grid.querySelectorAll('[data-flip-id]')
-      flipStateRef.current = Flip.getState(items)
     }
-    setActive(cat)
+    isTransitioning.current = true
+    startTransition(() => setActive(cat))
   }
 
-  /** After React commits the new DOM, animate from the captured snapshot */
+  /** After React commits the new filtered DOM, fade in the visible cards then release the height lock */
   useLayoutEffect(() => {
-    const state = flipStateRef.current
-    if (!state) return
-    flipStateRef.current = null
+    // Skip the very first mount — entrance animation is handled by the scroll-triggered useEffect
+    if (!isMounted.current) {
+      isMounted.current = true
+      return
+    }
+    const grid = gridRef.current
+    if (!grid) return
 
-    isFlipping.current = true
-    Flip.from(state, {
-      duration: 0.55,
-      ease: 'power1.inOut',
-      absolute: true,
-      stagger: 0.04,
-      onLeave: (els) =>
-        gsap.to(els, { opacity: 0, scale: 0.85, duration: 0.25 }),
-      onEnter: (els) =>
-        gsap.fromTo(els, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35 }),
-      onComplete: () => {
-        isFlipping.current = false
-        const grid = gridRef.current
-        if (!grid) return
-        // Release the height lock now that the new layout has settled
-        grid.style.minHeight = ''
-        // Clear Flip's leftover inline scale/opacity so hover starts from a clean slate
-        grid.querySelectorAll<HTMLElement>('.case-card-wrapper').forEach((c) => {
-          if (c.style.display !== 'none') {
-            gsap.set(c, { clearProps: 'scale,opacity,x,y' })
-          }
-        })
-      },
-    })
+    const visibleCards = Array.from(
+      grid.querySelectorAll<HTMLElement>('.case-card-wrapper')
+    ).filter(el => el.style.display !== 'none')
+
+    gsap.fromTo(
+      visibleCards,
+      { opacity: 0, y: 16 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.35,
+        ease: 'power2.out',
+        stagger: 0.025,
+        onComplete: () => {
+          grid.style.minHeight = ''
+          isTransitioning.current = false
+        },
+      }
+    )
   }, [active])
 
   return (
@@ -575,8 +573,10 @@ export default function ProjectsPage() {
                   background: active === cat ? '#1a1a1a' : undefined,
                   color: active === cat ? '#fff' : undefined,
                   border: 'none',
-                  cursor: 'pointer',
+                  cursor: isPending ? 'default' : 'pointer',
                   fontFamily: 'inherit',
+                  opacity: isPending && active !== cat ? 0.6 : 1,
+                  transition: 'opacity 0.15s',
                 }}
               >
                 {cat}
