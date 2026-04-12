@@ -17,6 +17,7 @@ type MediaBlock = {
   subheading?: string
   images: string[]
   video_url?: string
+  layout?: 'stacked' | 'grid'
 }
 
 type CaseData = {
@@ -284,7 +285,7 @@ export default async function CasePage({ params }: Props) {
           )}
           {block.images.length > 1 && (
             <div className="media-section last full-size">
-              <div className="media-section__photos">
+              <div className={`media-section__photos${block.layout === 'stacked' ? ' media-section__photos--fullsize' : ''}`}>
                 {block.images.map((img, j) => (
                   <div key={j} className="media-section__photos-item">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -292,7 +293,7 @@ export default async function CasePage({ params }: Props) {
                       alt=""
                       className="picture"
                       loading="lazy"
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes={block.layout === 'stacked' ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
                       src={`/images/${img}`}
                       {...imgSize(`/images/${img}`)}
                     />
