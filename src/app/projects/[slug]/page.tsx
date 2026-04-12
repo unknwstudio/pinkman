@@ -24,6 +24,7 @@ type CaseData = {
   website_url?: string
   hero: string
   subtitle: string
+  credit?: string
   intro?: string[]
   what_we_did?: string[]
   results: string[]
@@ -58,7 +59,7 @@ export default async function CasePage({ params }: Props) {
   const data = cases[slug]
   if (!data) notFound()
 
-  const { cover_image, website_url, hero, subtitle, intro, what_we_did, results, awards, media_blocks } = data
+  const { cover_image, website_url, hero, subtitle, credit, intro, what_we_did, results, awards, media_blocks } = data
 
   return (
     <>
@@ -78,6 +79,17 @@ export default async function CasePage({ params }: Props) {
             <div className="text-h2-wrapper">
               <h2 dangerouslySetInnerHTML={{ __html: ruNbspHtml(subtitle) }} />
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Credit line ── */}
+      {credit && (
+        <div className="portfolio-section" style={{ paddingTop: 0 }}>
+          <div className="main-container">
+            <p className="text-regular" style={{ fontSize: 'var(--14px)', color: 'var(--medium-grey)' }}>
+              {credit}
+            </p>
           </div>
         </div>
       )}
