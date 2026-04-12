@@ -60,8 +60,8 @@ export default function ServiceCasesGrid({ cases }: Props) {
         }
 
         const onLeave = () => {
-          gsap.to(card, { x: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)', overwrite: 'auto' })
-          if (img) gsap.to(img, { scale: 1, duration: 0.6, ease: 'power2.out' })
+          gsap.to(card, { x: 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
+          if (img) gsap.to(img, { scale: 1, duration: 0.4, ease: 'power2.out' })
         }
 
         card.addEventListener('mouseenter', onEnter)
