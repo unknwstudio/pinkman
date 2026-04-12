@@ -6,6 +6,14 @@ import gsap from '@/lib/gsap'
 
 const TOP_CASES = [
   {
+    title: 'Норма',
+    desc: 'Разработали брендинг, мобильное приложение и сайт для сети химчисток',
+    year: '2026',
+    cats: ['Брендинг', 'Веб-дизайн', 'Интерфейсы'],
+    img: '/images/_cases/norma/norma-cover.webp',
+    href: '/projects/norma',
+  },
+  {
     title: 'СИБУР',
     desc: 'Зонтичный карьерный бренд для нефтехимической компании',
     year: '2026',
@@ -60,14 +68,6 @@ const TOP_CASES = [
     cats: ['Веб-дизайн', 'Исследования', 'Сайты корпораций'],
     img: '/images/68d55d1e9a752dbe263fe0fe_Frame 174 (4).webp',
     href: '/projects/sdelali-novyy-sayt-dlya-sber-npf',
-  },
-  {
-    title: 'Норма',
-    desc: 'Разработали брендинг, мобильное приложение и сайт для сети химчисток',
-    year: '2026',
-    cats: ['Брендинг', 'Веб-дизайн', 'Интерфейсы'],
-    img: '/images/_cases/norma/norma-cover.webp',
-    href: '/projects/norma',
   },
 ]
 
