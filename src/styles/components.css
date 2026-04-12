@@ -1525,3 +1525,23 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 767px) {
   .text-hero { font-size: var(--mobile--37px); }
 }
+
+/* ════════════════════════════════════════════════════════════
+   CHIP HOVER STATES
+   ════════════════════════════════════════════════════════════ */
+.is__chip {
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+/* Active filter chip */
+.filter-chips-wrapper .is__chip--active {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+/* Non-active chips darken slightly on hover */
+.filter-chips-wrapper .is__chip:not(.is__chip--active):hover {
+  background-color: #d4d4d4;
+}
+/* Active chip lightens slightly on hover */
+.filter-chips-wrapper .is__chip--active:hover {
+  background-color: #333;
+}

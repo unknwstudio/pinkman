@@ -570,8 +570,6 @@ export default function ProjectsPage() {
                 onClick={() => handleFilter(cat)}
                 className={`text-small is__chip${active === cat ? ' is__chip--active' : ''}`}
                 style={{
-                  background: active === cat ? '#1a1a1a' : undefined,
-                  color: active === cat ? '#fff' : undefined,
                   border: 'none',
                   cursor: isPending ? 'default' : 'pointer',
                   fontFamily: 'inherit',
