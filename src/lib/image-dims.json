@@ -1,4 +1,15 @@
 {
+  "_cases/nova/nova-cover.webp": { "w": 1920, "h": 1080 },
+  "_cases/nova/nova-img-01.webp": { "w": 1920, "h": 959 },
+  "_cases/nova/nova-img-02.webp": { "w": 1920, "h": 1171 },
+  "_cases/nova/nova-img-03.webp": { "w": 1920, "h": 1171 },
+  "_cases/nova/nova-img-04.webp": { "w": 1920, "h": 996 },
+  "_cases/nova/nova-img-05.webp": { "w": 1920, "h": 2566 },
+  "_cases/nova/nova-img-06.webp": { "w": 1920, "h": 1198 },
+  "_cases/nova/nova-img-07.webp": { "w": 1920, "h": 1353 },
+  "_cases/nova/nova-img-08.webp": { "w": 1920, "h": 1657 },
+  "_cases/nova/nova-img-09.webp": { "w": 1920, "h": 1045 },
+
   "_cases/norma/norma-cover.webp": { "w": 1920, "h": 1080 },
   "_cases/norma/norma-img-01.webp": { "w": 1920, "h": 952 },
   "_cases/norma/norma-img-02.webp": { "w": 1920, "h": 949 },

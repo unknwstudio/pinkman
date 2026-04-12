@@ -1,4 +1,97 @@
 {
+  "nova-creative-group": {
+    "cover_image": "_cases/nova/nova-cover.webp",
+    "hero": "Nova Creative Group",
+    "subtitle": "Спроектировали сайт с нуля для компании, которая объединяет издательство и маркетинговое агентство",
+    "intro": [
+      "Nova Creative — агентство с двумя направлениями деятельности: книгоиздание и маркетинговые услуги полного цикла",
+      "Оба направления самостоятельные, со своей логикой и аудиторией, но при этом функционируют под одним брендом и тесно взаимодействуют друг с другом"
+    ],
+    "results": [
+      "Спроектировали сайт с нуля для компании, которая объединяет издательство и маркетинговое агентство, сохранив целостность бренда",
+      "Разделили продукт на два самостоятельных визуальных мира с единой точкой входа и удобной навигацией между ними",
+      "Создали приятную и цепляющую визуальную систему, передающую ценности бренда"
+    ],
+    "awards": [],
+    "media_blocks": [
+      {
+        "heading": "Сайт для Nova Creative Group",
+        "subheading": "<p>Как объединить издательство и маркетинг в одном пространстве</p>",
+        "images": []
+      },
+      {
+        "heading": "Два направления — два мира",
+        "subheading": "<p>Мы построили сайт как две связанные системы с общей точкой входа. Главная страница становится развилкой: пользователь сразу выбирает, «куда он хочет»: в издательство или в маркетинг. Учли и ситуации, когда пользователю нужны услуги в обоих направлениях. С помощью удобного интерфейса в любой момент можно переключиться в «соседний мир». По итогу они работают независимо, но остаются частью одной экосистемы</p>",
+        "video_url": "https://kinescope.io/embed/xoZnX3HtW3ERmwn8eYtZAB",
+        "images": []
+      },
+      {
+        "heading": null,
+        "images": [
+          "_cases/nova/nova-img-01.webp"
+        ]
+      },
+      {
+        "heading": "Собрали визуал вокруг идеи",
+        "subheading": "<p>Клиент пришел к нам с брендбуком компании. Мы же адаптировали базовые константы стиля, развили визуальную концепцию для масштабирования на сайт и иные цифровые каналы коммуникации.</p>",
+        "images": [
+          "_cases/nova/nova-img-02.webp"
+        ]
+      },
+      {
+        "heading": "Это отразилось и в цветах, и в настроении",
+        "subheading": "<p>Маркетинг — светлый, с акцентом на движение и креатив. Издательская часть — тёмная, но спокойная и глубокая. Также дополнили дизайн различными символами и эффектами. Например, использовали прозрачные элементы как метафору открытости и честного сотрудничества. А золото помогло подчеркнуть ощущение фундаментальности и премиальности. Дополнительно ввели графику на основе линий и спиралей — они проходят через весь сайт и помогают связать разные блоки между собой, добавляя динамики</p>",
+        "images": [
+          "_cases/nova/nova-img-03.webp"
+        ]
+      },
+      {
+        "heading": null,
+        "images": [
+          "_cases/nova/nova-img-04.webp"
+        ]
+      },
+      {
+        "heading": null,
+        "images": [
+          "_cases/nova/nova-img-05.webp"
+        ]
+      },
+      {
+        "heading": null,
+        "images": [
+          "_cases/nova/nova-img-06.webp"
+        ]
+      },
+      {
+        "heading": "Добавили движение и продумали путь пользователя",
+        "subheading": "<p>Сайт построен на движении: анимации, плавные переходы, реакция элементов. Мы не перешли грань между приятным и навязчивым интерактивом. Поэтому сознательно делали анимацию мягкой и спокойной, чтобы она не отвлекала от контента, а сопровождала пользователя по странице.</p>",
+        "video_url": "https://kinescope.io/embed/vWJ5G4rFZ7P5tL5vn9FMTN",
+        "images": []
+      },
+      {
+        "heading": null,
+        "subheading": "<p>Мы заложили понятные механики и сценарии, чтобы пользователь легко ориентировался в «двух мирах»: зайти и сразу выбрать направление, без лишних кликов изучить услуги, понятные и читаемые заголовки, логичные переходы в нужные разделы сайта, кнопка «Оставить заявку» в верхнем правом углу для удобного доступа, кросс-переходы между направлениями для удобного переключения</p>",
+        "images": [
+          "_cases/nova/nova-img-07.webp"
+        ]
+      },
+      {
+        "heading": "Учли особенности аудитории",
+        "subheading": "<p>Клиенту было важно удобство сайта не только на компьютере, но и на планшетах, поскольку значительная часть его аудитории заходит именно с них. Поэтому мы отдельно адаптировали сайт под такие устройства для комфортного изучения контента и быстрого перехода между разделами.</p>",
+        "images": [
+          "_cases/nova/nova-img-08.webp"
+        ]
+      },
+      {
+        "heading": "Результат",
+        "subheading": "<p>Наша команда сделала полноценный сайт с нуля: с понятной структурой, выстроенной логикой и приятным, цепляющим визуалом. Он отражает характер бренда, выделяется, органично разделяет направления, одновременно объединяя их в единую систему.</p>",
+        "images": [
+          "_cases/nova/nova-img-09.webp"
+        ]
+      }
+    ]
+  },
   "norma": {
     "cover_image": "_cases/norma/norma-cover.webp",
     "hero": "Норма",
@@ -116,19 +209,27 @@
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/smena-cover.webp"]
+        "images": [
+          "_cases/sibur/smena-cover.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/smena-img-01.webp"]
+        "images": [
+          "_cases/sibur/smena-img-01.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/smena-img-02.webp"]
+        "images": [
+          "_cases/sibur/smena-img-02.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/smena-img-03.webp"]
+        "images": [
+          "_cases/sibur/smena-img-03.webp"
+        ]
       },
       {
         "heading": "Концепция 2.1 — Вектор",
@@ -137,19 +238,27 @@
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/vector-1-cover.webp"]
+        "images": [
+          "_cases/sibur/vector-1-cover.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/vector-img-01-01.webp"]
+        "images": [
+          "_cases/sibur/vector-img-01-01.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/vector-img-01-02.webp"]
+        "images": [
+          "_cases/sibur/vector-img-01-02.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/vector-img-01-03.webp"]
+        "images": [
+          "_cases/sibur/vector-img-01-03.webp"
+        ]
       },
       {
         "heading": "Концепция 2.2 — Вектор (вариация)",
@@ -158,19 +267,27 @@
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/vector-2-cover.webp"]
+        "images": [
+          "_cases/sibur/vector-2-cover.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/vector-img-02-01.webp"]
+        "images": [
+          "_cases/sibur/vector-img-02-01.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/vector-img-02-02.webp"]
+        "images": [
+          "_cases/sibur/vector-img-02-02.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/vector-img-02-03.webp"]
+        "images": [
+          "_cases/sibur/vector-img-02-03.webp"
+        ]
       },
       {
         "heading": "Концепция 3 — Элемент",
@@ -179,19 +296,27 @@
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/element-cover.webp"]
+        "images": [
+          "_cases/sibur/element-cover.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/element-img-01.webp"]
+        "images": [
+          "_cases/sibur/element-img-01.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/element-img-02.webp"]
+        "images": [
+          "_cases/sibur/element-img-02.webp"
+        ]
       },
       {
         "heading": null,
-        "images": ["_cases/sibur/element-img-03.webp"]
+        "images": [
+          "_cases/sibur/element-img-03.webp"
+        ]
       }
     ]
   },
