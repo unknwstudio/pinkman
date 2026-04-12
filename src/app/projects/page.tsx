@@ -512,9 +512,10 @@ export default function ProjectsPage() {
     if (cat === active) return
     const grid = gridRef.current
     if (grid) {
+      // Lock current height so the grid never collapses while cards are display:none
+      grid.style.minHeight = grid.offsetHeight + 'px'
       // All [data-flip-id] elements must be in the DOM — even hidden ones
       const items = grid.querySelectorAll('[data-flip-id]')
-      console.log('[Flip] elements before getState:', items.length, items)
       flipStateRef.current = Flip.getState(items)
     }
     setActive(cat)
@@ -530,7 +531,7 @@ export default function ProjectsPage() {
     Flip.from(state, {
       duration: 0.55,
       ease: 'power1.inOut',
-      absolute: true,   // keeps grid height stable during animation
+      absolute: true,
       stagger: 0.04,
       onLeave: (els) =>
         gsap.to(els, { opacity: 0, scale: 0.85, duration: 0.25 }),
@@ -538,9 +539,11 @@ export default function ProjectsPage() {
         gsap.fromTo(els, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35 }),
       onComplete: () => {
         isFlipping.current = false
-        // Clear Flip's leftover inline scale/opacity so hover starts from a clean slate
         const grid = gridRef.current
         if (!grid) return
+        // Release the height lock now that the new layout has settled
+        grid.style.minHeight = ''
+        // Clear Flip's leftover inline scale/opacity so hover starts from a clean slate
         grid.querySelectorAll<HTMLElement>('.case-card-wrapper').forEach((c) => {
           if (c.style.display !== 'none') {
             gsap.set(c, { clearProps: 'scale,opacity,x,y' })
