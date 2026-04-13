@@ -20,6 +20,7 @@ const SERVICES = [
   { label: 'Multimedia\u00a0& Phygital', href: '/multimedia-phygital' },
   { label: 'Аутстафф дизайнеров', href: '/outstaff-designers' },
   { label: 'Видеоролики (AI, CG, съёмки)', href: '/video-production' },
+  { label: 'Брендинг и\u00a0айдентика', href: '/branding' },
   { label: 'Исследования', href: '/research' },
 ]
 

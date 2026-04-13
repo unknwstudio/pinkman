@@ -13,6 +13,7 @@ export const SERVICE_SLUGS = [
   'research',
   'ux-research-redesign',
   'creative-movie-production',
+  'branding',
   'event-identity',
 ] as const
 
@@ -35,6 +36,7 @@ export const ACCENT_COLORS: Record<string, string> = {
   '/research/':                   '#f5f5f5',
   '/ux-research-redesign/':      '#EBFAF3',
   '/creative-movie-production/': '#FFF3E6',
+  '/branding/':                   '#f5f5f5',
   '/event-identity/':            '#F3EAFF',
   '/talent-hub/':                '#f5f5f5',
 }
@@ -53,6 +55,6 @@ export const SERVICE_LINKS = [
   { href: '/video-production/',           label: 'Видеоролики (AI, CG, съёмки)' },
   { href: '/multimedia-phygital/',       label: 'Multimedia\u00a0&\u00a0Phygital' },
   { href: '/outstaff-designers/',          label: 'Аутстафф дизайнеров' },
+  { href: '/branding/',                   label: 'Брендинг и\u00a0айдентика' },
   { href: '/research/',                   label: 'Исследования' },
-  { href: '/event-identity/',            label: 'Айдентика мероприятий' },
 ] as const
