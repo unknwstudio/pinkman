@@ -4,7 +4,6 @@ import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
 import ContactCard from '@/components/ContactCard/ContactCard'
-import CaseCard from '@/components/CaseCard/CaseCard'
 
 export const metadata: Metadata = {
   title: 'Видеоролики (AI, CG, съёмки)',
@@ -29,7 +28,23 @@ export default function VideoProductionPage() {
             tagsTop={['AI']}
             title="AI&#x2011;ролики для&nbsp;OLV&nbsp;+ DOOH"
             description="От&nbsp;сценария до&nbsp;финальных ресайзов для&nbsp;десятка поверхностей. Быстро, технически верно, без&nbsp;потери качества."
-          />
+          >
+            <div style={{ display: 'flex', gap: 'var(--8px)', marginTop: 'var(--16px)' }}>
+              {[
+                { src: '/images/_cases/yagno-kazakh/horizontal.png', alt: 'Яндекс Го Казахстан' },
+                { src: '/images/_cases/bootlegger/image 2090012112.png', alt: 'AI-ролик для Bootlegger' },
+                { src: '/images/_cases/yandex-split/image 2090012112.png', alt: 'AI-ролик для Яндекс.Сплит' },
+              ].map((c) => (
+                <img
+                  key={c.alt}
+                  src={c.src}
+                  alt={c.alt}
+                  style={{ width: '80px', height: '56px', objectFit: 'cover', borderRadius: '6px' }}
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          </ServicePoint>
         </Link>
         <Link href="/creative-movie-production/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <ServicePoint
@@ -40,41 +55,6 @@ export default function VideoProductionPage() {
           />
         </Link>
       </ServiceGrid>
-
-      <div className="service-cases-section">
-        <div className="service-grid">
-          <CaseCard
-            chips={['Бренд и\u00a0контент', 'AI', '3D/Motion-design']}
-            year="2026"
-            title="Яндекс Го Казахстан"
-            subtitle="AI+CGI Campaign"
-            description="Подготовили AI-ролики для федеральной рекламной кампании с&nbsp;множеством ресайзов"
-            href="/projects/yandex-go-kazakhstan"
-            imgSrc="/images/_cases/yagno-kazakh/horizontal.png"
-            imgAlt="Яндекс Го Казахстан"
-          />
-          <CaseCard
-            chips={['Бренд и\u00a0контент', 'AI', '3D/Motion-design']}
-            year="2026"
-            title="AI-ролик для Яндекс.Сплит"
-            subtitle="AI+CGI Campaign"
-            description="Рекламный AI-ролик для различных каналов коммуникации"
-            href="/projects/ai-rolik-dlya-yandex-split"
-            imgSrc="/images/_cases/yandex-split/image 2090012112.png"
-            imgAlt="AI-ролик для Яндекс.Сплит"
-          />
-          <CaseCard
-            chips={['Бренд и\u00a0контент', 'AI', '3D/Motion-design']}
-            year="2026"
-            title="AI-ролик для Bootlegger"
-            subtitle="AI+CGI Campaign"
-            description="Рекламный AI-ролик для трансляции в&nbsp;кинотеатре Пионер"
-            href="/projects/ai-rolik-dlya-bootlegger"
-            imgSrc="/images/_cases/bootlegger/image 2090012112.png"
-            imgAlt="AI-ролик для Bootlegger"
-          />
-        </div>
-      </div>
 
       <ContactCard intro="Обсудим ваш ролик?" />
     </>

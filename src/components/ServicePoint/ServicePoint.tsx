@@ -43,9 +43,10 @@ export default function ServicePoint({
       </div>
       {(description || children) && (
         <div className="service-point__right">
-          {description
-            ? <p className="font-color-dark-gray" dangerouslySetInnerHTML={{ __html: description }} />
-            : children}
+          {description && (
+            <p className="font-color-dark-gray" dangerouslySetInnerHTML={{ __html: description }} />
+          )}
+          {children}
         </div>
       )}
     </div>
