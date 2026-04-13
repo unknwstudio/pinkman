@@ -899,7 +899,19 @@ a { color: inherit; text-decoration: none; }
 /* ════════════════════════════════════════════════════════════
    BIGGER CARD BORDER RADIUS
    ════════════════════════════════════════════════════════════ */
-.service-point { border-radius: 20px !important; }
+.service-point { border-radius: 20px !important; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+/* Clickable service-card hover: lift + shadow + activate button */
+.service-card-link:hover .service-point {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.service-card-link:hover .small-button {
+  background-color: var(--color--total-black) !important;
+  color: var(--color--white) !important;
+}
+.service-card-link:hover .small-button .small-button-arrow { opacity: 0 !important; }
+.service-card-link:hover .small-button .button-arrow__active { opacity: 1 !important; }
 
 /* tagsTop (chips ABOVE title): equal top & bottom indent */
 .service-point__tags--top {
