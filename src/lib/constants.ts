@@ -50,10 +50,10 @@ export const NAV_LINKS = [
 export const SERVICE_LINKS = [
   { href: '/sites/',                     label: 'Сайты' },
   { href: '/communications-design/',     label: 'Дизайн коммуникаций' },
+  { href: '/video-production/',           label: 'Видеоролики (AI, CG, съёмки)' },
   { href: '/multimedia-phygital/',       label: 'Multimedia\u00a0&\u00a0Phygital' },
   { href: '/outsource-multimedia/',      label: 'Аутсорс мультимедиа' },
   { href: '/outstaff-designers/',          label: 'Аутстафф дизайнеров' },
-  { href: '/video-production/',           label: 'Видеоролики (AI, CG, съёмки)' },
   { href: '/research/',                   label: 'Исследования' },
   { href: '/event-identity/',            label: 'Айдентика мероприятий' },
 ] as const
