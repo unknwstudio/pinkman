@@ -23,11 +23,20 @@ export default function VideoProductionPage() {
       <Section><div className="text-h1-wrapper"><h2 className="h1">Направления</h2></div></Section>
 
       <ServiceGrid>
-        <Link href="/ai-video/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link href="/ai-video/" className="service-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
           <ServicePoint
             tagsTop={['AI']}
             title="AI&#x2011;ролики для&nbsp;OLV&nbsp;+ DOOH"
             description="От&nbsp;сценария до&nbsp;финальных ресайзов для&nbsp;десятка поверхностей. Быстро, технически верно, без&nbsp;потери качества."
+            afterTitle={
+              <div className="small-button small-button--cases w-inline-block" style={{ marginTop: 'var(--16px)', display: 'inline-flex' }}>
+                <p className="text-regular small-button-text">Подробнее</p>
+                <div className="small-button-arrow-wrapper">
+                  <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                  <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                </div>
+              </div>
+            }
           >
             <div style={{ display: 'flex', gap: 'var(--8px)', marginTop: 'var(--16px)' }}>
               {[
@@ -46,12 +55,21 @@ export default function VideoProductionPage() {
             </div>
           </ServicePoint>
         </Link>
-        <Link href="/creative-movie-production/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link href="/creative-movie-production/" className="service-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
           <ServicePoint
             tagsTop={['съёмки']}
             title="Креатив и&nbsp;съёмка имиджевых роликов"
             description="Сценарий, съёмка и&nbsp;постпродакшен&nbsp;&mdash; от&nbsp;историй в&nbsp;формате рилс до&nbsp;полноценного кино о&nbsp;ваших клиентах, сотрудниках, компании."
             animDelay={2}
+            afterTitle={
+              <div className="small-button small-button--cases w-inline-block" style={{ marginTop: 'var(--16px)', display: 'inline-flex' }}>
+                <p className="text-regular small-button-text">Подробнее</p>
+                <div className="small-button-arrow-wrapper">
+                  <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                  <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                </div>
+              </div>
+            }
           />
         </Link>
       </ServiceGrid>
