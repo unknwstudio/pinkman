@@ -11,6 +11,7 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
   { url: `${BASE}/communications-design/`,    lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   { url: `${BASE}/multimedia-phygital/`,      lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   { url: `${BASE}/outsource-multimedia/`,     lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE}/video-production/`,          lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   { url: `${BASE}/ai-video/`,                 lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   { url: `${BASE}/creative-movie-production/`,lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   { url: `${BASE}/outstaff-designers/`,        lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
