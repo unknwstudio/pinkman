@@ -21,7 +21,7 @@ const SERVICES = [
   { label: 'Аутсорс мультимедиа', href: '/outsource-multimedia' },
   { label: 'Аутстафф дизайнеров', href: '/outstaff-designers' },
   { label: 'Видеоролики (AI, CG, съёмки)', href: '/video-production' },
-  { label: 'UX\u2011исследования при редизайне', href: '/ux-research-redesign' },
+  { label: 'Исследования', href: '/research' },
 ]
 
 const CLIENT_LOGOS = [
