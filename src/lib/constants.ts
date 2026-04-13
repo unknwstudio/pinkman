@@ -45,7 +45,6 @@ export const NAV_LINKS = [
 /** Service links inside the Услуги dropdown */
 export const SERVICE_LINKS = [
   { href: '/sites/',                     label: 'Сайты' },
-  { href: '/digital-products/',          label: 'Цифровые продукты' },
   { href: '/communications-design/',     label: 'Дизайн коммуникаций' },
   { href: '/multimedia-phygital/',       label: 'Multimedia\u00a0&\u00a0Phygital' },
   { href: '/outsource-multimedia/',      label: 'Аутсорс мультимедиа' },
