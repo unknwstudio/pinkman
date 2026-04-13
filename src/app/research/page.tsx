@@ -23,11 +23,20 @@ export default function ResearchPage() {
       <Section><div className="text-h1-wrapper"><h2 className="h1">Направления</h2></div></Section>
 
       <ServiceGrid>
-        <Link href="/ux-research-redesign/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link href="/ux-research-redesign/" className="service-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
           <ServicePoint
             tagsTop={['UX']}
             title="UX&#x2011;исследования при&nbsp;редизайне"
             description="Помогаем вносить изменения в&nbsp;продукт без&nbsp;риска просадки метрик. Проверяем сценарии на&nbsp;реальных пользователях до&nbsp;релиза."
+            afterTitle={
+              <div className="small-button small-button--cases w-inline-block" style={{ marginTop: 'var(--16px)', display: 'inline-flex' }}>
+                <p className="text-regular small-button-text">Подробнее</p>
+                <div className="small-button-arrow-wrapper">
+                  <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                  <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                </div>
+              </div>
+            }
           />
         </Link>
       </ServiceGrid>
