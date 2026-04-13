@@ -54,7 +54,7 @@ export const SERVICE_LINKS = [
   { href: '/communications-design/',     label: 'Дизайн коммуникаций' },
   { href: '/video-production/',           label: 'Видеоролики (AI, CG, съёмки)' },
   { href: '/multimedia-phygital/',       label: 'Multimedia\u00a0&\u00a0Phygital' },
-  { href: '/outstaff-designers/',          label: 'Аутстафф дизайнеров' },
   { href: '/branding/',                   label: 'Брендинг и\u00a0айдентика' },
+  { href: '/outstaff-designers/',          label: 'Аутстафф дизайнеров' },
   { href: '/research/',                   label: 'Исследования' },
 ] as const
