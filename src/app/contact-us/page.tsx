@@ -57,9 +57,9 @@ export default function ContactUsPage() {
               <h3 className="h3-bold font-color-black">Работа для&nbsp;опытных специалистов</h3>
               <p className="text-regular font-color-dark-gray" style={{ marginTop: 'var(--8px)' }}>
                 Мы&nbsp;сформировали сообщество Pinkman Talent Hub для&nbsp;работы вместе
-                с&nbsp;нами из&nbsp;1000+ дизайнеров, продюсеров, сценаристов и&nbsp;др.
-                Мы&nbsp;всегда в&nbsp;поиске талантов! Очень ждем твой отклик
-                и&nbsp;тестовое&nbsp;:)
+                с&nbsp;нами. Присоединяйся к&nbsp;1000+ дизайнерам, продюсерам, сценаристам
+                и&nbsp;другим специалистам&nbsp;— мы&nbsp;всегда в&nbsp;поиске талантов! Очень
+                ждем твой отклик и&nbsp;тестовое&nbsp;:)
               </p>
             </div>
             <Link className="talent-hub-banner__btn" href="/talent-hub/">
