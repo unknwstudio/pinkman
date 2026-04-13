@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/outstaff-ai/',
-        destination: '/outstaff-designers/ai/',
+        destination: '/outstaff-designers/',
         permanent: true,
       },
     ]
