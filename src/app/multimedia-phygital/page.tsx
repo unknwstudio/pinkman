@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
@@ -108,6 +109,17 @@ export default function MultimediaPhygitalPage() {
           href: '/projects/sdelali-chat-bota-i-sproektirovali-100-ekranov-dlya-proekta-vk-portaly',
         },
       ]} />
+
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Также</h2></div></Section>
+      <ServiceGrid>
+        <Link href="/outsource-multimedia/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ServicePoint
+            tagsTop={['аутсорс']}
+            title="Аутсорс мультимедиа&#x2011;команды"
+            description="Встраиваемся в&nbsp;ваш проект уже завтра. CGI, motion, UI, AI&#x2011;контент&nbsp;&mdash; в&nbsp;срок, в&nbsp;бюджет, без&nbsp;потери смысла."
+          />
+        </Link>
+      </ServiceGrid>
     </>
   )
 }

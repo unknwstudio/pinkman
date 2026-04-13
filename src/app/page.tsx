@@ -18,7 +18,6 @@ const SERVICES = [
   { label: 'Сайты', href: '/sites' },
   { label: 'Дизайн коммуникаций', href: '/communications-design' },
   { label: 'Multimedia\u00a0& Phygital', href: '/multimedia-phygital' },
-  { label: 'Аутсорс мультимедиа', href: '/outsource-multimedia' },
   { label: 'Аутстафф дизайнеров', href: '/outstaff-designers' },
   { label: 'Видеоролики (AI, CG, съёмки)', href: '/video-production' },
   { label: 'Исследования', href: '/research' },
