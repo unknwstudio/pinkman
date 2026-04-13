@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Аутстафф AI-дизайнеров',
   description: 'Расширяем вашу команду AI-дизайнерами с опытом в корпоративных проектах.',
   alternates: {
-    canonical: 'https://pinkman.ru/outstaff-ai/',
+    canonical: 'https://pinkman.ru/outstaff-designers/ai/',
   },
 }
 

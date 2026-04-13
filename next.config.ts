@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_BUILD_ID: gitHash,
   },
+  async redirects() {
+    return [
+      {
+        source: '/outstaff-ai/',
+        destination: '/outstaff-designers/ai/',
+        permanent: true,
+      },
+    ]
+  },
   trailingSlash: true,   // preserves /sites/ URL structure from the current site
   output: 'standalone',  // optimised for Vercel / Docker
   // Strict Mode mounts → unmounts → remounts every component in dev, which causes
