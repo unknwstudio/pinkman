@@ -24,7 +24,7 @@ export default function ContactUsPage() {
         <div className="main-container">
           <div className="contacts-card">
             <p className="contacts-intro">Чтобы начать — напишите Юре Григоренко.</p>
-            <p className="contacts-role">Директор ответит на&nbsp;вопросы, подготовит смету, соберёт команду.</p>
+            <p className="contacts-role">Управляющий партнер ответит на&nbsp;вопросы, подготовит смету, соберёт команду.</p>
             <div className="contacts-links">
               <a className="contacts-link-btn" href="https://t.me/grig44" target="_blank" rel="noopener noreferrer">
                 <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">

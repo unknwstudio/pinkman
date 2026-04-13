@@ -386,7 +386,7 @@ export default function DesignSystemPage() {
       <DSBlock label="ContactCard — custom intro + role" pad={false}>
         <ContactCard
           intro="Обсудим проект?"
-          role="Аккаунт-директор Юрий Григоренко — расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект."
+          role="Управляющий партнер Юрий Григоренко — расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект."
         />
       </DSBlock>
 

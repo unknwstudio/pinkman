@@ -150,7 +150,7 @@ export default function CommunicationsDesignPage() {
         },
       ]} />
 
-      <ContactCard intro="Обсудим проект?" role="Аккаунт&#x2011;директор Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
+      <ContactCard intro="Обсудим проект?" role="Управляющий партнер Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
     </>
   )
 }

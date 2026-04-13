@@ -87,7 +87,7 @@ export default function OutstaffAiPage() {
         </div>
       </Section>
 
-      <ContactCard intro="Обсудим ваши задачи?" role="Аккаунт&#x2011;директор Юрий Григоренко&nbsp;— подберёт дизайнеров и&nbsp;расскажет, как&nbsp;это работает." />
+      <ContactCard intro="Обсудим ваши задачи?" role="Управляющий партнер Юрий Григоренко&nbsp;— подберёт дизайнеров и&nbsp;расскажет, как&nbsp;это работает." />
     </>
   )
 }
