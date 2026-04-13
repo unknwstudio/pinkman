@@ -20,6 +20,16 @@ export default function MultimediaPhygitalPage() {
 
       <Section><div className="text-h2-wrapper"><h2>Интерактивные спецпроекты и&nbsp;новый бренд-опыт</h2></div></Section>
 
+      <ServiceGrid>
+        <Link href="/outsource-multimedia/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ServicePoint
+            tagsTop={['аутсорс']}
+            title="Аутсорс мультимедиа&#x2011;команды"
+            description="Встраиваемся в&nbsp;ваш проект уже завтра. CGI, motion, UI, AI&#x2011;контент&nbsp;&mdash; в&nbsp;срок, в&nbsp;бюджет, без&nbsp;потери смысла."
+          />
+        </Link>
+      </ServiceGrid>
+
       <div className="service-section">
         <div className="service">
           <div className="service__text">
@@ -110,16 +120,6 @@ export default function MultimediaPhygitalPage() {
         },
       ]} />
 
-      <Section><div className="text-h1-wrapper"><h2 className="h1">Также</h2></div></Section>
-      <ServiceGrid>
-        <Link href="/outsource-multimedia/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ServicePoint
-            tagsTop={['аутсорс']}
-            title="Аутсорс мультимедиа&#x2011;команды"
-            description="Встраиваемся в&nbsp;ваш проект уже завтра. CGI, motion, UI, AI&#x2011;контент&nbsp;&mdash; в&nbsp;срок, в&nbsp;бюджет, без&nbsp;потери смысла."
-          />
-        </Link>
-      </ServiceGrid>
     </>
   )
 }
