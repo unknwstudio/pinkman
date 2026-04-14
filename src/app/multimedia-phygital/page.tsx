@@ -127,6 +127,15 @@ export default function MultimediaPhygitalPage() {
           imgSrcSet: '/images/680b76b7c91ad25c42587b6c_vkportal-p-500.webp 500w, /images/680b76b7c91ad25c42587b6c_vkportal-p-800.webp 800w, /images/680b76b7c91ad25c42587b6c_vkportal-p-1080.webp 1080w, /images/680b76b7c91ad25c42587b6c_vkportal.webp 1248w',
           href: '/projects/sdelali-chat-bota-i-sproektirovali-100-ekranov-dlya-proekta-vk-portaly',
         },
+        {
+          title: 'Синяя птица \u00d7 Сила света',
+          desc: 'Сценический визуал для\u00a0шоу \u00abСиняя птица\u00bb: 19\u00a0видеофонов для\u00a012-го сезона',
+          year: '2025',
+          cats: ['DOOH', 'AI', 'Коллаборация'],
+          img: '/images/69aacdcc619e6cb9f4fcab3c_0.webp',
+          imgSrcSet: '',
+          href: '/projects/scenicheskiy-vizual-dlya-siney-pticy-fony-k-nomeram-shou',
+        },
       ]} />
 
     </>
