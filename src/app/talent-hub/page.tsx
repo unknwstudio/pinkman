@@ -156,7 +156,7 @@ export default function TalentHubPage() {
       </ServicePointRow>
 
       {/* Animation video */}
-      <div className="service-points-section" style={{ paddingTop: 0 }}>
+      <div className="service-points-section" style={{ paddingTop: 0, paddingBottom: 0, marginBottom: 0 }}>
         <div className="main-container">
           <video
             autoPlay
