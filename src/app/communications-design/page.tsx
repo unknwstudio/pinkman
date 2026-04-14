@@ -9,7 +9,7 @@ import ServiceCasesGrid from '@/components/ServiceCasesGrid/ServiceCasesGrid'
 import ContactCard from '@/components/ContactCard/ContactCard'
 
 export const metadata: Metadata = {
-  title: 'Креатив и дизайн коммуникаций',
+  title: 'Дизайн коммуникаций',
   description: 'Масштабируемый визуальный контент для брендов',
   alternates: {
     canonical: 'https://pinkman.ru/communications-design/',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function CommunicationsDesignPage() {
   return (
     <>
-      <Section><div className="text-big-wrapper"><p className="text-big">Креатив и&nbsp;дизайн коммуникаций</p></div></Section>
+      <Section><div className="text-big-wrapper"><p className="text-big">Дизайн коммуникаций</p></div></Section>
 
       <Section><div className="text-h2-wrapper"><h2>Масштабируемый визуальный контент для&nbsp;брендов</h2></div></Section>
 

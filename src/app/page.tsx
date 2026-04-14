@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const SERVICES = [
   { label: 'Сайты', href: '/sites' },
-  { label: 'Креатив и\u00a0дизайн коммуникаций', href: '/communications-design' },
+  { label: 'Дизайн коммуникаций', href: '/communications-design' },
   { label: 'Мультимедиа для\u00a0музеев и\u00a0шоу', href: '/multimedia-phygital' },
   { label: 'Аутстафф дизайнеров', href: '/outstaff-designers' },
   { label: 'Видеоролики (AI, CG, съёмки)', href: '/video-production' },
