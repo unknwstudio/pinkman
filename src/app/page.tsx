@@ -278,8 +278,9 @@ export default function HomePage() {
                     src="/images/681bcb1b2e9074bb32ba85e7_Frame 2131331949.png"
                     srcSet="/images/681bcb1b2e9074bb32ba85e7_Frame 2131331949-p-500.png 500w, /images/681bcb1b2e9074bb32ba85e7_Frame 2131331949.png 687w"
                     width={687}
-                  height={349}
-                />
+                    height={349}
+                  />
+                </picture>
                 <p className="developing-text">1x Золотой сайт<br />1x Tagline Awards<br />1x Рейтинг Рунета<br />2x Awwwards<br />1x Киберпросвет<br />1x Eventiada</p>
               </div>
             </div>
