@@ -14,6 +14,7 @@ export const SERVICE_SLUGS = [
   'ux-research-redesign',
   'ux-audit',
   'creative-movie-production',
+  'design-factory',
   'branding',
   'brand-identity',
   'event-identity',
@@ -39,6 +40,7 @@ export const ACCENT_COLORS: Record<string, string> = {
   '/ux-research-redesign/':      '#EBFAF3',
   '/ux-audit/':                   '#EBFAF3',
   '/creative-movie-production/': '#FFF3E6',
+  '/design-factory/':              '#f5f5f5',
   '/branding/':                   '#f5f5f5',
   '/brand-identity/':             '#f5f5f5',
   '/event-identity/':            '#F3EAFF',
@@ -56,6 +58,7 @@ export const NAV_LINKS = [
 export const SERVICE_LINKS = [
   { href: '/sites/',                     label: 'Сайты' },
   { href: '/communications-design/',     label: 'Дизайн коммуникаций' },
+  { href: '/design-factory/',             label: 'Дизайн\u2011завод' },
   { href: '/video-production/',           label: 'Видеоролики (AI, CG, съёмки)' },
   { href: '/multimedia-phygital/',       label: 'Мультимедиа для\u00a0музеев и\u00a0шоу' },
   { href: '/branding/',                   label: 'Брендинг и\u00a0айдентика' },
