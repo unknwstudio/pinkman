@@ -98,15 +98,18 @@ export default async function CasePage({ params }: Props) {
       {/* ── Cover image ── */}
       {cover_image && (
         <div className="media-section last" style={{ marginBottom: 'var(--32px)' }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            alt=""
-            className="picture"
-            loading="eager"
-            sizes="100vw"
-            src={`/images/${cover_image}`}
-            {...imgSize(`/images/${cover_image}`)}
-          />
+          <picture>
+            <source type="image/avif" srcSet={`/images/${cover_image.replace(/\.(webp|png|jpe?g)$/i, '.avif')}`} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt=""
+              className="picture"
+              loading="eager"
+              sizes="100vw"
+              src={`/images/${cover_image}`}
+              {...imgSize(`/images/${cover_image}`)}
+            />
+          </picture>
           {website_url && (
             <div className="case-cover-button">
               <a

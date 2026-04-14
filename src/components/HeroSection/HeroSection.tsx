@@ -176,25 +176,31 @@ export default function HeroSection() {
                   </div>
                 </div>
                 <div className="case-card-big___right">
-                  <img
-                    alt={c.title}
-                    className="case-card-big___image hide-mobile"
-                    loading={i === 0 ? 'eager' : 'lazy'}
-                    sizes="(max-width: 1248px) 100vw, 1248px"
-                    src={c.img}
-                    width={1248}
-                    height={823}
-                  />
-                  <img
-                    alt={c.title}
-                    className="case-card-big___image hide-desktop"
-                    loading={i === 0 ? 'eager' : 'lazy'}
-                    fetchPriority={i === 0 ? 'high' : undefined}
-                    sizes="100vw"
-                    src={c.img}
-                    width={1248}
-                    height={823}
-                  />
+                  <picture>
+                    <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} />
+                    <img
+                      alt={c.title}
+                      className="case-card-big___image hide-mobile"
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                      sizes="(max-width: 1248px) 100vw, 1248px"
+                      src={c.img}
+                      width={1248}
+                      height={823}
+                    />
+                  </picture>
+                  <picture>
+                    <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} />
+                    <img
+                      alt={c.title}
+                      className="case-card-big___image hide-desktop"
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                      fetchPriority={i === 0 ? 'high' : undefined}
+                      sizes="100vw"
+                      src={c.img}
+                      width={1248}
+                      height={823}
+                    />
+                  </picture>
                 </div>
               </div>
             </Link>

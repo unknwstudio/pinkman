@@ -39,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preload" href="/fonts/66f6e23524a454603f7d542a_AkkuratLLCyrTT-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/66f6e23524a454603f7d542e_AkkuratLLCyrTT-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
         {/* Preload homepage LCP image (first hero case — Норма, mobile) */}
+        <link rel="preload" href="/images/_cases/norma/norma-cover.avif" as="image" type="image/avif" fetchPriority="high" />
         <link rel="preload" href="/images/_cases/norma/norma-cover.webp" as="image" fetchPriority="high" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEHHG5XKMC" />
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WEHHG5XKMC');` }} />
