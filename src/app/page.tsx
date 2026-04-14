@@ -14,12 +14,15 @@ export const metadata: Metadata = {
 }
 
 
+const SERVICES_FEATURED = [
+  { label: 'Дизайн коммуникаций', href: '/communications-design' },
+  { label: 'Видеоролики (AI, CG, съёмки)', href: '/video-production' },
+]
+
 const SERVICES = [
   { label: 'Сайты', href: '/sites' },
-  { label: 'Дизайн коммуникаций', href: '/communications-design' },
   { label: 'Мультимедиа контент', href: '/multimedia-phygital' },
   { label: 'Аутстафф дизайнеров', href: '/outstaff-designers' },
-  { label: 'Видеоролики (AI, CG, съёмки)', href: '/video-production' },
   { label: 'Брендинг и\u00a0айдентика', href: '/branding' },
   { label: 'Исследования', href: '/research' },
 ]
@@ -94,6 +97,19 @@ export default function HomePage() {
 
       <div className="portfolio-section">
         <div className="main-container">
+          <div className="list-wrapper padding-32px">
+            <div className="list">
+              {SERVICES_FEATURED.map((s, i) => (
+                <ServiceListItem
+                  key={s.href}
+                  label={s.label}
+                  href={s.href}
+                  animDelay={i > 0 ? Math.min(i, 4) as 1 | 2 | 3 | 4 : undefined}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="services-separator" />
           <div className="list-wrapper padding-32px">
             <div className="list">
               {SERVICES.map((s, i) => (
