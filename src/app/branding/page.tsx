@@ -4,6 +4,7 @@ import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
 import ContactCard from '@/components/ContactCard/ContactCard'
+import CaseCard from '@/components/CaseCard/CaseCard'
 
 export const metadata: Metadata = {
   title: 'Брендинг и айдентика',
@@ -57,6 +58,32 @@ export default function BrandingPage() {
           />
         </Link>
       </ServiceGrid>
+
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Кейсы</h2></div></Section>
+      <div className="service-cases-section">
+        <div className="service-grid">
+          <CaseCard
+            chips={['Брендинг', 'Карьерный бренд']}
+            year="2026"
+            title="СИБУР"
+            subtitle="Зонтичный карьерный бренд для&nbsp;нефтехимической компании"
+            description="Разработка зонтичного бренда СИБУР для&nbsp;упаковки программ карьерной траектории для&nbsp;СУЗов и&nbsp;ВУЗов"
+            href="/projects/sibur-kariernyy-brend"
+            imgSrc="/images/_cases/sibur/sibur-cover.webp"
+            imgAlt="СИБУР"
+          />
+          <CaseCard
+            chips={['Брендинг', 'Сайт', 'Приложение']}
+            year="2025"
+            title="Норма"
+            subtitle="Брендинг, мобильное приложение и&nbsp;сайт для&nbsp;сети химчисток"
+            description="Разработали брендинг, мобильное приложение и&nbsp;сайт для&nbsp;сети химчисток &laquo;Норма&raquo;"
+            href="/projects/norma"
+            imgSrc="/images/_cases/norma/norma-cover.webp"
+            imgAlt="Норма"
+          />
+        </div>
+      </div>
 
       <ContactCard intro="Обсудим ваш проект?" />
     </>
