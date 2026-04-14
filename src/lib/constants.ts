@@ -14,6 +14,7 @@ export const SERVICE_SLUGS = [
   'ux-research-redesign',
   'creative-movie-production',
   'branding',
+  'brand-identity',
   'event-identity',
 ] as const
 
@@ -37,6 +38,7 @@ export const ACCENT_COLORS: Record<string, string> = {
   '/ux-research-redesign/':      '#EBFAF3',
   '/creative-movie-production/': '#FFF3E6',
   '/branding/':                   '#f5f5f5',
+  '/brand-identity/':             '#f5f5f5',
   '/event-identity/':            '#F3EAFF',
   '/talent-hub/':                '#f5f5f5',
 }
