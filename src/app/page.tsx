@@ -188,15 +188,18 @@ export default function HomePage() {
                 <div className="col-1">
                   <div className="col-3-w-area">
                     <img alt="" className="developing-image" src="/images/681b93885c03ba50cbf37cc0_Frame 2131331909.webp" width={422} height={422} />
-                    <img
-                      alt=""
-                      className="developing-image"
-                      sizes="(max-width: 861px) 100vw, 861px"
-                      src="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908.png"
-                      srcSet="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908-p-500.png 500w, /images/681b92dabf0d4e7c1a39f649_Frame 2131331908-p-800.png 800w, /images/681b92dabf0d4e7c1a39f649_Frame 2131331908.png 861w"
-                      width={861}
-                      height={422}
-                    />
+                    <picture>
+                      <source type="image/avif" srcSet="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908.avif" />
+                      <img
+                        alt=""
+                        className="developing-image"
+                        sizes="(max-width: 861px) 100vw, 861px"
+                        src="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908.png"
+                        srcSet="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908-p-500.png 500w, /images/681b92dabf0d4e7c1a39f649_Frame 2131331908-p-800.png 800w, /images/681b92dabf0d4e7c1a39f649_Frame 2131331908.png 861w"
+                        width={861}
+                        height={422}
+                      />
+                    </picture>
                   </div>
                   <div className="col-3">
                     <img alt="" className="developing-image" src="/images/681b95f15ad8c01ba415eccf_Frame 2131331568.jpg" width={422} height={423} />
@@ -228,15 +231,18 @@ export default function HomePage() {
                   height={457}
                 />
                 <p className="developing-text">Разработали <strong>1000+</strong> иллюстраций</p>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 861px) 100vw, 861px"
-                  src="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908.png"
-                  srcSet="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908-p-500.png 500w, /images/681b92dabf0d4e7c1a39f649_Frame 2131331908-p-800.png 800w, /images/681b92dabf0d4e7c1a39f649_Frame 2131331908.png 861w"
-                  width={861}
-                  height={422}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908.avif" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 861px) 100vw, 861px"
+                    src="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908.png"
+                    srcSet="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908-p-500.png 500w, /images/681b92dabf0d4e7c1a39f649_Frame 2131331908-p-800.png 800w, /images/681b92dabf0d4e7c1a39f649_Frame 2131331908.png 861w"
+                    width={861}
+                    height={422}
+                  />
+                </picture>
                 <p className="developing-text">Создали новую <strong>систему навигации, архитектуру сайта</strong> и <strong>пользовательский опыт</strong></p>
                 <p className="developing-text">Разработали и&nbsp;внедрили <strong>дизайн-систему</strong></p>
                 <img
@@ -300,30 +306,36 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="col-1">
-                  <img
-                    alt=""
-                    className="developing-image"
-                    sizes="(max-width: 1302px) 100vw, 1302px"
-                    src="/images/681bb38ecb5abd20c87e0860_Frame 2131331870.png"
-                    srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-500.png 500w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-800.png 800w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.png 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.png 1302w"
-                  width={1302}
-                  height={672}
-                />
+                  <picture>
+                    <source type="image/avif" srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.avif 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.avif 1302w" sizes="(max-width: 1302px) 100vw, 1302px" />
+                    <img
+                      alt=""
+                      className="developing-image"
+                      sizes="(max-width: 1302px) 100vw, 1302px"
+                      src="/images/681bb38ecb5abd20c87e0860_Frame 2131331870.png"
+                      srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-500.png 500w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-800.png 800w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.png 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.png 1302w"
+                      width={1302}
+                      height={672}
+                    />
+                  </picture>
                   <div className="col-2">
                     <div className="col-1 col-1--4gap">
                       <p className="developing-text"><strong>100+</strong> страниц</p>
                       <p className="developing-text"><strong>300+</strong> иллюстраций</p>
                       <p className="developing-text"><strong>Онлайн и&nbsp;офлайн</strong> активности</p>
                     </div>
-                    <img
-                      alt=""
-                      className="developing-image"
-                      sizes="(max-width: 641px) 100vw, 641px"
-                      src="/images/681bb42503ab947a72120b76_Frame 2131331872.png"
-                      srcSet="/images/681bb42503ab947a72120b76_Frame 2131331872-p-500.png 500w, /images/681bb42503ab947a72120b76_Frame 2131331872.png 641w"
-                  width={641}
-                  height={374}
-                />
+                    <picture>
+                      <source type="image/avif" srcSet="/images/681bb42503ab947a72120b76_Frame 2131331872.avif" />
+                      <img
+                        alt=""
+                        className="developing-image"
+                        sizes="(max-width: 641px) 100vw, 641px"
+                        src="/images/681bb42503ab947a72120b76_Frame 2131331872.png"
+                        srcSet="/images/681bb42503ab947a72120b76_Frame 2131331872-p-500.png 500w, /images/681bb42503ab947a72120b76_Frame 2131331872.png 641w"
+                        width={641}
+                        height={374}
+                      />
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -358,29 +370,35 @@ export default function HomePage() {
                   <p className="developing-text">Рост конверсии <strong>— 40%</strong></p>
                   <p className="developing-text">Время на&nbsp;сайте <strong>— 3:35</strong></p>
                 </div>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 686px) 100vw, 686px"
-                  src="/images/681bce3db3d112316bb4b950_Frame 2131331872.png"
-                  srcSet="/images/681bce3db3d112316bb4b950_Frame 2131331872-p-500.png 500w, /images/681bce3db3d112316bb4b950_Frame 2131331872.png 686w"
-                  width={686}
-                  height={401}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bce3db3d112316bb4b950_Frame 2131331872.avif" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 686px) 100vw, 686px"
+                    src="/images/681bce3db3d112316bb4b950_Frame 2131331872.png"
+                    srcSet="/images/681bce3db3d112316bb4b950_Frame 2131331872-p-500.png 500w, /images/681bce3db3d112316bb4b950_Frame 2131331872.png 686w"
+                    width={686}
+                    height={401}
+                  />
+                </picture>
                 <div className="col-1 col-1--2gap-mob">
                   <p className="developing-text"><strong>100+</strong> страниц</p>
                   <p className="developing-text"><strong>300+</strong> иллюстраций</p>
                   <p className="developing-text"><strong>Онлайн и&nbsp;офлайн</strong> активности</p>
                 </div>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 1302px) 100vw, 1302px"
-                  src="/images/681bb38ecb5abd20c87e0860_Frame 2131331870.png"
-                  srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-500.png 500w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-800.png 800w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.png 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.png 1302w"
-                  width={1302}
-                  height={672}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.avif 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.avif 1302w" sizes="(max-width: 1302px) 100vw, 1302px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 1302px) 100vw, 1302px"
+                    src="/images/681bb38ecb5abd20c87e0860_Frame 2131331870.png"
+                    srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-500.png 500w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-800.png 800w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.png 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.png 1302w"
+                    width={1302}
+                    height={672}
+                  />
+                </picture>
                 <p className="developing-text"><strong>Бронза</strong> на&nbsp;Workspace</p>
               </div>
             </div>
@@ -420,15 +438,18 @@ export default function HomePage() {
                   width={1388}
                   height={516}
                 />
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 605px) 100vw, 605px"
-                  src="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.png"
-                  srcSet="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289-p-500.png 500w, /images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.png 605w"
-                  width={605}
-                  height={515}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.avif" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 605px) 100vw, 605px"
+                    src="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.png"
+                    srcSet="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289-p-500.png 500w, /images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.png 605w"
+                    width={605}
+                    height={515}
+                  />
+                </picture>
               </div>
               {/* Desktop row 3: 3 images (col-3 col3--fix-columns) */}
               <div className="developing-row col-3 col3--fix-columns">
@@ -441,15 +462,18 @@ export default function HomePage() {
                   width={595}
                   height={633}
                 />
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 1392px) 100vw, 1392px"
-                  src="/images/681bbfd9d97c4462eb111b27_Frame 2131331902.png"
-                  srcSet="/images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-500.png 500w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-800.png 800w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-1080.png 1080w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902.png 1392w"
-                  width={1392}
-                  height={634}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-1080.avif 1080w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902.avif 1392w" sizes="(max-width: 1392px) 100vw, 1392px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 1392px) 100vw, 1392px"
+                    src="/images/681bbfd9d97c4462eb111b27_Frame 2131331902.png"
+                    srcSet="/images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-500.png 500w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-800.png 800w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-1080.png 1080w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902.png 1392w"
+                    width={1392}
+                    height={634}
+                  />
+                </picture>
                 <img
                   alt=""
                   className="developing-image"

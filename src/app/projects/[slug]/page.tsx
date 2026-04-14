@@ -273,15 +273,18 @@ export default async function CasePage({ params }: Props) {
           )}
           {block.images.length === 1 && (
             <div className="media-section last">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                alt=""
-                className="picture"
-                loading="lazy"
-                sizes="100vw"
-                src={`/images/${block.images[0]}`}
-                {...imgSize(`/images/${block.images[0]}`)}
-              />
+              <picture>
+                <source type="image/avif" srcSet={`/images/${block.images[0].replace(/\.(webp|png|jpe?g)$/i, '.avif')}`} />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  alt=""
+                  className="picture"
+                  loading="lazy"
+                  sizes="100vw"
+                  src={`/images/${block.images[0]}`}
+                  {...imgSize(`/images/${block.images[0]}`)}
+                />
+              </picture>
             </div>
           )}
           {block.images.length > 1 && (
@@ -289,15 +292,18 @@ export default async function CasePage({ params }: Props) {
               <div className={`media-section__photos${block.layout === 'stacked' ? ' media-section__photos--fullsize' : ''}`}>
                 {block.images.map((img, j) => (
                   <div key={j} className="media-section__photos-item">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      alt=""
-                      className="picture"
-                      loading="lazy"
-                      sizes={block.layout === 'stacked' ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
-                      src={`/images/${img}`}
-                      {...imgSize(`/images/${img}`)}
-                    />
+                    <picture>
+                      <source type="image/avif" srcSet={`/images/${img.replace(/\.(webp|png|jpe?g)$/i, '.avif')}`} />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        alt=""
+                        className="picture"
+                        loading="lazy"
+                        sizes={block.layout === 'stacked' ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
+                        src={`/images/${img}`}
+                        {...imgSize(`/images/${img}`)}
+                      />
+                    </picture>
                   </div>
                 ))}
               </div>

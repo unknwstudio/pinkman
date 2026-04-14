@@ -2,6 +2,9 @@
    components.css — v CLDNXT-345727
    ============================================================ */
 
+/* <picture> is a transparent wrapper — must not affect flex/grid layout */
+picture { display: contents; }
+
 /* ── FONTS ─────────────────────────────────────────────────── */
 @font-face {
   font-family: 'Akkurat';
