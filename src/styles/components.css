@@ -976,6 +976,12 @@ a { color: inherit; text-decoration: none; }
 .service-card-link:hover .small-button .button-arrow__active {
   opacity: 1 !important;
 }
+/* "Лучше всего мы делаем" service list: keep grey arrow on hover.
+   The arrow-wrapper has a white background so the white arrow would be
+   invisible (white-on-white). Cancel the swap for items inside .list. */
+.list .list-item-wrapper:hover .small-button .small-button-arrow { opacity: 1 !important; }
+.list .list-item-wrapper:hover .small-button .button-arrow__active { opacity: 0 !important; }
+
 /* Ensure the overlay link sits on top for clickability */
 .list-item-wrapper { position: relative; }
 .list-item-link { z-index: 1; }
