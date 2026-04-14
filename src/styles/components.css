@@ -910,8 +910,7 @@ a { color: inherit; text-decoration: none; }
   background-color: var(--color--total-black) !important;
   color: var(--color--white) !important;
 }
-.service-card-link:hover .small-button .small-button-arrow { opacity: 0 !important; }
-.service-card-link:hover .small-button .button-arrow__active { display: block !important; opacity: 1 !important; }
+/* Arrow swap handled in the consolidated block below */
 
 /* tagsTop (chips ABOVE title): equal top & bottom indent */
 .service-point__tags--top {
@@ -940,15 +939,28 @@ a { color: inherit; text-decoration: none; }
 .service__img { height: auto; }
 .case-card-big___image { height: auto; }
 
-/* Small service buttons — smooth hover transitions */
+/* Small service buttons — arrow-swap via absolute overlay.
+   Both arrows are positioned on top of each other so only opacity changes
+   on hover — no layout shift, no arrow flying upward.
+   (button-arrow__active has display:none in main.min.css; we override it
+   here so the opacity transition works without re-triggering flex layout.) */
 .small-button {
   transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
 }
-.small-button .small-button-arrow {
+.small-button .small-button-arrow-wrapper {
+  position: relative;
+}
+.small-button .small-button-arrow,
+.small-button .button-arrow__active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: opacity 0.2s ease !important;
 }
 .small-button .button-arrow__active {
-  transition: opacity 0.2s ease !important;
+  display: block !important; /* override display:none from main.min.css */
+  opacity: 0;
 }
 
 /* ServiceListItem: hovering the whole row activates the button visuals */
@@ -956,11 +968,12 @@ a { color: inherit; text-decoration: none; }
   background-color: var(--color--total-black) !important;
   color: var(--color--white) !important;
 }
-.list-item-wrapper:hover .small-button .small-button-arrow {
+.list-item-wrapper:hover .small-button .small-button-arrow,
+.service-card-link:hover .small-button .small-button-arrow {
   opacity: 0 !important;
 }
-.list-item-wrapper:hover .small-button .button-arrow__active {
-  display: block !important;
+.list-item-wrapper:hover .small-button .button-arrow__active,
+.service-card-link:hover .small-button .button-arrow__active {
   opacity: 1 !important;
 }
 /* Ensure the overlay link sits on top for clickability */
