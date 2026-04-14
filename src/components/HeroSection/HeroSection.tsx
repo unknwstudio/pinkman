@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import gsap from '@/lib/gsap'
 
-const TOP_CASES = [
+const ALL_CASES = [
   {
     title: 'Норма',
     desc: 'Разработали брендинг, мобильное приложение и сайт для сети химчисток',
@@ -71,9 +71,109 @@ const TOP_CASES = [
   },
 ]
 
+const hasAiTag = (c: (typeof ALL_CASES)[number]) =>
+  c.cats.some((cat) => cat.toLowerCase() === 'ai')
+
+// AI carousel — max 5, list is already newest-first
+const AI_CASES = ALL_CASES.filter(hasAiTag).slice(0, 5)
+// Non-AI carousel — all, newest-first
+const OTHER_CASES = ALL_CASES.filter((c) => !hasAiTag(c))
+
+/** Shared card JSX — identical for both grids */
+function CaseCard({ c, i }: { c: (typeof ALL_CASES)[number]; i: number }) {
+  return (
+    <Link
+      key={c.href}
+      href={c.href}
+      style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+      data-cursor="VIEW"
+    >
+      <div className="case-card-big">
+        <div className="case-card-big___left">
+          <div className="case-card-big-top">
+            <div className="cases-item__top-navigation">
+              <div className="cases-item__top-left">
+                {c.cats.map((cat) => (
+                  <p key={cat} className="text-small is__chip">{cat}</p>
+                ))}
+              </div>
+              <p className="text-regular font-color-medium-grey mob-text-s">{c.year}</p>
+            </div>
+            <div className="cases-item__title-wrapper">
+              <h3 className="h3-bold font-color-black">{c.title}</h3>
+              <h3 className="font-color-dark-gray mb-20">{c.desc}</h3>
+              <div className="case-card-big__btn-wrapper" style={{ pointerEvents: 'none' }}>
+                <span className="small-button small-button--cases w-inline-block">
+                  <p className="text-regular small-button-text">Подробнее</p>
+                  <div className="small-button-arrow-wrapper">
+                    <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                    <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="case-card-big___right">
+          <picture>
+            <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} />
+            <img
+              alt={c.title}
+              className="case-card-big___image hide-mobile"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              sizes="(max-width: 1248px) 100vw, 1248px"
+              src={c.img}
+              width={1248}
+              height={823}
+            />
+          </picture>
+          <picture>
+            <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} />
+            <img
+              alt={c.title}
+              className="case-card-big___image hide-desktop"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchPriority={i === 0 ? 'high' : undefined}
+              sizes="100vw"
+              src={c.img}
+              width={1248}
+              height={823}
+            />
+          </picture>
+        </div>
+      </div>
+    </Link>
+  )
+}
+
+/** Attach GSAP hover (x-shift + scale) to all direct <a> children of a grid */
+function attachHoverListeners(grid: HTMLDivElement): () => void {
+  const cleanups: (() => void)[] = []
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>(':scope > a'))
+  cards.forEach((card) => {
+    const img = card.querySelector<HTMLElement>('img.case-card-big___image')
+    const onEnter = () => {
+      gsap.to(card, { x: 8, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
+      if (img) gsap.to(img, { scale: 1.05, duration: 0.5, ease: 'power2.out' })
+    }
+    const onLeave = () => {
+      gsap.to(card, { x: 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
+      if (img) gsap.to(img, { scale: 1, duration: 0.4, ease: 'power2.out' })
+    }
+    card.addEventListener('mouseenter', onEnter)
+    card.addEventListener('mouseleave', onLeave)
+    cleanups.push(() => {
+      card.removeEventListener('mouseenter', onEnter)
+      card.removeEventListener('mouseleave', onLeave)
+    })
+  })
+  return () => cleanups.forEach((fn) => fn())
+}
+
 export default function HeroSection() {
   const textRef = useRef<HTMLParagraphElement>(null)
-  const gridRef = useRef<HTMLDivElement>(null)
+  const aiGridRef = useRef<HTMLDivElement>(null)
+  const otherGridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const text = textRef.current
@@ -83,7 +183,6 @@ export default function HeroSection() {
     const isPointerFine = window.matchMedia('(pointer: fine)').matches
 
     const ctx = gsap.context(() => {
-      // One-shot entrance — no scroll trigger, no scrub
       gsap.from(text, {
         y: isMobile ? 60 : 120,
         opacity: 0,
@@ -92,37 +191,17 @@ export default function HeroSection() {
       })
     })
 
-    // Horizontal hover — same as portfolio cards, pointer:fine only
-    const cleanups: (() => void)[] = []
-
-    if (isPointerFine && gridRef.current) {
-      const cards = Array.from(gridRef.current.querySelectorAll<HTMLElement>(':scope > a'))
-
-      cards.forEach((card) => {
-        const img = card.querySelector<HTMLElement>('img.case-card-big___image')
-
-        const onEnter = () => {
-          gsap.to(card, { x: 8, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
-          if (img) gsap.to(img, { scale: 1.05, duration: 0.5, ease: 'power2.out' })
-        }
-
-        const onLeave = () => {
-          gsap.to(card, { x: 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
-          if (img) gsap.to(img, { scale: 1, duration: 0.4, ease: 'power2.out' })
-        }
-
-        card.addEventListener('mouseenter', onEnter)
-        card.addEventListener('mouseleave', onLeave)
-        cleanups.push(() => {
-          card.removeEventListener('mouseenter', onEnter)
-          card.removeEventListener('mouseleave', onLeave)
-        })
-      })
-    }
+    const cleanupAi = isPointerFine && aiGridRef.current
+      ? attachHoverListeners(aiGridRef.current)
+      : null
+    const cleanupOther = isPointerFine && otherGridRef.current
+      ? attachHoverListeners(otherGridRef.current)
+      : null
 
     return () => {
       ctx.revert()
-      cleanups.forEach((fn) => fn())
+      cleanupAi?.()
+      cleanupOther?.()
     }
   }, [])
 
@@ -139,71 +218,28 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── Top 3 cases (replaces carousel) ── */}
+      {/* ── AI projects carousel (max 5, newest first) ── */}
       <div className="service-cases-section">
-        <div className="service-grid" ref={gridRef}>
-          {TOP_CASES.map((c, i) => (
-            <Link
-              key={c.href}
-              href={c.href}
-              style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
-              data-cursor="VIEW"
-            >
-              <div className="case-card-big">
-                <div className="case-card-big___left">
-                  <div className="case-card-big-top">
-                    <div className="cases-item__top-navigation">
-                      <div className="cases-item__top-left">
-                        {c.cats.map((cat) => (
-                          <p key={cat} className="text-small is__chip">{cat}</p>
-                        ))}
-                      </div>
-                      <p className="text-regular font-color-medium-grey mob-text-s">{c.year}</p>
-                    </div>
-                    <div className="cases-item__title-wrapper">
-                      <h3 className="h3-bold font-color-black">{c.title}</h3>
-                      <h3 className="font-color-dark-gray mb-20">{c.desc}</h3>
-                      <div className="case-card-big__btn-wrapper" style={{ pointerEvents: 'none' }}>
-                        <span className="small-button small-button--cases w-inline-block">
-                          <p className="text-regular small-button-text">Подробнее</p>
-                          <div className="small-button-arrow-wrapper">
-                            <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
-                            <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
-                          </div>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="case-card-big___right">
-                  <picture>
-                    <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} />
-                    <img
-                      alt={c.title}
-                      className="case-card-big___image hide-mobile"
-                      loading={i === 0 ? 'eager' : 'lazy'}
-                      sizes="(max-width: 1248px) 100vw, 1248px"
-                      src={c.img}
-                      width={1248}
-                      height={823}
-                    />
-                  </picture>
-                  <picture>
-                    <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} />
-                    <img
-                      alt={c.title}
-                      className="case-card-big___image hide-desktop"
-                      loading={i === 0 ? 'eager' : 'lazy'}
-                      fetchPriority={i === 0 ? 'high' : undefined}
-                      sizes="100vw"
-                      src={c.img}
-                      width={1248}
-                      height={823}
-                    />
-                  </picture>
-                </div>
-              </div>
-            </Link>
+        <div className="service-grid" ref={aiGridRef}>
+          {AI_CASES.map((c, i) => (
+            <CaseCard key={c.href} c={c} i={i} />
+          ))}
+        </div>
+      </div>
+
+      {/* ── Other projects ── */}
+      <div className="portfolio-section">
+        <div className="main-container">
+          <div className="text-h1-wrapper">
+            <h2 className="h1 anim">Другие проекты</h2>
+          </div>
+        </div>
+      </div>
+
+      <div className="service-cases-section">
+        <div className="service-grid" ref={otherGridRef}>
+          {OTHER_CASES.map((c, i) => (
+            <CaseCard key={c.href} c={c} i={i} />
           ))}
         </div>
       </div>
