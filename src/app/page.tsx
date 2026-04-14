@@ -255,16 +255,10 @@ export default function HomePage() {
                   <img alt="ОТП Банк" className="developing-logo__img" src="/images/681ba9d2154bb4307b274549.svg" />
                   <h2>2023-н.в.</h2>
                 </div>
-                <div className="col-2">
-                  <img
-                    alt="ОТП Банк"
-                    className="developing-image"
-                    sizes="(max-width: 641px) 100vw, 641px"
-                    src="/images/681ba969215ae40612b5784f_Frame 2131331871 (1).webp"
-                    srcSet="/images/681ba969215ae40612b5784f_Frame 2131331871 (1)-p-500.webp 500w, /images/681ba969215ae40612b5784f_Frame 2131331871 (1).webp 641w"
-                    width={641}
-                    height={400}
-                  />
+                <div className="col-2 col-2--36gap">
+                  <div className="col-1 col-1--4gap">
+                    <p className="developing-text">🥇 Золотой сайт 2025<br />Лучший сайт банка</p>
+                  </div>
                   <div className="col-1 col-1--4gap">
                     <p className="developing-text">Глубина просмотра <strong>— 3</strong></p>
                     <p className="developing-text">Показатель отказов <strong>— 18%</strong></p>
@@ -273,10 +267,9 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              {/* Desktop row 2: award+big-image left, gallery right */}
+              {/* Desktop row 2: big-image left, gallery right */}
               <div className="developing-row col-2">
-                <div className="col-2 col-2--max-content">
-                  <p className="developing-text developing-text--max-w"><strong>Бронза</strong> на&nbsp;Workspace</p>
+                <div className="col-1">
                   <div className="col-1">
                     <img
                       alt=""
@@ -287,7 +280,7 @@ export default function HomePage() {
                   width={1008}
                   height={673}
                 />
-                    <p className="developing-text">ОТП Банк — один из&nbsp;лидеров на&nbsp;рынке розничного кредитования<br />и&nbsp;банковских услуг в&nbsp;России</p>
+                    <p className="developing-text">ОТП Банк — один из&nbsp;лидеров на&nbsp;рынке розничного кредитования и&nbsp;банковских услуг в&nbsp;России</p>
                   </div>
                 </div>
                 <div className="col-1">

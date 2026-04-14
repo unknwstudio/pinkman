@@ -1233,6 +1233,13 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: var(--32px);
 }
 
+/* Developing section — awards list */
+.developing-awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 /* ════════════════════════════════════════════════════════════
    SERVICE POINT ROW  — 3-column horizontal layout (desktop)
    NOTE: NO horizontal padding here — parent .service-points-section

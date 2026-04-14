@@ -4,7 +4,7 @@ import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import ScrollAnimator from '@/components/ScrollAnimator/ScrollAnimator'
 import SmoothScroller from '@/components/SmoothScroller/SmoothScroller'
-import Cursor from '@/components/Cursor/Cursor'
+// import Cursor from '@/components/Cursor/Cursor'
 import ServicePageAnimator from '@/components/ServicePageAnimator/ServicePageAnimator'
 
 const OG_IMAGE = '/images/6717d958e16fdfb6e86dc87d_og.jpg'
@@ -63,8 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         {/* SmoothScroller is a null-render client component — just bootstraps GSAP */}
         <SmoothScroller />
-        {/* Custom cursor — only renders on pointer:fine (desktop) */}
-        <Cursor />
+        {/* Custom cursor disabled — using default cursor */}
         {/* Service page scroll animations — runs on every route */}
         <ServicePageAnimator />
       </body>

@@ -38,7 +38,4 @@
 
 body { background-color: #f5f5f5; }
 
-/* ── Custom cursor — hide native on pointer:fine (desktop with mouse) ── */
-@media (pointer: fine) {
-  *, *::before, *::after { cursor: none !important; }
-}
+/* ── Custom cursor disabled — using default cursor ── */
