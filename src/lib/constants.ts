@@ -60,7 +60,7 @@ export const SERVICE_LINKS = [
   { href: '/communications-design/',     label: 'Дизайн коммуникаций' },
   { href: '/design-factory/',             label: 'Дизайн\u2011завод' },
   { href: '/video-production/',           label: 'Видеоролики (AI, CG, съёмки)' },
-  { href: '/multimedia-phygital/',       label: 'Мультимедиа для\u00a0мероприятий' },
+  { href: '/multimedia-phygital/',       label: 'Мультимедиа контент' },
   { href: '/branding/',                   label: 'Брендинг и\u00a0айдентика' },
   { href: '/outstaff-designers/',          label: 'Аутстафф дизайнеров' },
   { href: '/research/',                   label: 'Исследования' },
