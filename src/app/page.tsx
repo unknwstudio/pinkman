@@ -195,7 +195,7 @@ export default function HomePage() {
                       <source type="image/avif" srcSet="/images/681b93885c03ba50cbf37cc0_Frame 2131331909.avif" />
                       <img alt="" className="developing-image" src="/images/681b93885c03ba50cbf37cc0_Frame 2131331909.webp" width={422} height={422} />
                     </picture>
-                    <picture>
+                    <picture style={{gridArea: 'Area'}}>
                       <source type="image/avif" srcSet="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908.avif" />
                       <img
                         alt=""
