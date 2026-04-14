@@ -19,6 +19,7 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
   { url: `${BASE}/brand-identity/`,            lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   { url: `${BASE}/research/`,                  lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   { url: `${BASE}/ux-research-redesign/`,     lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE}/ux-audit/`,                lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   { url: `${BASE}/contact-us/`,               lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.6 },
   { url: `${BASE}/privacy-policy/`,           lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
 ]
