@@ -155,6 +155,19 @@ export default function TalentHubPage() {
         </div>
       </ServicePointRow>
 
+      {/* Animation video */}
+      <div className="service-points-section" style={{ paddingTop: 0 }}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ width: '100%', borderRadius: '20px', display: 'block' }}
+        >
+          <source src="/videos/talent-hub-animation.mp4" type="video/mp4" />
+        </video>
+      </div>
+
       {/* Cards in rows of 2 */}
       <ServicePointRow compact>
         <ServicePoint
