@@ -142,7 +142,7 @@ export default function HeroSection() {
       {/* ── Top 3 cases (replaces carousel) ── */}
       <div className="service-cases-section">
         <div className="service-grid" ref={gridRef}>
-          {TOP_CASES.map((c) => (
+          {TOP_CASES.map((c, i) => (
             <Link
               key={c.href}
               href={c.href}
@@ -179,7 +179,7 @@ export default function HeroSection() {
                   <img
                     alt={c.title}
                     className="case-card-big___image hide-mobile"
-                    loading="eager"
+                    loading={i === 0 ? 'eager' : 'lazy'}
                     sizes="(max-width: 1248px) 100vw, 1248px"
                     src={c.img}
                     width={1248}
@@ -188,7 +188,8 @@ export default function HeroSection() {
                   <img
                     alt={c.title}
                     className="case-card-big___image hide-desktop"
-                    loading="eager"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={i === 0 ? 'high' : undefined}
                     sizes="100vw"
                     src={c.img}
                     width={1248}
