@@ -911,7 +911,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--color--white) !important;
 }
 .service-card-link:hover .small-button .small-button-arrow { opacity: 0 !important; }
-.service-card-link:hover .small-button .button-arrow__active { opacity: 1 !important; }
+.service-card-link:hover .small-button .button-arrow__active { display: block !important; opacity: 1 !important; }
 
 /* tagsTop (chips ABOVE title): equal top & bottom indent */
 .service-point__tags--top {
@@ -960,6 +960,7 @@ a { color: inherit; text-decoration: none; }
   opacity: 0 !important;
 }
 .list-item-wrapper:hover .small-button .button-arrow__active {
+  display: block !important;
   opacity: 1 !important;
 }
 /* Ensure the overlay link sits on top for clickability */
