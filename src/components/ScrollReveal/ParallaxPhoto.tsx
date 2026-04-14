@@ -6,6 +6,7 @@ import gsap from '@/lib/gsap'
 interface ParallaxPhotoProps {
   src: string
   srcSet?: string
+  avifSrcSet?: string
   sizes?: string
   alt?: string
   width?: number
@@ -16,6 +17,7 @@ interface ParallaxPhotoProps {
 export default function ParallaxPhoto({
   src,
   srcSet,
+  avifSrcSet,
   sizes,
   alt = '',
   width,
@@ -67,18 +69,21 @@ export default function ParallaxPhoto({
 
   return (
     <div ref={wrapRef} style={{ overflow: 'hidden', lineHeight: 0 }}>
-      <img
-        ref={imgRef}
-        src={src}
-        srcSet={srcSet}
-        sizes={sizes}
-        alt={alt}
-        className={className}
-        loading="lazy"
-        width={width}
-        height={height}
-        style={{ display: 'block', width: '100%', transformOrigin: 'center center' }}
-      />
+      <picture>
+        {avifSrcSet && <source type="image/avif" srcSet={avifSrcSet} sizes={sizes} />}
+        <img
+          ref={imgRef}
+          src={src}
+          srcSet={srcSet}
+          sizes={sizes}
+          alt={alt}
+          className={className}
+          loading="lazy"
+          width={width}
+          height={height}
+          style={{ display: 'block', width: '100%', transformOrigin: 'center center' }}
+        />
+      </picture>
     </div>
   )
 }
