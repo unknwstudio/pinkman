@@ -202,9 +202,9 @@ export default function HomePage() {
                     </picture>
                   </div>
                   <div className="col-3">
-                    <img alt="" className="developing-image" src="/images/681b95f15ad8c01ba415eccf_Frame 2131331568.jpg" width={422} height={423} />
-                    <img alt="" className="developing-image" src="/images/681b96042fe162c63ba8d86c_Free_Billboard_Mockup_v01 2.jpg" width={422} height={423} />
-                    <img alt="" className="developing-image" src="/images/681b961744fcff24c996bc93_Frame 2131331569.jpg" width={422} height={423} />
+                    <picture><source type="image/avif" srcSet="/images/681b95f15ad8c01ba415eccf_Frame 2131331568.avif" /><img alt="" className="developing-image" src="/images/681b95f15ad8c01ba415eccf_Frame 2131331568.jpg" width={422} height={423} /></picture>
+                    <picture><source type="image/avif" srcSet="/images/681b96042fe162c63ba8d86c_Free_Billboard_Mockup_v01 2.avif" /><img alt="" className="developing-image" src="/images/681b96042fe162c63ba8d86c_Free_Billboard_Mockup_v01 2.jpg" width={422} height={423} /></picture>
+                    <picture><source type="image/avif" srcSet="/images/681b961744fcff24c996bc93_Frame 2131331569.avif" /><img alt="" className="developing-image" src="/images/681b961744fcff24c996bc93_Frame 2131331569.jpg" width={422} height={423} /></picture>
                   </div>
                 </div>
                 <div className="col-1 col-1--8gap">
@@ -245,15 +245,18 @@ export default function HomePage() {
                 </picture>
                 <p className="developing-text">Создали новую <strong>систему навигации, архитектуру сайта</strong> и <strong>пользовательский опыт</strong></p>
                 <p className="developing-text">Разработали и&nbsp;внедрили <strong>дизайн-систему</strong></p>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 686px) 100vw, 686px"
-                  src="/images/681bca9beb8fb039e4f5da86_Frame 2131331912.png"
-                  srcSet="/images/681bca9beb8fb039e4f5da86_Frame 2131331912-p-500.png 500w, /images/681bca9beb8fb039e4f5da86_Frame 2131331912.png 686w"
-                  width={686}
-                  height={651}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bca9beb8fb039e4f5da86_Frame 2131331912.avif" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 686px) 100vw, 686px"
+                    src="/images/681bca9beb8fb039e4f5da86_Frame 2131331912.png"
+                    srcSet="/images/681bca9beb8fb039e4f5da86_Frame 2131331912-p-500.png 500w, /images/681bca9beb8fb039e4f5da86_Frame 2131331912.png 686w"
+                    width={686}
+                    height={651}
+                  />
+                </picture>
                 <p className="developing-text"><strong>Организовали работу</strong> большой команды дизайнеров и <strong>интегрировали</strong> её в продуктовые команды</p>
                 <p className="developing-text"><strong>Сократили time2market</strong> до нескольких часов</p>
                 <img
