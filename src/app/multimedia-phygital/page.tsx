@@ -46,12 +46,18 @@ export default function MultimediaPhygitalPage() {
             <p className="font-color-dark-gray">Интегрируем иммерсивные технологии в&nbsp;маркетинг, ритейл и&nbsp;ивенты. Прорабатываем сценарии, делаем 3D и&nbsp;интерфейсы, собираем под&nbsp;ключ</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682aff6810703914676a4d87_m1.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682aff77a7b7b7e8063d8456_m1mob.webp"
-              srcSet="/images/682aff77a7b7b7e8063d8456_m1mob-p-500.webp 500w, /images/682aff77a7b7b7e8063d8456_m1mob.webp 686w"
-              width={686} height={906} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682aff6810703914676a4d87_m1.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682aff6810703914676a4d87_m1.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682aff77a7b7b7e8063d8456_m1mob-p-500.avif 500w, /images/682aff77a7b7b7e8063d8456_m1mob.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682aff77a7b7b7e8063d8456_m1mob.webp"
+                srcSet="/images/682aff77a7b7b7e8063d8456_m1mob-p-500.webp 500w, /images/682aff77a7b7b7e8063d8456_m1mob.webp 686w"
+                width={686} height={906} />
+            </picture>
           </div>
         </div>
       </div>
@@ -63,12 +69,18 @@ export default function MultimediaPhygitalPage() {
             <p className="font-color-dark-gray">Создаём инсталляции и&nbsp;оформляем пространства с&nbsp;технологичной визуальной частью&nbsp;— для&nbsp;выставок, презентаций и&nbsp;бренд-мероприятий</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682affa1142ae3b66be54ed4_m2.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682affb888e04d40f868a901_m2mob.webp"
-              srcSet="/images/682affb888e04d40f868a901_m2mob-p-500.webp 500w, /images/682affb888e04d40f868a901_m2mob.webp 686w"
-              width={686} height={888} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682affa1142ae3b66be54ed4_m2.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682affa1142ae3b66be54ed4_m2.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682affb888e04d40f868a901_m2mob-p-500.avif 500w, /images/682affb888e04d40f868a901_m2mob.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682affb888e04d40f868a901_m2mob.webp"
+                srcSet="/images/682affb888e04d40f868a901_m2mob-p-500.webp 500w, /images/682affb888e04d40f868a901_m2mob.webp 686w"
+                width={686} height={888} />
+            </picture>
           </div>
         </div>
       </div>
@@ -80,12 +92,18 @@ export default function MultimediaPhygitalPage() {
             <p className="font-color-dark-gray">Разрабатываем музейные проекты и&nbsp;экспозиции на&nbsp;стыке цифрового и&nbsp;офлайн-опыта: от&nbsp;идеи и&nbsp;сценария до&nbsp;реализации, монтажа и&nbsp;печатных материалов</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682affe67434316939544690_m3.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682b000a9ead6e45d8f0bc0d_m3mob.webp"
-              srcSet="/images/682b000a9ead6e45d8f0bc0d_m3mob-p-500.webp 500w, /images/682b000a9ead6e45d8f0bc0d_m3mob.webp 690w"
-              width={690} height={2070} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682affe67434316939544690_m3.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682affe67434316939544690_m3.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682b000a9ead6e45d8f0bc0d_m3mob-p-500.avif 500w, /images/682b000a9ead6e45d8f0bc0d_m3mob.avif 690w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682b000a9ead6e45d8f0bc0d_m3mob.webp"
+                srcSet="/images/682b000a9ead6e45d8f0bc0d_m3mob-p-500.webp 500w, /images/682b000a9ead6e45d8f0bc0d_m3mob.webp 690w"
+                width={690} height={2070} />
+            </picture>
           </div>
         </div>
       </div>

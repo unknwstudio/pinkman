@@ -133,6 +133,7 @@ export default function HomePage() {
           <ParallaxPhoto
             src="/images/670ea6853791772722428373_home-page-image.webp"
             srcSet="/images/670ea6853791772722428373_home-page-image-p-500.webp 500w, /images/670ea6853791772722428373_home-page-image-p-800.webp 800w, /images/670ea6853791772722428373_home-page-image-p-1080.webp 1080w, /images/670ea6853791772722428373_home-page-image-p-1600.webp 1600w, /images/670ea6853791772722428373_home-page-image-p-2000.webp 2000w, /images/670ea6853791772722428373_home-page-image-p-2600.webp 2600w, /images/670ea6853791772722428373_home-page-image.webp 2880w"
+            avifSrcSet="/images/670ea6853791772722428373_home-page-image-p-500.avif 500w, /images/670ea6853791772722428373_home-page-image-p-800.avif 800w, /images/670ea6853791772722428373_home-page-image-p-1080.avif 1080w, /images/670ea6853791772722428373_home-page-image-p-1600.avif 1600w, /images/670ea6853791772722428373_home-page-image-p-2000.avif 2000w, /images/670ea6853791772722428373_home-page-image-p-2600.avif 2600w, /images/670ea6853791772722428373_home-page-image.avif 2880w"
             sizes="(max-width: 2880px) 100vw, 2880px"
             width={2880}
             height={3334}
@@ -173,21 +174,27 @@ export default function HomePage() {
                     <p className="developing-text">1x Золотой сайт<br />1x Tagline Awards<br />1x Рейтинг Рунета<br />2x Awwwards<br />1x Киберпросвет<br />1x Eventiada</p>
                   </div>
                 </div>
-                <img
-                  alt="ВТБ"
-                  className="developing-image"
-                  sizes="(max-width: 1302px) 100vw, 1302px"
-                  src="/images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942.webp"
-                  srcSet="/images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942-p-500.webp 500w, /images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942-p-800.webp 800w, /images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942-p-1080.webp 1080w, /images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942.webp 1302w"
-                  width={1302}
-                  height={636}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942-p-500.avif 500w, /images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942-p-800.avif 800w, /images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942-p-1080.avif 1080w, /images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942.avif 1302w" sizes="(max-width: 1302px) 100vw, 1302px" />
+                  <img
+                    alt="ВТБ"
+                    className="developing-image"
+                    sizes="(max-width: 1302px) 100vw, 1302px"
+                    src="/images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942.webp"
+                    srcSet="/images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942-p-500.webp 500w, /images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942-p-800.webp 800w, /images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942-p-1080.webp 1080w, /images/681b8ca20e5fa3ed921dc5e0_Frame 2131331942.webp 1302w"
+                    width={1302}
+                    height={636}
+                  />
+                </picture>
               </div>
               {/* Desktop row 2: gallery left, text right */}
               <div className="developing-row col-2">
                 <div className="col-1">
                   <div className="col-3-w-area">
-                    <img alt="" className="developing-image" src="/images/681b93885c03ba50cbf37cc0_Frame 2131331909.webp" width={422} height={422} />
+                    <picture>
+                      <source type="image/avif" srcSet="/images/681b93885c03ba50cbf37cc0_Frame 2131331909.avif" />
+                      <img alt="" className="developing-image" src="/images/681b93885c03ba50cbf37cc0_Frame 2131331909.webp" width={422} height={422} />
+                    </picture>
                     <picture>
                       <source type="image/avif" srcSet="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908.avif" />
                       <img
@@ -221,15 +228,18 @@ export default function HomePage() {
                   <img alt="ВТБ" className="developing-logo__img" src="/images/681b8aef7fa22633a64dc5df_VTB.svg" />
                   <h2>2019-2025</h2>
                 </div>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 685px) 100vw, 685px"
-                  src="/images/681bca6de2182fd5263ae349_Frame 2131331942 (1).webp"
-                  srcSet="/images/681bca6de2182fd5263ae349_Frame 2131331942 (1)-p-500.webp 500w, /images/681bca6de2182fd5263ae349_Frame 2131331942 (1).webp 685w"
-                  width={685}
-                  height={457}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bca6de2182fd5263ae349_Frame 2131331942 (1)-p-500.avif 500w, /images/681bca6de2182fd5263ae349_Frame 2131331942 (1).avif 685w" sizes="(max-width: 685px) 100vw, 685px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 685px) 100vw, 685px"
+                    src="/images/681bca6de2182fd5263ae349_Frame 2131331942 (1).webp"
+                    srcSet="/images/681bca6de2182fd5263ae349_Frame 2131331942 (1)-p-500.webp 500w, /images/681bca6de2182fd5263ae349_Frame 2131331942 (1).webp 685w"
+                    width={685}
+                    height={457}
+                  />
+                </picture>
                 <p className="developing-text">Разработали <strong>1000+</strong> иллюстраций</p>
                 <picture>
                   <source type="image/avif" srcSet="/images/681b92dabf0d4e7c1a39f649_Frame 2131331908.avif" />
@@ -259,13 +269,15 @@ export default function HomePage() {
                 </picture>
                 <p className="developing-text"><strong>Организовали работу</strong> большой команды дизайнеров и <strong>интегрировали</strong> её в продуктовые команды</p>
                 <p className="developing-text"><strong>Сократили time2market</strong> до нескольких часов</p>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 687px) 100vw, 687px"
-                  src="/images/681bcb1b2e9074bb32ba85e7_Frame 2131331949.png"
-                  srcSet="/images/681bcb1b2e9074bb32ba85e7_Frame 2131331949-p-500.png 500w, /images/681bcb1b2e9074bb32ba85e7_Frame 2131331949.png 687w"
-                  width={687}
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bcb1b2e9074bb32ba85e7_Frame 2131331949-p-500.avif 500w, /images/681bcb1b2e9074bb32ba85e7_Frame 2131331949.avif 687w" sizes="(max-width: 687px) 100vw, 687px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 687px) 100vw, 687px"
+                    src="/images/681bcb1b2e9074bb32ba85e7_Frame 2131331949.png"
+                    srcSet="/images/681bcb1b2e9074bb32ba85e7_Frame 2131331949-p-500.png 500w, /images/681bcb1b2e9074bb32ba85e7_Frame 2131331949.png 687w"
+                    width={687}
                   height={349}
                 />
                 <p className="developing-text">1x Золотой сайт<br />1x Tagline Awards<br />1x Рейтинг Рунета<br />2x Awwwards<br />1x Киберпросвет<br />1x Eventiada</p>
@@ -296,15 +308,18 @@ export default function HomePage() {
               <div className="developing-row col-2">
                 <div className="col-1">
                   <div className="col-1">
-                    <img
-                      alt=""
-                      className="developing-image"
-                      sizes="(max-width: 1008px) 100vw, 1008px"
-                      src="/images/681bb34297bbc7a7a9127997_Frame 2131331869.webp"
-                      srcSet="/images/681bb34297bbc7a7a9127997_Frame 2131331869-p-500.webp 500w, /images/681bb34297bbc7a7a9127997_Frame 2131331869-p-800.webp 800w, /images/681bb34297bbc7a7a9127997_Frame 2131331869.webp 1008w"
-                  width={1008}
-                  height={673}
-                />
+                    <picture>
+                      <source type="image/avif" srcSet="/images/681bb34297bbc7a7a9127997_Frame 2131331869-p-500.avif 500w, /images/681bb34297bbc7a7a9127997_Frame 2131331869-p-800.avif 800w, /images/681bb34297bbc7a7a9127997_Frame 2131331869.avif 1008w" sizes="(max-width: 1008px) 100vw, 1008px" />
+                      <img
+                        alt=""
+                        className="developing-image"
+                        sizes="(max-width: 1008px) 100vw, 1008px"
+                        src="/images/681bb34297bbc7a7a9127997_Frame 2131331869.webp"
+                        srcSet="/images/681bb34297bbc7a7a9127997_Frame 2131331869-p-500.webp 500w, /images/681bb34297bbc7a7a9127997_Frame 2131331869-p-800.webp 800w, /images/681bb34297bbc7a7a9127997_Frame 2131331869.webp 1008w"
+                        width={1008}
+                        height={673}
+                      />
+                    </picture>
                     <p className="developing-text">ОТП Банк — один из&nbsp;лидеров на&nbsp;рынке розничного кредитования и&nbsp;банковских услуг в&nbsp;России</p>
                   </div>
                 </div>
@@ -315,8 +330,8 @@ export default function HomePage() {
                       alt=""
                       className="developing-image"
                       sizes="(max-width: 1302px) 100vw, 1302px"
-                      src="/images/681bb38ecb5abd20c87e0860_Frame 2131331870.png"
-                      srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-500.png 500w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-800.png 800w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.png 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.png 1302w"
+                      src="/images/681bb38ecb5abd20c87e0860_Frame 2131331870.webp"
+                      srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-500.png 500w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-800.png 800w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.png 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.webp 1302w"
                       width={1302}
                       height={672}
                     />
@@ -348,25 +363,31 @@ export default function HomePage() {
                   <img alt="ОТП Банк" className="developing-logo__img" src="/images/681ba9d2154bb4307b274549.svg" />
                   <h2>2023-н.в.</h2>
                 </div>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 686px) 100vw, 686px"
-                  src="/images/681bce315c000289491ed6a5_Frame 2131331869 (1).webp"
-                  srcSet="/images/681bce315c000289491ed6a5_Frame 2131331869 (1)-p-500.webp 500w, /images/681bce315c000289491ed6a5_Frame 2131331869 (1).webp 686w"
-                  width={686}
-                  height={353}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bce315c000289491ed6a5_Frame 2131331869 (1)-p-500.avif 500w, /images/681bce315c000289491ed6a5_Frame 2131331869 (1).avif 686w" sizes="(max-width: 686px) 100vw, 686px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 686px) 100vw, 686px"
+                    src="/images/681bce315c000289491ed6a5_Frame 2131331869 (1).webp"
+                    srcSet="/images/681bce315c000289491ed6a5_Frame 2131331869 (1)-p-500.webp 500w, /images/681bce315c000289491ed6a5_Frame 2131331869 (1).webp 686w"
+                    width={686}
+                    height={353}
+                  />
+                </picture>
                 <p className="developing-text">ОТП Банк — один из&nbsp;лидеров на рынке розничного кредитования и&nbsp;банковских услуг в&nbsp;России</p>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 686px) 100vw, 686px"
-                  src="/images/681bce1cf3803562b2473eb9_Frame 2131331871 (1) (1).webp"
-                  srcSet="/images/681bce1cf3803562b2473eb9_Frame 2131331871 (1) (1)-p-500.webp 500w, /images/681bce1cf3803562b2473eb9_Frame 2131331871 (1) (1).webp 686w"
-                  width={686}
-                  height={391}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bce1cf3803562b2473eb9_Frame 2131331871 (1) (1)-p-500.avif 500w, /images/681bce1cf3803562b2473eb9_Frame 2131331871 (1) (1).avif 686w" sizes="(max-width: 686px) 100vw, 686px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 686px) 100vw, 686px"
+                    src="/images/681bce1cf3803562b2473eb9_Frame 2131331871 (1) (1).webp"
+                    srcSet="/images/681bce1cf3803562b2473eb9_Frame 2131331871 (1) (1)-p-500.webp 500w, /images/681bce1cf3803562b2473eb9_Frame 2131331871 (1) (1).webp 686w"
+                    width={686}
+                    height={391}
+                  />
+                </picture>
                 <div className="col-1 col-1--2gap-mob">
                   <p className="developing-text">Глубина просмотра <strong>— 3</strong></p>
                   <p className="developing-text">Показатель отказов <strong>— 18%</strong></p>
@@ -396,8 +417,8 @@ export default function HomePage() {
                     alt=""
                     className="developing-image"
                     sizes="(max-width: 1302px) 100vw, 1302px"
-                    src="/images/681bb38ecb5abd20c87e0860_Frame 2131331870.png"
-                    srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-500.png 500w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-800.png 800w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.png 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.png 1302w"
+                    src="/images/681bb38ecb5abd20c87e0860_Frame 2131331870.webp"
+                    srcSet="/images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-500.png 500w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-800.png 800w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870-p-1080.png 1080w, /images/681bb38ecb5abd20c87e0860_Frame 2131331870.webp 1302w"
                     width={1302}
                     height={672}
                   />
@@ -432,23 +453,26 @@ export default function HomePage() {
                 <div className="col-1 col-1--4gap">
                   <p className="developing-text"><strong>Два года</strong> дизайн-поддержки фудтех-проектов Яндекса<br />в <strong>10+</strong> странах</p>
                 </div>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 1388px) 100vw, 1388px"
-                  src="/images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1).webp"
-                  srcSet="/images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1)-p-500.webp 500w, /images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1)-p-800.webp 800w, /images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1)-p-1080.webp 1080w, /images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1).webp 1388w"
-                  width={1388}
-                  height={516}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1)-p-500.avif 500w, /images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1)-p-800.avif 800w, /images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1)-p-1080.avif 1080w, /images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1).avif 1388w" sizes="(max-width: 1388px) 100vw, 1388px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 1388px) 100vw, 1388px"
+                    src="/images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1).webp"
+                    srcSet="/images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1)-p-500.webp 500w, /images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1)-p-800.webp 800w, /images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1)-p-1080.webp 1080w, /images/681bbb09cb4a2b51729ef6b9_Frame 2131331925 (1).webp 1388w"
+                    width={1388}
+                    height={516}
+                  />
+                </picture>
                 <picture>
                   <source type="image/avif" srcSet="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.avif" />
                   <img
                     alt=""
                     className="developing-image"
                     sizes="(max-width: 605px) 100vw, 605px"
-                    src="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.png"
-                    srcSet="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289-p-500.png 500w, /images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.png 605w"
+                    src="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.webp"
+                    srcSet="/images/681bbb24c95eafdf2e96ea6a_Frame 2131328289-p-500.png 500w, /images/681bbb24c95eafdf2e96ea6a_Frame 2131328289.webp 605w"
                     width={605}
                     height={515}
                   />
@@ -456,36 +480,42 @@ export default function HomePage() {
               </div>
               {/* Desktop row 3: 3 images (col-3 col3--fix-columns) */}
               <div className="developing-row col-3 col3--fix-columns">
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 595px) 100vw, 595px"
-                  src="/images/681bbfcd10be7ac1904e4879_Frame 2131331920.webp"
-                  srcSet="/images/681bbfcd10be7ac1904e4879_Frame 2131331920-p-500.webp 500w, /images/681bbfcd10be7ac1904e4879_Frame 2131331920.webp 595w"
-                  width={595}
-                  height={633}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bbfcd10be7ac1904e4879_Frame 2131331920-p-500.avif 500w, /images/681bbfcd10be7ac1904e4879_Frame 2131331920.avif 595w" sizes="(max-width: 595px) 100vw, 595px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 595px) 100vw, 595px"
+                    src="/images/681bbfcd10be7ac1904e4879_Frame 2131331920.webp"
+                    srcSet="/images/681bbfcd10be7ac1904e4879_Frame 2131331920-p-500.webp 500w, /images/681bbfcd10be7ac1904e4879_Frame 2131331920.webp 595w"
+                    width={595}
+                    height={633}
+                  />
+                </picture>
                 <picture>
                   <source type="image/avif" srcSet="/images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-1080.avif 1080w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902.avif 1392w" sizes="(max-width: 1392px) 100vw, 1392px" />
                   <img
                     alt=""
                     className="developing-image"
                     sizes="(max-width: 1392px) 100vw, 1392px"
-                    src="/images/681bbfd9d97c4462eb111b27_Frame 2131331902.png"
-                    srcSet="/images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-500.png 500w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-800.png 800w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-1080.png 1080w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902.png 1392w"
+                    src="/images/681bbfd9d97c4462eb111b27_Frame 2131331902.webp"
+                    srcSet="/images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-500.png 500w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-800.png 800w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902-p-1080.png 1080w, /images/681bbfd9d97c4462eb111b27_Frame 2131331902.webp 1392w"
                     width={1392}
                     height={634}
                   />
                 </picture>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 604px) 100vw, 604px"
-                  src="/images/681bbfe4a2111d8a1fe54b5e_Frame 2131331947 (1).webp"
-                  srcSet="/images/681bbfe4a2111d8a1fe54b5e_Frame 2131331947 (1)-p-500.webp 500w, /images/681bbfe4a2111d8a1fe54b5e_Frame 2131331947 (1).webp 604w"
-                  width={604}
-                  height={633}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bbfe4a2111d8a1fe54b5e_Frame 2131331947 (1)-p-500.avif 500w, /images/681bbfe4a2111d8a1fe54b5e_Frame 2131331947 (1).avif 604w" sizes="(max-width: 604px) 100vw, 604px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 604px) 100vw, 604px"
+                    src="/images/681bbfe4a2111d8a1fe54b5e_Frame 2131331947 (1).webp"
+                    srcSet="/images/681bbfe4a2111d8a1fe54b5e_Frame 2131331947 (1)-p-500.webp 500w, /images/681bbfe4a2111d8a1fe54b5e_Frame 2131331947 (1).webp 604w"
+                    width={604}
+                    height={633}
+                  />
+                </picture>
               </div>
               {/* Mobile-only row */}
               <div className="developing-row col-1 mobile">
@@ -494,15 +524,18 @@ export default function HomePage() {
                   <h2>2023-н.в.</h2>
                 </div>
                 <p className="developing-text"><strong>Два года</strong> дизайн-поддержки фудтех-проектов Яндекса в <strong>10+</strong> странах</p>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 686px) 100vw, 686px"
-                  src="/images/681bd06e8ec58b8f900c7d6a_Frame 2131331926 1.webp"
-                  srcSet="/images/681bd06e8ec58b8f900c7d6a_Frame 2131331926 1-p-500.webp 500w, /images/681bd06e8ec58b8f900c7d6a_Frame 2131331926 1.webp 686w"
-                  width={686}
-                  height={872}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bd06e8ec58b8f900c7d6a_Frame 2131331926 1-p-500.avif 500w, /images/681bd06e8ec58b8f900c7d6a_Frame 2131331926 1.avif 686w" sizes="(max-width: 686px) 100vw, 686px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 686px) 100vw, 686px"
+                    src="/images/681bd06e8ec58b8f900c7d6a_Frame 2131331926 1.webp"
+                    srcSet="/images/681bd06e8ec58b8f900c7d6a_Frame 2131331926 1-p-500.webp 500w, /images/681bd06e8ec58b8f900c7d6a_Frame 2131331926 1.webp 686w"
+                    width={686}
+                    height={872}
+                  />
+                </picture>
                 <div className="col-1 col-1--2gap-mob">
                   <p className="developing-text"><strong>100+</strong> моушен-роликов</p>
                   <p className="developing-text"><strong>10</strong> крупных спецпроектов</p>
@@ -510,15 +543,18 @@ export default function HomePage() {
                   <p className="developing-text"><strong>1000+</strong> слайдов</p>
                   <p className="developing-text"><strong>xxm</strong> аудитория дизайна</p>
                 </div>
-                <img
-                  alt=""
-                  className="developing-image"
-                  sizes="(max-width: 595px) 100vw, 595px"
-                  src="/images/681bbfcd10be7ac1904e4879_Frame 2131331920.webp"
-                  srcSet="/images/681bbfcd10be7ac1904e4879_Frame 2131331920-p-500.webp 500w, /images/681bbfcd10be7ac1904e4879_Frame 2131331920.webp 595w"
-                  width={595}
-                  height={633}
-                />
+                <picture>
+                  <source type="image/avif" srcSet="/images/681bbfcd10be7ac1904e4879_Frame 2131331920-p-500.avif 500w, /images/681bbfcd10be7ac1904e4879_Frame 2131331920.avif 595w" sizes="(max-width: 595px) 100vw, 595px" />
+                  <img
+                    alt=""
+                    className="developing-image"
+                    sizes="(max-width: 595px) 100vw, 595px"
+                    src="/images/681bbfcd10be7ac1904e4879_Frame 2131331920.webp"
+                    srcSet="/images/681bbfcd10be7ac1904e4879_Frame 2131331920-p-500.webp 500w, /images/681bbfcd10be7ac1904e4879_Frame 2131331920.webp 595w"
+                    width={595}
+                    height={633}
+                  />
+                </picture>
                 <p className="developing-text">Взяли <strong>серебро</strong><br />на&nbsp;E+ Awards 2024</p>
               </div>
             </div>
