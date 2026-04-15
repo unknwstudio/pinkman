@@ -20,11 +20,8 @@ export default function CasePinkmanSitePage() {
     <>
       {/* ── Hero ── */}
       <Section>
-        <div style={{ marginBottom: 'var(--8px)' }}>
-          <p className="text-small is__chip">Кейс&nbsp;&mdash; разработка сайта</p>
-        </div>
-        <div className="text-big-wrapper" style={{ maxWidth: '110%' }}>
-          <p className="text-big">Сайт топовой дизайн&#x2011;студии теперь обновляет нейронка&nbsp;&mdash; легко, без&nbsp;разработчиков</p>
+        <div className="text-big-wrapper">
+          <p className="text-big">Сайт топовой дизайн&#x2011;студии теперь обновляет нейронка — легко, без разработчиков</p>
         </div>
       </Section>
 
@@ -72,33 +69,40 @@ export default function CasePinkmanSitePage() {
         <ServicePoint variant="default" title="" description="" />
       </ServicePointRow>
 
-      {/* ── До и после — таблица ── */}
+      {/* ── До и после — две карточки ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">До&nbsp;и&nbsp;после</h2></div></Section>
-      <Section>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderRadius: '20px', overflow: 'hidden' }}>
-          <div style={{ background: '#f0f0f0', padding: 'var(--24px)', borderBottom: '1px solid #e0e0e0' }}>
-            <p className="text-regular" style={{ fontWeight: 700 }}>Было</p>
-          </div>
-          <div style={{ background: '#f0f0f0', padding: 'var(--24px)', borderBottom: '1px solid #e0e0e0' }}>
-            <p className="text-regular" style={{ fontWeight: 700 }}>Стало</p>
-          </div>
-          {[
-            ['Сайт не\u00a0открывается в\u00a0России', 'Сайт работает для\u00a0всей российской аудитории'],
-            ['Мелкая правка\u00a0— только через нескольких человек с\u00a0очередью', 'Любую правку делает любой сотрудник с\u00a0доступом'],
-            ['Новый блок\u00a0— ждать дизайнера и\u00a0разработчика', 'Новый блок\u00a0— через запрос в\u00a0чате нейронки'],
-            ['Публикация кейса с\u00a0новыми блоками: до\u00a04\u00a0дней', 'Публикация кейса: минуты'],
-          ].map(([was, now], i, arr) => (
-            <div key={i} style={{ display: 'contents' }}>
-              <div style={{ background: '#fff', padding: 'var(--20px) var(--24px)', borderBottom: i < arr.length - 1 ? '1px solid #f0f0f0' : 'none' }}>
-                <p className="text-regular font-color-dark-gray">{was}</p>
+      <div className="service-points-section">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--8px)' }}>
+          {/* Было */}
+          <div style={{ background: '#fff', borderRadius: '20px', padding: 'var(--32px)', border: '1px solid #e8e8e8' }}>
+            <p style={{ color: '#8B0000', fontWeight: 700, fontSize: '1.1rem', marginBottom: 'var(--24px)' }}>Было</p>
+            {[
+              'Сайт не\u00a0открывается в\u00a0России',
+              'Мелкая правка — только через одного человека',
+              'Новый блок — ждать дизайнера и\u00a0разработчика',
+              'Публикация кейса: 36–56 часов',
+            ].map((text, i, arr) => (
+              <div key={i} style={{ padding: 'var(--16px) 0', borderTop: i > 0 ? '1px solid #f0f0f0' : 'none' }}>
+                <p className="text-regular font-color-black">{text}</p>
               </div>
-              <div style={{ background: '#fff', padding: 'var(--20px) var(--24px)', borderBottom: i < arr.length - 1 ? '1px solid #f0f0f0' : 'none' }}>
-                <p className="text-regular font-color-black" style={{ fontWeight: 500 }}>{now}</p>
+            ))}
+          </div>
+          {/* Стало */}
+          <div style={{ background: '#fff', borderRadius: '20px', padding: 'var(--32px)', border: '1px solid #e8e8e8' }}>
+            <p style={{ color: '#2D5A27', fontWeight: 700, fontSize: '1.1rem', marginBottom: 'var(--24px)' }}>Стало</p>
+            {[
+              'Сайт работает для\u00a0всей российской аудитории',
+              'Любую правку делает любой из\u00a06 сотрудников',
+              'Новый блок — без\u00a0отдельного дизайна и\u00a0разработки',
+              'Публикация кейса: минуты',
+            ].map((text, i) => (
+              <div key={i} style={{ padding: 'var(--16px) 0', borderTop: i > 0 ? '1px solid #f0f0f0' : 'none' }}>
+                <p className="text-regular font-color-black">{text}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </Section>
+      </div>
 
       {/* ── Решение — 7. розовая плашка, 8. серые бейджи ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Решение</h2></div></Section>
