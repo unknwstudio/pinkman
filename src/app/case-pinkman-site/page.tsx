@@ -18,15 +18,6 @@ export const metadata: Metadata = {
 export default function CasePinkmanSitePage() {
   return (
     <>
-      {/* ── 1. Logo — desktop only ── */}
-      <Section>
-        <div className="hide-mobile" style={{ marginBottom: '-2rem' }}>
-          <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40" style={{ color: '#F03882' }}>
-            <path d="M21.8368 4.41815H7.18411L0 47H14.5816L16.0042 38.637L36.703 43.8639C43.0335 45.4668 48.0126 42.3306 49.1507 35.222C51.5691 20.0292 49.5063 4 33.9289 4C29.1632 4 23.4017 7.13614 20.4143 12.0146L21.8368 4.41815ZM36.2051 29.9951L21.3389 26.2318C22.3348 21.9806 26.9582 16.6143 32.862 17.799C37.272 18.705 37.4143 25.5348 36.2051 29.9951Z" fill="currentColor"/>
-          </svg>
-        </div>
-      </Section>
-
       {/* ── Hero ── */}
       <Section>
         <div className="text-big-wrapper">
@@ -57,11 +48,11 @@ export default function CasePinkmanSitePage() {
         { value: '~7 дней', label: 'полный перенос и отладка сайта' },
         { value: '0 мин', label: 'ожидание разработчика для любых правок' },
         { value: '6+', label: 'человек обновляют сайт самостоятельно' },
-        { value: '4 дня → мин', label: 'публикация кейса с новыми блоками' },
-      ]} smallValues />
+        { value: 'Несколько минут', label: 'публикация кейса с новыми блоками' },
+      ]} />
 
       {/* ── Проблема — жёлтая плашка ── */}
-      <Section><div className="text-h1-wrapper" style={{ marginBottom: 'var(--16px)' }}><h2 className="h1">Проблема</h2></div></Section>
+      <Section><div className="text-h1-wrapper" style={{ marginBottom: 'var(--16px)' }}><h2 className="h1">Как было раньше</h2></div></Section>
       <Section>
         <div className="callout-box callout-box--yellow anim case-pinkman-card">
           <p className="text-regular font-color-black">Сайт студии работал на&nbsp;Webflow&nbsp;&mdash; популярной зарубежной платформе. После ряда ограничений сайт перестал открываться у&nbsp;российской аудитории. Основной канал коммуникации с&nbsp;клиентами работал через раз, форма обратной связи&nbsp;&mdash; нестабильно.</p>

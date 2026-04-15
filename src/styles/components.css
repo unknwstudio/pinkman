@@ -946,11 +946,10 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid #e8e8e8;
 }
 
-/* 4. Mobile: stat values bigger */
+/* Mobile overrides for case-pinkman-site */
 @media (max-width: 767px) {
-  .stat-grid__value { font-size: 1.6rem !important; }
   .case-pinkman-ba-grid { grid-template-columns: 1fr; }
-  .case-pinkman-ba-heading { font-size: 1.1rem; }
+  .case-pinkman-ba-heading { font-size: 1rem !important; }
 }
 
 /* ════════════════════════════════════════════════════════════
