@@ -95,7 +95,7 @@ export default function CasePinkmanSitePage() {
               'Публикация кейса: минуты',
             ].map((text, i) => (
               <div key={i} className="case-pinkman-ba-row">
-                <p className="text-regular font-color-black">{text}</p>
+                <p className="text-regular font-color-black" style={{ fontWeight: 700 }}>{text}</p>
               </div>
             ))}
           </div>
