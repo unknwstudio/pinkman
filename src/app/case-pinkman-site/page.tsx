@@ -49,18 +49,17 @@ export default function CasePinkmanSitePage() {
         { value: '~7 дней', label: 'полный перенос и отладка сайта' },
         { value: '0 мин', label: 'ожидание разработчика для любых правок' },
         { value: '6+', label: 'человек обновляют сайт самостоятельно' },
-        { value: 'Пара минут', label: 'публикация кейса с новыми блоками' },
+        { value: '~ 3 мин', label: 'публикация кейса с новыми блоками' },
       ]} smallValues />
 
       {/* ── Проблема — жёлтая плашка ── */}
       <Section><div className="text-h1-wrapper" style={{ marginBottom: 'var(--16px)' }}><h2 className="h1">Как было раньше</h2></div></Section>
-      <Section>
-        <div className="callout-box callout-box--yellow anim case-pinkman-card">
-          <p className="text-regular font-color-black">Сайт студии работал на&nbsp;Webflow&nbsp;&mdash; популярной зарубежной платформе. После ряда ограничений сайт перестал открываться у&nbsp;российской аудитории. Основной канал коммуникации с&nbsp;клиентами работал через раз, форма обратной связи&nbsp;&mdash; нестабильно.</p>
-          <p className="text-regular font-color-black" style={{ marginTop: 'var(--16px)' }}>Перенос на&nbsp;новый конструктор с&nbsp;кастомизацией требовал больших денежных и, самое важное, временных затрат&nbsp;&mdash; около полутора месяцев с&nbsp;учётом рисков и&nbsp;технических сложностей. А&nbsp;сайт должен работать и&nbsp;корректно открываться уже сейчас.</p>
-          <p className="text-regular font-color-black" style={{ marginTop: 'var(--16px)' }}>Параллельно существовала операционная боль&nbsp;&mdash; и&nbsp;у&nbsp;неё было два уровня:</p>
-        </div>
-      </Section>
+      <ServicePointRow compact twoCol>
+        <ServicePoint
+          title="Что происходило"
+          description="Сайт студии работал на&nbsp;Webflow&nbsp;&mdash; популярной зарубежной платформе. После ряда ограничений сайт перестал открываться у&nbsp;российской аудитории. Основной канал коммуникации с&nbsp;клиентами работал через раз, форма обратной связи&nbsp;&mdash; нестабильно.<br/><br/>Перенос на&nbsp;новый конструктор с&nbsp;кастомизацией требовал больших денежных и, самое важное, временных затрат&nbsp;&mdash; около полутора месяцев с&nbsp;учётом рисков и&nbsp;технических сложностей. А&nbsp;сайт должен работать и&nbsp;корректно открываться уже сейчас.<br/><br/>Параллельно существовала операционная боль&nbsp;&mdash; и&nbsp;у&nbsp;неё было два уровня:"
+        />
+      </ServicePointRow>
 
       <ServicePointRow>
         <ServicePoint
