@@ -86,19 +86,6 @@ export default function CasePinkmanSitePage() {
       {/* ── Было / Стало ── */}
       <div className="service-points-section is--compact">
         <div className="case-pinkman-ba-grid">
-          <div className="case-pinkman-ba-card case-pinkman-ba-card--was case-pinkman-card">
-            <p className="case-pinkman-ba-heading">Было</p>
-            {[
-              'Сайт не\u00a0открывается в\u00a0России',
-              'Мелкая правка — только через одного человека',
-              'Новый блок — ждать дизайнера и\u00a0разработчика',
-              'Публикация кейса: 36–56 часов',
-            ].map((text, i) => (
-              <div key={i} className="case-pinkman-ba-row">
-                <p className="text-regular font-color-black">{text}</p>
-              </div>
-            ))}
-          </div>
           <div className="case-pinkman-ba-card case-pinkman-ba-card--now case-pinkman-card">
             <p className="case-pinkman-ba-heading">Стало</p>
             {[
@@ -106,6 +93,19 @@ export default function CasePinkmanSitePage() {
               'Любую правку делает любой из\u00a06 сотрудников',
               'Новый блок — без\u00a0отдельного дизайна и\u00a0разработки',
               'Публикация кейса: минуты',
+            ].map((text, i) => (
+              <div key={i} className="case-pinkman-ba-row">
+                <p className="text-regular font-color-black">{text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="case-pinkman-ba-card case-pinkman-ba-card--was case-pinkman-card">
+            <p className="case-pinkman-ba-heading">Было</p>
+            {[
+              'Сайт не\u00a0открывается в\u00a0России',
+              'Мелкая правка — только через одного человека',
+              'Новый блок — ждать дизайнера и\u00a0разработчика',
+              'Публикация кейса: 36–56 часов',
             ].map((text, i) => (
               <div key={i} className="case-pinkman-ba-row">
                 <p className="text-regular font-color-black">{text}</p>
