@@ -931,11 +931,8 @@ a { color: inherit; text-decoration: none; }
   padding: var(--32px);
   border: 1px solid #e8e8e8;
 }
-.case-pinkman-ba-card--was { background: #1a1a1a; border-color: transparent; }
-.case-pinkman-ba-card--was .case-pinkman-ba-heading { color: #fff; }
-.case-pinkman-ba-card--was .text-regular { color: rgba(255, 255, 255, 0.75) !important; }
-.case-pinkman-ba-card--was .case-pinkman-ba-row + .case-pinkman-ba-row { border-color: rgba(255, 255, 255, 0.12); }
-.case-pinkman-ba-card--now { background: rgba(240, 56, 130, 0.08); border-color: transparent; }
+.case-pinkman-ba-card--was { background: #fff; border-color: transparent; }
+.case-pinkman-ba-card--now { background: rgba(200, 235, 200, 0.4); border-color: transparent; }
 .case-pinkman-ba-heading {
   color: #000;
   font-weight: 700;
@@ -954,16 +951,15 @@ a { color: inherit; text-decoration: none; }
   color: #555;
 }
 .case-pinkman-gradient-highlight {
-  transition: all 0.5s ease;
-  background-size: 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
+  transition: color 1s ease, -webkit-text-fill-color 1s ease;
+  -webkit-text-fill-color: currentColor;
 }
 .case-pinkman-gradient-text:hover .case-pinkman-gradient-highlight {
   background: linear-gradient(90deg, #F03882, #ff6eb4, #F03882);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: -webkit-text-fill-color 1.2s ease;
 }
 
 /* Mobile overrides for case-pinkman-site */

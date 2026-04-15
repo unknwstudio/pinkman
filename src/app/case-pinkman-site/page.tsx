@@ -77,14 +77,16 @@ export default function CasePinkmanSitePage() {
 
       {/* ── Решение — розовая плашка ── */}
       <Section><div className="text-h1-wrapper" style={{ marginBottom: 'var(--16px)' }}><h2 className="h1">Решение</h2></div></Section>
-      <Section>
-        <div className="callout-box anim case-pinkman-card">
-          <p className="text-regular font-color-black">Мы&nbsp;перенесли сайт на&nbsp;собственное решение с&nbsp;AI&#x2011;ассистентом в&nbsp;основе. Теперь вносить изменения может любой человек из&nbsp;команды без&nbsp;технических навыков&nbsp;&mdash; отдел продаж, продуктовый отдел, дизайнеры, основатели студии. Баг, правка, новый кейс&nbsp;&mdash; исправляется сразу, без&nbsp;заявок и&nbsp;ожиданий.</p>
+      <div className="service-points-section is--compact">
+        <div className="main-container">
+          <div className="callout-box anim case-pinkman-card">
+            <p className="text-regular font-color-black">Мы&nbsp;перенесли сайт на&nbsp;собственное решение с&nbsp;AI&#x2011;ассистентом в&nbsp;основе. Теперь вносить изменения может любой человек из&nbsp;команды без&nbsp;технических навыков&nbsp;&mdash; отдел продаж, продуктовый отдел, дизайнеры, основатели студии. Баг, правка, новый кейс&nbsp;&mdash; исправляется сразу, без&nbsp;заявок и&nbsp;ожиданий.</p>
+          </div>
         </div>
-      </Section>
+      </div>
 
       {/* ── Было / Стало ── */}
-      <div className="service-points-section" style={{ marginBottom: 'var(--8px)' }}>
+      <div className="service-points-section is--compact">
         <div className="case-pinkman-ba-grid">
           <div className="case-pinkman-ba-card case-pinkman-ba-card--was case-pinkman-card">
             <p className="case-pinkman-ba-heading">Было</p>
