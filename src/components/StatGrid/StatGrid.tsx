@@ -11,12 +11,14 @@ interface StatItem {
 
 interface StatGridProps {
   items: StatItem[]
+  /** Slightly smaller value font size */
+  smallValues?: boolean
 }
 
-export default function StatGrid({ items }: StatGridProps) {
+export default function StatGrid({ items, smallValues }: StatGridProps) {
   return (
     <div className="service-points-section">
-      <div className="stat-grid">
+      <div className="stat-grid" style={smallValues ? { fontSize: '0.88em' } : undefined}>
         {items.map((item, i) => (
           <div key={i} className="stat-grid__item">
             <p className="stat-grid__value">{item.value}</p>

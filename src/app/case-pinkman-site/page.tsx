@@ -38,23 +38,14 @@ export default function CasePinkmanSitePage() {
         </a>
       </Section>
 
-      {/* ── Результат — 3. уменьшенный кегль заголовков ── */}
+      {/* ── Результат — карточки с чуть уменьшенным кеглем ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Результат</h2></div></Section>
-      <div className="service-points-section">
-        <div className="stat-grid" style={{ fontSize: '0.85em' }}>
-          {[
-            { value: '~7 дней', label: 'полный перенос и отладка сайта' },
-            { value: '0 мин', label: 'ожидание разработчика для любых правок' },
-            { value: '6+', label: 'человек обновляют сайт самостоятельно' },
-            { value: '4 дня → мин', label: 'публикация кейса с новыми блоками' },
-          ].map((item) => (
-            <div key={item.label} className="stat-item anim">
-              <p className="stat-value">{item.value}</p>
-              <p className="stat-label">{item.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <StatGrid items={[
+        { value: '~7 дней', label: 'полный перенос и отладка сайта' },
+        { value: '0 мин', label: 'ожидание разработчика для любых правок' },
+        { value: '6+', label: 'человек обновляют сайт самостоятельно' },
+        { value: '4 дня → мин', label: 'публикация кейса с новыми блоками' },
+      ]} smallValues />
 
       {/* ── Проблема — 4. жёлтая плашка ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Проблема</h2></div></Section>
@@ -62,10 +53,8 @@ export default function CasePinkmanSitePage() {
         <div className="callout-box callout-box--yellow anim">
           <p className="text-regular font-color-black">Сайт студии работал на&nbsp;Webflow&nbsp;&mdash; популярной зарубежной платформе. После ряда ограничений сайт перестал открываться у&nbsp;российской аудитории. Основной канал коммуникации с&nbsp;клиентами работал через раз, форма обратной связи&nbsp;&mdash; нестабильно.</p>
           <p className="text-regular font-color-black" style={{ marginTop: 'var(--16px)' }}>Перенос на&nbsp;новый конструктор с&nbsp;кастомизацией требовал больших денежных и, самое важное, временных затрат&nbsp;&mdash; около полутора месяцев с&nbsp;учётом рисков и&nbsp;технических сложностей. А&nbsp;сайт должен работать и&nbsp;корректно открываться уже сейчас.</p>
+          <p className="text-regular font-color-black" style={{ marginTop: 'var(--16px)' }}>Параллельно существовала операционная боль&nbsp;&mdash; и&nbsp;у&nbsp;неё было два уровня:</p>
         </div>
-      </Section>
-      <Section>
-        <p className="font-color-dark-gray">Параллельно существовала операционная боль&nbsp;&mdash; и&nbsp;у&nbsp;неё было два уровня:</p>
       </Section>
 
       <ServicePointRow>
@@ -111,7 +100,7 @@ export default function CasePinkmanSitePage() {
           <div className="process-steps__list" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
             <div className="process-step">
               <div className="process-step__num">
-                <span className="process-step__num-badge" style={{ background: '#999' }}>1</span>
+                <span className="process-step__num-badge" style={{ background: '#444' }}>1</span>
                 <span className="process-step__tag">~3 дня</span>
               </div>
               <h3>Перенос</h3>
@@ -119,7 +108,7 @@ export default function CasePinkmanSitePage() {
             </div>
             <div className="process-step">
               <div className="process-step__num">
-                <span className="process-step__num-badge" style={{ background: '#999' }}>2</span>
+                <span className="process-step__num-badge" style={{ background: '#444' }}>2</span>
                 <span className="process-step__tag">3–4 дня</span>
               </div>
               <h3>Отладка</h3>
@@ -141,10 +130,10 @@ export default function CasePinkmanSitePage() {
       <Section><div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}><h2 className="h1">Внутренний UI&#x2011;kit, который растёт вместе с&nbsp;сайтом</h2></div>
         <p className="font-color-dark-gray">В&nbsp;основе решения&nbsp;&mdash; собственный UI&#x2011;kit: набор визуальных констант и&nbsp;компонентов, которым пользуется нейронка при&nbsp;каждом запросе. Это означает, что любой новый блок или страница автоматически соответствует стилистике сайта. Нейронка не&nbsp;просто выполняет задачи&nbsp;&mdash; она развивает UI&#x2011;kit исходя из&nbsp;новых запросов, сохраняя визуальную целостность без&nbsp;участия дизайнера.</p>
       </Section>
-      <Section><div className="text-big-wrapper"><p className="text-big">Раньше, чтобы поменять ссылку на&nbsp;сайте, нужно было писать разработчику и&nbsp;ждать. Сейчас это делает любой человек из&nbsp;команды за&nbsp;минуту.</p></div></Section>
+      <Section><div className="text-big-wrapper"><p className="text-big" style={{ color: '#555' }}>Раньше, чтобы поменять ссылку на&nbsp;сайте, нужно было писать разработчику и&nbsp;ждать. Сейчас это делает любой человек из&nbsp;команды за&nbsp;минуту.</p></div></Section>
 
       {/* ── CTA — 10. "Хотите так же? Свяжитесь с Юрой!" ── */}
-      <Section><div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}><h2 className="h1">Хотите так&nbsp;же? Свяжитесь с&nbsp;Юрой!</h2></div>
+      <Section><div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}><h2 className="h1">Хотите так&nbsp;же? Свяжитесь с&nbsp;нами!</h2></div>
         <p className="font-color-dark-gray">Если ваш сайт работает на&nbsp;зарубежной платформе или обновление контента занимает дни&nbsp;&mdash; расскажем, как это решить для&nbsp;вашего бизнеса.</p>
       </Section>
 
