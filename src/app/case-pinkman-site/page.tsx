@@ -25,6 +25,15 @@ export default function CasePinkmanSitePage() {
         </div>
       </Section>
 
+      <Section>
+        <img
+          src="/images/case-pinkman-hero.png"
+          alt="Pinkman сайт"
+          style={{ width: '100%', borderRadius: '20px', display: 'block' }}
+          loading="eager"
+        />
+      </Section>
+
       {/* 1. "теперь любой человек из команды" */}
       <Section><div className="text-h2-wrapper"><h2>Перенесли сайт с&nbsp;Webflow на&nbsp;собственное решение с&nbsp;нейронками&nbsp;&mdash; теперь любой человек из&nbsp;команды может вносить изменения в&nbsp;прод за&nbsp;несколько минут, без&nbsp;ожидания разработчиков и&nbsp;лишних костов для&nbsp;новых блоков и&nbsp;страниц.</h2></div></Section>
 
@@ -160,7 +169,7 @@ export default function CasePinkmanSitePage() {
         <div className="main-container">
           <div className="contacts-card" style={{ display: 'flex', alignItems: 'center', gap: 'var(--24px)' }}>
             <img
-              src="/images/yura-grig.jpg"
+              src="/images/yura-grig.png"
               alt="Юрий Григоренко"
               style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
             />
