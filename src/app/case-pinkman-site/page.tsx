@@ -23,7 +23,7 @@ export default function CasePinkmanSitePage() {
         <div style={{ marginBottom: 'var(--8px)' }}>
           <p className="text-small is__chip">Кейс&nbsp;&mdash; разработка сайта</p>
         </div>
-        <div className="text-big-wrapper">
+        <div className="text-big-wrapper" style={{ maxWidth: '110%' }}>
           <p className="text-big">Сайт топовой дизайн&#x2011;студии теперь обновляет нейронка&nbsp;&mdash; легко, без&nbsp;разработчиков</p>
         </div>
       </Section>
@@ -72,19 +72,33 @@ export default function CasePinkmanSitePage() {
         <ServicePoint variant="default" title="" description="" />
       </ServicePointRow>
 
-      {/* ── До и после — 6. без тегов Было/Стало ── */}
+      {/* ── До и после — таблица ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">До&nbsp;и&nbsp;после</h2></div></Section>
-      <ServicePointRow>
-        <ServicePoint
-          title="Как было"
-          description="Сайт не&nbsp;открывается в&nbsp;России. Мелкая правка&nbsp;&mdash; только через нескольких человек с&nbsp;очередью. Новый блок&nbsp;&mdash; ждать дизайнера и&nbsp;разработчика. Публикация кейса с&nbsp;новыми блоками: до&nbsp;4&nbsp;дней."
-        />
-        <ServicePoint
-          title="Как стало"
-          description="Сайт работает для&nbsp;всей российской аудитории. Любую правку делает любой сотрудник с&nbsp;доступом. Новый блок&nbsp;&mdash; только через запрос в&nbsp;чате нейронки. Публикация кейса: минуты."
-        />
-        <ServicePoint variant="default" title="" description="" />
-      </ServicePointRow>
+      <Section>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ background: '#f0f0f0', padding: 'var(--24px)', borderBottom: '1px solid #e0e0e0' }}>
+            <p className="text-regular" style={{ fontWeight: 700 }}>Было</p>
+          </div>
+          <div style={{ background: '#f0f0f0', padding: 'var(--24px)', borderBottom: '1px solid #e0e0e0' }}>
+            <p className="text-regular" style={{ fontWeight: 700 }}>Стало</p>
+          </div>
+          {[
+            ['Сайт не\u00a0открывается в\u00a0России', 'Сайт работает для\u00a0всей российской аудитории'],
+            ['Мелкая правка\u00a0— только через нескольких человек с\u00a0очередью', 'Любую правку делает любой сотрудник с\u00a0доступом'],
+            ['Новый блок\u00a0— ждать дизайнера и\u00a0разработчика', 'Новый блок\u00a0— через запрос в\u00a0чате нейронки'],
+            ['Публикация кейса с\u00a0новыми блоками: до\u00a04\u00a0дней', 'Публикация кейса: минуты'],
+          ].map(([was, now], i, arr) => (
+            <div key={i} style={{ display: 'contents' }}>
+              <div style={{ background: '#fff', padding: 'var(--20px) var(--24px)', borderBottom: i < arr.length - 1 ? '1px solid #f0f0f0' : 'none' }}>
+                <p className="text-regular font-color-dark-gray">{was}</p>
+              </div>
+              <div style={{ background: '#fff', padding: 'var(--20px) var(--24px)', borderBottom: i < arr.length - 1 ? '1px solid #f0f0f0' : 'none' }}>
+                <p className="text-regular font-color-black" style={{ fontWeight: 500 }}>{now}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
 
       {/* ── Решение — 7. розовая плашка, 8. серые бейджи ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Решение</h2></div></Section>
@@ -130,7 +144,7 @@ export default function CasePinkmanSitePage() {
       <Section><div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}><h2 className="h1">Внутренний UI&#x2011;kit, который растёт вместе с&nbsp;сайтом</h2></div>
         <p className="font-color-dark-gray">В&nbsp;основе решения&nbsp;&mdash; собственный UI&#x2011;kit: набор визуальных констант и&nbsp;компонентов, которым пользуется нейронка при&nbsp;каждом запросе. Это означает, что любой новый блок или страница автоматически соответствует стилистике сайта. Нейронка не&nbsp;просто выполняет задачи&nbsp;&mdash; она развивает UI&#x2011;kit исходя из&nbsp;новых запросов, сохраняя визуальную целостность без&nbsp;участия дизайнера.</p>
       </Section>
-      <Section><div className="text-big-wrapper"><p className="text-big" style={{ color: '#555' }}>Раньше, чтобы поменять ссылку на&nbsp;сайте, нужно было писать разработчику и&nbsp;ждать. Сейчас это делает любой человек из&nbsp;команды за&nbsp;минуту.</p></div></Section>
+      <Section><div className="text-big-wrapper"><p className="text-big" style={{ color: '#555' }}>Раньше, чтобы поменять что&#x2011;то на&nbsp;сайте, нужно было писать разработчику и&nbsp;ждать. Сейчас это делает любой человек из&nbsp;команды за&nbsp;минуту.</p></div></Section>
 
       {/* ── CTA — 10. "Хотите так же? Свяжитесь с Юрой!" ── */}
       <Section><div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}><h2 className="h1">Хотите так&nbsp;же? Свяжитесь с&nbsp;нами!</h2></div>
