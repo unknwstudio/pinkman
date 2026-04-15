@@ -46,10 +46,10 @@ export default function CasePinkmanSitePage() {
       {/* ── Результат ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Результат</h2></div></Section>
       <StatGrid items={[
-        { value: '~7 дней', label: 'полный перенос и отладка сайта' },
         { value: '0 мин', label: 'ожидание разработчика для любых правок' },
         { value: '6+', label: 'человек обновляют сайт самостоятельно' },
         { value: '~ 3 мин', label: 'публикация кейса с новыми блоками' },
+        { value: '~7 дней', label: 'полный перенос и отладка сайта' },
       ]} smallValues />
 
       {/* ── Проблема — жёлтая плашка ── */}
@@ -84,7 +84,7 @@ export default function CasePinkmanSitePage() {
       </Section>
 
       {/* ── Было / Стало ── */}
-      <div className="service-points-section">
+      <div className="service-points-section" style={{ marginBottom: 'var(--8px)' }}>
         <div className="case-pinkman-ba-grid">
           <div className="case-pinkman-ba-card case-pinkman-ba-card--was case-pinkman-card">
             <p className="case-pinkman-ba-heading">Было</p>
