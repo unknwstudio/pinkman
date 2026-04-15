@@ -77,13 +77,11 @@ export default function CasePinkmanSitePage() {
 
       {/* ── Решение — розовая плашка ── */}
       <Section><div className="text-h1-wrapper" style={{ marginBottom: 'var(--16px)' }}><h2 className="h1">Решение</h2></div></Section>
-      <div className="service-points-section is--compact">
-        <div className="main-container">
-          <div className="callout-box callout-box--green anim case-pinkman-card">
-            <p className="text-regular font-color-black">Мы&nbsp;перенесли сайт на&nbsp;собственное решение с&nbsp;AI&#x2011;ассистентом в&nbsp;основе. Теперь вносить изменения может любой человек из&nbsp;команды без&nbsp;технических навыков&nbsp;&mdash; отдел продаж, продуктовый отдел, дизайнеры, основатели студии. Баг, правка, новый кейс&nbsp;&mdash; исправляется сразу, без&nbsp;заявок и&nbsp;ожиданий.</p>
-          </div>
+      <Section>
+        <div className="callout-box callout-box--green anim case-pinkman-card">
+          <p className="text-regular font-color-black">Мы&nbsp;перенесли сайт на&nbsp;собственное решение с&nbsp;AI&#x2011;ассистентом в&nbsp;основе. Теперь вносить изменения может любой человек из&nbsp;команды без&nbsp;технических навыков&nbsp;&mdash; отдел продаж, продуктовый отдел, дизайнеры, основатели студии. Баг, правка, новый кейс&nbsp;&mdash; исправляется сразу, без&nbsp;заявок и&nbsp;ожиданий.</p>
         </div>
-      </div>
+      </Section>
 
       {/* ── Было / Стало ── */}
       <div className="service-points-section is--compact">
