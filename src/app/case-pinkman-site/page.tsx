@@ -26,12 +26,13 @@ export default function CasePinkmanSitePage() {
       </Section>
 
       <Section>
-        <img
-          src="/images/case-pinkman-hero.png"
-          alt="Pinkman сайт"
-          className="case-pinkman-hero-img"
-          loading="eager"
-        />
+        <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '20px', overflow: 'hidden' }}>
+          <iframe
+            src="https://kinescope.io/embed/fdMYyeWgDKaZo8HHB9EZmN?autoplay=1&muted=1&loop=1"
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+          />
+        </div>
       </Section>
 
       <Section><div className="text-h2-wrapper"><h2>Перенесли сайт с&nbsp;Webflow на&nbsp;собственное решение с&nbsp;нейронками&nbsp;&mdash; теперь любой человек из&nbsp;команды может вносить изменения в&nbsp;прод за&nbsp;несколько минут, без&nbsp;ожидания разработчиков и&nbsp;лишних костов для&nbsp;новых блоков и&nbsp;страниц.</h2></div></Section>
