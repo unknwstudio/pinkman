@@ -83,37 +83,6 @@ export default function CasePinkmanSitePage() {
         </div>
       </Section>
 
-      <div className="service-points-section">
-        <div className="process-steps">
-          <div className="process-steps__list" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-            <div className="process-step case-pinkman-card">
-              <div className="process-step__num">
-                <span className="process-step__num-badge" style={{ background: '#444' }}>1</span>
-                <span className="process-step__tag">~3 дня</span>
-              </div>
-              <h3>Перенос</h3>
-              <p>Полный перенос сайта с&nbsp;Webflow на&nbsp;собственное решение</p>
-            </div>
-            <div className="process-step case-pinkman-card">
-              <div className="process-step__num">
-                <span className="process-step__num-badge" style={{ background: '#444' }}>2</span>
-                <span className="process-step__tag">3–4 дня</span>
-              </div>
-              <h3>Отладка</h3>
-              <p>Точечные правки, проверка всех страниц и&nbsp;корректности отображения</p>
-            </div>
-            <div className="process-step case-pinkman-card">
-              <div className="process-step__num">
-                <span className="process-step__num-badge">✓</span>
-                <span className="process-step__tag">~7 дней</span>
-              </div>
-              <h3>Полный запуск</h3>
-              <p>Против полутора месяцев на&nbsp;перенос через классическую разработку</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* ── Было / Стало ── */}
       <div className="service-points-section">
         <div className="case-pinkman-ba-grid">
@@ -142,6 +111,37 @@ export default function CasePinkmanSitePage() {
                 <p className="text-regular font-color-black">{text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="service-points-section">
+        <div className="process-steps">
+          <div className="process-steps__list" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            <div className="process-step case-pinkman-card">
+              <div className="process-step__num">
+                <span className="process-step__num-badge" style={{ background: '#444' }}>1</span>
+                <span className="process-step__tag">~3 дня</span>
+              </div>
+              <h3>Перенос</h3>
+              <p>Полный перенос сайта с&nbsp;Webflow на&nbsp;собственное решение</p>
+            </div>
+            <div className="process-step case-pinkman-card">
+              <div className="process-step__num">
+                <span className="process-step__num-badge" style={{ background: '#444' }}>2</span>
+                <span className="process-step__tag">3–4 дня</span>
+              </div>
+              <h3>Отладка</h3>
+              <p>Точечные правки, проверка всех страниц и&nbsp;корректности отображения</p>
+            </div>
+            <div className="process-step case-pinkman-card">
+              <div className="process-step__num">
+                <span className="process-step__num-badge">✓</span>
+                <span className="process-step__tag">~7 дней</span>
+              </div>
+              <h3>Полный запуск</h3>
+              <p>Против полутора месяцев на&nbsp;перенос через классическую разработку</p>
+            </div>
           </div>
         </div>
       </div>
