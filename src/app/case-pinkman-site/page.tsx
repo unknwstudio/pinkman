@@ -18,6 +18,15 @@ export const metadata: Metadata = {
 export default function CasePinkmanSitePage() {
   return (
     <>
+      {/* ── 1. Logo — desktop only ── */}
+      <Section>
+        <div className="hide-mobile" style={{ marginBottom: '-2rem' }}>
+          <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40" style={{ color: '#F03882' }}>
+            <path d="M21.8368 4.41815H7.18411L0 47H14.5816L16.0042 38.637L36.703 43.8639C43.0335 45.4668 48.0126 42.3306 49.1507 35.222C51.5691 20.0292 49.5063 4 33.9289 4C29.1632 4 23.4017 7.13614 20.4143 12.0146L21.8368 4.41815ZM36.2051 29.9951L21.3389 26.2318C22.3348 21.9806 26.9582 16.6143 32.862 17.799C37.272 18.705 37.4143 25.5348 36.2051 29.9951Z" fill="currentColor"/>
+          </svg>
+        </div>
+      </Section>
+
       {/* ── Hero ── */}
       <Section>
         <div className="text-big-wrapper">
@@ -29,22 +38,20 @@ export default function CasePinkmanSitePage() {
         <img
           src="/images/case-pinkman-hero.png"
           alt="Pinkman сайт"
-          style={{ width: '100%', borderRadius: '20px', display: 'block', border: '1px solid #e0e0e0' }}
+          className="case-pinkman-hero-img"
           loading="eager"
         />
       </Section>
 
-      {/* 1. "теперь любой человек из команды" */}
       <Section><div className="text-h2-wrapper"><h2>Перенесли сайт с&nbsp;Webflow на&nbsp;собственное решение с&nbsp;нейронками&nbsp;&mdash; теперь любой человек из&nbsp;команды может вносить изменения в&nbsp;прод за&nbsp;несколько минут, без&nbsp;ожидания разработчиков и&nbsp;лишних костов для&nbsp;новых блоков и&nbsp;страниц.</h2></div></Section>
 
-      {/* 2. pinkman.ru — крупная ссылка */}
       <Section>
         <a href="https://pinkman.ru" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
           <h2 className="h1" style={{ textDecoration: 'underline', textUnderlineOffset: '6px' }}>pinkman.ru&nbsp;↗</h2>
         </a>
       </Section>
 
-      {/* ── Результат — карточки с чуть уменьшенным кеглем ── */}
+      {/* ── Результат ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Результат</h2></div></Section>
       <StatGrid items={[
         { value: '~7 дней', label: 'полный перенос и отладка сайта' },
@@ -53,10 +60,10 @@ export default function CasePinkmanSitePage() {
         { value: '4 дня → мин', label: 'публикация кейса с новыми блоками' },
       ]} smallValues />
 
-      {/* ── Проблема — 4. жёлтая плашка ── */}
-      <Section><div className="text-h1-wrapper"><h2 className="h1">Проблема</h2></div></Section>
+      {/* ── Проблема — жёлтая плашка ── */}
+      <Section><div className="text-h1-wrapper" style={{ marginBottom: 'var(--16px)' }}><h2 className="h1">Проблема</h2></div></Section>
       <Section>
-        <div className="callout-box callout-box--yellow anim">
+        <div className="callout-box callout-box--yellow anim case-pinkman-card">
           <p className="text-regular font-color-black">Сайт студии работал на&nbsp;Webflow&nbsp;&mdash; популярной зарубежной платформе. После ряда ограничений сайт перестал открываться у&nbsp;российской аудитории. Основной канал коммуникации с&nbsp;клиентами работал через раз, форма обратной связи&nbsp;&mdash; нестабильно.</p>
           <p className="text-regular font-color-black" style={{ marginTop: 'var(--16px)' }}>Перенос на&nbsp;новый конструктор с&nbsp;кастомизацией требовал больших денежных и, самое важное, временных затрат&nbsp;&mdash; около полутора месяцев с&nbsp;учётом рисков и&nbsp;технических сложностей. А&nbsp;сайт должен работать и&nbsp;корректно открываться уже сейчас.</p>
           <p className="text-regular font-color-black" style={{ marginTop: 'var(--16px)' }}>Параллельно существовала операционная боль&nbsp;&mdash; и&nbsp;у&nbsp;неё было два уровня:</p>
@@ -69,7 +76,6 @@ export default function CasePinkmanSitePage() {
           title="Часы ожидания"
           description="Поменять ссылку, текст или картинку технически было возможно через встроенную админку&nbsp;&mdash; но&nbsp;интерфейс был ориентирован на&nbsp;разработчиков. На&nbsp;практике быстро это умели делать лишь несколько человек, и&nbsp;любая мелочь превращалась в&nbsp;задачу с&nbsp;очередью."
         />
-        {/* 5. "От 4 дней" */}
         <ServicePoint
           tagsTop={['структурные изменения']}
           title="От&nbsp;4 дней"
@@ -81,31 +87,31 @@ export default function CasePinkmanSitePage() {
       {/* ── До и после — две карточки ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">До&nbsp;и&nbsp;после</h2></div></Section>
       <div className="service-points-section">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--8px)' }}>
+        <div className="case-pinkman-ba-grid">
           {/* Было */}
-          <div style={{ background: '#f7f7f7', borderRadius: '20px', padding: 'var(--32px)', border: '1px solid #e8e8e8' }}>
-            <p style={{ color: '#000', fontWeight: 700, fontSize: '1.1rem', marginBottom: 'var(--24px)' }}>Было</p>
+          <div className="case-pinkman-ba-card case-pinkman-ba-card--was case-pinkman-card">
+            <p className="case-pinkman-ba-heading">Было</p>
             {[
               'Сайт не\u00a0открывается в\u00a0России',
               'Мелкая правка — только через одного человека',
               'Новый блок — ждать дизайнера и\u00a0разработчика',
               'Публикация кейса: 36–56 часов',
-            ].map((text, i, arr) => (
-              <div key={i} style={{ padding: 'var(--16px) 0', borderTop: i > 0 ? '1px solid #f0f0f0' : 'none' }}>
+            ].map((text, i) => (
+              <div key={i} className="case-pinkman-ba-row">
                 <p className="text-regular font-color-black">{text}</p>
               </div>
             ))}
           </div>
           {/* Стало */}
-          <div style={{ background: '#fff', borderRadius: '20px', padding: 'var(--32px)', border: '1px solid #e8e8e8' }}>
-            <p style={{ color: '#000', fontWeight: 700, fontSize: '1.1rem', marginBottom: 'var(--24px)' }}>Стало</p>
+          <div className="case-pinkman-ba-card case-pinkman-ba-card--now case-pinkman-card">
+            <p className="case-pinkman-ba-heading">Стало</p>
             {[
               'Сайт работает для\u00a0всей российской аудитории',
               'Любую правку делает любой из\u00a06 сотрудников',
               'Новый блок — без\u00a0отдельного дизайна и\u00a0разработки',
               'Публикация кейса: минуты',
             ].map((text, i) => (
-              <div key={i} style={{ padding: 'var(--16px) 0', borderTop: i > 0 ? '1px solid #f0f0f0' : 'none' }}>
+              <div key={i} className="case-pinkman-ba-row">
                 <p className="text-regular font-color-black">{text}</p>
               </div>
             ))}
@@ -113,19 +119,18 @@ export default function CasePinkmanSitePage() {
         </div>
       </div>
 
-      {/* ── Решение — 7. розовая плашка, 8. серые бейджи ── */}
-      <Section><div className="text-h1-wrapper"><h2 className="h1">Решение</h2></div></Section>
+      {/* ── Решение — розовая плашка ── */}
+      <Section><div className="text-h1-wrapper" style={{ marginBottom: 'var(--16px)' }}><h2 className="h1">Решение</h2></div></Section>
       <Section>
-        <div className="callout-box anim">
+        <div className="callout-box anim case-pinkman-card">
           <p className="text-regular font-color-black">Мы&nbsp;перенесли сайт на&nbsp;собственное решение с&nbsp;AI&#x2011;ассистентом в&nbsp;основе. Теперь вносить изменения может любой человек из&nbsp;команды без&nbsp;технических навыков&nbsp;&mdash; отдел продаж, продуктовый отдел, дизайнеры, основатели студии. Баг, правка, новый кейс&nbsp;&mdash; исправляется сразу, без&nbsp;заявок и&nbsp;ожиданий.</p>
         </div>
       </Section>
 
-      {/* 8. Серые бейджи для шагов 1 и 2 */}
       <div className="service-points-section">
         <div className="process-steps">
           <div className="process-steps__list" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-            <div className="process-step">
+            <div className="process-step case-pinkman-card">
               <div className="process-step__num">
                 <span className="process-step__num-badge" style={{ background: '#444' }}>1</span>
                 <span className="process-step__tag">~3 дня</span>
@@ -133,7 +138,7 @@ export default function CasePinkmanSitePage() {
               <h3>Перенос</h3>
               <p>Полный перенос сайта с&nbsp;Webflow на&nbsp;собственное решение</p>
             </div>
-            <div className="process-step">
+            <div className="process-step case-pinkman-card">
               <div className="process-step__num">
                 <span className="process-step__num-badge" style={{ background: '#444' }}>2</span>
                 <span className="process-step__tag">3–4 дня</span>
@@ -141,7 +146,7 @@ export default function CasePinkmanSitePage() {
               <h3>Отладка</h3>
               <p>Точечные правки, проверка всех страниц и&nbsp;корректности отображения</p>
             </div>
-            <div className="process-step">
+            <div className="process-step case-pinkman-card">
               <div className="process-step__num">
                 <span className="process-step__num-badge">✓</span>
                 <span className="process-step__tag">~7 дней</span>
@@ -153,18 +158,18 @@ export default function CasePinkmanSitePage() {
         </div>
       </div>
 
-      {/* ── UI-kit — 9. крупный текст ── */}
+      {/* ── UI-kit ── */}
       <Section><div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}><h2 className="h1">Внутренний UI&#x2011;kit, который растёт вместе с&nbsp;сайтом</h2></div>
         <p className="font-color-dark-gray">В&nbsp;основе решения&nbsp;&mdash; собственный UI&#x2011;kit: набор визуальных констант и&nbsp;компонентов, которым пользуется нейронка при&nbsp;каждом запросе. Это означает, что любой новый блок или страница автоматически соответствует стилистике сайта. Нейронка не&nbsp;просто выполняет задачи&nbsp;&mdash; она развивает UI&#x2011;kit исходя из&nbsp;новых запросов, сохраняя визуальную целостность без&nbsp;участия дизайнера.</p>
       </Section>
       <Section><div className="text-big-wrapper"><p className="text-big" style={{ color: '#555' }}>Раньше, чтобы поменять что&#x2011;то на&nbsp;сайте, нужно было писать разработчику и&nbsp;ждать. Сейчас это делает любой человек из&nbsp;команды за&nbsp;минуту.</p></div></Section>
 
-      {/* ── CTA — 10. "Хотите так же? Свяжитесь с Юрой!" ── */}
+      {/* ── CTA ── */}
       <Section><div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}><h2 className="h1">Хотите так&nbsp;же? Свяжитесь с&nbsp;нами!</h2></div>
         <p className="font-color-dark-gray">Если ваш сайт работает на&nbsp;зарубежной платформе или обновление контента занимает дни&nbsp;&mdash; расскажем, как это решить для&nbsp;вашего бизнеса.</p>
       </Section>
 
-      {/* 11. Без заголовка "Обсудить проект?", 12. Фото Юры круглое */}
+      {/* ── Контакты с фото Юры ── */}
       <div className="portfolio-section contacts-main-section">
         <div className="main-container">
           <div className="contacts-card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--24px)' }}>

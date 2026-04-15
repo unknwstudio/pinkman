@@ -900,6 +900,60 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ════════════════════════════════════════════════════════════
+   CASE PINKMAN SITE — page-specific styles
+   ════════════════════════════════════════════════════════════ */
+
+/* Hero image */
+.case-pinkman-hero-img {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+  border: 1px solid #e0e0e0;
+}
+
+/* 3. Hover animation on cards */
+.case-pinkman-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.case-pinkman-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Before/after grid */
+.case-pinkman-ba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--8px);
+}
+.case-pinkman-ba-card {
+  border-radius: 20px;
+  padding: var(--32px);
+  border: 1px solid #e8e8e8;
+}
+.case-pinkman-ba-card--was { background: #f4f4f4; }
+.case-pinkman-ba-card--now { background: #fff; }
+.case-pinkman-ba-heading {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: var(--24px);
+}
+.case-pinkman-ba-row {
+  padding: var(--16px) 0;
+}
+.case-pinkman-ba-row + .case-pinkman-ba-row {
+  border-top: 1px solid #e8e8e8;
+}
+
+/* 4. Mobile: stat values bigger */
+@media (max-width: 767px) {
+  .stat-grid__value { font-size: 1.6rem !important; }
+  .case-pinkman-ba-grid { grid-template-columns: 1fr; }
+  .case-pinkman-ba-heading { font-size: 1.1rem; }
+}
+
+/* ════════════════════════════════════════════════════════════
    BIGGER CARD BORDER RADIUS
    ════════════════════════════════════════════════════════════ */
 .service-point { border-radius: 20px !important; transition: transform 0.3s ease, box-shadow 0.3s ease; }
