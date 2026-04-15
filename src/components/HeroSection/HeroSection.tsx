@@ -6,6 +6,14 @@ import gsap from '@/lib/gsap'
 
 const ALL_CASES = [
   {
+    title: 'Поленов и ученики',
+    desc: 'Интерактивный гид по выставке — цифровое AI-путешествие',
+    year: '2026',
+    cats: ['Спецпроекты', 'Интерфейсы'],
+    img: '/images/_cases/polenov/polenov-cover.webp',
+    href: '/projects/polenov-i-ucheniki',
+  },
+  {
     title: 'Норма',
     desc: 'Разработали брендинг, мобильное приложение и сайт для сети химчисток',
     year: '2026',
