@@ -48,8 +48,8 @@ export default function CasePinkmanSitePage() {
         { value: '~7 дней', label: 'полный перенос и отладка сайта' },
         { value: '0 мин', label: 'ожидание разработчика для любых правок' },
         { value: '6+', label: 'человек обновляют сайт самостоятельно' },
-        { value: 'Несколько минут', label: 'публикация кейса с новыми блоками' },
-      ]} />
+        { value: 'Пара минут', label: 'публикация кейса с новыми блоками' },
+      ]} smallValues />
 
       {/* ── Проблема — жёлтая плашка ── */}
       <Section><div className="text-h1-wrapper" style={{ marginBottom: 'var(--16px)' }}><h2 className="h1">Как было раньше</h2></div></Section>
@@ -165,7 +165,7 @@ export default function CasePinkmanSitePage() {
         <div className="main-container">
           <div className="contacts-card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--24px)' }}>
             <img
-              src="/images/yura-grig.png"
+              src="/images/yura-grig.jpg"
               alt="Юрий Григоренко"
               style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
             />
