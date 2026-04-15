@@ -69,7 +69,7 @@ export default function VideoProductionPage() {
             subtitle="AI+CGI Campaign"
             description="Подготовили AI-ролики для федеральной рекламной кампании с&nbsp;множеством ресайзов"
             href="/projects/yandex-go-kazakhstan"
-            imgSrc="/images/_cases/yagno-kazakh/horizontal.png"
+            imgSrc="/images/_cases/yagno-kazakh/horizontal.avif"
             imgAlt="Яндекс Го Казахстан"
           />
           <CaseCard
@@ -79,7 +79,7 @@ export default function VideoProductionPage() {
             subtitle="AI+CGI Campaign"
             description="Рекламный AI-ролик для различных каналов коммуникации"
             href="/projects/ai-rolik-dlya-yandex-split"
-            imgSrc="/images/_cases/yandex-split/image 2090012112.png"
+            imgSrc="/images/_cases/yandex-split/image 2090012112.avif"
             imgAlt="AI-ролик для Яндекс.Сплит"
           />
           <CaseCard
@@ -89,7 +89,7 @@ export default function VideoProductionPage() {
             subtitle="AI+CGI Campaign"
             description="Рекламный AI-ролик для трансляции в&nbsp;кинотеатре Пионер"
             href="/projects/ai-rolik-dlya-bootlegger"
-            imgSrc="/images/_cases/bootlegger/image 2090012112.png"
+            imgSrc="/images/_cases/bootlegger/image 2090012112.avif"
             imgAlt="AI-ролик для Bootlegger"
           />
           <CaseCard

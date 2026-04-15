@@ -22,7 +22,7 @@ const SLIDES: Slide[] = [
     title: 'Яндекс Го Казахстан',
     subtitle: 'AI+CGI Campaign',
     description: 'Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов',
-    imgSrc: '/images/_cases/yagno-kazakh/horizontal.png',
+    imgSrc: '/images/_cases/yagno-kazakh/horizontal.avif',
     href: '/projects/yandex-go-kazakhstan',
   },
   {
@@ -31,7 +31,7 @@ const SLIDES: Slide[] = [
     title: 'AI-ролик для Яндекс.Сплит',
     subtitle: 'AI+CGI Campaign',
     description: 'Рекламный AI-ролик для различных каналов коммуникации',
-    imgSrc: '/images/_cases/yandex-split/image 2090012112.png',
+    imgSrc: '/images/_cases/yandex-split/image 2090012112.avif',
     href: '/projects/ai-rolik-dlya-yandex-split',
   },
   {
@@ -40,7 +40,7 @@ const SLIDES: Slide[] = [
     title: 'AI-ролик для Bootlegger',
     subtitle: 'AI+CGI Campaign',
     description: 'Рекламный AI-ролик для трансляции в\u00a0кинотеатре Пионер',
-    imgSrc: '/images/_cases/bootlegger/image 2090012112.png',
+    imgSrc: '/images/_cases/bootlegger/image 2090012112.avif',
     href: '/projects/ai-rolik-dlya-bootlegger',
   },
   // ── 2025 ─────────────────────────────────────────────────

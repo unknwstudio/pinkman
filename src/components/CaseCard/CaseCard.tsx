@@ -92,26 +92,32 @@ export default function CaseCard({
 
         {hasImage && (
           <div className="case-card-big___right">
-            <img
-              alt={imgAlt}
-              className="case-card-big___image hide-mobile"
-              loading="eager"
-              sizes="(max-width: 1248px) 100vw, 1248px"
-              src={imgSrc}
-              srcSet={imgSrcSet}
-              width={1248}
-              height={823}
-            />
-            <img
-              alt={imgAlt}
-              className="case-card-big___image hide-desktop"
-              loading="eager"
-              sizes="100vw"
-              src={imgSrcMobile ?? imgSrc}
-              srcSet={imgSrcSetMobile ?? imgSrcSet}
-              width={1248}
-              height={823}
-            />
+            <picture>
+              <source type="image/avif" srcSet={imgSrc!.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="(max-width: 1248px) 100vw, 1248px" />
+              <img
+                alt={imgAlt}
+                className="case-card-big___image hide-mobile"
+                loading="eager"
+                sizes="(max-width: 1248px) 100vw, 1248px"
+                src={imgSrc}
+                srcSet={imgSrcSet}
+                width={1248}
+                height={823}
+              />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet={(imgSrcMobile ?? imgSrc)!.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="100vw" />
+              <img
+                alt={imgAlt}
+                className="case-card-big___image hide-desktop"
+                loading="eager"
+                sizes="100vw"
+                src={imgSrcMobile ?? imgSrc}
+                srcSet={imgSrcSetMobile ?? imgSrcSet}
+                width={1248}
+                height={823}
+              />
+            </picture>
           </div>
         )}
       </div>

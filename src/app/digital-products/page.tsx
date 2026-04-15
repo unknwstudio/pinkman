@@ -28,12 +28,18 @@ export default function DigitalProductsPage() {
             <p className="font-color-dark-gray">Понимаем, как&nbsp;пользователи взаимодействуют с&nbsp;продуктом. Интервью, юзабилити-тесты, карты сценариев&nbsp;— находим проблемы и&nbsp;точки роста, прежде чем начинать дизайн</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a60386fd9bb45b8360898_dp1 (1).webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a605d92514d91b4f789c1_dp1mob.webp"
-              srcSet="/images/682a605d92514d91b4f789c1_dp1mob-p-500.webp 500w, /images/682a605d92514d91b4f789c1_dp1mob.webp 688w"
-              width={688} height={2004} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682a60386fd9bb45b8360898_dp1 (1).avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682a60386fd9bb45b8360898_dp1 (1).webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a605d92514d91b4f789c1_dp1mob-p-500.avif 500w, /images/682a605d92514d91b4f789c1_dp1mob.avif 688w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a605d92514d91b4f789c1_dp1mob.webp"
+                srcSet="/images/682a605d92514d91b4f789c1_dp1mob-p-500.webp 500w, /images/682a605d92514d91b4f789c1_dp1mob.webp 688w"
+                width={688} height={2004} />
+            </picture>
           </div>
         </div>
       </div>
@@ -45,12 +51,18 @@ export default function DigitalProductsPage() {
             <p className="font-color-dark-gray">Проектируем логику продукта: от&nbsp;общей структуры до&nbsp;мельчайших сценариев. Учитываем бизнес-цели, поведение пользователей и&nbsp;ограничения разработки</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6089a4b3f53ee86c0baf_dp2.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a609b00d93f05c1cb5467_dp2mob.webp"
-              srcSet="/images/682a609b00d93f05c1cb5467_dp2mob-p-500.webp 500w, /images/682a609b00d93f05c1cb5467_dp2mob.webp 686w"
-              width={686} height={1540} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682a6089a4b3f53ee86c0baf_dp2.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682a6089a4b3f53ee86c0baf_dp2.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a609b00d93f05c1cb5467_dp2mob-p-500.avif 500w, /images/682a609b00d93f05c1cb5467_dp2mob.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a609b00d93f05c1cb5467_dp2mob.webp"
+                srcSet="/images/682a609b00d93f05c1cb5467_dp2mob-p-500.webp 500w, /images/682a609b00d93f05c1cb5467_dp2mob.webp 686w"
+                width={686} height={1540} />
+            </picture>
           </div>
         </div>
       </div>
@@ -62,12 +74,18 @@ export default function DigitalProductsPage() {
             <p className="font-color-dark-gray">Делаем UI для&nbsp;сложных систем: от&nbsp;личных кабинетов до&nbsp;внутренних платформ и&nbsp;дашбордов. Прорабатываем каждый экран, чтобы было понятно, удобно и&nbsp;быстро</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a60d1413f6b916e3cf518_dp3.webp" width={2624} height={824} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a60e3379497ff5729c636_dp3mob.webp"
-              srcSet="/images/682a60e3379497ff5729c636_dp3mob-p-500.webp 500w, /images/682a60e3379497ff5729c636_dp3mob.webp 686w"
-              width={686} height={868} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682a60d1413f6b916e3cf518_dp3.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682a60d1413f6b916e3cf518_dp3.webp" width={2624} height={824} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a60e3379497ff5729c636_dp3mob-p-500.avif 500w, /images/682a60e3379497ff5729c636_dp3mob.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a60e3379497ff5729c636_dp3mob.webp"
+                srcSet="/images/682a60e3379497ff5729c636_dp3mob-p-500.webp 500w, /images/682a60e3379497ff5729c636_dp3mob.webp 686w"
+                width={686} height={868} />
+            </picture>
           </div>
         </div>
       </div>

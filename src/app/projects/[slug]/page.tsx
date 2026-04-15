@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import fs from 'fs'
+import path from 'path'
 import casesData from '@/lib/cases.json'
 import { ruNbsp, ruNbspHtml } from '@/lib/ru-nbsp'
 import imageDims from '@/lib/image-dims.json'
@@ -10,6 +12,13 @@ function imgSize(src: string): { width: number; height: number } | Record<string
   const key = src.replace(/^\/images\//, '')
   const d = dims[key]
   return d ? { width: d.w, height: d.h } : {}
+}
+
+/** Returns the public-path AVIF URL only if the file exists on disk, otherwise null. */
+function avifSrc(webpPublicPath: string): string | null {
+  const avifPublicPath = webpPublicPath.replace(/\.(webp|png|jpe?g)$/i, '.avif')
+  const fsPath = path.join(process.cwd(), 'public', avifPublicPath)
+  return fs.existsSync(fsPath) ? avifPublicPath : null
 }
 
 type MediaBlock = {
@@ -99,7 +108,7 @@ export default async function CasePage({ params }: Props) {
       {cover_image && (
         <div className="media-section last" style={{ marginBottom: 'var(--32px)' }}>
           <picture>
-            <source type="image/avif" srcSet={`/images/${cover_image.replace(/\.(webp|png|jpe?g)$/i, '.avif')}`} />
+            {avifSrc(`/images/${cover_image}`) && <source type="image/avif" srcSet={avifSrc(`/images/${cover_image}`)!} />}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt=""
@@ -277,7 +286,7 @@ export default async function CasePage({ params }: Props) {
           {block.images.length === 1 && (
             <div className="media-section last">
               <picture>
-                <source type="image/avif" srcSet={`/images/${block.images[0].replace(/\.(webp|png|jpe?g)$/i, '.avif')}`} />
+                {avifSrc(`/images/${block.images[0]}`) && <source type="image/avif" srcSet={avifSrc(`/images/${block.images[0]}`)!} />}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   alt=""
@@ -296,7 +305,7 @@ export default async function CasePage({ params }: Props) {
                 {block.images.map((img, j) => (
                   <div key={j} className="media-section__photos-item">
                     <picture>
-                      <source type="image/avif" srcSet={`/images/${img.replace(/\.(webp|png|jpe?g)$/i, '.avif')}`} />
+                      {avifSrc(`/images/${img}`) && <source type="image/avif" srcSet={avifSrc(`/images/${img}`)!} />}
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         alt=""
