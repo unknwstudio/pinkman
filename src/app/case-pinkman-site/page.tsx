@@ -29,7 +29,7 @@ export default function CasePinkmanSitePage() {
         <img
           src="/images/case-pinkman-hero.png"
           alt="Pinkman сайт"
-          style={{ width: '100%', borderRadius: '20px', display: 'block' }}
+          style={{ width: '100%', borderRadius: '20px', display: 'block', border: '1px solid #e0e0e0' }}
           loading="eager"
         />
       </Section>
@@ -83,8 +83,8 @@ export default function CasePinkmanSitePage() {
       <div className="service-points-section">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--8px)' }}>
           {/* Было */}
-          <div style={{ background: '#fff', borderRadius: '20px', padding: 'var(--32px)', border: '1px solid #e8e8e8' }}>
-            <p style={{ color: '#8B0000', fontWeight: 700, fontSize: '1.1rem', marginBottom: 'var(--24px)' }}>Было</p>
+          <div style={{ background: '#f7f7f7', borderRadius: '20px', padding: 'var(--32px)', border: '1px solid #e8e8e8' }}>
+            <p style={{ color: '#000', fontWeight: 700, fontSize: '1.1rem', marginBottom: 'var(--24px)' }}>Было</p>
             {[
               'Сайт не\u00a0открывается в\u00a0России',
               'Мелкая правка — только через одного человека',
@@ -98,7 +98,7 @@ export default function CasePinkmanSitePage() {
           </div>
           {/* Стало */}
           <div style={{ background: '#fff', borderRadius: '20px', padding: 'var(--32px)', border: '1px solid #e8e8e8' }}>
-            <p style={{ color: '#2D5A27', fontWeight: 700, fontSize: '1.1rem', marginBottom: 'var(--24px)' }}>Стало</p>
+            <p style={{ color: '#000', fontWeight: 700, fontSize: '1.1rem', marginBottom: 'var(--24px)' }}>Стало</p>
             {[
               'Сайт работает для\u00a0всей российской аудитории',
               'Любую правку делает любой из\u00a06 сотрудников',
@@ -167,7 +167,7 @@ export default function CasePinkmanSitePage() {
       {/* 11. Без заголовка "Обсудить проект?", 12. Фото Юры круглое */}
       <div className="portfolio-section contacts-main-section">
         <div className="main-container">
-          <div className="contacts-card" style={{ display: 'flex', alignItems: 'center', gap: 'var(--24px)' }}>
+          <div className="contacts-card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--24px)' }}>
             <img
               src="/images/yura-grig.png"
               alt="Юрий Григоренко"
