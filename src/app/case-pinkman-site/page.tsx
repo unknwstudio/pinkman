@@ -56,12 +56,12 @@ export default function CasePinkmanSitePage() {
       <Section><div className="text-h1-wrapper" style={{ marginBottom: 'var(--16px)' }}><h2 className="h1">Как было раньше</h2></div></Section>
       <ServicePointRow compact twoCol>
         <ServicePoint
-          title="Что происходило"
+          title="Сайт работал с&nbsp;перебоями из&#x2011;за блокировок зарубежных платформ"
           description="Сайт студии работал на&nbsp;Webflow&nbsp;&mdash; популярной зарубежной платформе. После ряда ограничений сайт перестал открываться у&nbsp;российской аудитории. Основной канал коммуникации с&nbsp;клиентами работал через раз, форма обратной связи&nbsp;&mdash; нестабильно.<br/><br/>Перенос на&nbsp;новый конструктор с&nbsp;кастомизацией требовал больших денежных и, самое важное, временных затрат&nbsp;&mdash; около полутора месяцев с&nbsp;учётом рисков и&nbsp;технических сложностей. А&nbsp;сайт должен работать и&nbsp;корректно открываться уже сейчас.<br/><br/>Параллельно существовала операционная боль&nbsp;&mdash; и&nbsp;у&nbsp;неё было два уровня:"
         />
       </ServicePointRow>
 
-      <ServicePointRow>
+      <ServicePointRow compact>
         <ServicePoint
           tagsTop={['мелкие правки']}
           title="Часы ожидания"
