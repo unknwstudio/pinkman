@@ -150,7 +150,7 @@ export default function CasePinkmanSitePage() {
       <Section><div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}><h2 className="h1">Внутренний UI&#x2011;kit, который растёт вместе с&nbsp;сайтом</h2></div>
         <p className="font-color-dark-gray">В&nbsp;основе решения&nbsp;&mdash; собственный UI&#x2011;kit: набор визуальных констант и&nbsp;компонентов, которым пользуется нейронка при&nbsp;каждом запросе. Это означает, что любой новый блок или страница автоматически соответствует стилистике сайта. Нейронка не&nbsp;просто выполняет задачи&nbsp;&mdash; она развивает UI&#x2011;kit исходя из&nbsp;новых запросов, сохраняя визуальную целостность без&nbsp;участия дизайнера.</p>
       </Section>
-      <Section><div className="text-big-wrapper"><p className="text-big" style={{ color: '#555' }}>Раньше, чтобы поменять что&#x2011;то на&nbsp;сайте, нужно было писать разработчику и&nbsp;ждать. Сейчас это делает любой человек из&nbsp;команды за&nbsp;минуту.</p></div></Section>
+      <Section><div className="text-big-wrapper"><p className="text-big case-pinkman-gradient-text">Раньше, чтобы поменять что&#x2011;то на&nbsp;сайте, нужно было писать разработчику и&nbsp;ждать. <span className="case-pinkman-gradient-highlight">Сейчас это делает любой человек из&nbsp;команды за&nbsp;минуту.</span></p></div></Section>
 
       {/* ── CTA ── */}
       <Section><div className="text-h1-wrapper" style={{ marginBottom: '1rem' }}><h2 className="h1">Хотите так&nbsp;же? Свяжитесь с&nbsp;нами!</h2></div>

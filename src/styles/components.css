@@ -949,6 +949,23 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid #e8e8e8;
 }
 
+/* Gradient text hover effect */
+.case-pinkman-gradient-text {
+  color: #555;
+}
+.case-pinkman-gradient-highlight {
+  transition: all 0.5s ease;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.case-pinkman-gradient-text:hover .case-pinkman-gradient-highlight {
+  background: linear-gradient(90deg, #F03882, #ff6eb4, #F03882);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Mobile overrides for case-pinkman-site */
 @media (max-width: 767px) {
   .case-pinkman-ba-grid { grid-template-columns: 1fr; }
