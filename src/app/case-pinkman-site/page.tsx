@@ -84,7 +84,7 @@ export default function CasePinkmanSitePage() {
       </Section>
 
       {/* ── Было / Стало ── */}
-      <div className="service-points-section is--compact">
+      <div className="service-points-section is--compact" style={{ marginTop: 'var(--32px)' }}>
         <div className="case-pinkman-ba-grid">
           <div className="case-pinkman-ba-card case-pinkman-ba-card--now case-pinkman-card">
             <p className="case-pinkman-ba-heading">Стало</p>
