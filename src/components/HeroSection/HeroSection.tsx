@@ -6,8 +6,8 @@ import gsap from '@/lib/gsap'
 
 const ALL_CASES = [
   {
-    title: 'Роскосмос\u00a0— День Космонавтики на\u00a0Первом',
-    desc: 'AI-ролики для\u00a0фонов сцены большого концерта Роскосмоса ко\u00a0Дню Космонавтики на\u00a0Первом канале',
+    title: 'Зрелищные AI-ролики для\u00a0концерта Роскосмоса ко\u00a0Дню Космонавтики',
+    desc: 'Оживили сцену на\u00a0Первом канале и\u00a0дополнили выступление артистов',
     year: '2026',
     cats: ['AI-ролики', 'шоу'],
     img: '/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.png',
