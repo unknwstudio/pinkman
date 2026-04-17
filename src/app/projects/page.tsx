@@ -32,6 +32,14 @@ type Case = {
 const CASES: Case[] = [
   // ── 2026 ──────────────────────────────────────────────────────────────
   {
+    title: 'Роскосмос\u00a0— День Космонавтики на\u00a0Первом',
+    desc: 'AI-ролики для\u00a0фонов сцены большого концерта Роскосмоса ко\u00a0Дню Космонавтики на\u00a0Первом канале',
+    year: '2026',
+    cats: ['AI-ролики', 'шоу'],
+    img: '/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.png',
+    href: '/projects/roscosmos-den-kosmonavtiki',
+  },
+  {
     title: 'Поленов и ученики',
     desc: 'Интерактивный гид по выставке — цифровое AI-путешествие',
     year: '2026',
