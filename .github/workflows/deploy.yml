@@ -6,10 +6,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  bump-version:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Bump build number
+        run: |
+          BUILD=$(jq '.build' version.json)
+          NEW_BUILD=$((BUILD + 1))
+          jq --argjson b "$NEW_BUILD" '.build = $b' version.json > version.tmp.json
+          mv version.tmp.json version.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add version.json
+          git commit -m "chore: bump build to $(printf '%04d' $NEW_BUILD) [skip ci]"
+          git push
+
+  deploy:
+    needs: bump-version
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:

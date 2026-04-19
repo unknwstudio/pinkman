@@ -1,4 +1,5 @@
-export const SITE_VERSION = process.env.NEXT_PUBLIC_BUILD_ID ?? 'dev'
+import versionData from '../../version.json'
+export const SITE_VERSION = String(versionData.build).padStart(4, '0')
 
 /** All service-page slugs — used by Nav to flag the Услуги tab as active */
 export const SERVICE_SLUGS = [

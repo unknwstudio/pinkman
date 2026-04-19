@@ -10,7 +10,7 @@ const ALL_CASES = [
     desc: 'Оживили сцену на\u00a0Первом канале и\u00a0дополнили выступление артистов',
     year: '2026',
     cats: ['AI-ролики', 'шоу'],
-    img: '/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.png',
+    img: '/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.webp',
     href: '/projects/roscosmos-den-kosmonavtiki',
   },
   {

@@ -36,7 +36,7 @@ const CASES: Case[] = [
     desc: 'Оживили сцену на\u00a0Первом канале и\u00a0дополнили выступление артистов',
     year: '2026',
     cats: ['AI-ролики', 'шоу'],
-    img: '/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.png',
+    img: '/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.webp',
     href: '/projects/roscosmos-den-kosmonavtiki',
   },
   {
@@ -615,6 +615,9 @@ export default function ProjectsPage() {
             // Include index to guarantee uniqueness even when title+year+cats[0] collide
             // (e.g. two "Сбер х Пушкинский музей 2024" entries with the same first category)
             const flipId = `case-${c.title}-${c.year}-${index}`
+            const avifSrc = c.img?.startsWith('/images/_cases/')
+              ? c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')
+              : undefined
             return (
             <div
               key={flipId}
@@ -653,26 +656,32 @@ export default function ProjectsPage() {
                     </div>
                     {c.img && (
                       <div className="case-card-big___right">
-                        <img
-                          alt={c.title}
-                          className="case-card-big___image hide-mobile"
-                          loading="lazy"
-                          sizes="(max-width: 1248px) 100vw, 1248px"
-                          src={c.img}
-                          srcSet={c.imgSrcSet}
-                          width={1248}
-                          height={823}
-                        />
-                        <img
-                          alt={c.title}
-                          className="case-card-big___image hide-desktop"
-                          loading="lazy"
-                          sizes="100vw"
-                          src={c.img}
-                          srcSet={c.imgSrcSet}
-                          width={1248}
-                          height={823}
-                        />
+                        <picture>
+                          {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                          {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="(max-width: 1248px) 100vw, 1248px" />}
+                          <img
+                            alt={c.title}
+                            className="case-card-big___image hide-mobile"
+                            loading="lazy"
+                            sizes="(max-width: 1248px) 100vw, 1248px"
+                            src={c.img}
+                            width={1248}
+                            height={823}
+                          />
+                        </picture>
+                        <picture>
+                          {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                          {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="100vw" />}
+                          <img
+                            alt={c.title}
+                            className="case-card-big___image hide-desktop"
+                            loading="lazy"
+                            sizes="100vw"
+                            src={c.img}
+                            width={1248}
+                            height={823}
+                          />
+                        </picture>
                       </div>
                     )}
                   </div>
@@ -697,26 +706,32 @@ export default function ProjectsPage() {
                   </div>
                   {c.img && (
                     <div className="case-card-big___right">
-                      <img
-                        alt={c.title}
-                        className="case-card-big___image hide-mobile"
-                        loading="lazy"
-                        sizes="(max-width: 1248px) 100vw, 1248px"
-                        src={c.img}
-                        srcSet={c.imgSrcSet}
-                        width={1248}
-                        height={823}
-                      />
-                      <img
-                        alt={c.title}
-                        className="case-card-big___image hide-desktop"
-                        loading="lazy"
-                        sizes="100vw"
-                        src={c.img}
-                        srcSet={c.imgSrcSet}
-                        width={1248}
-                        height={823}
-                      />
+                      <picture>
+                        {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                        {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="(max-width: 1248px) 100vw, 1248px" />}
+                        <img
+                          alt={c.title}
+                          className="case-card-big___image hide-mobile"
+                          loading="lazy"
+                          sizes="(max-width: 1248px) 100vw, 1248px"
+                          src={c.img}
+                          width={1248}
+                          height={823}
+                        />
+                      </picture>
+                      <picture>
+                        {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                        {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="100vw" />}
+                        <img
+                          alt={c.title}
+                          className="case-card-big___image hide-desktop"
+                          loading="lazy"
+                          sizes="100vw"
+                          src={c.img}
+                          width={1248}
+                          height={823}
+                        />
+                      </picture>
                     </div>
                   )}
                 </div>

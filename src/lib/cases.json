@@ -1,5 +1,6 @@
 {
   "roscosmos-den-kosmonavtiki": {
+    "cover_image": "_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.webp",
     "hero": "AI-ролики для концерта Роскосмоса ко Дню Космонавтики на Первом канале",
     "subtitle": "AI + 2D Motion Campaign — подготовили AI-ролики для фонов П-образной сцены большого концерта Роскосмоса ко Дню Космонавтики. Оживили сцену на Первом и дополнили выступление Валерии, Дмитрия Маликова, Юлии Савичевой и остальных артистов.",
     "results": [],
@@ -14,9 +15,9 @@
         "heading": null,
         "layout": "stacked",
         "images": [
-          "_cases/roscosmos-den-kosmonavtiki/roscos-img-01.png",
-          "_cases/roscosmos-den-kosmonavtiki/roscos-img-02.png",
-          "_cases/roscosmos-den-kosmonavtiki/roscos-img-03.png"
+          "_cases/roscosmos-den-kosmonavtiki/roscos-img-01.webp",
+          "_cases/roscosmos-den-kosmonavtiki/roscos-img-02.webp",
+          "_cases/roscosmos-den-kosmonavtiki/roscos-img-03.webp"
         ]
       }
     ]
