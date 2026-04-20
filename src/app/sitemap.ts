@@ -26,6 +26,9 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
   { url: `${BASE}/research-brand-perception/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   { url: `${BASE}/research-new-product/`,      lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   { url: `${BASE}/research-product-growth/`,   lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE}/research-audience/`,          lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE}/research-customer-journey/`,  lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE}/research-growth-opportunities/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   { url: `${BASE}/contact-us/`,               lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.6 },
   { url: `${BASE}/privacy-policy/`,           lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
 ]

@@ -134,6 +134,61 @@ export default function ResearchPage() {
         </Link>
       </ServiceGrid>
 
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Рынок, аудитория и&nbsp;точки роста</h2></div></Section>
+
+      <ServiceGrid>
+        <Link href="/research-audience/" className="service-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ServicePoint
+            tagsTop={['аудитория']}
+            title="Понимание аудитории и&nbsp;причин выбора"
+            description="Кто ваш клиент, что для&nbsp;него важно и&nbsp;почему он&nbsp;выбирает вас или конкурентов."
+            afterTitle={
+              <div className="small-button small-button--cases w-inline-block" style={{ marginTop: 'var(--16px)', display: 'inline-flex' }}>
+                <p className="text-regular small-button-text">Подробнее</p>
+                <div className="small-button-arrow-wrapper">
+                  <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                  <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                </div>
+              </div>
+            }
+          />
+        </Link>
+        <Link href="/research-customer-journey/" className="service-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ServicePoint
+            tagsTop={['CJM']}
+            title="Путь клиента: от&nbsp;первого касания до&nbsp;использования"
+            description="Где ломается путь клиента до&nbsp;покупки, активации и&nbsp;первого опыта&nbsp;— и&nbsp;как убрать точки потери."
+            animDelay={2}
+            afterTitle={
+              <div className="small-button small-button--cases w-inline-block" style={{ marginTop: 'var(--16px)', display: 'inline-flex' }}>
+                <p className="text-regular small-button-text">Подробнее</p>
+                <div className="small-button-arrow-wrapper">
+                  <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                  <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                </div>
+              </div>
+            }
+          />
+        </Link>
+        <Link href="/research-growth-opportunities/" className="service-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ServicePoint
+            tagsTop={['точки роста']}
+            title="Поиск точек роста на&nbsp;рынке"
+            description="Где искать следующие возможности: в&nbsp;сегментах, сценариях, потребностях или направлениях."
+            animDelay={3}
+            afterTitle={
+              <div className="small-button small-button--cases w-inline-block" style={{ marginTop: 'var(--16px)', display: 'inline-flex' }}>
+                <p className="text-regular small-button-text">Подробнее</p>
+                <div className="small-button-arrow-wrapper">
+                  <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                  <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                </div>
+              </div>
+            }
+          />
+        </Link>
+      </ServiceGrid>
+
       <ContactCard intro="Обсудим ваш проект?" />
     </>
   )
