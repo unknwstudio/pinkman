@@ -15,13 +15,6 @@ export const metadata: Metadata = {
   },
 }
 
-const cases = [
-  ['Зеленый Банк', 'Брендинг и&nbsp;айдентика для&nbsp;одного из&nbsp;направлений Зеленого Банка (2026)'],
-  ['СИБУР', 'Разработка зонтичного бренда СИБУР для&nbsp;упаковки программ карьерной траектории для&nbsp;СУЗов и&nbsp;ВУЗов (2026)'],
-  ['Плавательный', 'Брендинг и&nbsp;айдентика для&nbsp;собственной торговой марки Плавательный (in\u00a0progress, 2026)'],
-  ['RICS', 'Айдентика для&nbsp;конференции RICS&nbsp;&mdash; первого международного ивента в&nbsp;России по&nbsp;креативной экономике (2025)'],
-] as const
-
 export default function BrandIdentityPage() {
   return (
     <>
@@ -263,17 +256,6 @@ export default function BrandIdentityPage() {
           />
         </div>
       </div>
-
-      <Section>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--16px)' }}>
-          {cases.map(([client, desc]) => (
-            <div key={desc} className="anim">
-              <p className="text-regular font-color-black"><strong>{client}</strong></p>
-              <p className="text-regular font-color-dark-gray" dangerouslySetInnerHTML={{ __html: desc }} />
-            </div>
-          ))}
-        </div>
-      </Section>
 
       <ContactCard intro="Обсудим ваш бренд?" />
     </>
