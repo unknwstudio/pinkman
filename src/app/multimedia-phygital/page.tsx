@@ -146,6 +146,15 @@ export default function MultimediaPhygitalPage() {
           href: '/projects/sdelali-chat-bota-i-sproektirovali-100-ekranov-dlya-proekta-vk-portaly',
         },
         {
+          title: 'Роскосмос \u00d7 Первый канал',
+          desc: 'Зрелищные AI-ролики для\u00a0концерта ко\u00a0Дню Космонавтики',
+          year: '2026',
+          cats: ['AI-ролики', 'шоу', 'DOOH'],
+          img: '/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.webp',
+          imgSrcSet: '',
+          href: '/projects/roscosmos-den-kosmonavtiki',
+        },
+        {
           title: 'Синяя птица \u00d7 Сила света',
           desc: 'Сценический визуал для\u00a0шоу \u00abСиняя птица\u00bb: 19\u00a0видеофонов для\u00a012-го сезона',
           year: '2025',
