@@ -221,6 +221,7 @@ export default function BrandIdentityPage() {
             subtitle="Айдентика и&nbsp;мерч для&nbsp;СТМ бренда &laquo;Плавательный&raquo;"
             imgSrc="/images/_cases/brand-identity/plavatelniy-cover.jpg"
             imgAlt="Плавательный"
+            noAvif
           />
           <CaseCard
             chips={['Брендинг', 'Айдентика', 'Финансы']}
@@ -229,6 +230,7 @@ export default function BrandIdentityPage() {
             subtitle="Брендинг и&nbsp;айдентика для&nbsp;Сбербанка страхование жизни"
             imgSrc="/images/_cases/brand-identity/sbsg-cover.jpg"
             imgAlt="Сбербанк страхование жизни"
+            noAvif
           />
           <CaseCard
             chips={['Айдентика', 'Премиум']}
@@ -238,6 +240,7 @@ export default function BrandIdentityPage() {
             description="Превратили утилитарный предмет безопасности в&nbsp;стильный элемент интерьера. Определили миссию и&nbsp;tone&#x2011;of&#x2011;voice бренда: &laquo;Спокойствие вместо хаоса&raquo;."
             imgSrc="/images/_cases/brand-identity/bontel-cover.jpg"
             imgAlt="Bontel"
+            noAvif
           />
           <CaseCard
             chips={['Айдентика', 'Мерч', 'Одежда']}
@@ -247,6 +250,7 @@ export default function BrandIdentityPage() {
             description="Концепция &laquo;Комфортного роста&raquo;: природные мотивы создают уютную среду для&nbsp;учебы и&nbsp;развития навыков."
             imgSrc="/images/_cases/brand-identity/ozon-cover.jpg"
             imgAlt="Ozon Univer"
+            noAvif
           />
           <CaseCard
             chips={['Брендинг', 'Мероприятия', 'Финансы']}
@@ -255,6 +259,7 @@ export default function BrandIdentityPage() {
             subtitle="Брендинг и&nbsp;фирменный стиль мероприятий для&nbsp;банка ПСБ"
             imgSrc="/images/_cases/brand-identity/psb-cover.jpg"
             imgAlt="ПСБ"
+            noAvif
           />
         </div>
       </div>

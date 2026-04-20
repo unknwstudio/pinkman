@@ -23,6 +23,8 @@ type CaseCardProps = {
   imgSrcSetMobile?: string
   /** Alt text for image */
   imgAlt?: string
+  /** Skip the AVIF <source> — use when no .avif sibling exists */
+  noAvif?: boolean
 }
 
 export default function CaseCard({
@@ -38,6 +40,7 @@ export default function CaseCard({
   imgSrcMobile,
   imgSrcSetMobile,
   imgAlt = '',
+  noAvif = false,
 }: CaseCardProps) {
   const hasImage = Boolean(imgSrc)
 
@@ -93,7 +96,9 @@ export default function CaseCard({
         {hasImage && (
           <div className="case-card-big___right">
             <picture>
-              <source type="image/avif" srcSet={imgSrc!.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="(max-width: 1248px) 100vw, 1248px" />
+              {!noAvif && (
+                <source type="image/avif" srcSet={imgSrc!.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="(max-width: 1248px) 100vw, 1248px" />
+              )}
               <img
                 alt={imgAlt}
                 className="case-card-big___image hide-mobile"
@@ -106,7 +111,9 @@ export default function CaseCard({
               />
             </picture>
             <picture>
-              <source type="image/avif" srcSet={(imgSrcMobile ?? imgSrc)!.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="100vw" />
+              {!noAvif && (
+                <source type="image/avif" srcSet={(imgSrcMobile ?? imgSrc)!.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="100vw" />
+              )}
               <img
                 alt={imgAlt}
                 className="case-card-big___image hide-desktop"
