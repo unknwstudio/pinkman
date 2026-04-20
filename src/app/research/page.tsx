@@ -96,6 +96,44 @@ export default function ResearchPage() {
         </Link>
       </ServiceGrid>
 
+      <Section><div className="text-h1-wrapper"><h2 className="h1">Продуктовые исследования&nbsp;/ Discovery</h2></div></Section>
+
+      <ServiceGrid>
+        <Link href="/research-new-product/" className="service-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ServicePoint
+            tagsTop={['новый продукт']}
+            title="Новый продукт: валидация идеи и&nbsp;проработка решения"
+            description="Поможем понять, стоит&nbsp;ли запускать продукт, что нужно аудитории и&nbsp;каким должно быть решение до&nbsp;старта разработки."
+            afterTitle={
+              <div className="small-button small-button--cases w-inline-block" style={{ marginTop: 'var(--16px)', display: 'inline-flex' }}>
+                <p className="text-regular small-button-text">Подробнее</p>
+                <div className="small-button-arrow-wrapper">
+                  <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                  <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                </div>
+              </div>
+            }
+          />
+        </Link>
+        <Link href="/research-product-growth/" className="service-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ServicePoint
+            tagsTop={['рост']}
+            title="Развитие продукта: проработка гипотез роста"
+            description="Понимаем, какие возможности нужны пользователям, есть&nbsp;ли спрос и&nbsp;как внедрять их&nbsp;в&nbsp;продукт."
+            animDelay={2}
+            afterTitle={
+              <div className="small-button small-button--cases w-inline-block" style={{ marginTop: 'var(--16px)', display: 'inline-flex' }}>
+                <p className="text-regular small-button-text">Подробнее</p>
+                <div className="small-button-arrow-wrapper">
+                  <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                  <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                </div>
+              </div>
+            }
+          />
+        </Link>
+      </ServiceGrid>
+
       <ContactCard intro="Обсудим ваш проект?" />
     </>
   )
