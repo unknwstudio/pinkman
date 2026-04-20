@@ -82,6 +82,53 @@ export default function BrandingPage() {
             imgSrc="/images/_cases/norma/norma-cover.webp"
             imgAlt="Норма"
           />
+          <CaseCard
+            chips={['Брендинг', 'Айдентика', 'Мерч']}
+            year="2026"
+            title="Плавательный"
+            subtitle="Айдентика и&nbsp;мерч для&nbsp;СТМ бренда &laquo;Плавательный&raquo;"
+            imgSrc="/images/_cases/brand-identity/plavatelniy-cover.jpg"
+            imgAlt="Плавательный"
+            noAvif
+          />
+          <CaseCard
+            chips={['Брендинг', 'Айдентика', 'Финансы']}
+            year="2025"
+            title="Сбербанк страхование жизни"
+            subtitle="Брендинг и&nbsp;айдентика для&nbsp;Сбербанка страхование жизни"
+            imgSrc="/images/_cases/brand-identity/sbsg-cover.jpg"
+            imgAlt="Сбербанк страхование жизни"
+            noAvif
+          />
+          <CaseCard
+            chips={['Айдентика', 'Премиум']}
+            year="2025"
+            title="Bontel"
+            subtitle="Премиальная айдентика для&nbsp;утилитарного предмета безопасности"
+            description="Превратили утилитарный предмет безопасности в&nbsp;стильный элемент интерьера. Определили миссию и&nbsp;tone&#x2011;of&#x2011;voice бренда: &laquo;Спокойствие вместо хаоса&raquo;."
+            imgSrc="/images/_cases/brand-identity/bontel-cover.jpg"
+            imgAlt="Bontel"
+            noAvif
+          />
+          <CaseCard
+            chips={['Айдентика', 'Мерч', 'Одежда']}
+            year="2025"
+            title="Ozon Univer"
+            subtitle="Айдентика и&nbsp;мерч Ozon&nbsp;Univer. Дизайн коллекции одежды и&nbsp;аксессуаров"
+            description="Концепция &laquo;Комфортного роста&raquo;: природные мотивы создают уютную среду для&nbsp;учебы и&nbsp;развития навыков."
+            imgSrc="/images/_cases/brand-identity/ozon-cover.jpg"
+            imgAlt="Ozon Univer"
+            noAvif
+          />
+          <CaseCard
+            chips={['Брендинг', 'Мероприятия', 'Финансы']}
+            year="2025"
+            title="ПСБ"
+            subtitle="Брендинг и&nbsp;фирменный стиль мероприятий для&nbsp;банка ПСБ"
+            imgSrc="/images/_cases/brand-identity/psb-cover.jpg"
+            imgAlt="ПСБ"
+            noAvif
+          />
         </div>
       </div>
 
