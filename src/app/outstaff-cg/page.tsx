@@ -28,8 +28,8 @@ export default function OutstaffCgPage() {
       <Section>
         <div className="text-h2-wrapper">
           <h2>
-            Подбираем CG&#x2011;дженералистов, 3D/Motion&#x2011;артистов и&nbsp;суперов
-            под&nbsp;ваш проект. Работаем попроектно и&nbsp;на&nbsp;аутстафф.
+            Подбираем CG&#x2011;дженералистов, 3D/Motion&#x2011;артистов.
+            Работаем попроектно и&nbsp;на&nbsp;аутстафф.
           </h2>
         </div>
       </Section>
@@ -84,10 +84,31 @@ export default function OutstaffCgPage() {
                 которые общаются с&nbsp;человеком, когда он&nbsp;к&nbsp;ним подходит.
                 7&nbsp;персонажей, по&nbsp;3&nbsp;шота на&nbsp;каждого. Итого 21&nbsp;шот&nbsp;—
                 от&nbsp;кеинга до&nbsp;цветокоррекции и&nbsp;сведения липсинка,
-                в&nbsp;том числе работал как&nbsp;композер.
+                в&nbsp;том числе работал как&nbsp;композер. Помимо арок&nbsp;— делал
+                инсталляции для&nbsp;экспозиции центра.
               </p>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* Анимация + видео — превью работ перед кейсом «Синяя птица» */}
+      <Section>
+        <div className={`${styles.videoBox} anim`}>
+          <iframe
+            src="https://kinescope.io/embed/cbbab9a5-8a96-4295-a014-8f726053d5ee?autoplay=1&muted=1&loop=1"
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+            title="Анимация — Сергей Малкин"
+          />
+        </div>
+      </Section>
+      <Section>
+        <div className={`${styles.videoBox} anim`}>
+          <iframe
+            src="https://kinescope.io/embed/91ca0a4c-117c-49af-9471-b32072704154?autoplay=1&muted=1&loop=1"
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+            title="Видео — Сергей Малкин"
+          />
         </div>
       </Section>
 
