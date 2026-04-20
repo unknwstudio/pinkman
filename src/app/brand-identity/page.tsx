@@ -76,7 +76,7 @@ export default function BrandIdentityPage() {
 
       {/* ── Выделенная команда ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Выделенная команда на&nbsp;проекте</h2></div></Section>
-      <ServicePointRow>
+      <ServicePointRow compact>
         <ServicePoint
           tagsTop={['стратегия']}
           title="Стратег"
@@ -176,7 +176,7 @@ export default function BrandIdentityPage() {
 
       {/* ── Как мы работаем ── */}
       <Section><div className="text-h1-wrapper"><h2 className="h1">Что&nbsp;мы&nbsp;делаем и&nbsp;как</h2></div></Section>
-      <ProcessSteps steps={[
+      <ProcessSteps compact steps={[
         { num: '1', title: 'Интервью', description: 'Проводим интервью с&nbsp;ключевой командой&nbsp;&mdash; фиксируем видение, ценности, амбиции', tag: 'старт' },
         { num: '2', title: 'Исследование', description: 'Исследуем рынок, конкурентов и&nbsp;смежные индустрии&nbsp;&mdash; ищем пространство для&nbsp;позиционирования', tag: 'аналитика' },
         { num: '3', title: 'Бренд&#x2011;платформа', description: 'Формируем видение, миссии, ценности, TOV, ключевые сообщения', tag: 'стратегия' },
@@ -213,6 +213,48 @@ export default function BrandIdentityPage() {
             href="/projects/norma"
             imgSrc="/images/_cases/norma/norma-cover.webp"
             imgAlt="Норма"
+          />
+          <CaseCard
+            chips={['Брендинг', 'Айдентика', 'Мерч']}
+            year="2026"
+            title="Плавательный"
+            subtitle="Айдентика и&nbsp;мерч для&nbsp;СТМ бренда &laquo;Плавательный&raquo;"
+            imgSrc="/images/_cases/brand-identity/plavatelniy-cover.jpg"
+            imgAlt="Плавательный"
+          />
+          <CaseCard
+            chips={['Брендинг', 'Айдентика', 'Финансы']}
+            year="2025"
+            title="Сбербанк страхование жизни"
+            subtitle="Брендинг и&nbsp;айдентика для&nbsp;Сбербанка страхование жизни"
+            imgSrc="/images/_cases/brand-identity/sbsg-cover.jpg"
+            imgAlt="Сбербанк страхование жизни"
+          />
+          <CaseCard
+            chips={['Айдентика', 'Премиум']}
+            year="2025"
+            title="Bontel"
+            subtitle="Премиальная айдентика для&nbsp;утилитарного предмета безопасности"
+            description="Превратили утилитарный предмет безопасности в&nbsp;стильный элемент интерьера. Определили миссию и&nbsp;tone&#x2011;of&#x2011;voice бренда: &laquo;Спокойствие вместо хаоса&raquo;."
+            imgSrc="/images/_cases/brand-identity/bontel-cover.jpg"
+            imgAlt="Bontel"
+          />
+          <CaseCard
+            chips={['Айдентика', 'Мерч', 'Одежда']}
+            year="2025"
+            title="Ozon Univer"
+            subtitle="Айдентика и&nbsp;мерч Ozon&nbsp;Univer. Дизайн коллекции одежды и&nbsp;аксессуаров"
+            description="Концепция &laquo;Комфортного роста&raquo;: природные мотивы создают уютную среду для&nbsp;учебы и&nbsp;развития навыков."
+            imgSrc="/images/_cases/brand-identity/ozon-cover.jpg"
+            imgAlt="Ozon Univer"
+          />
+          <CaseCard
+            chips={['Брендинг', 'Мероприятия', 'Финансы']}
+            year="2025"
+            title="ПСБ"
+            subtitle="Брендинг и&nbsp;фирменный стиль мероприятий для&nbsp;банка ПСБ"
+            imgSrc="/images/_cases/brand-identity/psb-cover.jpg"
+            imgAlt="ПСБ"
           />
         </div>
       </div>
