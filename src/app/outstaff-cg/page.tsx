@@ -82,7 +82,7 @@ export default function OutstaffCgPage() {
                 <strong>Центр Исламской цивилизации.</strong>{' '}
                 Разработка арок с&nbsp;представителями правительства&nbsp;— как&nbsp;голограммы,
                 которые общаются с&nbsp;человеком, когда он&nbsp;к&nbsp;ним подходит.
-                7&nbsp;персонажей, по&nbsp;3&nbsp;шота на&nbsp;каждого. Итого 21&nbsp;шот&nbsp;—
+                12&nbsp;персонажей, по&nbsp;3&nbsp;шота на&nbsp;каждого&nbsp;—
                 от&nbsp;кеинга до&nbsp;цветокоррекции и&nbsp;сведения липсинка,
                 в&nbsp;том числе работал как&nbsp;композер. Помимо арок&nbsp;— делал
                 инсталляции для&nbsp;экспозиции центра.
@@ -93,6 +93,15 @@ export default function OutstaffCgPage() {
       </Section>
 
       {/* Анимация + видео — превью работ перед кейсом «Синяя птица» */}
+      <Section>
+        <div className={`${styles.videoBox} anim`}>
+          <iframe
+            src="https://kinescope.io/embed/8f98ca1c-836a-4c34-9498-674908a25866?autoplay=1&muted=1&loop=1"
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+            title="Шоурил — Сергей Малкин"
+          />
+        </div>
+      </Section>
       <Section>
         <div className={`${styles.videoBox} anim`}>
           <iframe
