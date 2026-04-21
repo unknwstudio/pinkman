@@ -48,14 +48,6 @@ const CASES: Case[] = [
     href: '/projects/polenov-i-ucheniki',
   },
   {
-    title: 'Nova Creative Group',
-    desc: 'Спроектировали сайт с\u00a0нуля для компании, которая объединяет издательство и\u00a0маркетинговое агентство',
-    year: '2025',
-    cats: ['Веб-дизайн'],
-    img: '/images/_cases/nova/nova-cover.webp',
-    href: '/projects/nova-creative-group',
-  },
-  {
     title: 'Норма',
     desc: 'Разработали брендинг, мобильное приложение и сайт для сети химчисток',
     year: '2026',
@@ -140,6 +132,14 @@ const CASES: Case[] = [
     img: '/images/680b764199c920914c0a7c5b_gpb.webp',
     imgSrcSet: '/images/680b764199c920914c0a7c5b_gpb-p-500.webp 500w, /images/680b764199c920914c0a7c5b_gpb-p-800.webp 800w, /images/680b764199c920914c0a7c5b_gpb-p-1080.webp 1080w, /images/680b764199c920914c0a7c5b_gpb.webp 1248w',
     href: '/projects/1-5-goda-pomogaem-podderzhivat-dizayn-kommunikaciy-gazprombanka-na-autstaffe',
+  },
+  {
+    title: 'Nova Creative Group',
+    desc: 'Спроектировали сайт с\u00a0нуля для компании, которая объединяет издательство и\u00a0маркетинговое агентство',
+    year: '2025',
+    cats: ['Веб-дизайн'],
+    img: '/images/_cases/nova/nova-cover.webp',
+    href: '/projects/nova-creative-group',
   },
   {
     title: 'X5 Tech',
