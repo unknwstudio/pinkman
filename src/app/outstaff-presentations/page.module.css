@@ -1,0 +1,130 @@
+/* Outstaff Presentations — designer cards */
+
+.person {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--48px);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .person {
+    grid-template-columns: 1fr;
+    gap: var(--24px);
+  }
+}
+
+.photo {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .photo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--16px);
+}
+
+.name {
+  margin: 0;
+}
+
+.role {
+  margin: 0;
+}
+
+.projectBlock {
+  margin-top: var(--16px);
+}
+
+.projectBlock h4 {
+  margin: 0 0 var(--8px) 0;
+  font-weight: 600;
+}
+
+.projectList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.projectList li {
+  padding: 4px 0;
+  color: var(--color-dark-gray, #555);
+}
+
+.externalLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+  margin-top: var(--8px);
+}
+
+.externalLink:hover {
+  opacity: 0.85;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--16px);
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.galleryItem {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.galleryItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.divider {
+  height: 1px;
+  background: #e5e5e5;
+  margin: var(--48px) 0;
+}
