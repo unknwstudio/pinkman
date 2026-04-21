@@ -128,3 +128,45 @@
   background: #e5e5e5;
   margin: var(--48px) 0;
 }
+
+.behanceLink {
+  display: flex;
+  align-items: center;
+  gap: var(--16px);
+  padding: var(--16px) var(--24px);
+  border-radius: 16px;
+  background: #1769FF;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+}
+
+.behanceLink:hover {
+  opacity: 0.9;
+}
+
+.behanceLink svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.videoBox {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+}
+
+.videoBox iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
