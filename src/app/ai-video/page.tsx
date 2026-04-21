@@ -42,7 +42,7 @@ export default function AiVideoPage() {
             subtitle="AI+CGI Campaign"
             description="Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов"
             href="/projects/yandex-go-kazakhstan"
-            imgSrc="/images/_cases/yagno-kazakh/horizontal.png"
+            imgSrc="/images/_cases/yagno-kazakh/horizontal.avif"
             imgAlt="Яндекс Го Казахстан"
           />
           <CaseCard
@@ -52,7 +52,7 @@ export default function AiVideoPage() {
             subtitle="AI+CGI Campaign"
             description="Рекламный AI-ролик для различных каналов коммуникации"
             href="/projects/ai-rolik-dlya-yandex-split"
-            imgSrc="/images/_cases/yandex-split/image 2090012112.png"
+            imgSrc="/images/_cases/yandex-split/image 2090012112.avif"
             imgAlt="AI-ролик для Яндекс.Сплит"
           />
           <CaseCard
@@ -62,7 +62,7 @@ export default function AiVideoPage() {
             subtitle="AI+CGI Campaign"
             description="Рекламный AI-ролик для трансляции в\u00a0кинотеатре Пионер"
             href="/projects/ai-rolik-dlya-bootlegger"
-            imgSrc="/images/_cases/bootlegger/image 2090012112.png"
+            imgSrc="/images/_cases/bootlegger/image 2090012112.avif"
             imgAlt="AI-ролик для Bootlegger"
           />
         </div>
@@ -148,7 +148,7 @@ export default function AiVideoPage() {
 
       <ContactCard
         intro="Обсудим проект?"
-        role="Аккаунт-директор Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект."
+        role="Управляющий партнер Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект."
       />
     </>
   )

@@ -9,7 +9,7 @@ interface ContactCardProps {
 
 export default function ContactCard({
   intro = 'Обсудим ваши задачи?',
-  role = 'Аккаунт\u2011директор Юрий Григоренко\u00a0— подберёт команду и\u00a0расскажет, как\u00a0это работает.',
+  role = 'Управляющий партнер Юрий Григоренко\u00a0— подберёт команду и\u00a0расскажет, как\u00a0это работает.',
   phone = '+79153110332',
   email = 'grig@pinkman.ru',
 }: ContactCardProps) {

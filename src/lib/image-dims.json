@@ -1,4 +1,43 @@
 {
+  "_cases/nova/nova-cover.webp": { "w": 1920, "h": 1080 },
+  "_cases/nova/nova-img-01.webp": { "w": 1920, "h": 959 },
+  "_cases/nova/nova-img-02.webp": { "w": 1920, "h": 1171 },
+  "_cases/nova/nova-img-03.webp": { "w": 1920, "h": 1171 },
+  "_cases/nova/nova-img-04.webp": { "w": 1920, "h": 996 },
+  "_cases/nova/nova-img-05.webp": { "w": 1920, "h": 2566 },
+  "_cases/nova/nova-img-06.webp": { "w": 1920, "h": 1198 },
+  "_cases/nova/nova-img-07.webp": { "w": 1920, "h": 1353 },
+  "_cases/nova/nova-img-08.webp": { "w": 1920, "h": 1657 },
+  "_cases/nova/nova-img-09.webp": { "w": 1920, "h": 1045 },
+
+  "_cases/norma/norma-cover.webp": { "w": 1920, "h": 1080 },
+  "_cases/norma/norma-img-01.webp": { "w": 1920, "h": 952 },
+  "_cases/norma/norma-img-02.webp": { "w": 1920, "h": 949 },
+  "_cases/norma/norma-img-03.webp": { "w": 1920, "h": 952 },
+  "_cases/norma/norma-img-04.webp": { "w": 1920, "h": 952 },
+  "_cases/norma/norma-img-05.webp": { "w": 1920, "h": 952 },
+  "_cases/norma/norma-img-06.webp": { "w": 1920, "h": 952 },
+  "_cases/norma/norma-img-07.webp": { "w": 1920, "h": 1157 },
+  "_cases/norma/norma-img-08.webp": { "w": 1920, "h": 1673 },
+  "_cases/norma/norma-img-09.webp": { "w": 1920, "h": 1934 },
+  "_cases/norma/norma-img-10.webp": { "w": 1920, "h": 1174 },
+  "_cases/norma/norma-img-11.webp": { "w": 1920, "h": 1862 },
+  "_cases/norma/norma-img-12.webp": { "w": 1920, "h": 1174 },
+  "_cases/norma/norma-img-13.webp": { "w": 1920, "h": 1862 },
+  "_cases/norma/norma-img-14.webp": { "w": 1920, "h": 858 },
+  "_cases/norma/norma-img-15.webp": { "w": 1920, "h": 952 },
+  "_cases/norma/norma-img-16.webp": { "w": 1920, "h": 1689 },
+  "_cases/norma/norma-img-17.webp": { "w": 1920, "h": 1414 },
+  "_cases/norma/norma-img-18.webp": { "w": 1920, "h": 1196 },
+  "_cases/norma/norma-img-19.webp": { "w": 1920, "h": 852 },
+  "_cases/norma/norma-img-20.webp": { "w": 1920, "h": 851 },
+  "_cases/norma/norma-img-21.webp": { "w": 1920, "h": 1080 },
+  "_cases/norma/norma-img-22.webp": { "w": 1920, "h": 948 },
+  "_cases/norma/norma-img-23.webp": { "w": 1920, "h": 948 },
+  "_cases/norma/norma-img-24.webp": { "w": 1920, "h": 952 },
+  "_cases/norma/norma-img-25.webp": { "w": 1920, "h": 952 },
+  "_cases/norma/norma-img-26.webp": { "w": 1920, "h": 952 },
+  "_cases/norma/norma-img-27.webp": { "w": 1920, "h": 952 },
   "670ea6853791772722428373_home-page-image-p-1080.webp": {
     "w": 1080,
     "h": 1250
@@ -815,10 +854,6 @@
     "w": 800,
     "h": 397
   },
-  "67f65ccb4e3ee5fa796eb97d_Решения.webp": {
-    "w": 2624,
-    "h": 1302
-  },
   "67f65d02a7a2bfbcf2b2d170_Карта сайта-p-1080.webp": {
     "w": 1080,
     "h": 536
@@ -839,10 +874,6 @@
     "w": 800,
     "h": 397
   },
-  "67f65d02a7a2bfbcf2b2d170_Карта сайта.webp": {
-    "w": 2624,
-    "h": 1302
-  },
   "67f65d133b883d243a3f020f_Дизайн-система-p-1080.webp": {
     "w": 1080,
     "h": 536
@@ -862,10 +893,6 @@
   "67f65d133b883d243a3f020f_Дизайн-система-p-800.webp": {
     "w": 800,
     "h": 397
-  },
-  "67f65d133b883d243a3f020f_Дизайн-система.webp": {
-    "w": 2624,
-    "h": 1302
   },
   "67f65d23f9ddff6d2814e494_1 (4)-p-1080.webp": {
     "w": 1080,
@@ -1067,10 +1094,6 @@
     "w": 800,
     "h": 450
   },
-  "67f7b2a76e2d3acca99076ca_Версии сайта (частные лица, бизнес, фин организации).webp": {
-    "w": 2624,
-    "h": 1476
-  },
   "67f7b2de4ececb66412f25d8_Страницы продуктов_ карта, займ, курс валют-p-1080.webp": {
     "w": 1080,
     "h": 581
@@ -1095,10 +1118,6 @@
     "w": 800,
     "h": 430
   },
-  "67f7b2de4ececb66412f25d8_Страницы продуктов_ карта, займ, курс валют.webp": {
-    "w": 2624,
-    "h": 1412
-  },
   "67f7b305dadc8c368a1fbea3_Фильтр вкладов-p-1080.webp": {
     "w": 1080,
     "h": 581
@@ -1119,10 +1138,6 @@
     "w": 800,
     "h": 430
   },
-  "67f7b305dadc8c368a1fbea3_Фильтр вкладов.webp": {
-    "w": 2624,
-    "h": 1411
-  },
   "67f7b32cc95cd47e51606e75_Кредитный калькулятор-p-1080.webp": {
     "w": 1080,
     "h": 581
@@ -1142,10 +1157,6 @@
   "67f7b32cc95cd47e51606e75_Кредитный калькулятор-p-800.webp": {
     "w": 800,
     "h": 430
-  },
-  "67f7b32cc95cd47e51606e75_Кредитный калькулятор.webp": {
-    "w": 2624,
-    "h": 1411
   },
   "67f7b371b07f8de98114c02b_Frame 2131331432-p-1080.webp": {
     "w": 1080,
@@ -1194,10 +1205,6 @@
   "67f7b39a6e2d3acca99189f8_Графика_ паттерны с традиционными элементами и их применение в баннерах-p-800.webp": {
     "w": 800,
     "h": 460
-  },
-  "67f7b39a6e2d3acca99189f8_Графика_ паттерны с традиционными элементами и их применение в баннерах.webp": {
-    "w": 2624,
-    "h": 1509
   },
   "67f7fbcc61fe7f4a55089720_Rectangle 1004241 (9)-p-1080.webp": {
     "w": 1080,
@@ -1434,10 +1441,6 @@
   "67f912926dc2ddc8161b755b_победа 2-p-800.webp": {
     "w": 800,
     "h": 397
-  },
-  "67f912926dc2ddc8161b755b_победа 2.webp": {
-    "w": 2624,
-    "h": 1302
   },
   "67f912bd829efc31780bc567_Frame 2131330129-p-1080.webp": {
     "w": 1080,
@@ -2126,10 +2129,6 @@
   "67fe8af0ce26bb7535d252f5_CJM Х5 Dialog Insights-p-800.webp": {
     "w": 800,
     "h": 533
-  },
-  "67fe8af0ce26bb7535d252f5_CJM Х5 Dialog Insights.webp": {
-    "w": 2626,
-    "h": 1749
   },
   "67fe8af798df1c958ef5afe1_Frame 2131331594-p-1080.webp": {
     "w": 1080,
@@ -5603,10 +5602,6 @@
     "w": 800,
     "h": 402
   },
-  "689de43c500684325a3f0096_Мерч.webp": {
-    "w": 2624,
-    "h": 1317
-  },
   "689de44babe8efe8aa28dc43_Мерч (1)-p-1080.webp": {
     "w": 1080,
     "h": 964
@@ -5626,10 +5621,6 @@
   "689de44babe8efe8aa28dc43_Мерч (1)-p-800.webp": {
     "w": 800,
     "h": 714
-  },
-  "689de44babe8efe8aa28dc43_Мерч (1).webp": {
-    "w": 2624,
-    "h": 2343
   },
   "689de46b500684325a3f0fe9_Frame 2131331952 (4)-p-1080.webp": {
     "w": 1080,
@@ -5679,10 +5670,6 @@
     "w": 800,
     "h": 402
   },
-  "689de476567ceb04e0dce280_Мерч (2).webp": {
-    "w": 2624,
-    "h": 1317
-  },
   "689de47c2a29a7a70c926540_Мерч (3)-p-1080.webp": {
     "w": 1080,
     "h": 542
@@ -5706,10 +5693,6 @@
   "689de47c2a29a7a70c926540_Мерч (3)-p-800.webp": {
     "w": 800,
     "h": 402
-  },
-  "689de47c2a29a7a70c926540_Мерч (3).webp": {
-    "w": 2624,
-    "h": 1317
   },
   "689de6712a29a7a70c93ab65_Frame 2087329163 (2)-p-1080.webp": {
     "w": 1080,
@@ -6115,10 +6098,6 @@
     "w": 800,
     "h": 478
   },
-  "68cbd93ad857580e5250c454_Графика_ паттерны с традиционными элементами и их применение в баннерах.webp": {
-    "w": 2624,
-    "h": 1568
-  },
   "68cbdaff6588bc3f71b548f6_Frame 2131332009-p-1080.webp": {
     "w": 1080,
     "h": 1280
@@ -6226,10 +6205,6 @@
   "68cbdb5f6588bc3f71b59f99_Графика_ паттерны с традиционными элементами и их применение в баннерах (1)-p-800.png": {
     "w": 800,
     "h": 402
-  },
-  "68cbdb5f6588bc3f71b59f99_Графика_ паттерны с традиционными элементами и их применение в баннерах (1).png": {
-    "w": 2624,
-    "h": 1320
   },
   "68cbdb6cd857580e52524997_Frame 2131332060-p-1080.webp": {
     "w": 1080,
@@ -7066,5 +7041,137 @@
   "webclip.png": {
     "w": 256,
     "h": 256
+  },
+  "689de43c500684325a3f0096.webp": {
+    "w": 2624,
+    "h": 1317
+  },
+  "689de44babe8efe8aa28dc43.webp": {
+    "w": 2624,
+    "h": 2343
+  },
+  "689de476567ceb04e0dce280.webp": {
+    "w": 2624,
+    "h": 1317
+  },
+  "689de47c2a29a7a70c926540.webp": {
+    "w": 2624,
+    "h": 1317
+  },
+  "68cbd93ad857580e5250c454.webp": {
+    "w": 2624,
+    "h": 1568
+  },
+  "68cbdb5f6588bc3f71b59f99.png": {
+    "w": 2624,
+    "h": 1320
+  },
+  "67f65ccb4e3ee5fa796eb97d.webp": {
+    "w": 2624,
+    "h": 1302
+  },
+  "67f65d02a7a2bfbcf2b2d170.webp": {
+    "w": 2624,
+    "h": 1302
+  },
+  "67f65d133b883d243a3f020f.webp": {
+    "w": 2624,
+    "h": 1302
+  },
+  "67f912926dc2ddc8161b755b.webp": {
+    "w": 2624,
+    "h": 1302
+  },
+  "67f7b2a76e2d3acca99076ca.webp": {
+    "w": 2624,
+    "h": 1476
+  },
+  "67f7b2de4ececb66412f25d8.webp": {
+    "w": 2624,
+    "h": 1412
+  },
+  "67f7b305dadc8c368a1fbea3.webp": {
+    "w": 2624,
+    "h": 1411
+  },
+  "67f7b32cc95cd47e51606e75.webp": {
+    "w": 2624,
+    "h": 1411
+  },
+  "67f7b39a6e2d3acca99189f8.webp": {
+    "w": 2624,
+    "h": 1509
+  },
+  "67fe8af0ce26bb7535d252f5.webp": {
+    "w": 2626,
+    "h": 1749
+  },
+  "_cases/sibur/element-cover.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/element-img-01.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/element-img-02.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/element-img-03.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/sibur-cover.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/smena-cover.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/smena-img-01.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/smena-img-02.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/smena-img-03.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/vector-1-cover.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/vector-2-cover.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/vector-img-01-01.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/vector-img-01-02.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/vector-img-01-03.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/vector-img-02-01.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/vector-img-02-02.webp": {
+    "w": 1920,
+    "h": 1080
+  },
+  "_cases/sibur/vector-img-02-03.webp": {
+    "w": 1920,
+    "h": 1080
   }
 }

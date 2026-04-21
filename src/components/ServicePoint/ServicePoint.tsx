@@ -6,6 +6,8 @@ interface ServicePointProps {
   tagsTop?: string[]
   variant?: 'white' | 'default'
   children?: React.ReactNode
+  /** Content rendered in the left column, below title and tags */
+  afterTitle?: React.ReactNode
   /** Staggered animation delay 1–4 (maps to data-d attribute) */
   animDelay?: 1 | 2 | 3 | 4
 }
@@ -17,6 +19,7 @@ export default function ServicePoint({
   tagsTop,
   variant = 'white',
   children,
+  afterTitle,
   animDelay,
 }: ServicePointProps) {
   return (
@@ -40,12 +43,14 @@ export default function ServicePoint({
             ))}
           </div>
         )}
+        {afterTitle}
       </div>
       {(description || children) && (
         <div className="service-point__right">
-          {description
-            ? <p className="font-color-dark-gray" dangerouslySetInnerHTML={{ __html: description }} />
-            : children}
+          {description && (
+            <p className="font-color-dark-gray" dangerouslySetInnerHTML={{ __html: description }} />
+          )}
+          {children}
         </div>
       )}
     </div>

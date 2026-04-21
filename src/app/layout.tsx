@@ -4,7 +4,7 @@ import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
 import ScrollAnimator from '@/components/ScrollAnimator/ScrollAnimator'
 import SmoothScroller from '@/components/SmoothScroller/SmoothScroller'
-import Cursor from '@/components/Cursor/Cursor'
+// import Cursor from '@/components/Cursor/Cursor'
 import ServicePageAnimator from '@/components/ServicePageAnimator/ServicePageAnimator'
 
 const OG_IMAGE = '/images/6717d958e16fdfb6e86dc87d_og.jpg'
@@ -35,6 +35,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru">
       <head>
+        {/* Preload primary fonts to break the HTML→CSS→font-face chain */}
+        <link rel="preload" href="/fonts/66f6e23524a454603f7d542a_AkkuratLLCyrTT-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/66f6e23524a454603f7d542e_AkkuratLLCyrTT-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        {/* Preload homepage LCP image (first hero case — Норма, mobile) */}
+        <link rel="preload" href="/images/_cases/norma/norma-cover.avif" as="image" type="image/avif" fetchPriority="high" />
+        <link rel="preload" href="/images/_cases/norma/norma-cover.webp" as="image" fetchPriority="high" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEHHG5XKMC" />
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WEHHG5XKMC');` }} />
       </head>
@@ -58,8 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         {/* SmoothScroller is a null-render client component — just bootstraps GSAP */}
         <SmoothScroller />
-        {/* Custom cursor — only renders on pointer:fine (desktop) */}
-        <Cursor />
+        {/* Custom cursor disabled — using default cursor */}
         {/* Service page scroll animations — runs on every route */}
         <ServicePageAnimator />
       </body>

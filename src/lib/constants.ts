@@ -1,4 +1,5 @@
-export const SITE_VERSION = 'CLDNXT-347012'
+import versionData from '../../version.json'
+export const SITE_VERSION = String(versionData.build).padStart(4, '0')
 
 /** All service-page slugs — used by Nav to flag the Услуги tab as active */
 export const SERVICE_SLUGS = [
@@ -7,10 +8,25 @@ export const SERVICE_SLUGS = [
   'communications-design',
   'multimedia-phygital',
   'outsource-multimedia',
-  'outstaff-ai',
+  'outstaff-designers',
+  'video-production',
   'ai-video',
+  'research',
   'ux-research-redesign',
+  'ux-audit',
+  'research-for-branding',
+  'research-brand-perception',
+  'research-new-product',
+  'research-product-growth',
+  'research-audience',
+  'research-customer-journey',
+  'research-growth-opportunities',
   'creative-movie-production',
+  'design-factory',
+  'ai-products',
+  'branding',
+  'brand-identity',
+  'event-identity',
 ] as const
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number]
@@ -26,10 +42,26 @@ export const ACCENT_COLORS: Record<string, string> = {
   '/communications-design/':     '#f5f5f5',
   '/multimedia-phygital/':       '#f5f5f5',
   '/outsource-multimedia/':      '#f5f5f5',
-  '/outstaff-ai/':               '#FFEC5F',
+  '/outstaff-designers/':         '#FFEC5F',
+  '/video-production/':           '#f5f5f5',
   '/ai-video/':                  '#f5f5f5',
+  '/research/':                   '#f5f5f5',
   '/ux-research-redesign/':      '#EBFAF3',
+  '/ux-audit/':                   '#EBFAF3',
+  '/research-for-branding/':      '#EBFAF3',
+  '/research-brand-perception/':  '#EBFAF3',
+  '/research-new-product/':       '#EBFAF3',
+  '/research-product-growth/':    '#EBFAF3',
+  '/research-audience/':          '#EBFAF3',
+  '/research-customer-journey/':  '#EBFAF3',
+  '/research-growth-opportunities/': '#EBFAF3',
   '/creative-movie-production/': '#FFF3E6',
+  '/ai-products/':                  '#f5f5f5',
+  '/design-factory/':              '#f5f5f5',
+  '/branding/':                   '#f5f5f5',
+  '/brand-identity/':             '#f5f5f5',
+  '/event-identity/':            '#F3EAFF',
+  '/talent-hub/':                '#f5f5f5',
 }
 
 /** Nav links shown in mobile overlay + desktop bar */
@@ -42,12 +74,11 @@ export const NAV_LINKS = [
 /** Service links inside the Услуги dropdown */
 export const SERVICE_LINKS = [
   { href: '/sites/',                     label: 'Сайты' },
-  { href: '/digital-products/',          label: 'Цифровые продукты' },
   { href: '/communications-design/',     label: 'Дизайн коммуникаций' },
-  { href: '/multimedia-phygital/',       label: 'Multimedia\u00a0&\u00a0Phygital' },
-  { href: '/outsource-multimedia/',      label: 'Аутсорс мультимедиа' },
-  { href: '/outstaff-ai/',               label: 'Аутстафф AI\u2011дизайнеров' },
-  { href: '/ai-video/',                  label: 'AI\u2011ролики для OLV\u00a0+\u00a0DOOH' },
-  { href: '/ux-research-redesign/',      label: 'UX\u2011исследования при редизайне' },
-  { href: '/creative-movie-production/', label: 'Креатив и съёмка роликов' },
+  { href: '/design-factory/',             label: 'Дизайн\u2011завод' },
+  { href: '/video-production/',           label: 'Видеоролики (AI, CG, съёмки)' },
+  { href: '/multimedia-phygital/',       label: 'Мультимедиа контент' },
+  { href: '/branding/',                   label: 'Брендинг и\u00a0айдентика' },
+  { href: '/outstaff-designers/',          label: 'Аутстафф дизайнеров' },
+  { href: '/research/',                   label: 'Исследования' },
 ] as const

@@ -33,26 +33,32 @@ export default function ServiceSection({
           <p className="font-color-dark-gray" dangerouslySetInnerHTML={{ __html: description }} />
         </div>
         <div className="service__picture">
-          <img
-            alt={imgAlt}
-            className="service__img hide-mobile"
-            loading="eager"
-            sizes="100vw"
-            src={imgSrc}
-            srcSet={imgSrcSet}
-            width={imgWidth}
-            height={imgHeight}
-          />
-          <img
-            alt={imgAlt}
-            className="service__img hide-desktop"
-            loading="eager"
-            sizes="100vw"
-            src={imgSrcMobile ?? imgSrc}
-            srcSet={imgSrcSetMobile ?? imgSrcSet}
-            width={imgMobileWidth ?? imgWidth}
-            height={imgMobileHeight ?? imgHeight}
-          />
+          <picture>
+            <source type="image/avif" srcSet={imgSrc.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="100vw" />
+            <img
+              alt={imgAlt}
+              className="service__img hide-mobile"
+              loading="eager"
+              sizes="100vw"
+              src={imgSrc}
+              srcSet={imgSrcSet}
+              width={imgWidth}
+              height={imgHeight}
+            />
+          </picture>
+          <picture>
+            <source type="image/avif" srcSet={(imgSrcMobile ?? imgSrc).replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="100vw" />
+            <img
+              alt={imgAlt}
+              className="service__img hide-desktop"
+              loading="eager"
+              sizes="100vw"
+              src={imgSrcMobile ?? imgSrc}
+              srcSet={imgSrcSetMobile ?? imgSrcSet}
+              width={imgMobileWidth ?? imgWidth}
+              height={imgMobileHeight ?? imgHeight}
+            />
+          </picture>
         </div>
       </div>
     </div>

@@ -116,7 +116,7 @@ export default function CreativeMoviePage() {
         </div>
       </Section>
 
-      <ContactCard intro="Обсудим ваш ролик?" role="Аккаунт&#x2011;директор Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
+      <ContactCard intro="Обсудим ваш ролик?" role="Управляющий партнер Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
     </>
   )
 }

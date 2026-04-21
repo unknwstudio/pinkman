@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Section from '@/components/Section/Section'
 import ServiceGrid from '@/components/ServiceGrid/ServiceGrid'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
@@ -19,6 +20,25 @@ export default function MultimediaPhygitalPage() {
 
       <Section><div className="text-h2-wrapper"><h2>Интерактивные спецпроекты и&nbsp;новый бренд-опыт</h2></div></Section>
 
+      <ServiceGrid>
+        <Link href="/outsource-multimedia/" className="service-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ServicePoint
+            tagsTop={['аутсорс']}
+            title="Аутсорс мультимедиа&#x2011;команды"
+            description="Встраиваемся в&nbsp;ваш проект уже завтра. CGI, motion, UI, AI&#x2011;контент&nbsp;&mdash; в&nbsp;срок, в&nbsp;бюджет, без&nbsp;потери смысла."
+            afterTitle={
+              <div className="small-button small-button--cases w-inline-block" style={{ marginTop: 'var(--16px)', display: 'inline-flex' }}>
+                <p className="text-regular small-button-text">Подробнее</p>
+                <div className="small-button-arrow-wrapper">
+                  <img alt="" className="small-button-arrow" loading="eager" src="/images/67152c3278a3dccbefe124b3_arrow-grey.svg" />
+                  <img alt="" className="button-arrow__active" loading="eager" src="/images/66f6e23524a454603f7d5540_arrow-white.svg" />
+                </div>
+              </div>
+            }
+          />
+        </Link>
+      </ServiceGrid>
+
       <div className="service-section">
         <div className="service">
           <div className="service__text">
@@ -26,12 +46,18 @@ export default function MultimediaPhygitalPage() {
             <p className="font-color-dark-gray">Интегрируем иммерсивные технологии в&nbsp;маркетинг, ритейл и&nbsp;ивенты. Прорабатываем сценарии, делаем 3D и&nbsp;интерфейсы, собираем под&nbsp;ключ</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682aff6810703914676a4d87_m1.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682aff77a7b7b7e8063d8456_m1mob.webp"
-              srcSet="/images/682aff77a7b7b7e8063d8456_m1mob-p-500.webp 500w, /images/682aff77a7b7b7e8063d8456_m1mob.webp 686w"
-              width={686} height={906} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682aff6810703914676a4d87_m1.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682aff6810703914676a4d87_m1.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682aff77a7b7b7e8063d8456_m1mob-p-500.avif 500w, /images/682aff77a7b7b7e8063d8456_m1mob.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682aff77a7b7b7e8063d8456_m1mob.webp"
+                srcSet="/images/682aff77a7b7b7e8063d8456_m1mob-p-500.webp 500w, /images/682aff77a7b7b7e8063d8456_m1mob.webp 686w"
+                width={686} height={906} />
+            </picture>
           </div>
         </div>
       </div>
@@ -43,12 +69,18 @@ export default function MultimediaPhygitalPage() {
             <p className="font-color-dark-gray">Создаём инсталляции и&nbsp;оформляем пространства с&nbsp;технологичной визуальной частью&nbsp;— для&nbsp;выставок, презентаций и&nbsp;бренд-мероприятий</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682affa1142ae3b66be54ed4_m2.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682affb888e04d40f868a901_m2mob.webp"
-              srcSet="/images/682affb888e04d40f868a901_m2mob-p-500.webp 500w, /images/682affb888e04d40f868a901_m2mob.webp 686w"
-              width={686} height={888} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682affa1142ae3b66be54ed4_m2.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682affa1142ae3b66be54ed4_m2.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682affb888e04d40f868a901_m2mob-p-500.avif 500w, /images/682affb888e04d40f868a901_m2mob.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682affb888e04d40f868a901_m2mob.webp"
+                srcSet="/images/682affb888e04d40f868a901_m2mob-p-500.webp 500w, /images/682affb888e04d40f868a901_m2mob.webp 686w"
+                width={686} height={888} />
+            </picture>
           </div>
         </div>
       </div>
@@ -60,12 +92,18 @@ export default function MultimediaPhygitalPage() {
             <p className="font-color-dark-gray">Разрабатываем музейные проекты и&nbsp;экспозиции на&nbsp;стыке цифрового и&nbsp;офлайн-опыта: от&nbsp;идеи и&nbsp;сценария до&nbsp;реализации, монтажа и&nbsp;печатных материалов</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682affe67434316939544690_m3.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682b000a9ead6e45d8f0bc0d_m3mob.webp"
-              srcSet="/images/682b000a9ead6e45d8f0bc0d_m3mob-p-500.webp 500w, /images/682b000a9ead6e45d8f0bc0d_m3mob.webp 690w"
-              width={690} height={2070} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682affe67434316939544690_m3.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682affe67434316939544690_m3.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682b000a9ead6e45d8f0bc0d_m3mob-p-500.avif 500w, /images/682b000a9ead6e45d8f0bc0d_m3mob.avif 690w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682b000a9ead6e45d8f0bc0d_m3mob.webp"
+                srcSet="/images/682b000a9ead6e45d8f0bc0d_m3mob-p-500.webp 500w, /images/682b000a9ead6e45d8f0bc0d_m3mob.webp 690w"
+                width={690} height={2070} />
+            </picture>
           </div>
         </div>
       </div>
@@ -107,7 +145,26 @@ export default function MultimediaPhygitalPage() {
           imgSrcSet: '/images/680b76b7c91ad25c42587b6c_vkportal-p-500.webp 500w, /images/680b76b7c91ad25c42587b6c_vkportal-p-800.webp 800w, /images/680b76b7c91ad25c42587b6c_vkportal-p-1080.webp 1080w, /images/680b76b7c91ad25c42587b6c_vkportal.webp 1248w',
           href: '/projects/sdelali-chat-bota-i-sproektirovali-100-ekranov-dlya-proekta-vk-portaly',
         },
+        {
+          title: 'Роскосмос \u00d7 Первый канал',
+          desc: 'Зрелищные AI-ролики для\u00a0концерта ко\u00a0Дню Космонавтики',
+          year: '2026',
+          cats: ['AI-ролики', 'шоу', 'DOOH'],
+          img: '/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.webp',
+          imgSrcSet: '',
+          href: '/projects/roscosmos-den-kosmonavtiki',
+        },
+        {
+          title: 'Синяя птица \u00d7 Сила света',
+          desc: 'Сценический визуал для\u00a0шоу \u00abСиняя птица\u00bb: 19\u00a0видеофонов для\u00a012-го сезона',
+          year: '2025',
+          cats: ['DOOH', 'AI', 'Коллаборация'],
+          img: '/images/69aacdcc619e6cb9f4fcab3c_0.webp',
+          imgSrcSet: '',
+          href: '/projects/scenicheskiy-vizual-dlya-siney-pticy-fony-k-nomeram-shou',
+        },
       ]} />
+
     </>
   )
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import fs from 'fs'
+import path from 'path'
 import casesData from '@/lib/cases.json'
 import { ruNbsp, ruNbspHtml } from '@/lib/ru-nbsp'
 import imageDims from '@/lib/image-dims.json'
@@ -12,11 +14,19 @@ function imgSize(src: string): { width: number; height: number } | Record<string
   return d ? { width: d.w, height: d.h } : {}
 }
 
+/** Returns the public-path AVIF URL only if the file exists on disk, otherwise null. */
+function avifSrc(webpPublicPath: string): string | null {
+  const avifPublicPath = webpPublicPath.replace(/\.(webp|png|jpe?g)$/i, '.avif')
+  const fsPath = path.join(process.cwd(), 'public', avifPublicPath)
+  return fs.existsSync(fsPath) ? avifPublicPath : null
+}
+
 type MediaBlock = {
   heading: string | null
   subheading?: string
   images: string[]
   video_url?: string
+  layout?: 'stacked' | 'grid'
 }
 
 type CaseData = {
@@ -24,6 +34,7 @@ type CaseData = {
   website_url?: string
   hero: string
   subtitle: string
+  credit?: string
   intro?: string[]
   what_we_did?: string[]
   results: string[]
@@ -58,22 +69,56 @@ export default async function CasePage({ params }: Props) {
   const data = cases[slug]
   if (!data) notFound()
 
-  const { cover_image, website_url, hero, subtitle, intro, what_we_did, results, awards, media_blocks } = data
+  const { cover_image, website_url, hero, subtitle, credit, intro, what_we_did, results, awards, media_blocks } = data
 
   return (
     <>
+      {/* ── Hero ── */}
+      <div className="portfolio-section">
+        <div className="main-container">
+          <div className="text-big-wrapper">
+            <p className="text-big" dangerouslySetInnerHTML={{ __html: ruNbspHtml(hero) }} />
+          </div>
+        </div>
+      </div>
+
+      {/* ── Subtitle ── */}
+      {subtitle && (
+        <div className="portfolio-section">
+          <div className="main-container">
+            <div className="text-h2-wrapper">
+              <h2 dangerouslySetInnerHTML={{ __html: ruNbspHtml(subtitle) }} />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Credit line ── */}
+      {credit && (
+        <div className="portfolio-section" style={{ paddingTop: 0 }}>
+          <div className="main-container">
+            <p className="text-regular" style={{ fontSize: 'var(--14px)', color: 'var(--medium-grey)' }}>
+              {credit}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* ── Cover image ── */}
       {cover_image && (
-        <div className="media-section last">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            alt=""
-            className="picture"
-            loading="eager"
-            sizes="100vw"
-            src={`/images/${cover_image}`}
-            {...imgSize(`/images/${cover_image}`)}
-          />
+        <div className="media-section last" style={{ marginBottom: 'var(--32px)' }}>
+          <picture>
+            {avifSrc(`/images/${cover_image}`) && <source type="image/avif" srcSet={avifSrc(`/images/${cover_image}`)!} />}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt=""
+              className="picture"
+              loading="eager"
+              sizes="100vw"
+              src={`/images/${cover_image}`}
+              {...imgSize(`/images/${cover_image}`)}
+            />
+          </picture>
           {website_url && (
             <div className="case-cover-button">
               <a
@@ -93,26 +138,6 @@ export default async function CasePage({ params }: Props) {
               </a>
             </div>
           )}
-        </div>
-      )}
-
-      {/* ── Hero ── */}
-      <div className="portfolio-section">
-        <div className="main-container">
-          <div className="text-big-wrapper">
-            <p className="text-big" dangerouslySetInnerHTML={{ __html: ruNbspHtml(hero) }} />
-          </div>
-        </div>
-      </div>
-
-      {/* ── Subtitle ── */}
-      {subtitle && (
-        <div className="portfolio-section">
-          <div className="main-container">
-            <div className="text-h2-wrapper">
-              <h2 dangerouslySetInnerHTML={{ __html: ruNbspHtml(subtitle) }} />
-            </div>
-          </div>
         </div>
       )}
 
@@ -252,6 +277,7 @@ export default async function CasePage({ params }: Props) {
                 <iframe
                   src={block.video_url}
                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                  allow="autoplay; fullscreen"
                   allowFullScreen
                 />
               </div>
@@ -259,31 +285,37 @@ export default async function CasePage({ params }: Props) {
           )}
           {block.images.length === 1 && (
             <div className="media-section last">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                alt=""
-                className="picture"
-                loading="lazy"
-                sizes="100vw"
-                src={`/images/${block.images[0]}`}
-                {...imgSize(`/images/${block.images[0]}`)}
-              />
+              <picture>
+                {avifSrc(`/images/${block.images[0]}`) && <source type="image/avif" srcSet={avifSrc(`/images/${block.images[0]}`)!} />}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  alt=""
+                  className="picture"
+                  loading="lazy"
+                  sizes="100vw"
+                  src={`/images/${block.images[0]}`}
+                  {...imgSize(`/images/${block.images[0]}`)}
+                />
+              </picture>
             </div>
           )}
           {block.images.length > 1 && (
             <div className="media-section last full-size">
-              <div className="media-section__photos">
+              <div className={`media-section__photos${block.layout === 'stacked' ? ' media-section__photos--fullsize' : ''}`}>
                 {block.images.map((img, j) => (
                   <div key={j} className="media-section__photos-item">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      alt=""
-                      className="picture"
-                      loading="lazy"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      src={`/images/${img}`}
-                      {...imgSize(`/images/${img}`)}
-                    />
+                    <picture>
+                      {avifSrc(`/images/${img}`) && <source type="image/avif" srcSet={avifSrc(`/images/${img}`)!} />}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        alt=""
+                        className="picture"
+                        loading="lazy"
+                        sizes={block.layout === 'stacked' ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
+                        src={`/images/${img}`}
+                        {...imgSize(`/images/${img}`)}
+                      />
+                    </picture>
                   </div>
                 ))}
               </div>

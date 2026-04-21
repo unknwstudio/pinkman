@@ -30,12 +30,18 @@ export default function CommunicationsDesignPage() {
             <p className="font-color-dark-gray">KV, баннеры, ресайзы и&nbsp;любые digital-материалы. Работаем по&nbsp;гайдлайнам, быстро адаптируем к&nbsp;разным форматам и&nbsp;собираем большие объёмы графики под&nbsp;кампании и&nbsp;на&nbsp;потоке</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6b06d7d614e5dbce03ec_dc1.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a6b4a315fe0e5d7f437bf_dc1mob.webp"
-              srcSet="/images/682a6b4a315fe0e5d7f437bf_dc1mob-p-500.webp 500w, /images/682a6b4a315fe0e5d7f437bf_dc1mob.webp 686w"
-              width={686} height={1845} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682a6b06d7d614e5dbce03ec_dc1.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682a6b06d7d614e5dbce03ec_dc1.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a6b4a315fe0e5d7f437bf_dc1mob-p-500.avif 500w, /images/682a6b4a315fe0e5d7f437bf_dc1mob.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a6b4a315fe0e5d7f437bf_dc1mob.webp"
+                srcSet="/images/682a6b4a315fe0e5d7f437bf_dc1mob-p-500.webp 500w, /images/682a6b4a315fe0e5d7f437bf_dc1mob.webp 686w"
+                width={686} height={1845} />
+            </picture>
           </div>
         </div>
       </div>
@@ -47,12 +53,18 @@ export default function CommunicationsDesignPage() {
             <p className="font-color-dark-gray">Работаем с&nbsp;большими объемами 3D-графики и&nbsp;сжатыми сроками. Делаем моушен высокого качества для&nbsp;DOOH, naked eye, ТВ и&nbsp;онлайна. Масштабируем продакшен под&nbsp;задачи и&nbsp;каналы</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6b83b04cabb3d464a3b5_dc2.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a6b98292840b5a7ae3c85_dc2mob.webp"
-              srcSet="/images/682a6b98292840b5a7ae3c85_dc2mob-p-500.webp 500w, /images/682a6b98292840b5a7ae3c85_dc2mob.webp 692w"
-              width={692} height={937} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682a6b83b04cabb3d464a3b5_dc2.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682a6b83b04cabb3d464a3b5_dc2.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a6b98292840b5a7ae3c85_dc2mob-p-500.avif 500w, /images/682a6b98292840b5a7ae3c85_dc2mob.avif 692w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a6b98292840b5a7ae3c85_dc2mob.webp"
+                srcSet="/images/682a6b98292840b5a7ae3c85_dc2mob-p-500.webp 500w, /images/682a6b98292840b5a7ae3c85_dc2mob.webp 692w"
+                width={692} height={937} />
+            </picture>
           </div>
         </div>
       </div>
@@ -64,12 +76,18 @@ export default function CommunicationsDesignPage() {
             <p className="font-color-dark-gray">Создаём визуальную стратегию бренда: от&nbsp;идеи и&nbsp;логотипа до&nbsp;системы носителей. Прорабатываем айдентику и&nbsp;адаптируем её под&nbsp;цифровую среду, маркетинг и&nbsp;офлайн-коммуникации</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6bdc3520fbfb6ffab04c_dc3.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a6bf4a5ca3597ed9994b6_dc3mob.webp"
-              srcSet="/images/682a6bf4a5ca3597ed9994b6_dc3mob-p-500.webp 500w, /images/682a6bf4a5ca3597ed9994b6_dc3mob.webp 689w"
-              width={689} height={1977} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682a6bdc3520fbfb6ffab04c_dc3.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682a6bdc3520fbfb6ffab04c_dc3.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a6bf4a5ca3597ed9994b6_dc3mob-p-500.avif 500w, /images/682a6bf4a5ca3597ed9994b6_dc3mob.avif 689w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a6bf4a5ca3597ed9994b6_dc3mob.webp"
+                srcSet="/images/682a6bf4a5ca3597ed9994b6_dc3mob-p-500.webp 500w, /images/682a6bf4a5ca3597ed9994b6_dc3mob.webp 689w"
+                width={689} height={1977} />
+            </picture>
           </div>
         </div>
       </div>
@@ -81,12 +99,18 @@ export default function CommunicationsDesignPage() {
             <p className="font-color-dark-gray">Делаем вирусные ролики под&nbsp;ключ для&nbsp;соцсетей с&nbsp;визуальными эффектами, AI-графикой и&nbsp;фокусом на&nbsp;охваты</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager"
-              src="/images/682a6c28876c3a1a4098d33a_dc4.webp" width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a6c445f3ba61580a05292_dc4mob.webp"
-              srcSet="/images/682a6c445f3ba61580a05292_dc4mob-p-500.webp 500w, /images/682a6c445f3ba61580a05292_dc4mob.webp 686w"
-              width={686} height={1490} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682a6c28876c3a1a4098d33a_dc4.avif" />
+              <img alt="" className="service__img hide-mobile" loading="eager"
+                src="/images/682a6c28876c3a1a4098d33a_dc4.webp" width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a6c445f3ba61580a05292_dc4mob-p-500.avif 500w, /images/682a6c445f3ba61580a05292_dc4mob.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a6c445f3ba61580a05292_dc4mob.webp"
+                srcSet="/images/682a6c445f3ba61580a05292_dc4mob-p-500.webp 500w, /images/682a6c445f3ba61580a05292_dc4mob.webp 686w"
+                width={686} height={1490} />
+            </picture>
           </div>
         </div>
       </div>
@@ -150,7 +174,7 @@ export default function CommunicationsDesignPage() {
         },
       ]} />
 
-      <ContactCard intro="Обсудим проект?" role="Аккаунт&#x2011;директор Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
+      <ContactCard intro="Обсудим проект?" role="Управляющий партнер Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
     </>
   )
 }

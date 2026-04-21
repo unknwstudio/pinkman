@@ -98,7 +98,7 @@ export default function OutsourceMultimediaPage() {
         </div>
       </div>
 
-      <ContactCard intro="Обсудим проект?" role="Аккаунт-директор Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
+      <ContactCard intro="Обсудим проект?" role="Управляющий партнер Юрий Григоренко&nbsp;— расскажет про&nbsp;состав команды, сроки и&nbsp;стоимость под&nbsp;ваш проект." />
     </>
   )
 }

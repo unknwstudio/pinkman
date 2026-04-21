@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useRef, useLayoutEffect, useEffect } from 'react'
+import { useState, useRef, useLayoutEffect, useEffect, useTransition } from 'react'
 import Link from 'next/link'
-import gsap, { Flip } from '@/lib/gsap'
+import gsap from '@/lib/gsap'
 
 const CATEGORIES = [
   'Все проекты',
@@ -32,11 +32,43 @@ type Case = {
 const CASES: Case[] = [
   // ── 2026 ──────────────────────────────────────────────────────────────
   {
+    title: 'Зрелищные AI-ролики для\u00a0концерта Роскосмоса ко\u00a0Дню Космонавтики',
+    desc: 'Оживили сцену на\u00a0Первом канале и\u00a0дополнили выступление артистов',
+    year: '2026',
+    cats: ['AI-ролики', 'шоу'],
+    img: '/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.webp',
+    href: '/projects/roscosmos-den-kosmonavtiki',
+  },
+  {
+    title: 'Поленов и ученики',
+    desc: 'Интерактивный гид по выставке — цифровое AI-путешествие',
+    year: '2026',
+    cats: ['Спецпроекты', 'Интерфейсы'],
+    img: '/images/_cases/polenov/polenov-cover.webp',
+    href: '/projects/polenov-i-ucheniki',
+  },
+  {
+    title: 'Норма',
+    desc: 'Разработали брендинг, мобильное приложение и сайт для сети химчисток',
+    year: '2026',
+    cats: ['Брендинг', 'Веб-дизайн', 'Интерфейсы'],
+    img: '/images/_cases/norma/norma-cover.webp',
+    href: '/projects/norma',
+  },
+  {
+    title: 'СИБУР',
+    desc: 'Зонтичный карьерный бренд для нефтехимической компании',
+    year: '2026',
+    cats: ['Брендинг'],
+    img: '/images/_cases/sibur/sibur-cover.webp',
+    href: '/projects/sibur-kariernyy-brend',
+  },
+  {
     title: 'Яндекс Го Казахстан',
     desc: 'Подготовили AI-ролики для федеральной рекламной кампании с\u00a0множеством ресайзов',
     year: '2026',
     cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
-    img: '/images/_cases/yagno-kazakh/horizontal.png',
+    img: '/images/_cases/yagno-kazakh/horizontal.avif',
     href: '/projects/yandex-go-kazakhstan',
   },
   {
@@ -44,7 +76,7 @@ const CASES: Case[] = [
     desc: 'Рекламный AI-ролик для различных каналов коммуникации',
     year: '2026',
     cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
-    img: '/images/_cases/yandex-split/image 2090012112.png',
+    img: '/images/_cases/yandex-split/image 2090012112.avif',
     href: '/projects/ai-rolik-dlya-yandex-split',
   },
   {
@@ -52,7 +84,7 @@ const CASES: Case[] = [
     desc: 'Рекламный AI-ролик для трансляции в\u00a0кинотеатре Пионер',
     year: '2026',
     cats: ['Бренд и\u00a0контент', 'AI', '3D/Motion-design'],
-    img: '/images/_cases/bootlegger/image 2090012112.png',
+    img: '/images/_cases/bootlegger/image 2090012112.avif',
     href: '/projects/ai-rolik-dlya-bootlegger',
   },
   // ── 2025 ──────────────────────────────────────────────────────────────
@@ -100,6 +132,14 @@ const CASES: Case[] = [
     img: '/images/680b764199c920914c0a7c5b_gpb.webp',
     imgSrcSet: '/images/680b764199c920914c0a7c5b_gpb-p-500.webp 500w, /images/680b764199c920914c0a7c5b_gpb-p-800.webp 800w, /images/680b764199c920914c0a7c5b_gpb-p-1080.webp 1080w, /images/680b764199c920914c0a7c5b_gpb.webp 1248w',
     href: '/projects/1-5-goda-pomogaem-podderzhivat-dizayn-kommunikaciy-gazprombanka-na-autstaffe',
+  },
+  {
+    title: 'Nova Creative Group',
+    desc: 'Спроектировали сайт с\u00a0нуля для компании, которая объединяет издательство и\u00a0маркетинговое агентство',
+    year: '2025',
+    cats: ['Веб-дизайн'],
+    img: '/images/_cases/nova/nova-cover.webp',
+    href: '/projects/nova-creative-group',
   },
   {
     title: 'X5 Tech',
@@ -418,9 +458,12 @@ const CASES: Case[] = [
 
 export default function ProjectsPage() {
   const [active, setActive] = useState('Все проекты')
+  const [isPending, startTransition] = useTransition()
   const gridRef = useRef<HTMLDivElement>(null)
-  // Stores the Flip state captured BEFORE React updates the DOM
-  const flipStateRef = useRef<ReturnType<typeof Flip.getState> | null>(null)
+  // Guard: skip hover tweens while filter transition is running
+  const isTransitioning = useRef(false)
+  // Skip the initial mount in useLayoutEffect
+  const isMounted = useRef(false)
 
   // ── Card grid: stagger entrance + horizontal hover ───────────────────────
   useEffect(() => {
@@ -457,13 +500,15 @@ export default function ProjectsPage() {
         const img = card.querySelector<HTMLElement>('img.case-card-big___image')
 
         const onEnter = () => {
+          if (isTransitioning.current) return
           gsap.to(card, { x: 8, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
           if (img) gsap.to(img, { scale: 1.05, duration: 0.5, ease: 'power2.out' })
         }
 
         const onLeave = () => {
-          gsap.to(card, { x: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)', overwrite: 'auto' })
-          if (img) gsap.to(img, { scale: 1, duration: 0.6, ease: 'power2.out' })
+          if (isTransitioning.current) return
+          gsap.to(card, { x: 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
+          if (img) gsap.to(img, { scale: 1, duration: 0.4, ease: 'power2.out' })
         }
 
         card.addEventListener('mouseenter', onEnter)
@@ -487,35 +532,47 @@ export default function ProjectsPage() {
   const isVisible = (c: Case) =>
     active === 'Все проекты' || c.cats.includes(active)
 
-  /** Capture Flip snapshot BEFORE React touches the DOM, then update state */
+  /** Lock grid height, then defer the state update so the main thread stays responsive */
   function handleFilter(cat: string) {
-    if (cat === active) return
+    if (cat === active || isPending) return
     const grid = gridRef.current
     if (grid) {
-      // All [data-flip-id] elements must be in the DOM — even hidden ones
-      const items = grid.querySelectorAll('[data-flip-id]')
-      console.log('[Flip] elements before getState:', items.length, items)
-      flipStateRef.current = Flip.getState(items)
+      // Pin the current height — grid won't collapse while cards swap display:none
+      grid.style.minHeight = grid.offsetHeight + 'px'
     }
-    setActive(cat)
+    isTransitioning.current = true
+    startTransition(() => setActive(cat))
   }
 
-  /** After React commits the new DOM, animate from the captured snapshot */
+  /** After React commits the new filtered DOM, fade in the visible cards then release the height lock */
   useLayoutEffect(() => {
-    const state = flipStateRef.current
-    if (!state) return
-    flipStateRef.current = null
+    // Skip the very first mount — entrance animation is handled by the scroll-triggered useEffect
+    if (!isMounted.current) {
+      isMounted.current = true
+      return
+    }
+    const grid = gridRef.current
+    if (!grid) return
 
-    Flip.from(state, {
-      duration: 0.55,
-      ease: 'power1.inOut',
-      absolute: true,   // keeps grid height stable during animation
-      stagger: 0.04,
-      onLeave: (els) =>
-        gsap.to(els, { opacity: 0, scale: 0.85, duration: 0.25 }),
-      onEnter: (els) =>
-        gsap.fromTo(els, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35 }),
-    })
+    const visibleCards = Array.from(
+      grid.querySelectorAll<HTMLElement>('.case-card-wrapper')
+    ).filter(el => el.style.display !== 'none')
+
+    gsap.fromTo(
+      visibleCards,
+      { opacity: 0, y: 16 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.35,
+        ease: 'power2.out',
+        stagger: 0.025,
+        onComplete: () => {
+          grid.style.minHeight = ''
+          isTransitioning.current = false
+        },
+      }
+    )
   }, [active])
 
   return (
@@ -537,11 +594,11 @@ export default function ProjectsPage() {
                 onClick={() => handleFilter(cat)}
                 className={`text-small is__chip${active === cat ? ' is__chip--active' : ''}`}
                 style={{
-                  background: active === cat ? '#1a1a1a' : undefined,
-                  color: active === cat ? '#fff' : undefined,
                   border: 'none',
-                  cursor: 'pointer',
+                  cursor: isPending ? 'default' : 'pointer',
                   fontFamily: 'inherit',
+                  opacity: isPending && active !== cat ? 0.6 : 1,
+                  transition: 'opacity 0.15s',
                 }}
               >
                 {cat}
@@ -558,6 +615,9 @@ export default function ProjectsPage() {
             // Include index to guarantee uniqueness even when title+year+cats[0] collide
             // (e.g. two "Сбер х Пушкинский музей 2024" entries with the same first category)
             const flipId = `case-${c.title}-${c.year}-${index}`
+            const avifSrc = c.img?.startsWith('/images/_cases/')
+              ? c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')
+              : undefined
             return (
             <div
               key={flipId}
@@ -596,26 +656,32 @@ export default function ProjectsPage() {
                     </div>
                     {c.img && (
                       <div className="case-card-big___right">
-                        <img
-                          alt={c.title}
-                          className="case-card-big___image hide-mobile"
-                          loading="lazy"
-                          sizes="(max-width: 1248px) 100vw, 1248px"
-                          src={c.img}
-                          srcSet={c.imgSrcSet}
-                          width={1248}
-                          height={823}
-                        />
-                        <img
-                          alt={c.title}
-                          className="case-card-big___image hide-desktop"
-                          loading="lazy"
-                          sizes="100vw"
-                          src={c.img}
-                          srcSet={c.imgSrcSet}
-                          width={1248}
-                          height={823}
-                        />
+                        <picture>
+                          {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                          {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="(max-width: 1248px) 100vw, 1248px" />}
+                          <img
+                            alt={c.title}
+                            className="case-card-big___image hide-mobile"
+                            loading="lazy"
+                            sizes="(max-width: 1248px) 100vw, 1248px"
+                            src={c.img}
+                            width={1248}
+                            height={823}
+                          />
+                        </picture>
+                        <picture>
+                          {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                          {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="100vw" />}
+                          <img
+                            alt={c.title}
+                            className="case-card-big___image hide-desktop"
+                            loading="lazy"
+                            sizes="100vw"
+                            src={c.img}
+                            width={1248}
+                            height={823}
+                          />
+                        </picture>
                       </div>
                     )}
                   </div>
@@ -640,26 +706,32 @@ export default function ProjectsPage() {
                   </div>
                   {c.img && (
                     <div className="case-card-big___right">
-                      <img
-                        alt={c.title}
-                        className="case-card-big___image hide-mobile"
-                        loading="lazy"
-                        sizes="(max-width: 1248px) 100vw, 1248px"
-                        src={c.img}
-                        srcSet={c.imgSrcSet}
-                        width={1248}
-                        height={823}
-                      />
-                      <img
-                        alt={c.title}
-                        className="case-card-big___image hide-desktop"
-                        loading="lazy"
-                        sizes="100vw"
-                        src={c.img}
-                        srcSet={c.imgSrcSet}
-                        width={1248}
-                        height={823}
-                      />
+                      <picture>
+                        {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                        {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="(max-width: 1248px) 100vw, 1248px" />}
+                        <img
+                          alt={c.title}
+                          className="case-card-big___image hide-mobile"
+                          loading="lazy"
+                          sizes="(max-width: 1248px) 100vw, 1248px"
+                          src={c.img}
+                          width={1248}
+                          height={823}
+                        />
+                      </picture>
+                      <picture>
+                        {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                        {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="100vw" />}
+                        <img
+                          alt={c.title}
+                          className="case-card-big___image hide-desktop"
+                          loading="lazy"
+                          sizes="100vw"
+                          src={c.img}
+                          width={1248}
+                          height={823}
+                        />
+                      </picture>
                     </div>
                   )}
                 </div>

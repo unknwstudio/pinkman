@@ -33,6 +33,9 @@ export default function Cursor() {
     const onOver = (e: MouseEvent) => {
       const target = (e.target as Element).closest('[data-cursor]')
       if (!target) return
+      // Skip if the mouse is moving between children of the same [data-cursor] element
+      const from = e.relatedTarget as Element | null
+      if (from && target.contains(from)) return
       const newLabel = target.getAttribute('data-cursor') ?? ''
       setLabel(newLabel)
       gsap.to(follower, {
@@ -40,29 +43,47 @@ export default function Cursor() {
         height: 80,
         duration: 0.35,
         ease: 'power2.out',
+        overwrite: 'auto',
       })
     }
 
     const onOut = (e: MouseEvent) => {
       const target = (e.target as Element).closest('[data-cursor]')
       if (!target) return
+      // Skip if the mouse is still inside the [data-cursor] element (moving to a child)
+      const to = e.relatedTarget as Element | null
+      if (to && target.contains(to)) return
       setLabel('')
       gsap.to(follower, {
         width: 40,
         height: 40,
-        duration: 0.5,
-        ease: 'elastic.out(1, 0.5)',
+        duration: 0.4,
+        ease: 'power2.out',
+        overwrite: 'auto',
+      })
+    }
+
+    const onReset = () => {
+      setLabel('')
+      gsap.to(follower, {
+        width: 40,
+        height: 40,
+        duration: 0.4,
+        ease: 'power2.out',
+        overwrite: 'auto',
       })
     }
 
     document.addEventListener('mousemove', onMove)
     document.addEventListener('mouseover', onOver)
     document.addEventListener('mouseout', onOut)
+    document.addEventListener('click', onReset)
 
     return () => {
       document.removeEventListener('mousemove', onMove)
       document.removeEventListener('mouseover', onOver)
       document.removeEventListener('mouseout', onOut)
+      document.removeEventListener('click', onReset)
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 

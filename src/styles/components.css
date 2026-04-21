@@ -2,6 +2,9 @@
    components.css — v CLDNXT-345727
    ============================================================ */
 
+/* <picture> is a transparent wrapper — must not affect flex/grid layout */
+picture { display: contents; }
+
 /* ── FONTS ─────────────────────────────────────────────────── */
 @font-face {
   font-family: 'Akkurat';
@@ -93,6 +96,332 @@ a { color: inherit; text-decoration: none; }
 .service-points-section,
 .service-section,
 .service-cases-section { margin-bottom: 5rem !important; }
+
+/* Compact variant — vertical gap between rows matches horizontal card gap */
+.service-points-section.is--compact {
+  margin-bottom: var(--8px) !important;
+  padding-top: 0 !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   TALENT HUB BANNER  (contact-us page)
+   ════════════════════════════════════════════════════════════ */
+.talent-hub-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 48px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.talent-hub-banner:hover { border-color: rgba(0, 0, 0, 0.25); }
+.talent-hub-banner__body { flex: 1; min-width: 0; }
+.talent-hub-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #0d0d0d;
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 2px solid #0d0d0d;
+  border-radius: 100px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.talent-hub-banner__btn:hover { background: #0d0d0d; color: #fff; }
+@media (max-width: 767px) {
+  .talent-hub-banner { flex-direction: column; align-items: flex-start; padding: 28px 24px; gap: 24px; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   TALENT HUB STICKY BAR  (/talent-hub/ page)
+   ════════════════════════════════════════════════════════════ */
+.th-bar-outer {
+  position: fixed;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 9100;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.th-bar--hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none !important;
+}
+.th-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 10px;
+  padding: 10px;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.22);
+  pointer-events: all;
+  max-width: 90vw;
+}
+.th-bar__group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+.th-bar__primary,
+.th-bar__secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 100px;
+  transition: opacity 0.15s, background 0.15s, color 0.15s;
+  white-space: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.th-bar__primary {
+  background: #F03882;
+}
+.th-bar__primary:hover { opacity: 0.88; }
+.th-bar__secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.th-bar__secondary:hover { background: rgba(255, 255, 255, 0.2); color: #fff; }
+.th-bar__note {
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: left;
+  padding: 0 4px;
+}
+@media (max-width: 767px) {
+  .th-bar { grid-template-columns: 1fr; gap: 10px; border-radius: 20px; padding: 12px; }
+  .th-bar__primary, .th-bar__secondary { font-size: 15px; padding: 12px 20px; }
+  .th-bar__note { font-size: 14px; max-width: 280px; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   FAQ ACCORDION  (/talent-hub/ page)
+   ════════════════════════════════════════════════════════════ */
+.faq-list { display: flex; flex-direction: column; gap: 0; }
+.faq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.faq-item:first-child { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+.faq-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+}
+.faq-trigger h3 { flex: 1; }
+.faq-chevron {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.25s ease;
+}
+.faq-item.is-open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 0;
+}
+.faq-item.is-open .faq-answer {
+  max-height: 500px;
+  padding-bottom: 24px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CALLOUT BOX (highlight block)
+   ════════════════════════════════════════════════════════════ */
+.callout-box {
+  padding: 32px 40px;
+  border-radius: 20px;
+  background: rgba(240, 56, 130, 0.08);
+  border-left: 4px solid #F03882;
+}
+.callout-box--green {
+  background: rgba(200, 235, 200, 0.4);
+  border-left-color: #5aad5a;
+}
+.callout-box--yellow {
+  background: rgba(255, 220, 80, 0.15);
+  border-left-color: #E5B800;
+}
+.callout-box--pink-sm {
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(240, 56, 130, 0.08);
+  border-left: 3px solid #F03882;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 767px) { .callout-box { padding: 24px 20px; } }
+
+/* Numbered list inside ServicePoint card */
+.th-numbered-list {
+  list-style: none;
+  counter-reset: th-num;
+  padding: 0;
+  margin: 8px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.th-numbered-list li {
+  counter-increment: th-num;
+  display: flex;
+  gap: 10px;
+  color: rgba(0, 0, 0, 0.55);
+  line-height: 1.5;
+}
+.th-numbered-list li::before {
+  content: counter(th-num) '.';
+  flex-shrink: 0;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.35);
+  min-width: 20px;
+}
+
+/* Mini callout inside a card */
+.th-mini-callout {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 220, 80, 0.18);
+  border-left: 3px solid #E5B800;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Large pink accent text for "Что дальше?" */
+.th-accent-text {
+  font-size: 65px;
+  line-height: 1.12;
+  font-weight: 600;
+  color: #777;
+  letter-spacing: -0.03em;
+}
+@media (max-width: 991px) { .th-accent-text { font-size: 48px; } }
+@media (max-width: 767px) { .th-accent-text { font-size: 32px; line-height: 1.2; } }
+
+/* Inline CTA buttons for /talent-hub/ intro & contacts */
+.th-intro-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+}
+.th-intro-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.th-intro-note {
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.45);
+  padding-left: 4px;
+}
+/* Fixed-width column layout for equal-length buttons */
+.th-intro-buttons--fixed {
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+}
+.th-intro-buttons--fixed .th-intro-btn,
+.th-intro-buttons--fixed .contacts-link-btn {
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.th-intro-buttons--fixed .th-intro-note {
+  padding-left: 0;
+}
+.th-intro-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 100px;
+  transition: opacity 0.15s, background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.th-intro-btn--primary {
+  background: #F03882;
+  color: #fff;
+}
+.th-intro-btn--primary:hover { opacity: 0.88; }
+.th-intro-btn--secondary {
+  background: #0d0d0d;
+  color: #fff;
+}
+.th-intro-btn--secondary:hover { opacity: 0.88; }
+
+/* Constrain callouts to 2/3 grid width (matches 2 cards in a 3-col row) */
+.th-two-col-width {
+  max-width: calc(66.8% - 3px);
+}
+
+@media (max-width: 991px) {
+  .th-two-col-width { max-width: 100%; }
+}
+@media (max-width: 767px) {
+  .th-intro-buttons { flex-direction: column; }
+  .th-intro-btn,
+  .th-intro-buttons--fixed .contacts-link-btn {
+    font-size: 15px;
+    padding: 14px 20px;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .th-intro-buttons--fixed { width: 100%; }
+  .th-intro-buttons--fixed .th-intro-note { padding-left: 0; }
+}
+
+/* Step card buttons */
+.th-step-btn { margin-top: 8px; }
+
+/* Page-level logo for standalone pages (e.g. /talent-hub/) */
+.th-page-logo {
+  display: block;
+  width: 44px;
+  height: 44px;
+  color: #0d0d0d;
+  transition: opacity 0.15s;
+}
+.th-page-logo:hover { opacity: 0.7; }
 
 /* ════════════════════════════════════════════════════════════
    DESKTOP NAV — old Webflow header (hidden on desktop, kept for mobile hamburger)
@@ -575,9 +904,89 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ════════════════════════════════════════════════════════════
+   CASE PINKMAN SITE — page-specific styles
+   ════════════════════════════════════════════════════════════ */
+
+/* Hero image */
+.case-pinkman-hero-img {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+  border: 1px solid #e0e0e0;
+}
+
+/* 3. Hover animation on cards */
+.case-pinkman-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.case-pinkman-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Before/after grid */
+.case-pinkman-ba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--8px);
+}
+.case-pinkman-ba-card {
+  border-radius: 20px;
+  padding: var(--32px);
+  border: 1px solid #e8e8e8;
+}
+.case-pinkman-ba-card--was { background: #fff; border-color: transparent; }
+.case-pinkman-ba-card--now { background: rgba(200, 235, 200, 0.4); border-color: transparent; }
+.case-pinkman-ba-heading {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: var(--24px);
+}
+.case-pinkman-ba-row {
+  padding: var(--16px) 0;
+}
+.case-pinkman-ba-row + .case-pinkman-ba-row {
+  border-top: 1px solid #e8e8e8;
+}
+
+/* Gradient text hover effect */
+.case-pinkman-gradient-text {
+  color: #555;
+}
+.case-pinkman-gradient-highlight {
+  transition: color 1s ease, -webkit-text-fill-color 1s ease;
+  -webkit-text-fill-color: currentColor;
+}
+.case-pinkman-gradient-text:hover .case-pinkman-gradient-highlight {
+  background: linear-gradient(90deg, #F03882, #ff6eb4, #F03882);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: -webkit-text-fill-color 1.2s ease;
+}
+
+/* Mobile overrides for case-pinkman-site */
+@media (max-width: 767px) {
+  .case-pinkman-ba-grid { grid-template-columns: 1fr; }
+  .case-pinkman-ba-heading { font-size: 1rem !important; }
+}
+
+/* ════════════════════════════════════════════════════════════
    BIGGER CARD BORDER RADIUS
    ════════════════════════════════════════════════════════════ */
-.service-point { border-radius: 20px !important; }
+.service-point { border-radius: 20px !important; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+/* Clickable service-card hover: lift + shadow + activate button */
+.service-card-link:hover .service-point {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.service-card-link:hover .small-button {
+  background-color: var(--color--total-black) !important;
+  color: var(--color--white) !important;
+}
+/* Arrow swap handled in the consolidated block below */
 
 /* tagsTop (chips ABOVE title): equal top & bottom indent */
 .service-point__tags--top {
@@ -597,21 +1006,40 @@ a { color: inherit; text-decoration: none; }
 .image-section { cursor: default !important; pointer-events: none !important; }
 .image-section * { pointer-events: none !important; }
 
+/* OTP Bank block: restore row gap so "Бронза" text doesn't overlap images */
+.developing-block.col-1 { grid-row-gap: var(--10px); }
+
+/* <picture> wrappers must behave as block grid items, not inline */
+.developing-block picture { display: block; width: 100%; }
+
 /* Ensure HTML width/height attrs act as aspect-ratio hints, not fixed sizes */
 .developing-image { height: auto; }
 .image { height: auto; }
 .service__img { height: auto; }
 .case-card-big___image { height: auto; }
 
-/* Small service buttons — smooth hover transitions */
+/* Small service buttons — arrow-swap via absolute overlay.
+   Both arrows are positioned on top of each other so only opacity changes
+   on hover — no layout shift, no arrow flying upward.
+   (button-arrow__active has display:none in main.min.css; we override it
+   here so the opacity transition works without re-triggering flex layout.) */
 .small-button {
   transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
 }
-.small-button .small-button-arrow {
+.small-button .small-button-arrow-wrapper {
+  position: relative;
+}
+.small-button .small-button-arrow,
+.small-button .button-arrow__active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: opacity 0.2s ease !important;
 }
 .small-button .button-arrow__active {
-  transition: opacity 0.2s ease !important;
+  display: block !important; /* override display:none from main.min.css */
+  opacity: 0;
 }
 
 /* ServiceListItem: hovering the whole row activates the button visuals */
@@ -619,12 +1047,20 @@ a { color: inherit; text-decoration: none; }
   background-color: var(--color--total-black) !important;
   color: var(--color--white) !important;
 }
-.list-item-wrapper:hover .small-button .small-button-arrow {
+.list-item-wrapper:hover .small-button .small-button-arrow,
+.service-card-link:hover .small-button .small-button-arrow {
   opacity: 0 !important;
 }
-.list-item-wrapper:hover .small-button .button-arrow__active {
+.list-item-wrapper:hover .small-button .button-arrow__active,
+.service-card-link:hover .small-button .button-arrow__active {
   opacity: 1 !important;
 }
+/* "Лучше всего мы делаем" service list: keep grey arrow on hover.
+   The arrow-wrapper has a white background so the white arrow would be
+   invisible (white-on-white). Cancel the swap for items inside .list. */
+.list .list-item-wrapper:hover .small-button .small-button-arrow { opacity: 1 !important; }
+.list .list-item-wrapper:hover .small-button .button-arrow__active { opacity: 0 !important; }
+
 /* Ensure the overlay link sits on top for clickability */
 .list-item-wrapper { position: relative; }
 .list-item-link { z-index: 1; }
@@ -876,6 +1312,18 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: var(--32px);
 }
 
+/* Services separator — gap between featured and regular services */
+.services-separator {
+  height: var(--32px);
+}
+
+/* Developing section — awards list */
+.developing-awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 /* ════════════════════════════════════════════════════════════
    SERVICE POINT ROW  — 3-column horizontal layout (desktop)
    NOTE: NO horizontal padding here — parent .service-points-section
@@ -892,6 +1340,15 @@ a { color: inherit; text-decoration: none; }
 .service-point-row .service-point {
   grid-template-columns: 1fr !important;
   row-gap: var(--16px);
+}
+/* When a row has fewer items than columns, stretch to fill */
+.service-point-row--full .service-point { grid-column: 1 / -1; }
+/* Span exactly 2 of 3 columns — aligns with 2-card rows */
+.service-point-row--two-col .service-point,
+.service-point-row--two-col > .callout-box { grid-column: 1 / 3; }
+@media (max-width: 991px) {
+  .service-point-row--two-col .service-point,
+  .service-point-row--two-col > .callout-box { grid-column: 1 / -1; }
 }
 /* Right section (description) gets a subtle top separator when stacked */
 .service-point-row .service-point__right {
@@ -1190,4 +1647,24 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 767px) {
   .text-hero { font-size: var(--mobile--37px); }
+}
+
+/* ════════════════════════════════════════════════════════════
+   CHIP HOVER STATES
+   ════════════════════════════════════════════════════════════ */
+.is__chip {
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+/* Active filter chip */
+.filter-chips-wrapper .is__chip--active {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+/* Non-active chips darken slightly on hover */
+.filter-chips-wrapper .is__chip:not(.is__chip--active):hover {
+  background-color: #d4d4d4;
+}
+/* Active chip lightens slightly on hover */
+.filter-chips-wrapper .is__chip--active:hover {
+  background-color: #333;
 }

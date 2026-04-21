@@ -60,8 +60,8 @@ export default function ServiceCasesGrid({ cases }: Props) {
         }
 
         const onLeave = () => {
-          gsap.to(card, { x: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)', overwrite: 'auto' })
-          if (img) gsap.to(img, { scale: 1, duration: 0.6, ease: 'power2.out' })
+          gsap.to(card, { x: 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' })
+          if (img) gsap.to(img, { scale: 1, duration: 0.4, ease: 'power2.out' })
         }
 
         card.addEventListener('mouseenter', onEnter)
@@ -118,26 +118,32 @@ export default function ServiceCasesGrid({ cases }: Props) {
                   </div>
                   {c.img && (
                     <div className="case-card-big___right">
-                      <img
-                        alt={c.title}
-                        className="case-card-big___image hide-mobile"
-                        loading="lazy"
-                        sizes="(max-width: 1248px) 100vw, 1248px"
-                        src={c.img}
-                        srcSet={c.imgSrcSet}
-                        width={1248}
-                        height={823}
-                      />
-                      <img
-                        alt={c.title}
-                        className="case-card-big___image hide-desktop"
-                        loading="lazy"
-                        sizes="100vw"
-                        src={c.img}
-                        srcSet={c.imgSrcSet}
-                        width={1248}
-                        height={823}
-                      />
+                      <picture>
+                        <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="(max-width: 1248px) 100vw, 1248px" />
+                        <img
+                          alt={c.title}
+                          className="case-card-big___image hide-mobile"
+                          loading="lazy"
+                          sizes="(max-width: 1248px) 100vw, 1248px"
+                          src={c.img}
+                          srcSet={c.imgSrcSet}
+                          width={1248}
+                          height={823}
+                        />
+                      </picture>
+                      <picture>
+                        <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="100vw" />
+                        <img
+                          alt={c.title}
+                          className="case-card-big___image hide-desktop"
+                          loading="lazy"
+                          sizes="100vw"
+                          src={c.img}
+                          srcSet={c.imgSrcSet}
+                          width={1248}
+                          height={823}
+                        />
+                      </picture>
                     </div>
                   )}
                 </div>
@@ -162,26 +168,32 @@ export default function ServiceCasesGrid({ cases }: Props) {
                 </div>
                 {c.img && (
                   <div className="case-card-big___right">
-                    <img
-                      alt={c.title}
-                      className="case-card-big___image hide-mobile"
-                      loading="lazy"
-                      sizes="(max-width: 1248px) 100vw, 1248px"
-                      src={c.img}
-                      srcSet={c.imgSrcSet}
-                      width={1248}
-                      height={823}
-                    />
-                    <img
-                      alt={c.title}
-                      className="case-card-big___image hide-desktop"
-                      loading="lazy"
-                      sizes="100vw"
-                      src={c.img}
-                      srcSet={c.imgSrcSet}
-                      width={1248}
-                      height={823}
-                    />
+                    <picture>
+                      <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="(max-width: 1248px) 100vw, 1248px" />
+                      <img
+                        alt={c.title}
+                        className="case-card-big___image hide-mobile"
+                        loading="lazy"
+                        sizes="(max-width: 1248px) 100vw, 1248px"
+                        src={c.img}
+                        srcSet={c.imgSrcSet}
+                        width={1248}
+                        height={823}
+                      />
+                    </picture>
+                    <picture>
+                      <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} sizes="100vw" />
+                      <img
+                        alt={c.title}
+                        className="case-card-big___image hide-desktop"
+                        loading="lazy"
+                        sizes="100vw"
+                        src={c.img}
+                        srcSet={c.imgSrcSet}
+                        width={1248}
+                        height={823}
+                      />
+                    </picture>
                   </div>
                 )}
               </div>

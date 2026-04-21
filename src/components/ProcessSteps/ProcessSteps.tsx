@@ -14,11 +14,13 @@ interface ProcessStep {
 
 interface ProcessStepsProps {
   steps: ProcessStep[]
+  /** Reduces bottom margin to match card gap (default false) */
+  compact?: boolean
 }
 
-export default function ProcessSteps({ steps }: ProcessStepsProps) {
+export default function ProcessSteps({ steps, compact = false }: ProcessStepsProps) {
   return (
-    <div className="service-points-section">
+    <div className={`service-points-section${compact ? ' is--compact' : ''}`}>
       <div className="process-steps">
         {/* gridTemplateColumns inline — repeat() count cannot be a CSS custom property */}
         <div

@@ -28,14 +28,20 @@ export default function SitesPage() {
             <p className="font-color-dark-gray">Десятки разделов. Множество аудиторий. Сложная структура. Наша специализация&nbsp;— масштабные веб-проекты для&nbsp;крупного бизнеса</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager" sizes="100vw"
-              src="/images/6829dd5bc35528c6ea9fe39a_Frame 174.webp"
-              srcSet="/images/6829dd5bc35528c6ea9fe39a_Frame 174-p-500.webp 500w, /images/6829dd5bc35528c6ea9fe39a_Frame 174-p-800.webp 800w, /images/6829dd5bc35528c6ea9fe39a_Frame 174-p-1080.webp 1080w, /images/6829dd5bc35528c6ea9fe39a_Frame 174.webp 2624w"
-              width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a4b0416632e09b8f54d98_Group 2131328290.webp"
-              srcSet="/images/682a4b0416632e09b8f54d98_Group 2131328290-p-500.webp 500w, /images/682a4b0416632e09b8f54d98_Group 2131328290.webp 686w"
-              width={686} height={1240} />
+            <picture>
+              <source type="image/avif" srcSet="/images/6829dd5bc35528c6ea9fe39a_Frame 174-p-500.avif 500w, /images/6829dd5bc35528c6ea9fe39a_Frame 174-p-800.avif 800w, /images/6829dd5bc35528c6ea9fe39a_Frame 174-p-1080.avif 1080w, /images/6829dd5bc35528c6ea9fe39a_Frame 174.avif 2624w" sizes="100vw" />
+              <img alt="" className="service__img hide-mobile" loading="eager" sizes="100vw"
+                src="/images/6829dd5bc35528c6ea9fe39a_Frame 174.webp"
+                srcSet="/images/6829dd5bc35528c6ea9fe39a_Frame 174-p-500.webp 500w, /images/6829dd5bc35528c6ea9fe39a_Frame 174-p-800.webp 800w, /images/6829dd5bc35528c6ea9fe39a_Frame 174-p-1080.webp 1080w, /images/6829dd5bc35528c6ea9fe39a_Frame 174.webp 2624w"
+                width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a4b0416632e09b8f54d98_Group 2131328290-p-500.avif 500w, /images/682a4b0416632e09b8f54d98_Group 2131328290.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a4b0416632e09b8f54d98_Group 2131328290.webp"
+                srcSet="/images/682a4b0416632e09b8f54d98_Group 2131328290-p-500.webp 500w, /images/682a4b0416632e09b8f54d98_Group 2131328290.webp 686w"
+                width={686} height={1240} />
+            </picture>
           </div>
         </div>
       </div>
@@ -47,14 +53,20 @@ export default function SitesPage() {
             <p className="font-color-dark-gray">Рассказываем о&nbsp;продукте так, чтобы им начали пользоваться. Создаем сайты, которые объясняют сложное простыми словами и&nbsp;дизайном и&nbsp;конвертируют посетителей в&nbsp;клиентов</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager" sizes="100vw"
-              src="/images/682a425168c274c43157d27c_Frame 421.webp"
-              srcSet="/images/682a425168c274c43157d27c_Frame 421-p-500.webp 500w, /images/682a425168c274c43157d27c_Frame 421-p-800.webp 800w, /images/682a425168c274c43157d27c_Frame 421-p-1080.webp 1080w, /images/682a425168c274c43157d27c_Frame 421.webp 2624w"
-              width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a4c60ad8829907f9a66fc_Frame 2131331595 (1).webp"
-              srcSet="/images/682a4c60ad8829907f9a66fc_Frame 2131331595 (1)-p-500.webp 500w, /images/682a4c60ad8829907f9a66fc_Frame 2131331595 (1).webp 686w"
-              width={686} height={911} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682a425168c274c43157d27c_Frame 421-p-500.avif 500w, /images/682a425168c274c43157d27c_Frame 421-p-800.avif 800w, /images/682a425168c274c43157d27c_Frame 421-p-1080.avif 1080w, /images/682a425168c274c43157d27c_Frame 421.avif 2624w" sizes="100vw" />
+              <img alt="" className="service__img hide-mobile" loading="eager" sizes="100vw"
+                src="/images/682a425168c274c43157d27c_Frame 421.webp"
+                srcSet="/images/682a425168c274c43157d27c_Frame 421-p-500.webp 500w, /images/682a425168c274c43157d27c_Frame 421-p-800.webp 800w, /images/682a425168c274c43157d27c_Frame 421-p-1080.webp 1080w, /images/682a425168c274c43157d27c_Frame 421.webp 2624w"
+                width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a4c60ad8829907f9a66fc_Frame 2131331595 (1)-p-500.avif 500w, /images/682a4c60ad8829907f9a66fc_Frame 2131331595 (1).avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a4c60ad8829907f9a66fc_Frame 2131331595 (1).webp"
+                srcSet="/images/682a4c60ad8829907f9a66fc_Frame 2131331595 (1)-p-500.webp 500w, /images/682a4c60ad8829907f9a66fc_Frame 2131331595 (1).webp 686w"
+                width={686} height={911} />
+            </picture>
           </div>
         </div>
       </div>
@@ -66,14 +78,20 @@ export default function SitesPage() {
             <p className="font-color-dark-gray">Без&nbsp;воды и&nbsp;шаблонов. Четкая структура, понятные месседжи, высокая конверсия</p>
           </div>
           <div className="service__picture">
-            <img alt="" className="service__img hide-mobile" loading="eager" sizes="100vw"
-              src="/images/682a4392bb81a9ae14b5e4a9_Frame 422.webp"
-              srcSet="/images/682a4392bb81a9ae14b5e4a9_Frame 422-p-500.webp 500w, /images/682a4392bb81a9ae14b5e4a9_Frame 422-p-800.webp 800w, /images/682a4392bb81a9ae14b5e4a9_Frame 422-p-1080.webp 1080w, /images/682a4392bb81a9ae14b5e4a9_Frame 422.webp 2624w"
-              width={2624} height={852} />
-            <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
-              src="/images/682a4cb1350f72e44a18deb4_Frame 2131331603.webp"
-              srcSet="/images/682a4cb1350f72e44a18deb4_Frame 2131331603-p-500.webp 500w, /images/682a4cb1350f72e44a18deb4_Frame 2131331603.webp 686w"
-              width={686} height={899} />
+            <picture>
+              <source type="image/avif" srcSet="/images/682a4392bb81a9ae14b5e4a9_Frame 422-p-500.avif 500w, /images/682a4392bb81a9ae14b5e4a9_Frame 422-p-800.avif 800w, /images/682a4392bb81a9ae14b5e4a9_Frame 422-p-1080.avif 1080w, /images/682a4392bb81a9ae14b5e4a9_Frame 422.avif 2624w" sizes="100vw" />
+              <img alt="" className="service__img hide-mobile" loading="eager" sizes="100vw"
+                src="/images/682a4392bb81a9ae14b5e4a9_Frame 422.webp"
+                srcSet="/images/682a4392bb81a9ae14b5e4a9_Frame 422-p-500.webp 500w, /images/682a4392bb81a9ae14b5e4a9_Frame 422-p-800.webp 800w, /images/682a4392bb81a9ae14b5e4a9_Frame 422-p-1080.webp 1080w, /images/682a4392bb81a9ae14b5e4a9_Frame 422.webp 2624w"
+                width={2624} height={852} />
+            </picture>
+            <picture>
+              <source type="image/avif" srcSet="/images/682a4cb1350f72e44a18deb4_Frame 2131331603-p-500.avif 500w, /images/682a4cb1350f72e44a18deb4_Frame 2131331603.avif 686w" sizes="100vw" />
+              <img alt="" className="service__img hide-desktop" loading="eager" sizes="100vw"
+                src="/images/682a4cb1350f72e44a18deb4_Frame 2131331603.webp"
+                srcSet="/images/682a4cb1350f72e44a18deb4_Frame 2131331603-p-500.webp 500w, /images/682a4cb1350f72e44a18deb4_Frame 2131331603.webp 686w"
+                width={686} height={899} />
+            </picture>
           </div>
         </div>
       </div>
