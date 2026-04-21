@@ -117,7 +117,7 @@ export default function OutstaffPresentationsPage() {
 
       <Section>
         <div className={`${styles.gallery} anim`}>
-          {['roman-01', 'roman-02', 'roman-03', 'roman-04', 'roman-05', 'roman-06', 'roman-07', 'roman-08', 'roman-09'].map((name) => (
+          {['roman-01', 'roman-02', 'roman-03', 'roman-04', 'roman-05', 'roman-06', 'roman-07', 'roman-08', 'roman-09', 'roman-10', 'roman-11', 'roman-12'].map((name) => (
             <div key={name} className={styles.galleryItem}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={`/images/presentations/${name}.jpg`} alt="" loading="lazy" />
