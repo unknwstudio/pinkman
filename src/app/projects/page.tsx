@@ -617,7 +617,8 @@ export default function ProjectsPage() {
             const flipId = `case-${c.title}-${c.year}-${index}`
             const avifSet = (() => {
               if (!c.img?.startsWith('/images/_cases/')) return undefined
-              const base = c.img.replace(/\.(webp|png|jpe?g|avif)$/i, '')
+              // URL-encode spaces: srcset uses whitespace as a delimiter, so literal spaces break parsing
+              const base = c.img.replace(/\.(webp|png|jpe?g|avif)$/i, '').replace(/ /g, '%20')
               return `${base}-p-500.avif 500w, ${base}-p-800.avif 800w, ${base}-p-1080.avif 1080w, ${base}.avif 1248w`
             })()
             return (

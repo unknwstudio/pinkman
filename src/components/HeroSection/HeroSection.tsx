@@ -101,7 +101,8 @@ const OTHER_CASES = ALL_CASES.filter((c) => !hasAiTag(c))
  */
 function avifSrcSet(img: string): string | undefined {
   if (!img.startsWith('/images/_cases/')) return undefined
-  const base = img.replace(/\.(webp|png|jpe?g|avif)$/i, '')
+  // URL-encode spaces: srcset uses whitespace as a delimiter, so literal spaces break parsing
+  const base = img.replace(/\.(webp|png|jpe?g|avif)$/i, '').replace(/ /g, '%20')
   return `${base}-p-500.avif 500w, ${base}-p-800.avif 800w, ${base}-p-1080.avif 1080w, ${base}.avif 1248w`
 }
 
