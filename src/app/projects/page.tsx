@@ -615,9 +615,11 @@ export default function ProjectsPage() {
             // Include index to guarantee uniqueness even when title+year+cats[0] collide
             // (e.g. two "Сбер х Пушкинский музей 2024" entries with the same first category)
             const flipId = `case-${c.title}-${c.year}-${index}`
-            const avifSrc = c.img?.startsWith('/images/_cases/')
-              ? c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')
-              : undefined
+            const avifSet = (() => {
+              if (!c.img?.startsWith('/images/_cases/')) return undefined
+              const base = c.img.replace(/\.(webp|png|jpe?g|avif)$/i, '')
+              return `${base}-p-500.avif 500w, ${base}-p-800.avif 800w, ${base}-p-1080.avif 1080w, ${base}.avif 1248w`
+            })()
             return (
             <div
               key={flipId}
@@ -657,20 +659,20 @@ export default function ProjectsPage() {
                     {c.img && (
                       <div className="case-card-big___right">
                         <picture>
-                          {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
-                          {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="(max-width: 1248px) 100vw, 1248px" />}
+                          {avifSet && <source type="image/avif" srcSet={avifSet} sizes="(max-width: 768px) 100vw, 50vw" />}
+                          {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="(max-width: 768px) 100vw, 50vw" />}
                           <img
                             alt={c.title}
                             className="case-card-big___image hide-mobile"
                             loading="lazy"
-                            sizes="(max-width: 1248px) 100vw, 1248px"
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             src={c.img}
                             width={1248}
                             height={823}
                           />
                         </picture>
                         <picture>
-                          {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                          {avifSet && <source type="image/avif" srcSet={avifSet} sizes="100vw" />}
                           {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="100vw" />}
                           <img
                             alt={c.title}
@@ -707,20 +709,20 @@ export default function ProjectsPage() {
                   {c.img && (
                     <div className="case-card-big___right">
                       <picture>
-                        {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
-                        {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="(max-width: 1248px) 100vw, 1248px" />}
+                        {avifSet && <source type="image/avif" srcSet={avifSet} sizes="(max-width: 768px) 100vw, 50vw" />}
+                        {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="(max-width: 768px) 100vw, 50vw" />}
                         <img
                           alt={c.title}
                           className="case-card-big___image hide-mobile"
                           loading="lazy"
-                          sizes="(max-width: 1248px) 100vw, 1248px"
+                          sizes="(max-width: 768px) 100vw, 50vw"
                           src={c.img}
                           width={1248}
                           height={823}
                         />
                       </picture>
                       <picture>
-                        {avifSrc && <source type="image/avif" srcSet={avifSrc} />}
+                        {avifSet && <source type="image/avif" srcSet={avifSet} sizes="100vw" />}
                         {c.imgSrcSet && <source type="image/webp" srcSet={c.imgSrcSet} sizes="100vw" />}
                         <img
                           alt={c.title}

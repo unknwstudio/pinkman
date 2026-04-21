@@ -95,8 +95,19 @@ const AI_CASES = ALL_CASES.filter(hasAiTag).slice(0, 5)
 // Non-AI carousel — all, newest-first
 const OTHER_CASES = ALL_CASES.filter((c) => !hasAiTag(c))
 
+/**
+ * Build a responsive AVIF srcset for locally-stored _cases cover images.
+ * Returns undefined for CDN images that don't have generated AVIF variants.
+ */
+function avifSrcSet(img: string): string | undefined {
+  if (!img.startsWith('/images/_cases/')) return undefined
+  const base = img.replace(/\.(webp|png|jpe?g|avif)$/i, '')
+  return `${base}-p-500.avif 500w, ${base}-p-800.avif 800w, ${base}-p-1080.avif 1080w, ${base}.avif 1248w`
+}
+
 /** Shared card JSX — identical for both grids */
 function CaseCard({ c, i }: { c: (typeof ALL_CASES)[number]; i: number }) {
+  const avif = avifSrcSet(c.img)
   return (
     <Link
       key={c.href}
@@ -132,19 +143,19 @@ function CaseCard({ c, i }: { c: (typeof ALL_CASES)[number]; i: number }) {
         </div>
         <div className="case-card-big___right">
           <picture>
-            <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} />
+            {avif && <source type="image/avif" srcSet={avif} sizes="(max-width: 768px) 100vw, 50vw" />}
             <img
               alt={c.title}
               className="case-card-big___image hide-mobile"
               loading={i === 0 ? 'eager' : 'lazy'}
-              sizes="(max-width: 1248px) 100vw, 1248px"
+              sizes="(max-width: 768px) 100vw, 50vw"
               src={c.img}
               width={1248}
               height={823}
             />
           </picture>
           <picture>
-            <source type="image/avif" srcSet={c.img.replace(/\.(webp|png|jpe?g)$/i, '.avif')} />
+            {avif && <source type="image/avif" srcSet={avif} sizes="100vw" />}
             <img
               alt={c.title}
               className="case-card-big___image hide-desktop"
