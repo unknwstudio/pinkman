@@ -98,11 +98,14 @@ const ALL_CASES = [
 const hasAiTag = (c: (typeof ALL_CASES)[number]) =>
   c.cats.some((cat) => cat.toLowerCase() === 'ai')
 
-// Featured: the first entry in ALL_CASES always leads the top carousel,
-// even when it doesn't carry an AI tag. Keeps top slot editable via list order.
-const [FEATURED, ...REST] = ALL_CASES
-// Top carousel — featured + up to 4 newest AI cases
-const AI_CASES = [FEATURED, ...REST.filter(hasAiTag).slice(0, 4)]
+// Featured: the first 2 entries in ALL_CASES always lead the top carousel
+// in order, even when they don't carry an AI tag. Edit the list order to
+// control the top slots.
+const FEATURED_COUNT = 2
+const FEATURED = ALL_CASES.slice(0, FEATURED_COUNT)
+const REST = ALL_CASES.slice(FEATURED_COUNT)
+// Top carousel — featured + up to (5 - FEATURED_COUNT) newest AI cases
+const AI_CASES = [...FEATURED, ...REST.filter(hasAiTag).slice(0, 5 - FEATURED_COUNT)]
 // Non-AI carousel — remaining non-AI cases, newest-first
 const OTHER_CASES = REST.filter((c) => !hasAiTag(c))
 
