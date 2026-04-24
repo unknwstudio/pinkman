@@ -27,6 +27,7 @@ type MediaBlock = {
   images: string[]
   video_url?: string
   layout?: 'stacked' | 'grid'
+  gap?: number
 }
 
 type CaseData = {
@@ -301,7 +302,10 @@ export default async function CasePage({ params }: Props) {
           )}
           {block.images.length > 1 && (
             <div className="media-section last full-size">
-              <div className={`media-section__photos${block.layout === 'stacked' ? ' media-section__photos--fullsize' : ''}`}>
+              <div
+                className={`media-section__photos${block.layout === 'stacked' ? ' media-section__photos--fullsize' : ''}`}
+                style={block.gap != null ? { gap: `${block.gap}px` } : undefined}
+              >
                 {block.images.map((img, j) => (
                   <div key={j} className="media-section__photos-item">
                     <picture>

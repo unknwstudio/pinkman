@@ -13,6 +13,7 @@
       {
         "heading": null,
         "layout": "stacked",
+        "gap": 20,
         "images": [
           "_cases/sber-insurance-life/sber-insurance-life-img-01.webp",
           "_cases/sber-insurance-life/sber-insurance-life-img-02.webp",
