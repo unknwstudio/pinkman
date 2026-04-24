@@ -35,7 +35,7 @@ const CASES: Case[] = [
     title: 'Ребрендинг Сбер Страхования жизни',
     desc: 'Представили ребрендинг Сбер Страхования жизни на\u00a0квартальном собрании вместе с\u00a0командой клиента',
     year: '2026',
-    cats: ['Брендинг', '3D/Motion-design', 'Дизайн коммуникаций'],
+    cats: ['Брендинг', '3D/Motion-design', 'Дизайн коммуникаций', 'AI'],
     img: '/images/_cases/sber-insurance-life/sber-insurance-life-cover.webp',
     href: '/projects/sber-insurance-life',
   },
