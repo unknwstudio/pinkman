@@ -9,7 +9,7 @@ const ALL_CASES = [
     title: 'Ребрендинг Сбер Страхования жизни',
     desc: 'Представили ребрендинг Сбер Страхования жизни на\u00a0квартальном собрании вместе с\u00a0командой клиента',
     year: '2026',
-    cats: ['Брендинг', '3D/Motion-design'],
+    cats: ['Брендинг', '3D/Motion-design', 'Дизайн коммуникаций'],
     img: '/images/_cases/sber-insurance-life/sber-insurance-life-cover.webp',
     href: '/projects/sber-insurance-life',
   },
@@ -98,10 +98,13 @@ const ALL_CASES = [
 const hasAiTag = (c: (typeof ALL_CASES)[number]) =>
   c.cats.some((cat) => cat.toLowerCase() === 'ai')
 
-// AI carousel — max 5, list is already newest-first
-const AI_CASES = ALL_CASES.filter(hasAiTag).slice(0, 5)
-// Non-AI carousel — all, newest-first
-const OTHER_CASES = ALL_CASES.filter((c) => !hasAiTag(c))
+// Featured: the first entry in ALL_CASES always leads the top carousel,
+// even when it doesn't carry an AI tag. Keeps top slot editable via list order.
+const [FEATURED, ...REST] = ALL_CASES
+// Top carousel — featured + up to 4 newest AI cases
+const AI_CASES = [FEATURED, ...REST.filter(hasAiTag).slice(0, 4)]
+// Non-AI carousel — remaining non-AI cases, newest-first
+const OTHER_CASES = REST.filter((c) => !hasAiTag(c))
 
 /**
  * Build a responsive AVIF srcset for locally-stored _cases cover images.
