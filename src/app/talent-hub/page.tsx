@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import Section from '@/components/Section/Section'
 import ServicePointRow from '@/components/ServicePointRow/ServicePointRow'
 import ServicePoint from '@/components/ServicePoint/ServicePoint'
@@ -56,6 +57,9 @@ const PINKMAN_LOGO = (
 )
 
 export default function TalentHubPage() {
+  // Temporarily hidden from the site — route returns 404 until re-enabled.
+  notFound()
+
   return (
     <>
       {/* ── Custom sticky bar ── */}

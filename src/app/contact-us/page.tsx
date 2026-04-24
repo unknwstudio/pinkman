@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Контакты',
@@ -49,28 +48,7 @@ export default function ContactUsPage() {
         </div>
       </div>
 
-      {/* ── Talent Hub banner ── */}
-      <div className="portfolio-section">
-        <div className="main-container">
-          <div className="talent-hub-banner anim">
-            <div className="talent-hub-banner__body">
-              <h3 className="h3-bold font-color-black">Работа для&nbsp;опытных специалистов</h3>
-              <p className="text-regular font-color-dark-gray" style={{ marginTop: 'var(--8px)' }}>
-                Мы&nbsp;сформировали сообщество Pinkman Talent Hub для&nbsp;работы вместе
-                с&nbsp;нами. Присоединяйся к&nbsp;1000+ дизайнерам, продюсерам, сценаристам
-                и&nbsp;другим специалистам&nbsp;— мы&nbsp;всегда в&nbsp;поиске талантов! Очень
-                ждем твой отклик и&nbsp;тестовое&nbsp;:)
-              </p>
-            </div>
-            <Link className="talent-hub-banner__btn" href="/talent-hub/">
-              Узнать больше
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* Talent Hub banner hidden while /talent-hub/ is disabled */}
 
       <div className="portfolio-section contacts-legal-section">
         <div className="main-container">
