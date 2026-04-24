@@ -7,6 +7,10 @@
     "media_blocks": [
       {
         "heading": null,
+        "images": ["_cases/sber-insurance-life/sber-insurance-life-img-01.webp"]
+      },
+      {
+        "heading": null,
         "video_url": "https://kinescope.io/embed/eaebce34-de17-47ff-bc1c-446d40a62589?autoplay=1&muted=1&loop=1",
         "images": []
       },
@@ -15,7 +19,6 @@
         "layout": "stacked",
         "gap": 20,
         "images": [
-          "_cases/sber-insurance-life/sber-insurance-life-img-01.webp",
           "_cases/sber-insurance-life/sber-insurance-life-img-02.webp",
           "_cases/sber-insurance-life/sber-insurance-life-img-03.webp",
           "_cases/sber-insurance-life/sber-insurance-life-img-04.webp",
