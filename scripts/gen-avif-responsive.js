@@ -10,6 +10,7 @@ const QUALITY = 62
 
 // Bases (no extension). Source is preferred: png > webp > avif (lossless → lossy cascade)
 const COVERS = [
+  'public/images/_cases/sber-insurance-life/sber-insurance-life-cover',
   'public/images/_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover',
   'public/images/_cases/polenov/polenov-cover',
   'public/images/_cases/norma/norma-cover',

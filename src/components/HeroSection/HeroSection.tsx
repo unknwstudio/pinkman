@@ -6,6 +6,14 @@ import gsap from '@/lib/gsap'
 
 const ALL_CASES = [
   {
+    title: 'Ребрендинг Сбер Страхования жизни',
+    desc: 'Представили ребрендинг Сбер Страхования жизни на\u00a0квартальном собрании вместе с\u00a0командой клиента',
+    year: '2026',
+    cats: ['Брендинг', '3D/Motion-design'],
+    img: '/images/_cases/sber-insurance-life/sber-insurance-life-cover.webp',
+    href: '/projects/sber-insurance-life',
+  },
+  {
     title: 'Зрелищные AI-ролики для\u00a0концерта Роскосмоса ко\u00a0Дню Космонавтики',
     desc: 'Оживили сцену на\u00a0Первом канале и\u00a0дополнили выступление артистов',
     year: '2026',

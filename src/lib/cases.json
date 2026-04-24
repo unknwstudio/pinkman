@@ -1,4 +1,28 @@
 {
+  "sber-insurance-life": {
+    "cover_image": "_cases/sber-insurance-life/sber-insurance-life-cover.webp",
+    "hero": "Ребрендинг Сбер Страхования жизни",
+    "subtitle": "Представили ребрендинг Сбер Страхования жизни на квартальном собрании вместе с командой клиента. Был забронирован зал на 200+ человек, в итоге все места оказались заняты! Мы презентовали новую айдентику и шоурил, над которыми работала большая часть нашей студии. Разработали не только «красивый дизайн», но и решение под задачи бизнеса. Собрали уникальный и запоминающийся образ бренда. Клиенту понравился результат, а для нас это главный показатель.",
+    "results": [],
+    "awards": [],
+    "media_blocks": [
+      {
+        "heading": null,
+        "video_url": "https://kinescope.io/embed/eaebce34-de17-47ff-bc1c-446d40a62589?autoplay=1&muted=1&loop=1",
+        "images": []
+      },
+      {
+        "heading": null,
+        "layout": "stacked",
+        "images": [
+          "_cases/sber-insurance-life/sber-insurance-life-img-01.webp",
+          "_cases/sber-insurance-life/sber-insurance-life-img-02.webp",
+          "_cases/sber-insurance-life/sber-insurance-life-img-03.webp",
+          "_cases/sber-insurance-life/sber-insurance-life-img-04.webp"
+        ]
+      }
+    ]
+  },
   "roscosmos-den-kosmonavtiki": {
     "cover_image": "_cases/roscosmos-den-kosmonavtiki/roscosmos-den-kosmonavtiki-cover.webp",
     "hero": "AI-ролики для концерта Роскосмоса ко Дню Космонавтики на Первом канале",
